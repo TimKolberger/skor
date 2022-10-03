@@ -63,11 +63,13 @@ const ScoreForm = (props: ScoreFormProps) => {
         props.onSubmit?.({ score: Number(score), operator })
       }}
     >
-      <ScoreOperatorFormField value={operator} onChange={setOperator} />
-      <UpdateScoreFormField
-        value={score}
-        onChange={(value) => setScore(value || 0)}
-      />
+      <chakra.fieldset display="flex" flexDirection="column" gap="3">
+        <ScoreOperatorFormField value={operator} onChange={setOperator} />
+        <UpdateScoreFormField
+          value={score}
+          onChange={(value) => setScore(value || 0)}
+        />
+      </chakra.fieldset>
       {props.score !== undefined ? (
         <Text
           fontSize="3xl"

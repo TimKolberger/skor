@@ -37,13 +37,7 @@ export default function PlayerScorePage() {
         </>
       }
     >
-      <Container
-        display="flex"
-        flexDirection="column"
-        flex="1"
-        gap="12"
-        py="10"
-      >
+      <Container display="flex" flexDirection="column" flex="1" gap="8" py="10">
         <Heading textAlign="center" size="4xl" textTransform="uppercase">
           {player.name}
         </Heading>
