@@ -20,8 +20,8 @@ const pwaPlugin = VitePWA({
         type: "image/png",
       },
     ],
-    theme_color: "#00b5d8",
-    background_color: "#00b5d8",
+    theme_color: "#0a91b1",
+    background_color: "#0a91b1",
     display: "standalone",
   },
 })
