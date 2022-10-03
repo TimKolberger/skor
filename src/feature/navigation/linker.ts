@@ -10,4 +10,5 @@ export const linker = createLinker({
   setScores: "/players/set-scores",
 
   settings: "/settings",
+  legalNotice: "/legal-notice",
 } as const)

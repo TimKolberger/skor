@@ -10,6 +10,7 @@ import {
 import * as React from "react"
 import {
   FiActivity,
+  FiInfo,
   FiMoreVertical,
   FiSettings,
   FiTrendingDown,
@@ -86,6 +87,13 @@ export const GameScoresHeader = ({
                 to={linker.settings()}
               >
                 Settings
+              </MenuItem>
+              <MenuItem
+                icon={<Icon as={FiInfo} fontSize="lg" display="block" />}
+                as={Link}
+                to={linker.legalNotice()}
+              >
+                Legal Notice
               </MenuItem>
             </MenuList>
           </Menu>

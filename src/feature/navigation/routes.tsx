@@ -1,5 +1,6 @@
 import * as React from "react"
 
+import LegalNoticePage from "../legal-notice/LegalNoticePage"
 import { linker } from "./linker"
 
 const LazyGameScorePage = React.lazy(() => import("../scores/GameScorePage"))
@@ -12,6 +13,7 @@ const LazySetAllScoresPage = React.lazy(
 const LazyPlayerScorePage = React.lazy(
   () => import("../scores/PlayerScorePage")
 )
+const LazySettingsPage = React.lazy(() => import("../settings/SettingsPage"))
 
 export const routes = [
   { path: linker.home.definition, element: <LazyGameScorePage /> },
@@ -19,6 +21,7 @@ export const routes = [
   { path: linker.addPlayer.definition, element: <LazyAddPlayerPage /> },
   { path: linker.editPlayer.definition, element: <LazyEditPlayerPage /> },
   { path: linker.setScores.definition, element: <LazySetAllScoresPage /> },
-  { path: linker.settings.definition, element: <LazyNotFoundPage /> },
+  { path: linker.settings.definition, element: <LazySettingsPage /> },
+  { path: linker.legalNotice.definition, element: <LegalNoticePage /> },
   { element: <LazyNotFoundPage /> },
 ]
