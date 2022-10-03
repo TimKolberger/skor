@@ -79,6 +79,7 @@ export const GameScores = ({ sort }: GameScoresProps) => {
                 key={player.id}
                 value={value}
                 exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                drag={false}
               >
                 <ConnectedScoreTile
                   player={player}
