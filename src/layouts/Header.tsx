@@ -12,9 +12,8 @@ interface HeaderProps {
 export const Header = ({ to = linker.home(), actionButtons }: HeaderProps) => (
   <chakra.header
     display="flex"
-    flexBasis="36"
     sx={{
-      "@media (min-height: 30em)": {
+      "@media (min-height: 54em)": {
         flexBasis: "36",
       },
     }}
