@@ -1,5 +1,8 @@
 import { chakra, FormControl, FormLabel, SimpleGrid } from "@chakra-ui/react"
 import * as React from "react"
+import { AudioPlayerProvider, useAudioPlayer } from "react-use-audio-player"
+
+import { useMuted } from "../settings/useMuted"
 
 export const playerColors = [
   "gray.600",
@@ -25,7 +28,13 @@ interface PlayerColorInputProps {
   onChange: (value: string) => void
 }
 
-export const PlayerColorInput = ({
+export const PlayerColorInput = (props: PlayerColorInputProps) => (
+  <AudioPlayerProvider>
+    <PlayerColorInputComponent {...props} />
+  </AudioPlayerProvider>
+)
+
+const PlayerColorInputComponent = ({
   value,
   onChange,
 }: PlayerColorInputProps) => {
@@ -34,6 +43,8 @@ export const PlayerColorInput = ({
   React.useEffect(() => {
     colorSelectRef.current?.focus()
   }, [])
+
+  useAudioEffect(playerColors.indexOf(value))
 
   return (
     <FormControl>
@@ -113,4 +124,42 @@ export const PlayerColorInput = ({
       </SimpleGrid>
     </FormControl>
   )
+}
+
+function useAudioEffect(index: number) {
+  const [muted] = useMuted()
+  const allSounds = [
+    "c",
+    "cis",
+    "d",
+    "es",
+    "e",
+    "f",
+    "fis",
+    "g",
+    "gis",
+    "a",
+    "b",
+    "h",
+    "c1",
+    "cis1",
+    "d1",
+    "es1",
+    "e1",
+    "f1",
+    "fis1",
+    "g1",
+    "gis1",
+    "a1",
+    "b1",
+    "h1",
+    "c2",
+  ]
+  const sound = allSounds[index % allSounds.length]
+  return useAudioPlayer({
+    src: `/tunes/${sound}.mp3`,
+    format: "mp3",
+    autoplay: !muted,
+    onend: () => console.log("sound has ended!"),
+  })
 }

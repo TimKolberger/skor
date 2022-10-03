@@ -3062,6 +3062,11 @@ hoist-non-react-statics@^3.3.1:
   dependencies:
     react-is "^16.7.0"
 
+howler@^2.2.1:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/howler/-/howler-2.2.3.tgz#a2eff9b08b586798e7a2ee17a602a90df28715da"
+  integrity sha512-QM0FFkw0LRX1PR8pNzJVAY25JhIWvbKMBFM4gqk+QdV+kPXOhleWGCB6AiAF/goGjIHK2e/nIElplvjQwhr0jg==
+
 idb@^7.0.1:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/idb/-/idb-7.0.2.tgz#7a067e20dd16539938e456814b7d714ba8db3892"
@@ -3627,6 +3632,13 @@ react-style-singleton@^2.2.1:
     get-nonce "^1.0.0"
     invariant "^2.2.4"
     tslib "^2.0.0"
+
+react-use-audio-player@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/react-use-audio-player/-/react-use-audio-player-1.2.6.tgz#e50b6183029493c693c89e5822f8530b7648e864"
+  integrity sha512-ukFF5WOxsFYd44AaPXzFI4HltWaPD68+iJ9aDicn9FRBJ5poJUPO/WjFl5nk0tRYiyve3z711Oz79LYzCahhFQ==
+  dependencies:
+    howler "^2.2.1"
 
 react@18.2.0:
   version "18.2.0"
