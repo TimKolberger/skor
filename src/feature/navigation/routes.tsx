@@ -1,24 +1,16 @@
 import * as React from "react"
 
-import { linker } from "../feature/linker/linker"
+import { linker } from "./linker"
 
-const LazyGameScorePage = React.lazy(
-  () => import("../feature/scores/GameScorePage")
-)
-const LazyEditPlayerPage = React.lazy(
-  () => import("../feature/players/EditPlayerPage")
-)
-const LazyAddPlayerPage = React.lazy(
-  () => import("../feature/players/AddPlayerPage")
-)
-const LazyNotFoundPage = React.lazy(
-  () => import("../feature/linker/NotFoundPage")
-)
+const LazyGameScorePage = React.lazy(() => import("../scores/GameScorePage"))
+const LazyEditPlayerPage = React.lazy(() => import("../players/EditPlayerPage"))
+const LazyAddPlayerPage = React.lazy(() => import("../players/AddPlayerPage"))
+const LazyNotFoundPage = React.lazy(() => import("./NotFoundPage"))
 const LazySetAllScoresPage = React.lazy(
-  () => import("../feature/scores/SetAllScoresPage")
+  () => import("../scores/SetAllScoresPage")
 )
 const LazyPlayerScorePage = React.lazy(
-  () => import("../feature/scores/PlayerScorePage")
+  () => import("../scores/PlayerScorePage")
 )
 
 export const routes = [

@@ -3,7 +3,7 @@ import * as React from "react"
 import { FiX } from "react-icons/fi"
 import { Link, LinkProps } from "react-router-dom"
 
-import { linker } from "../feature/linker/linker"
+import { linker } from "../feature/navigation/linker"
 import { BaseLayout, BaseLayoutProps, modalVariants } from "./BaseLayout"
 import { Header } from "./Header"
 

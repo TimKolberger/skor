@@ -2,7 +2,7 @@ import { Button, chakra } from "@chakra-ui/react"
 import * as React from "react"
 import { Link, LinkProps } from "react-router-dom"
 
-import { linker } from "../feature/linker/linker"
+import { linker } from "../feature/navigation/linker"
 
 interface HeaderProps {
   to?: LinkProps["to"]

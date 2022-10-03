@@ -20,7 +20,7 @@ import {
 import { Link } from "react-router-dom"
 
 import { Header } from "../../layouts/Header"
-import { linker } from "../linker/linker"
+import { linker } from "../navigation/linker"
 
 export type Sort = "asc" | "desc"
 

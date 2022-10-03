@@ -4,8 +4,8 @@ import * as React from "react"
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 
 import { GameProvider } from "./feature/game/GameProvider"
+import { routes } from "./feature/navigation/routes"
 import { PlayerProvider } from "./feature/players/PlayerProvider"
-import { routes } from "./pages/routes"
 import { theme } from "./theme"
 
 export const App = () => (

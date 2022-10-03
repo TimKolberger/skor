@@ -4,8 +4,8 @@ import { FiUser } from "react-icons/fi"
 import { Link, useMatch } from "react-router-dom"
 
 import { FullModalLayout } from "../../layouts/FullModalLayout"
-import NotFoundPage from "../linker/NotFoundPage"
-import { linker } from "../linker/linker"
+import NotFoundPage from "../navigation/NotFoundPage"
+import { linker } from "../navigation/linker"
 import { usePlayers } from "../players/usePlayers"
 import { ConnectedScoreForm } from "./ScoreForm"
 

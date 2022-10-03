@@ -13,7 +13,7 @@ import { Link } from "react-router-dom"
 
 import type { ScoreSlice } from "../game/gameMachine"
 import { useGameService } from "../game/useGameService"
-import { linker } from "../linker/linker"
+import { linker } from "../navigation/linker"
 import { Player } from "../players/playerMachine"
 
 export interface ConnectedScoreTileProps {

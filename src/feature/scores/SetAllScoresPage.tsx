@@ -2,7 +2,7 @@ import { chakra, Container, Heading } from "@chakra-ui/react"
 import * as React from "react"
 
 import { FullModalLayout } from "../../layouts/FullModalLayout"
-import { linker } from "../linker/linker"
+import { linker } from "../navigation/linker"
 import { ConnectedScoreForm } from "./ScoreForm"
 
 export default function SetAllScoresPage() {
