@@ -1,10 +1,4 @@
-import {
-  chakra,
-  FormControl,
-  FormLabel,
-  SimpleGrid,
-  useBreakpointValue,
-} from "@chakra-ui/react"
+import { chakra, FormControl, FormLabel, SimpleGrid } from "@chakra-ui/react"
 import * as React from "react"
 
 export const playerColors = [
@@ -35,7 +29,7 @@ export const PlayerColorInput = ({
   value,
   onChange,
 }: PlayerColorInputProps) => {
-  const columns = useBreakpointValue({ base: 2, md: 4 }) ?? 2
+  const columns = 4
   const colorSelectRef = React.useRef<HTMLDivElement>(null)
   React.useEffect(() => {
     colorSelectRef.current?.focus()
