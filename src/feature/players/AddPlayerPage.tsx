@@ -1,0 +1,46 @@
+import { Button } from "@chakra-ui/react"
+import * as React from "react"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+
+import { FullModalLayout } from "../../layouts/FullModalLayout"
+import { Main } from "../../layouts/Main"
+import { linker } from "../linker/linker"
+import { playerColors } from "./PlayerColorInput"
+import { PlayerForm, PlayerFormValues } from "./PlayerForm"
+import { usePlayerService } from "./usePlayerService"
+
+export default function AddPlayerPage() {
+  const navigate = useNavigate()
+  const playerService = usePlayerService()
+  const [playerColor, setPlayerColor] = useState(
+    () => playerColors[Math.floor(Math.random() * playerColors.length)]
+  )
+
+  const onSubmit = (player: PlayerFormValues) => {
+    playerService.send({ type: "ADD_PLAYER", player })
+    navigate("/")
+  }
+
+  return (
+    <FullModalLayout to={linker.home()}>
+      <Main
+        px="0"
+        bg={playerColor}
+        transitionProperty="common"
+        transitionDuration="fast"
+        transitionTimingFunction="ease-out"
+      >
+        <PlayerForm
+          onSubmit={onSubmit}
+          onColorChange={setPlayerColor}
+          initialValues={{ color: playerColor }}
+        >
+          <Button type="submit" alignSelf="flex-end" variant="outline">
+            Add player
+          </Button>
+        </PlayerForm>
+      </Main>
+    </FullModalLayout>
+  )
+}
