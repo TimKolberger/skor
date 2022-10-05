@@ -36,17 +36,17 @@ export const GameProvider = ({ children }: GameProviderProps) => {
     return () => {
       sub.unsubscribe()
     }
-  }, [gameService, persistScores])
+  }, [gameService, persistScores, persistStep])
 
   React.useEffect(() => {
     gameService.send({ type: "IDLE" })
     gameService.send({ type: "SET_PLAYERS", players })
-  }, [players])
+  }, [gameService, players])
 
   React.useEffect(() => {
     gameService.send({ type: "IDLE" })
     gameService.send({ type: "SET_STEP", step })
-  }, [step])
+  }, [gameService, step])
 
   return (
     <GameServiceContext.Provider value={gameService}>

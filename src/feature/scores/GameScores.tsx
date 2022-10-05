@@ -5,6 +5,7 @@ import * as React from "react"
 import { useGame } from "../game/useGame"
 import { useGameService } from "../game/useGameService"
 import { Player } from "../players/playerMachine"
+import { noop } from "../utils/noop"
 import { Sort } from "./GameScoresHeader"
 import { ConnectedScoreTile } from "./ScoreTile"
 
@@ -36,7 +37,7 @@ export const GameScores = ({ sort }: GameScoresProps) => {
     () => () => {
       gameService.send({ type: "IDLE" })
     },
-    []
+    [gameService]
   )
 
   const sortedPlayersAndScores = React.useMemo(() => {
@@ -66,11 +67,7 @@ export const GameScores = ({ sort }: GameScoresProps) => {
 
   return (
     <LayoutGroup>
-      <ReorderGroup
-        axis="y"
-        values={sortedPlayersAndScores}
-        onReorder={React.useCallback(() => {}, [])}
-      >
+      <ReorderGroup axis="y" values={sortedPlayersAndScores} onReorder={noop}>
         <AnimatePresence>
           {sortedPlayersAndScores.map((value) => {
             const { player, scoreSlice } = value
