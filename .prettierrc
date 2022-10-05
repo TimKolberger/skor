@@ -1,5 +1,6 @@
 {
   "importOrder": ["<THIRD_PARTY_MODULES>", "^[./]"],
   "importOrderSeparation": true,
-  "semi": false
+  "semi": false,
+  "proseWrap": "always"
 }
