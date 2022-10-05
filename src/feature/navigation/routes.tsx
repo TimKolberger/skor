@@ -2,7 +2,7 @@ import * as React from "react"
 
 import { linker } from "./linker"
 
-const LazyGameScorePage = React.lazy(() => import("../scores/GameScorePage"))
+const LazyGameScorePage = React.lazy(() => import("../scores/GameScoresPage"))
 const LazyEditPlayerPage = React.lazy(() => import("../players/EditPlayerPage"))
 const LazyAddPlayerPage = React.lazy(() => import("../players/AddPlayerPage"))
 const LazyNotFoundPage = React.lazy(() => import("./NotFoundPage"))

@@ -7,7 +7,7 @@ import { usePlayerService } from "../players/usePlayerService"
 import { GameScores } from "./GameScores"
 import { GameScoresHeader, Sort } from "./GameScoresHeader"
 
-export default function GameScorePage() {
+export default function GameScoresPage() {
   const [sort, setSort] = useState<Sort>("asc")
   const playerService = usePlayerService()
   return (
