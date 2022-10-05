@@ -3,6 +3,31 @@ import * as React from "react"
 import { AudioPlayerProvider, useAudioPlayer } from "react-use-audio-player"
 
 import { useMuted } from "../settings/useMuted"
+import tune_a1 from "./assets/tunes/a1.mp3"
+import tune_a from "./assets/tunes/a.mp3"
+import tune_b1 from "./assets/tunes/b1.mp3"
+import tune_b from "./assets/tunes/b.mp3"
+import tune_c1 from "./assets/tunes/c1.mp3"
+import tune_c2 from "./assets/tunes/c2.mp3"
+import tune_c from "./assets/tunes/c.mp3"
+import tune_cis1 from "./assets/tunes/cis1.mp3"
+import tune_cis from "./assets/tunes/cis.mp3"
+import tune_d1 from "./assets/tunes/d1.mp3"
+import tune_d from "./assets/tunes/d.mp3"
+import tune_e1 from "./assets/tunes/e1.mp3"
+import tune_e from "./assets/tunes/e.mp3"
+import tune_es1 from "./assets/tunes/es1.mp3"
+import tune_es from "./assets/tunes/es.mp3"
+import tune_f1 from "./assets/tunes/f1.mp3"
+import tune_f from "./assets/tunes/f.mp3"
+import tune_fis1 from "./assets/tunes/fis1.mp3"
+import tune_fis from "./assets/tunes/fis.mp3"
+import tune_g1 from "./assets/tunes/g1.mp3"
+import tune_g from "./assets/tunes/g.mp3"
+import tune_gis1 from "./assets/tunes/gis1.mp3"
+import tune_gis from "./assets/tunes/gis.mp3"
+import tune_h1 from "./assets/tunes/h1.mp3"
+import tune_h from "./assets/tunes/h.mp3"
 
 export const playerColors = [
   "gray.600",
@@ -129,37 +154,36 @@ const PlayerColorInputComponent = ({
 function useAudioEffect(index: number) {
   const [muted] = useMuted()
   const allSounds = [
-    "c",
-    "cis",
-    "d",
-    "es",
-    "e",
-    "f",
-    "fis",
-    "g",
-    "gis",
-    "a",
-    "b",
-    "h",
-    "c1",
-    "cis1",
-    "d1",
-    "es1",
-    "e1",
-    "f1",
-    "fis1",
-    "g1",
-    "gis1",
-    "a1",
-    "b1",
-    "h1",
-    "c2",
+    tune_a,
+    tune_a1,
+    tune_b,
+    tune_b1,
+    tune_c,
+    tune_c1,
+    tune_c2,
+    tune_cis,
+    tune_cis1,
+    tune_d,
+    tune_d1,
+    tune_e,
+    tune_e1,
+    tune_es,
+    tune_es1,
+    tune_f,
+    tune_f1,
+    tune_fis,
+    tune_fis1,
+    tune_g,
+    tune_g1,
+    tune_gis,
+    tune_gis1,
+    tune_h,
+    tune_h1,
   ]
-  const sound = allSounds[index % allSounds.length]
+  const src = allSounds[index % allSounds.length]
   return useAudioPlayer({
-    src: `/tunes/${sound}.mp3`,
+    src,
     format: "mp3",
     autoplay: !muted,
-    onend: () => console.log("sound has ended!"),
   })
 }
