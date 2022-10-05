@@ -48,7 +48,7 @@ export const theme = extendTheme({
             },
             _focusVisible: {
               outline: "0",
-              borderColor: "blue.200",
+              borderColor: "whiteAlpha.700",
             },
           },
         },
@@ -63,7 +63,7 @@ export const theme = extendTheme({
             },
             _focusVisible: {
               outline: "0",
-              borderColor: "blue.200",
+              borderColor: "whiteAlpha.700",
             },
           },
         },

@@ -1,6 +1,6 @@
-import { Button, ButtonGroup, chakra, Text } from "@chakra-ui/react"
+import { Button, chakra, Text } from "@chakra-ui/react"
 import * as React from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 import { calcNextScore } from "../game/gameMachine"
 import { useGame } from "../game/useGame"
@@ -70,31 +70,32 @@ const ScoreForm = (props: ScoreFormProps) => {
           onChange={(value) => setScore(value || 0)}
         />
       </chakra.fieldset>
-      {props.score !== undefined ? (
-        <Text
-          fontSize="3xl"
-          fontWeight="bold"
-          fontStyle="italic"
-          textAlign="right"
-        >
-          next score is{" "}
-          <chakra.span fontSize="6xl">
-            {calcNextScore(props.score, operator, score)}
-          </chakra.span>
-        </Text>
-      ) : null}
-      <ButtonGroup
-        flexDirection="row-reverse"
+      <chakra.div
+        display="flex"
+        justifyContent="flex-end"
+        flexWrap="wrap"
         gap="3"
-        justifyContent="flex-start"
       >
+        {props.score !== undefined ? (
+          <Text
+            fontSize="xl"
+            fontWeight="bold"
+            fontStyle="italic"
+            textAlign="right"
+            mr="auto"
+          >
+            next score is
+            <br />
+            <chakra.span fontSize="6xl" lineHeight="1">
+              {calcNextScore(props.score, operator, score)}
+            </chakra.span>
+          </Text>
+        ) : null}
+
         <Button type="submit" variant="outline">
           Save score
         </Button>
-        <Button as={Link} to={linker.home()} variant="ghost">
-          Cancel
-        </Button>
-      </ButtonGroup>
+      </chakra.div>
     </chakra.form>
   )
 }
