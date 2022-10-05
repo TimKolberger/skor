@@ -2,7 +2,7 @@ import { Button, ButtonGroup, chakra, Icon, IconButton } from "@chakra-ui/react"
 import * as React from "react"
 import { useState } from "react"
 import { FiChevronLeft } from "react-icons/fi"
-import { Link, useMatch, useNavigate } from "react-router-dom"
+import { useMatch, useNavigate } from "react-router-dom"
 
 import { FullModalLayout } from "../../layouts/FullModalLayout"
 import { Main } from "../../layouts/Main"
@@ -75,9 +75,7 @@ export default function EditPlayerPage() {
             <Button type="submit" variant="outline">
               Save player
             </Button>
-            <Button as={Link} to={linker.home()} variant="ghost">
-              Cancel
-            </Button>
+
             <Button
               me="auto"
               type="button"
