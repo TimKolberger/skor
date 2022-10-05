@@ -1,9 +1,19 @@
-import { chakra } from "@chakra-ui/react"
+import {
+  Center,
+  chakra,
+  Icon,
+  IconButton,
+  Text,
+  VStack,
+} from "@chakra-ui/react"
 import { AnimatePresence, LayoutGroup, Reorder } from "framer-motion"
 import * as React from "react"
+import { FiAward, FiUserPlus } from "react-icons/fi"
+import { Link } from "react-router-dom"
 
 import { useGame } from "../game/useGame"
 import { useGameService } from "../game/useGameService"
+import { linker } from "../navigation/linker"
 import { Player } from "../players/playerMachine"
 import { noop } from "../utils/noop"
 import { Sort } from "./GameScoresHeader"
@@ -65,6 +75,10 @@ export const GameScores = ({ sort }: GameScoresProps) => {
       })
   }, [players, scores, sort])
 
+  if (!sortedPlayersAndScores.length) {
+    return <EmptyGameScoresScreen />
+  }
+
   return (
     <LayoutGroup>
       <ReorderGroup axis="y" values={sortedPlayersAndScores} onReorder={noop}>
@@ -91,3 +105,23 @@ export const GameScores = ({ sort }: GameScoresProps) => {
     </LayoutGroup>
   )
 }
+
+const EmptyGameScoresScreen = () => (
+  <Center flex="1">
+    <VStack spacing="8">
+      <Icon as={FiAward} fontSize="8xl" />
+      <Text fontSize="xl" maxW="60" textAlign="center" fontWeight="bold">
+        Assemble your players to start the game
+      </Text>
+      <IconButton
+        size="lg"
+        fontSize="4xl"
+        boxSize="20"
+        icon={<Icon as={FiUserPlus} />}
+        aria-label="Add player"
+        as={Link}
+        to={linker.addPlayer()}
+      />
+    </VStack>
+  </Center>
+)
