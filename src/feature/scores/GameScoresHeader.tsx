@@ -84,8 +84,10 @@ export const GameScoresHeader = ({
               </MenuItem>
               <MenuItem
                 icon={<Icon as={FaGithub} fontSize="lg" display="block" />}
-                as={Link}
-                to={linker.githubRepo()}
+                as="a"
+                href={linker.githubRepo()}
+                target="_blank"
+                rel="noopener"
               >
                 Open Source on GitHub
               </MenuItem>
