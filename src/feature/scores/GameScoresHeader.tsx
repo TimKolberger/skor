@@ -8,6 +8,7 @@ import {
   MenuList,
 } from "@chakra-ui/react"
 import * as React from "react"
+import { FaGithub } from "react-icons/fa"
 import {
   FiActivity,
   FiInfo,
@@ -82,11 +83,11 @@ export const GameScoresHeader = ({
                 Delete all Players
               </MenuItem>
               <MenuItem
-                icon={<Icon as={FiSettings} fontSize="lg" display="block" />}
+                icon={<Icon as={FaGithub} fontSize="lg" display="block" />}
                 as={Link}
-                to={linker.settings()}
+                to={linker.githubRepo()}
               >
-                Settings
+                Open Source on GitHub
               </MenuItem>
               <MenuItem
                 icon={<Icon as={FiInfo} fontSize="lg" display="block" />}
@@ -94,6 +95,13 @@ export const GameScoresHeader = ({
                 to={linker.legalNotice()}
               >
                 Legal Notice
+              </MenuItem>
+              <MenuItem
+                icon={<Icon as={FiSettings} fontSize="lg" display="block" />}
+                as={Link}
+                to={linker.settings()}
+              >
+                Settings
               </MenuItem>
             </MenuList>
           </Menu>
