@@ -20,11 +20,18 @@ export const ConnectedScoreForm = ({ player }: ConnectedScoreFormProps) => {
   const { scores } = useGame()
   const gameService = useGameService()
   const navigate = useNavigate()
+  const [operator, setOperator] = useLocalStorage<ScoreOperator>(
+    LS_KEY_SCORE_OPERATOR,
+    "add"
+  )
   const score = scores?.[player?.id ?? ""]
 
   return (
     <ScoreForm
-      score={score?.total}
+      initialValues={{
+        score: score?.total,
+        operator,
+      }}
       onSubmit={(values) => {
         gameService.send({
           type: "SET_SCORE",
@@ -32,25 +39,29 @@ export const ConnectedScoreForm = ({ player }: ConnectedScoreFormProps) => {
           operator: values.operator,
           score: values.score,
         })
+        setOperator(values.operator)
         navigate(linker.home())
       }}
     />
   )
 }
 
-interface ScoreFormProps {
-  score?: number
-  operator?: ScoreOperator
+export interface ScoreFormProps {
+  initialValues?: {
+    score?: number
+    operator?: ScoreOperator
+  }
   onSubmit: (values: { score: number; operator: ScoreOperator }) => void
 }
 
-const ScoreForm = (props: ScoreFormProps) => {
-  const [operator, setOperator] = useLocalStorage<ScoreOperator>(
-    LS_KEY_SCORE_OPERATOR,
-    props.operator || "add"
+export const ScoreForm = ({ initialValues, onSubmit }: ScoreFormProps) => {
+  const [operator, setOperator] = React.useState(
+    initialValues?.operator || "add"
   )
   const [score, setScore] = React.useState(
-    operator === "set" && props.score ? props.score : 0
+    initialValues?.operator === "set" && initialValues?.score
+      ? initialValues?.score
+      : 0
   )
   return (
     <chakra.form
@@ -60,7 +71,7 @@ const ScoreForm = (props: ScoreFormProps) => {
       flex="1 1"
       onSubmit={(e) => {
         e.preventDefault()
-        props.onSubmit?.({ score: Number(score), operator })
+        onSubmit?.({ score: Number(score), operator })
       }}
     >
       <chakra.fieldset display="flex" flexDirection="column" gap="3">
@@ -77,7 +88,7 @@ const ScoreForm = (props: ScoreFormProps) => {
         flexWrap="wrap"
         gap="6"
       >
-        {props.score !== undefined ? (
+        {score !== undefined ? (
           <Text
             flex="1"
             flexBasis="32"
@@ -90,7 +101,7 @@ const ScoreForm = (props: ScoreFormProps) => {
             next score is
             <br />
             <chakra.span fontSize="6xl" lineHeight="1">
-              {calcNextScore(props.score, operator, score)}
+              {calcNextScore(score, operator, score)}
             </chakra.span>
           </Text>
         ) : null}
