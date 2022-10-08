@@ -2,7 +2,6 @@ import {
   chakra,
   HTMLChakraProps,
   Icon,
-  IconButton,
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/react"
@@ -15,6 +14,7 @@ import { useGameService } from "../game/useGameService"
 import { linker } from "../navigation/linker"
 import { Player } from "../players/playerMachine"
 import { ScoreDiff } from "./ScoreDiff"
+import { TickingIconButton } from "./TickingIconButton"
 
 export interface ConnectedScoreTileProps {
   player: Player
@@ -70,10 +70,10 @@ const ScoreTile = ({
     bg={player.color}
     {...boxProps}
   >
-    <IconButton
+    <TickingIconButton
       icon={<Icon as={FiMinus} fontSize="4xl" />}
       aria-label="decrement score"
-      onClick={onDecrement}
+      onTick={onDecrement}
       alignSelf="stretch"
       h="auto"
       borderRadius="none"
@@ -104,10 +104,10 @@ const ScoreTile = ({
       </LinkOverlay>
       <ScoreDiff scoreSlice={scoreSlice} />
     </LinkBox>
-    <IconButton
+    <TickingIconButton
       icon={<Icon as={FiPlus} fontSize="4xl" />}
       aria-label="increment score"
-      onClick={onIncrement}
+      onTick={onIncrement}
       alignSelf="stretch"
       h="auto"
       borderRadius="none"
