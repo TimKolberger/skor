@@ -73,7 +73,7 @@ export function BetterNumberInput({ value, onChange }: BetterNumberInputProps) {
     <>
       <chakra.div display="flex" gap="6" flexDirection="column">
         <FormControl>
-          <FormLabel srOnly>Value</FormLabel>
+          <FormLabel srOnly>Score</FormLabel>
           {input}
         </FormControl>
       </chakra.div>
