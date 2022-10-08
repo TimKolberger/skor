@@ -5,7 +5,6 @@ import {
   IconButton,
   LinkBox,
   LinkOverlay,
-  Text,
 } from "@chakra-ui/react"
 import * as React from "react"
 import { FiMinus, FiPlus } from "react-icons/fi"
@@ -15,6 +14,7 @@ import type { ScoreSlice } from "../game/gameMachine"
 import { useGameService } from "../game/useGameService"
 import { linker } from "../navigation/linker"
 import { Player } from "../players/playerMachine"
+import { ScoreDiff } from "./ScoreDiff"
 
 export interface ConnectedScoreTileProps {
   player: Player
@@ -102,9 +102,7 @@ const ScoreTile = ({
       >
         {player.name}
       </LinkOverlay>
-      <Text fontWeight="black" fontSize="3xl">
-        {scoreSlice.total + scoreSlice.diff}
-      </Text>
+      <ScoreDiff scoreSlice={scoreSlice} />
     </LinkBox>
     <IconButton
       icon={<Icon as={FiPlus} fontSize="4xl" />}
