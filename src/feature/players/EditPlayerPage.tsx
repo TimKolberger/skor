@@ -10,6 +10,7 @@ import NotFoundPage from "../navigation/NotFoundPage"
 import { linker } from "../navigation/linker"
 import { playerColors } from "./PlayerColorInput"
 import { PlayerForm, PlayerFormValues } from "./PlayerForm"
+import { RemovePlayer } from "./RemovePlayer"
 import { usePlayerService } from "./usePlayerService"
 import { usePlayers } from "./usePlayers"
 
@@ -43,6 +44,12 @@ export default function EditPlayerPage() {
       actionButtons={
         <>
           <chakra.li>
+            <RemovePlayer
+              player={player}
+              onRemove={() => navigate(linker.home())}
+            />
+          </chakra.li>
+          <chakra.li>
             <IconButton
               onClick={() => navigate(-1)}
               variant="ghost"
@@ -74,22 +81,6 @@ export default function EditPlayerPage() {
           >
             <Button type="submit" variant="outline">
               Save player
-            </Button>
-
-            <Button
-              me="auto"
-              type="button"
-              variant="outline"
-              colorScheme="red"
-              onClick={() => {
-                navigate(linker.home())
-                playerService.send({
-                  type: "REMOVE_PLAYER",
-                  playerId: player.id,
-                })
-              }}
-            >
-              Remove player
             </Button>
           </ButtonGroup>
         </PlayerForm>

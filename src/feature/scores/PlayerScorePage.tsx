@@ -1,11 +1,12 @@
 import { chakra, Container, Heading, Icon, IconButton } from "@chakra-ui/react"
 import * as React from "react"
 import { FiUser } from "react-icons/fi"
-import { Link, useMatch } from "react-router-dom"
+import { Link, useMatch, useNavigate } from "react-router-dom"
 
 import { FullModalLayout } from "../../layouts/FullModalLayout"
 import NotFoundPage from "../navigation/NotFoundPage"
 import { linker } from "../navigation/linker"
+import { RemovePlayer } from "../players/RemovePlayer"
 import { usePlayers } from "../players/usePlayers"
 import { ConnectedScoreForm } from "./ScoreForm"
 
@@ -13,6 +14,7 @@ export default function PlayerScorePage() {
   const { players } = usePlayers()
   const match = useMatch(linker.playerScore.definition)
   const player = players.find((p) => p.id === match?.params.playerId)
+  const navigate = useNavigate()
 
   if (!player) {
     return <NotFoundPage />
@@ -24,6 +26,12 @@ export default function PlayerScorePage() {
       bg={player.color}
       actionButtons={
         <>
+          <chakra.li>
+            <RemovePlayer
+              player={player}
+              onRemove={() => navigate(linker.home())}
+            />
+          </chakra.li>
           <chakra.li>
             <IconButton
               as={Link}
