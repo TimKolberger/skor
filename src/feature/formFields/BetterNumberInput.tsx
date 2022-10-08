@@ -14,15 +14,12 @@ import {
 import * as React from "react"
 import { FiMinus, FiPlus } from "react-icons/fi"
 
-export interface UpdateScoreFormFieldProps {
+export interface BetterNumberInputProps {
   value?: number
   onChange: (value: number) => void
 }
 
-export function UpdateScoreFormField({
-  value,
-  onChange,
-}: UpdateScoreFormFieldProps) {
+export function BetterNumberInput({ value, onChange }: BetterNumberInputProps) {
   const inputRef = React.useRef<HTMLInputElement>(null)
 
   React.useEffect(() => {

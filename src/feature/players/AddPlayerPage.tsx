@@ -1,6 +1,7 @@
 import { Button } from "@chakra-ui/react"
 import * as React from "react"
 import { useState } from "react"
+import { useHotkeys } from "react-hotkeys-hook"
 import { useNavigate } from "react-router-dom"
 
 import { FullModalLayout } from "../../layouts/FullModalLayout"
@@ -16,6 +17,8 @@ export default function AddPlayerPage() {
   const [playerColor, setPlayerColor] = useState(
     () => playerColors[Math.floor(Math.random() * playerColors.length)]
   )
+
+  useHotkeys("esc", () => navigate(linker.home()))
 
   const onSubmit = (player: PlayerFormValues) => {
     playerService.send({ type: "ADD_PLAYER", player })

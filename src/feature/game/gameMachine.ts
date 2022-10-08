@@ -10,11 +10,14 @@ export interface ScoreSlice {
   diff: number
 }
 
+export type SortType = "asc" | "desc"
+
 export interface GameContext {
   players: Player[]
   scores: Record<Player["id"], ScoreSlice>
   step: number
   lastActivePlayer: Player["id"] | null
+  sort: SortType
 }
 
 type IncrementEvent = {
@@ -37,6 +40,15 @@ type SetStepEvent = {
   step: number
 }
 
+type SetSortEvent = {
+  type: "SET_SORT"
+  sort: SortType
+}
+
+type ToggleSortEvent = {
+  type: "TOGGLE_SORT"
+}
+
 type SetScoreEvent = {
   type: "SET_SCORE"
   playerId?: Player["id"]
@@ -55,6 +67,8 @@ type GameEvent =
   | IdleEvent
   | SetPlayersEvent
   | SetStepEvent
+  | SetSortEvent
+  | ToggleSortEvent
 
 const idleTimerId = "idle-timer"
 
@@ -64,6 +78,7 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
 
     context: {
       players: [],
+      sort: "asc",
       step: 1,
       scores: {},
       lastActivePlayer: null,
@@ -89,13 +104,21 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
             target: "idle",
             actions: ["setPlayers"],
           },
+          SET_SCORE: {
+            target: "counting",
+            actions: ["setScore"],
+          },
           SET_STEP: {
             target: "idle",
             actions: ["setStep"],
           },
-          SET_SCORE: {
-            target: "counting",
-            actions: ["setScore"],
+          SET_SORT: {
+            target: "idle",
+            actions: ["setSort"],
+          },
+          TOGGLE_SORT: {
+            target: "idle",
+            actions: ["toggleSort"],
           },
         },
       },
@@ -111,6 +134,14 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
             target: "counting",
             actions: ["cancelIdleTimer", "setActivePlayer", "decrement"],
             cond: "playerExists",
+          },
+          SET_SORT: {
+            target: "idle",
+            actions: ["cancelIdleTimer", "setSort"],
+          },
+          TOGGLE_SORT: {
+            target: "idle",
+            actions: ["cancelIdleTimer", "toggleSort"],
           },
           IDLE: {
             actions: ["cancelIdleTimer"],
@@ -235,6 +266,17 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
           }
           return nextScores
         },
+      }),
+      setSort: assign({
+        sort: (context, event) => {
+          if (!("sort" in event)) {
+            return context.sort
+          }
+          return event.sort
+        },
+      }),
+      toggleSort: assign({
+        sort: (context) => (context.sort !== "asc" ? "asc" : "desc"),
       }),
     },
     guards: {

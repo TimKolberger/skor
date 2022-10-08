@@ -1,5 +1,6 @@
 import { chakra, Container, Heading, Icon, IconButton } from "@chakra-ui/react"
 import * as React from "react"
+import { useHotkeys } from "react-hotkeys-hook"
 import { FiUser } from "react-icons/fi"
 import { Link, useMatch, useNavigate } from "react-router-dom"
 
@@ -15,6 +16,8 @@ export default function PlayerScorePage() {
   const match = useMatch(linker.playerScore.definition)
   const player = players.find((p) => p.id === match?.params.playerId)
   const navigate = useNavigate()
+
+  useHotkeys("esc", () => navigate(linker.home()))
 
   if (!player) {
     return <NotFoundPage />

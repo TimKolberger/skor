@@ -2,6 +2,7 @@ import { Button, chakra, Text } from "@chakra-ui/react"
 import * as React from "react"
 import { useNavigate } from "react-router-dom"
 
+import { BetterNumberInput } from "../formFields/BetterNumberInput"
 import { calcNextScore } from "../game/gameMachine"
 import { useGame } from "../game/useGame"
 import { useGameService } from "../game/useGameService"
@@ -10,7 +11,6 @@ import { LS_KEY_SCORE_OPERATOR } from "../persistence/localStorageKeys"
 import { useLocalStorage } from "../persistence/useLocalStorage"
 import { Player } from "../players/playerMachine"
 import { ScoreOperator, ScoreOperatorFormField } from "./ScoreOperatorFormField"
-import { UpdateScoreFormField } from "./UpdateScoreFormField"
 
 export interface ConnectedScoreFormProps {
   player?: Player
@@ -65,7 +65,7 @@ const ScoreForm = (props: ScoreFormProps) => {
     >
       <chakra.fieldset display="flex" flexDirection="column" gap="3">
         <ScoreOperatorFormField value={operator} onChange={setOperator} />
-        <UpdateScoreFormField
+        <BetterNumberInput
           value={score}
           onChange={(value) => setScore(value || 0)}
         />

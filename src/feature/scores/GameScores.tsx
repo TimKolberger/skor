@@ -14,10 +14,10 @@ import { Link } from "react-router-dom"
 import { useGame } from "../game/useGame"
 import { useGameService } from "../game/useGameService"
 import { linker } from "../navigation/linker"
-import { Player } from "../players/playerMachine"
 import { noop } from "../utils/noop"
-import { Sort } from "./GameScoresHeader"
 import { ConnectedScoreTile } from "./ScoreTile"
+import { sortPlayersWithScore } from "./sortPlayersWithScore"
+import { useGameScoresKeyboardShortcuts } from "./useGameScoresKeyboardShortcuts"
 
 const ReorderGroup = chakra(Reorder.Group, {
   baseStyle: {
@@ -35,13 +35,11 @@ const ReorderItem = chakra(Reorder.Item, {
   },
 })
 
-export interface GameScoresProps {
-  sort?: Sort
-}
-
-export const GameScores = ({ sort }: GameScoresProps) => {
+export const GameScores = () => {
   const gameService = useGameService()
-  const { players, scores } = useGame()
+  const { players, scores, sort } = useGame()
+
+  useGameScoresKeyboardShortcuts()
 
   React.useEffect(
     () => () => {
@@ -50,30 +48,15 @@ export const GameScores = ({ sort }: GameScoresProps) => {
     [gameService]
   )
 
-  const sortedPlayersAndScores = React.useMemo(() => {
-    const playersById = players.reduce((previousValue, player) => {
-      previousValue[player.id] = player
-      return previousValue
-    }, {} as Record<Player["id"], Player>)
-
-    return Object.entries(scores)
-      .sort(([, { total: a }], [, { total: b }]) =>
-        sort === "desc" ? a - b : b - a
-      )
-      .flatMap(([playerId, scoreSlice]) => {
-        const player = playersById[playerId]
-        if (!player) {
-          return []
-        }
-
-        return [
-          {
-            player,
-            scoreSlice,
-          },
-        ]
-      })
-  }, [players, scores, sort])
+  const sortedPlayersAndScores = React.useMemo(
+    () =>
+      sortPlayersWithScore({
+        players,
+        scores,
+        sort,
+      }),
+    [players, scores, sort]
+  )
 
   if (!sortedPlayersAndScores.length) {
     return <EmptyGameScoresScreen />

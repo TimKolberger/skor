@@ -1,6 +1,7 @@
 import { Button, ButtonGroup, chakra, Icon, IconButton } from "@chakra-ui/react"
 import * as React from "react"
 import { useState } from "react"
+import { useHotkeys } from "react-hotkeys-hook"
 import { FiChevronLeft } from "react-icons/fi"
 import { useMatch, useNavigate } from "react-router-dom"
 
@@ -25,6 +26,8 @@ export default function EditPlayerPage() {
       player?.color ||
       playerColors[Math.floor(Math.random() * playerColors.length)]
   )
+
+  useHotkeys("esc", () => navigate(linker.home()))
 
   if (!player) {
     return <NotFoundPage />
