@@ -25,7 +25,6 @@ export default function PlayerScorePage() {
 
   return (
     <FullModalLayout
-      to={linker.home()}
       bg={player.color}
       actionButtons={
         <>

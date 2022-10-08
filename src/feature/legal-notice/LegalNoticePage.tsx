@@ -2,11 +2,10 @@ import { chakra, Heading, Link } from "@chakra-ui/react"
 
 import { FullModalLayout } from "../../layouts/FullModalLayout"
 import { Main } from "../../layouts/Main"
-import { linker } from "../navigation/linker"
 
 export default function LegalNoticePage() {
   return (
-    <FullModalLayout to={linker.home()}>
+    <FullModalLayout>
       <Main py="10">
         <Heading mb="8">Legal Notice</Heading>
         <p>

@@ -43,7 +43,6 @@ export default function EditPlayerPage() {
 
   return (
     <FullModalLayout
-      to={linker.home()}
       actionButtons={
         <>
           <chakra.li>

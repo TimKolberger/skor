@@ -26,7 +26,7 @@ export default function AddPlayerPage() {
   }
 
   return (
-    <FullModalLayout to={linker.home()}>
+    <FullModalLayout>
       <Main
         px="0"
         bg={playerColor}

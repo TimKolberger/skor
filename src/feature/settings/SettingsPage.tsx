@@ -14,6 +14,7 @@ import { useHotkeys } from "react-hotkeys-hook"
 import { useNavigate } from "react-router-dom"
 
 import { FullModalLayout } from "../../layouts/FullModalLayout"
+import { Main } from "../../layouts/Main"
 import { BetterNumberInput } from "../formFields/BetterNumberInput"
 import { useGame } from "../game/useGame"
 import { useGameService } from "../game/useGameService"
@@ -25,8 +26,15 @@ export default function SettingsPage() {
   useHotkeys("esc", () => navigate(linker.home()))
 
   return (
-    <FullModalLayout to={linker.home()}>
-      <Container display="flex" flexDirection="column" flex="1" gap="8" py="10">
+    <FullModalLayout>
+      <Container
+        as={Main}
+        display="flex"
+        flexDirection="column"
+        flex="1"
+        gap="8"
+        py="10"
+      >
         <chakra.section display="flex" flexDirection="column" gap="8" py="8">
           <Heading textAlign="center" size="4xl" textTransform="uppercase">
             Settings
