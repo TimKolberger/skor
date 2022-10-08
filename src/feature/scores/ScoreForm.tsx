@@ -73,11 +73,14 @@ const ScoreForm = (props: ScoreFormProps) => {
       <chakra.div
         display="flex"
         justifyContent="flex-end"
+        alignItems="stretch"
         flexWrap="wrap"
-        gap="3"
+        gap="6"
       >
         {props.score !== undefined ? (
           <Text
+            flex="1"
+            flexBasis="32"
             fontSize="xl"
             fontWeight="bold"
             fontStyle="italic"
@@ -92,7 +95,15 @@ const ScoreForm = (props: ScoreFormProps) => {
           </Text>
         ) : null}
 
-        <Button type="submit" variant="outline">
+        <Button
+          size="lg"
+          type="submit"
+          variant="outline"
+          flex="1 0"
+          flexBasis="32"
+          h="auto"
+          minH="12"
+        >
           Save score
         </Button>
       </chakra.div>
