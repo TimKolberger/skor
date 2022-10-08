@@ -4,8 +4,8 @@ import { InterpreterFrom } from "xstate"
 
 import {
   LS_KEY_SCORE,
-  LS_KEY_STEP,
   LS_KEY_SORT,
+  LS_KEY_STEP,
 } from "../persistence/localStorageKeys"
 import { useLocalStorage } from "../persistence/useLocalStorage"
 import { usePlayers } from "../players/usePlayers"
