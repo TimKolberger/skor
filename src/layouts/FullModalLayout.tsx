@@ -8,27 +8,26 @@ import { BaseLayout, BaseLayoutProps, modalVariants } from "./BaseLayout"
 import { Header } from "./Header"
 
 export interface FullModalLayoutProps extends BaseLayoutProps {
-  to: LinkProps["to"]
+  to?: LinkProps["to"]
   bg?: HTMLChakraProps<"header">["bg"]
   actionButtons?: React.ReactNode
 }
 
 export const FullModalLayout = ({
   children,
-  to,
+  to = linker.home(),
   bg,
   actionButtons,
 }: FullModalLayoutProps) => (
   <BaseLayout variants={modalVariants} bg={bg}>
     <Header
-      to={to}
       actionButtons={
         <>
           {actionButtons}
           <chakra.li>
             <IconButton
               as={Link}
-              to={linker.home()}
+              to={to}
               variant="ghost"
               fontSize="2xl"
               icon={<Icon as={FiX} fontSize="2xl" />}

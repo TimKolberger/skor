@@ -1,15 +1,14 @@
 import { Button, chakra } from "@chakra-ui/react"
 import * as React from "react"
-import { Link, LinkProps } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import { linker } from "../feature/navigation/linker"
 
 interface HeaderProps {
-  to?: LinkProps["to"]
   actionButtons: React.ReactNode
 }
 
-export const Header = ({ to = linker.home(), actionButtons }: HeaderProps) => (
+export const Header = ({ actionButtons }: HeaderProps) => (
   <chakra.header
     display="flex"
     sx={{
@@ -28,7 +27,7 @@ export const Header = ({ to = linker.home(), actionButtons }: HeaderProps) => (
   >
     <Button
       as={Link}
-      to={to}
+      to={linker.home()}
       size="lg"
       variant="ghost"
       fontWeight="black"
