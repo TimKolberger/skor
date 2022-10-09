@@ -13,4 +13,4 @@ export const linker = createLinker({
   legalNotice: "/legal-notice",
 
   githubRepo: "https://github.com/TimKolberger/skor",
-} as const)
+})

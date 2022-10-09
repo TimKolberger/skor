@@ -1,8 +1,12 @@
-export type RouteConfigRecord<
-  RouteName extends string = string,
-  Path extends string = string
-> = {
-  [Key in RouteName]: Path
+function entries<T extends {}>(obj: T) {
+  type Entries<T> = {
+    [K in keyof T]: [K, T[K]]
+  }[keyof T][]
+  return Object.entries(obj) as Entries<T>
+}
+
+export type RouteConfigRecord<RouteName extends string, Path extends string> = {
+  readonly [Key in RouteName]: Path
 }
 
 type PathSegments<Path extends string> =
@@ -28,10 +32,22 @@ interface CreateUrlFunctionWithoutParams<Path extends string> {
   definition: Path
 }
 
-export function createLinker<Routes extends RouteConfigRecord>(routes: Routes) {
-  return Object.entries(routes).reduce(
+type UrlFactory<
+  Routes extends RouteConfigRecord<string, Path>,
+  Path extends string,
+  Key extends keyof Routes
+> = keyof RouteParams<Routes[Key]> extends ""
+  ? CreateUrlFunctionWithoutParams<Routes[Key]>
+  : CreateUrlFunctionWithParams<Routes[Key]>
+
+export function createLinker<
+  Routes extends RouteConfigRecord<RouteName, Path>,
+  RouteName extends string,
+  Path extends string
+>(routes: Routes) {
+  return entries(routes).reduce(
     (previousValue, [name, route]) => {
-      const createUrl: CreateUrlFunctionWithParams<string> = (params) => {
+      const createUrl = ((params) => {
         const parts = route.split("/")
         return parts
           .map((part) => {
@@ -42,16 +58,14 @@ export function createLinker<Routes extends RouteConfigRecord>(routes: Routes) {
             return part
           })
           .join("/")
-      }
+      }) as UrlFactory<Routes, Path, typeof name>
 
       createUrl.definition = route
-      ;(previousValue as any)[name] = createUrl
+      previousValue[name] = createUrl
       return previousValue
     },
     {} as {
-      [Key in keyof Routes]: keyof RouteParams<Routes[Key]> extends ""
-        ? CreateUrlFunctionWithoutParams<Routes[Key]>
-        : CreateUrlFunctionWithParams<Routes[Key]>
+      [Key in keyof Routes]: UrlFactory<Routes, Path, Key>
     }
   )
 }
