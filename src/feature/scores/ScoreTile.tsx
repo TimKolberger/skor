@@ -47,14 +47,14 @@ export const ConnectedScoreTile = ({
   )
 }
 
-interface ScoreTileProps extends HTMLChakraProps<"div"> {
+export interface ScoreTileProps extends HTMLChakraProps<"div"> {
   onDecrement: () => void
   player: Player
   scoreSlice: ScoreSlice
   onIncrement: () => void
 }
 
-const ScoreTile = ({
+export const ScoreTile = ({
   onDecrement,
   player,
   scoreSlice,
