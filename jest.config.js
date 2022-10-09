@@ -3,6 +3,7 @@ import * as fs from "node:fs"
 const tsconfig = JSON.parse(fs.readFileSync("./tsconfig.json").toString())
 
 const config = {
+  collectCoverageFrom: ["<rootDir>/src/**/*.{ts,tsx}", "!**/node_modules/**"],
   moduleNameMapper: {
     "\\.(svg|css|mp3)$": "<rootDir>/src/__mocks__/fileMock.js",
   },
