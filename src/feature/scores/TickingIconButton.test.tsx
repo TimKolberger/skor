@@ -8,7 +8,7 @@ describe("TickingIconButton", () => {
   })
 
   afterEach(() => {
-    jest.useFakeTimers()
+    jest.useRealTimers()
   })
 
   it("should tick on click", () => {
