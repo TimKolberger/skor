@@ -4,12 +4,12 @@ import { useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import { useNavigate } from "react-router-dom"
 
-import { FullModalLayout } from "../../layouts/FullModalLayout"
-import { Main } from "../../layouts/Main"
-import { linker } from "../navigation/linker"
-import { playerColors } from "./PlayerColorInput"
-import { PlayerForm, PlayerFormValues } from "./PlayerForm"
-import { usePlayerService } from "./usePlayerService"
+import { FullModalLayout } from "../../../layouts/FullModalLayout"
+import { Main } from "../../../layouts/Main"
+import { linker } from "../../navigation/linker"
+import { playerColors } from "../PlayerColorInput"
+import { PlayerForm, PlayerFormValues } from "../PlayerForm"
+import { usePlayerService } from "../usePlayerService"
 
 export default function AddPlayerPage() {
   const navigate = useNavigate()
