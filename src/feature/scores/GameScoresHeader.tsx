@@ -50,8 +50,7 @@ export const GameScoresHeader = ({
               aria-label="Sort"
               onClick={() =>
                 gameService.send({
-                  type: "SET_SORT",
-                  sort: sort === "asc" ? "desc" : "asc",
+                  type: "TOGGLE_SORT",
                 })
               }
             />
