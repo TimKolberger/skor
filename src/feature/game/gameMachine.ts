@@ -258,12 +258,14 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
               event.operator,
               event.score
             )
-            const diff = nextTotal - (nextScores[playerId]?.total || 0)
+            const total = nextScores[playerId]?.total || 0
+            const diff = nextTotal - total
             nextScores[playerId] = {
-              ...nextScores[playerId],
+              total,
               diff,
             }
           }
+
           return nextScores
         },
       }),
