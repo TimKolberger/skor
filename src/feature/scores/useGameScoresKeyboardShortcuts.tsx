@@ -4,30 +4,23 @@ import { useNavigate } from "react-router-dom"
 import { useGame } from "../game/useGame"
 import { useGameService } from "../game/useGameService"
 import { linker } from "../navigation/linker"
-import { sortPlayersWithScore } from "./sortPlayersWithScore"
 
 export function useGameScoresKeyboardShortcuts() {
   const gameService = useGameService()
-  const { sort, scores, players } = useGame()
+  const { scores, players } = useGame()
   const navigate = useNavigate()
 
   function createHotkeyHandler(index: number, type: "INCREMENT" | "DECREMENT") {
     return () => {
-      const sortedPlayers = sortPlayersWithScore({
-        players,
-        scores,
-        sort,
-      })
-
-      const playerScoreSlice = sortedPlayers[index]
-      if (!playerScoreSlice) {
+      const player = players[index]
+      if (!player) {
         return
       }
-      gameService.send({ type, playerId: playerScoreSlice.player.id })
+      gameService.send({ type, playerId: player.id })
     }
   }
 
-  const handlerDeps = [sort, scores, players]
+  const handlerDeps = [scores, players]
 
   useHotkeys("1", createHotkeyHandler(0, "INCREMENT"), handlerDeps)
   useHotkeys("2", createHotkeyHandler(1, "INCREMENT"), handlerDeps)

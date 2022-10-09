@@ -2,6 +2,7 @@ import { actions, assign, createMachine } from "xstate"
 
 import { Player } from "../players/playerMachine"
 import { ScoreOperator } from "../scores/ScoreOperatorFormField"
+import { sortPlayersWithScore } from "../scores/sortPlayersWithScore"
 
 const { send, cancel } = actions
 
@@ -88,7 +89,11 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
     initial: "idle",
     states: {
       idle: {
-        entry: ["calculateTotalScores", "clearActivePlayer"],
+        entry: [
+          "calculateTotalScores",
+          "clearActivePlayer",
+          "sortPlayersByScore",
+        ],
         on: {
           INCREMENT: {
             target: "counting",
@@ -279,6 +284,14 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
       }),
       toggleSort: assign({
         sort: (context) => (context.sort !== "asc" ? "asc" : "desc"),
+      }),
+      sortPlayersByScore: assign({
+        players: (context) =>
+          sortPlayersWithScore({
+            players: context.players,
+            scores: context.scores,
+            sort: context.sort,
+          }).map(({ player }) => player),
       }),
     },
     guards: {

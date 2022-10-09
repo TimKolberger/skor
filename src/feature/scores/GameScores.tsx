@@ -1,11 +1,4 @@
-import {
-  Center,
-  chakra,
-  Icon,
-  IconButton,
-  Text,
-  VStack,
-} from "@chakra-ui/react"
+import { chakra, Container, Icon, IconButton, Text } from "@chakra-ui/react"
 import { AnimatePresence, LayoutGroup, Reorder } from "framer-motion"
 import * as React from "react"
 import { FiAward, FiUserPlus } from "react-icons/fi"
@@ -16,7 +9,6 @@ import { useGameService } from "../game/useGameService"
 import { linker } from "../navigation/linker"
 import { noop } from "../utils/noop"
 import { ConnectedScoreTile } from "./ScoreTile"
-import { sortPlayersWithScore } from "./sortPlayersWithScore"
 import { useGameScoresKeyboardShortcuts } from "./useGameScoresKeyboardShortcuts"
 
 const ReorderGroup = chakra(Reorder.Group, {
@@ -49,13 +41,8 @@ export const GameScores = () => {
   )
 
   const sortedPlayersAndScores = React.useMemo(
-    () =>
-      sortPlayersWithScore({
-        players,
-        scores,
-        sort,
-      }),
-    [players, scores, sort]
+    () => players.map((player) => ({ player, scoreSlice: scores[player.id] })),
+    [players, scores]
   )
 
   if (!sortedPlayersAndScores.length) {
@@ -90,8 +77,22 @@ export const GameScores = () => {
 }
 
 const EmptyGameScoresScreen = () => (
-  <Center flex="1">
-    <VStack spacing="8">
+  <Container
+    display="flex"
+    flexDirection="column"
+    justifyContent="center"
+    flex="1"
+  >
+    <chakra.div
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      py="12"
+      borderRadius="md"
+      gap="8"
+      bg="cyan.600"
+      shadow="md"
+    >
       <Icon as={FiAward} fontSize="8xl" />
       <Text fontSize="xl" maxW="60" textAlign="center" fontWeight="bold">
         Assemble your players to start the game
@@ -105,6 +106,6 @@ const EmptyGameScoresScreen = () => (
         as={Link}
         to={linker.addPlayer()}
       />
-    </VStack>
-  </Center>
+    </chakra.div>
+  </Container>
 )
