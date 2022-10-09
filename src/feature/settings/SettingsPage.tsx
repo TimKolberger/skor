@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom"
 
 import { FullModalLayout } from "../../layouts/FullModalLayout"
 import { Main } from "../../layouts/Main"
-import { BetterNumberInput } from "../formFields/BetterNumberInput"
+import { MobileFriendlyNumberInput } from "../formFields/MobileFriendlyNumberInput"
 import { useGame } from "../game/useGame"
 import { useGameService } from "../game/useGameService"
 import { linker } from "../navigation/linker"
@@ -131,7 +131,7 @@ const UpdateStepForm = () => {
   return (
     <FormControl>
       <FormLabel>Increase score with each tick by</FormLabel>
-      <BetterNumberInput
+      <MobileFriendlyNumberInput
         value={game.step}
         onChange={(step) => gameService.send({ type: "SET_STEP", step })}
       />

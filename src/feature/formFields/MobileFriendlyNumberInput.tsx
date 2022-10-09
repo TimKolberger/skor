@@ -14,19 +14,15 @@ import {
 import * as React from "react"
 import { FiMinus, FiPlus } from "react-icons/fi"
 
-export interface BetterNumberInputProps {
+export interface MobileFriendlyNumberInputProps {
   value?: number
   onChange: (value: number) => void
 }
 
-export function BetterNumberInput({ value, onChange }: BetterNumberInputProps) {
-  const inputRef = React.useRef<HTMLInputElement>(null)
-
-  React.useEffect(() => {
-    inputRef.current?.focus()
-    inputRef.current?.select()
-  }, [])
-
+export function MobileFriendlyNumberInput({
+  value,
+  onChange,
+}: MobileFriendlyNumberInputProps) {
   const input = (
     <NumberInput
       name="score"
@@ -48,7 +44,6 @@ export function BetterNumberInput({ value, onChange }: BetterNumberInputProps) {
         </InputLeftElement>
 
         <NumberInputField
-          ref={inputRef}
           height="20"
           textAlign="center"
           fontWeight="bold"
@@ -70,13 +65,11 @@ export function BetterNumberInput({ value, onChange }: BetterNumberInputProps) {
   )
 
   return (
-    <>
-      <chakra.div display="flex" gap="6" flexDirection="column">
-        <FormControl>
-          <FormLabel srOnly>Score</FormLabel>
-          {input}
-        </FormControl>
-      </chakra.div>
-    </>
+    <chakra.div display="flex" gap="6" flexDirection="column">
+      <FormControl>
+        <FormLabel srOnly>Score</FormLabel>
+        {input}
+      </FormControl>
+    </chakra.div>
   )
 }

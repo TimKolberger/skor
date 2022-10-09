@@ -1,12 +1,12 @@
 import { fireEvent, screen } from "@testing-library/react"
 import { render } from "test/utils"
 
-import { BetterNumberInput } from "./BetterNumberInput"
+import { MobileFriendlyNumberInput } from "./MobileFriendlyNumberInput"
 
-describe("BetterNumberInput", () => {
+describe("MobileFriendlyNumberInput", () => {
   it("should show the initial value", () => {
     const onChangeMock = jest.fn()
-    render(<BetterNumberInput value={1337} onChange={onChangeMock} />)
+    render(<MobileFriendlyNumberInput value={1337} onChange={onChangeMock} />)
 
     const input = screen.getByLabelText(/score/i)
 
@@ -15,7 +15,7 @@ describe("BetterNumberInput", () => {
 
   it("should trigger the onChange when updated", () => {
     const onChangeMock = jest.fn()
-    render(<BetterNumberInput value={1337} onChange={onChangeMock} />)
+    render(<MobileFriendlyNumberInput value={1337} onChange={onChangeMock} />)
 
     const input = screen.getByLabelText(/score/i)
     fireEvent.change(input, { target: { value: 100 } })

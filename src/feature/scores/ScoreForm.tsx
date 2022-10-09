@@ -2,7 +2,7 @@ import { Button, chakra, Text } from "@chakra-ui/react"
 import * as React from "react"
 import { useNavigate } from "react-router-dom"
 
-import { BetterNumberInput } from "../formFields/BetterNumberInput"
+import { MobileFriendlyNumberInput } from "../formFields/MobileFriendlyNumberInput"
 import { calcNextScore } from "../game/gameMachine"
 import { useGame } from "../game/useGame"
 import { useGameService } from "../game/useGameService"
@@ -76,7 +76,7 @@ export const ScoreForm = ({ initialValues, onSubmit }: ScoreFormProps) => {
     >
       <chakra.fieldset display="flex" flexDirection="column" gap="3">
         <ScoreOperatorFormField value={operator} onChange={setOperator} />
-        <BetterNumberInput
+        <MobileFriendlyNumberInput
           value={score}
           onChange={(value) => setScore(value || 0)}
         />
