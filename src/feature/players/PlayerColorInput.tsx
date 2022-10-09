@@ -1,4 +1,10 @@
-import { chakra, FormControl, FormLabel, SimpleGrid } from "@chakra-ui/react"
+import {
+  chakra,
+  FormControl,
+  FormLabel,
+  SimpleGrid,
+  usePrevious,
+} from "@chakra-ui/react"
 import * as React from "react"
 import { AudioPlayerProvider, useAudioPlayer } from "react-use-audio-player"
 
@@ -55,14 +61,11 @@ interface PlayerColorInputProps {
 
 export const PlayerColorInput = (props: PlayerColorInputProps) => (
   <AudioPlayerProvider>
-    <PlayerColorInputComponent {...props} />
+    <ColorInputComponent {...props} />
   </AudioPlayerProvider>
 )
 
-const PlayerColorInputComponent = ({
-  value,
-  onChange,
-}: PlayerColorInputProps) => {
+const ColorInputComponent = ({ value, onChange }: PlayerColorInputProps) => {
   const columns = 4
   const colorSelectRef = React.useRef<HTMLDivElement>(null)
   React.useEffect(() => {
@@ -162,7 +165,7 @@ const PlayerColorInputComponent = ({
 }
 
 function useAudioEffect(index: number) {
-  const [muted] = useMuted()
+  const [mute] = useMuted()
   const allSounds = [
     tune_a,
     tune_a1,
@@ -191,9 +194,14 @@ function useAudioEffect(index: number) {
     tune_h1,
   ]
   const src = allSounds[index % allSounds.length]
+
+  const prev = usePrevious(index)
+  const isFirstRender = prev === index
+
   return useAudioPlayer({
     src,
     format: "mp3",
-    autoplay: !muted,
+    mute,
+    autoplay: !mute || !isFirstRender,
   })
 }
