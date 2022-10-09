@@ -1,10 +1,10 @@
 import * as React from "react"
 
-import { AppLayout } from "../../layouts/AppLayout"
-import { Main } from "../../layouts/Main"
-import { usePlayerService } from "../players/usePlayerService"
-import { GameScores } from "./GameScores"
-import { GameScoresHeader } from "./GameScoresHeader"
+import { AppLayout } from "../../../layouts/AppLayout"
+import { Main } from "../../../layouts/Main"
+import { usePlayerService } from "../../players/usePlayerService"
+import { GameScores } from "../GameScores"
+import { GameScoresHeader } from "../GameScoresHeader"
 
 export default function GameScoresPage() {
   const playerService = usePlayerService()

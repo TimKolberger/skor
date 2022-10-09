@@ -4,12 +4,12 @@ import { useHotkeys } from "react-hotkeys-hook"
 import { FiUser } from "react-icons/fi"
 import { Link, useMatch, useNavigate } from "react-router-dom"
 
-import { FullModalLayout } from "../../layouts/FullModalLayout"
-import NotFoundPage from "../navigation/NotFoundPage"
-import { linker } from "../navigation/linker"
-import { RemovePlayer } from "../players/RemovePlayer"
-import { usePlayers } from "../players/usePlayers"
-import { ConnectedScoreForm } from "./ScoreForm"
+import { FullModalLayout } from "../../../layouts/FullModalLayout"
+import { linker } from "../../navigation/linker"
+import NotFoundPage from "../../navigation/pages/NotFoundPage"
+import { RemovePlayer } from "../../players/RemovePlayer"
+import { usePlayers } from "../../players/usePlayers"
+import { ConnectedScoreForm } from "../ScoreForm"
 
 export default function PlayerScorePage() {
   const { players } = usePlayers()

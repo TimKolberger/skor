@@ -3,10 +3,10 @@ import * as React from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import { useNavigate } from "react-router-dom"
 
-import { FullModalLayout } from "../../layouts/FullModalLayout"
-import { Main } from "../../layouts/Main"
-import { linker } from "../navigation/linker"
-import { ConnectedScoreForm } from "./ScoreForm"
+import { FullModalLayout } from "../../../layouts/FullModalLayout"
+import { Main } from "../../../layouts/Main"
+import { linker } from "../../navigation/linker"
+import { ConnectedScoreForm } from "../ScoreForm"
 
 export default function SetAllScoresPage() {
   const navigate = useNavigate()
