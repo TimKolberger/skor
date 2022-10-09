@@ -1,12 +1,5 @@
-import {
-  chakra,
-  FormControl,
-  FormLabel,
-  SimpleGrid,
-  usePrevious,
-} from "@chakra-ui/react"
+import { chakra, FormControl, FormLabel, SimpleGrid } from "@chakra-ui/react"
 import * as React from "react"
-import { AudioPlayerProvider, useAudioPlayer } from "react-use-audio-player"
 
 import { useMuted } from "../settings/useMuted"
 import tune_a1 from "./assets/tunes/a1.mp3"
@@ -54,26 +47,24 @@ export const playerColors = [
   "rose.600",
 ]
 
-interface PlayerColorInputProps {
+export interface ColorInputProps {
   value: string
   onChange: (value: string) => void
 }
 
-export const PlayerColorInput = (props: PlayerColorInputProps) => (
-  <AudioPlayerProvider>
-    <ColorInputComponent {...props} />
-  </AudioPlayerProvider>
-)
-
-const ColorInputComponent = ({ value, onChange }: PlayerColorInputProps) => {
+export const ColorInput = ({ value, onChange }: ColorInputProps) => {
   const columns = 4
   const colorSelectRef = React.useRef<HTMLDivElement>(null)
   React.useEffect(() => {
     colorSelectRef.current?.focus()
   }, [])
-
-  useAudioEffect(playerColors.indexOf(value))
+  const playIndex = useAudioEffect()
   const id = React.useId()
+
+  const handleChange = (value: string) => {
+    playIndex(playerColors.indexOf(value))
+    onChange(value)
+  }
 
   return (
     <FormControl>
@@ -108,7 +99,7 @@ const ColorInputComponent = ({ value, onChange }: PlayerColorInputProps) => {
                 nextIndex = maxIndex
               }
               const nextColor = playerColors[nextIndex]
-              onChange(nextColor)
+              handleChange(nextColor)
             },
             ArrowRight: () => {
               let nextIndex = (currentIndex + 1) % length
@@ -116,7 +107,7 @@ const ColorInputComponent = ({ value, onChange }: PlayerColorInputProps) => {
                 nextIndex = maxIndex
               }
               const nextColor = playerColors[nextIndex]
-              onChange(nextColor)
+              handleChange(nextColor)
             },
             ArrowUp: () => {
               let nextIndex = (currentIndex - columns) % length
@@ -124,7 +115,7 @@ const ColorInputComponent = ({ value, onChange }: PlayerColorInputProps) => {
                 nextIndex += maxIndex + 1
               }
               const nextColor = playerColors[nextIndex]
-              onChange(nextColor)
+              handleChange(nextColor)
             },
             ArrowDown: () => {
               let nextIndex = (currentIndex + columns) % length
@@ -132,7 +123,7 @@ const ColorInputComponent = ({ value, onChange }: PlayerColorInputProps) => {
                 nextIndex += maxIndex - 1
               }
               const nextColor = playerColors[nextIndex]
-              onChange(nextColor)
+              handleChange(nextColor)
             },
           }
           keyHandlerMap[e.key]?.()
@@ -151,7 +142,7 @@ const ColorInputComponent = ({ value, onChange }: PlayerColorInputProps) => {
               transform="auto"
               scale={isSelected ? "1.2" : "1"}
               zIndex={isSelected ? 1 : 0}
-              onClick={() => onChange(color)}
+              onClick={() => handleChange(color)}
               boxShadow="md"
               transitionProperty="common"
               transitionDuration="fast"
@@ -164,44 +155,48 @@ const ColorInputComponent = ({ value, onChange }: PlayerColorInputProps) => {
   )
 }
 
-function useAudioEffect(index: number) {
+function useAudioEffect() {
   const [mute] = useMuted()
-  const allSounds = [
-    tune_a,
-    tune_a1,
-    tune_b,
-    tune_b1,
-    tune_c,
-    tune_c1,
-    tune_c2,
-    tune_cis,
-    tune_cis1,
-    tune_d,
-    tune_d1,
-    tune_e,
-    tune_e1,
-    tune_es,
-    tune_es1,
-    tune_f,
-    tune_f1,
-    tune_fis,
-    tune_fis1,
-    tune_g,
-    tune_g1,
-    tune_gis,
-    tune_gis1,
-    tune_h,
-    tune_h1,
-  ]
-  const src = allSounds[index % allSounds.length]
 
-  const prev = usePrevious(index)
-  const isFirstRender = prev === index
+  return useMultiAudio(
+    [
+      tune_a1,
+      tune_a,
+      tune_b1,
+      tune_b,
+      tune_c1,
+      tune_c2,
+      tune_c,
+      tune_cis1,
+      tune_cis,
+      tune_d1,
+      tune_d,
+      tune_e1,
+      tune_e,
+      tune_es1,
+      tune_es,
+      tune_f1,
+      tune_f,
+      tune_fis1,
+      tune_fis,
+      tune_g1,
+      tune_g,
+      tune_gis1,
+      tune_gis,
+      tune_h1,
+      tune_h,
+    ],
+    { mute }
+  )
+}
 
-  return useAudioPlayer({
-    src,
-    format: "mp3",
-    mute,
-    autoplay: !mute || !isFirstRender,
-  })
+function useMultiAudio(urls: string[], options?: { mute?: boolean }) {
+  return async function play(targetIndex: number) {
+    if (options?.mute) {
+      return
+    }
+    const url = urls[targetIndex % urls.length]
+    const audio = new Audio(url)
+    await audio.play()
+  }
 }

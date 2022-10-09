@@ -2,7 +2,7 @@ import { chakra, Container } from "@chakra-ui/react"
 import * as React from "react"
 import { useState } from "react"
 
-import { PlayerColorInput, playerColors } from "./PlayerColorInput"
+import { ColorInput, playerColors } from "./ColorInput"
 import { PlayerNameInput } from "./PlayerNameInput"
 import { generatePlayerName } from "./generatePlayerName"
 
@@ -43,7 +43,7 @@ export const PlayerForm = ({
       gap="6"
       pb="10"
     >
-      <PlayerColorInput
+      <ColorInput
         value={playerColor}
         onChange={(nextValue) => {
           setPlayerColor(nextValue)

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 import { FullModalLayout } from "../../../layouts/FullModalLayout"
 import { Main } from "../../../layouts/Main"
 import { linker } from "../../navigation/linker"
-import { playerColors } from "../PlayerColorInput"
+import { playerColors } from "../ColorInput"
 import { PlayerForm, PlayerFormValues } from "../PlayerForm"
 import { usePlayerService } from "../usePlayerService"
 

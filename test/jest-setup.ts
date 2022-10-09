@@ -7,3 +7,11 @@ beforeEach(() => {
     localStorage.removeItem(key)
   }
 })
+
+// mock prototype functions for audio elements
+window.HTMLMediaElement.prototype.load = () => {
+  /* do nothing */
+}
+window.HTMLMediaElement.prototype.play = async () => {
+  /* do nothing */
+}
