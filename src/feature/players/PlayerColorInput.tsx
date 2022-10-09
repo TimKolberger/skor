@@ -70,12 +70,21 @@ const PlayerColorInputComponent = ({
   }, [])
 
   useAudioEffect(playerColors.indexOf(value))
+  const id = React.useId()
 
   return (
     <FormControl>
-      <FormLabel srOnly>Player color</FormLabel>
-      <input type="hidden" name="playerColor" value={value} />
+      <FormLabel srOnly id={id}>
+        Player color
+      </FormLabel>
+      <input
+        aria-labelledby={id}
+        type="hidden"
+        name="playerColor"
+        value={value}
+      />
       <SimpleGrid
+        aria-label="Color selection"
         ref={colorSelectRef}
         columns={columns}
         tabIndex={0}
@@ -131,6 +140,7 @@ const PlayerColorInputComponent = ({
           return (
             <chakra.div
               key={color}
+              aria-label={`Select player color ${color}`}
               bg={color}
               h="20"
               flex="1 1 auto"
