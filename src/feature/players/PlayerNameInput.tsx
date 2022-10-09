@@ -20,6 +20,7 @@ export const PlayerNameInput = ({ value, onChange }: PlayerNameInputProps) => (
     <FormLabel>Player name</FormLabel>
     <chakra.div display="flex" gap="3">
       <Input
+        size="lg"
         variant="filled"
         placeholder="e.g. John Doe"
         required
@@ -28,6 +29,7 @@ export const PlayerNameInput = ({ value, onChange }: PlayerNameInputProps) => (
         onChange={({ currentTarget: { value } }) => onChange(value)}
       />
       <IconButton
+        size="lg"
         aria-label="Generate player name"
         icon={<FiShuffle />}
         onClick={() => onChange(generatePlayerName())}
