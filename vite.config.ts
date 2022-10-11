@@ -28,8 +28,5 @@ const pwaPlugin = VitePWA({
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), pwaPlugin],
-  server: {
-    open: true,
-  },
+  plugins: [react(), pwaPlugin]
 })
