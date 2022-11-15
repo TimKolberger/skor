@@ -47,6 +47,6 @@
     "prettier": "2.7.1",
     "typescript": "4.8.4",
     "vite": "3.2.3",
-    "vite-plugin-pwa": "0.13.1"
+    "vite-plugin-pwa": "0.13.3"
   }
 }
