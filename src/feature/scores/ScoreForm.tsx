@@ -101,7 +101,7 @@ export const ScoreForm = ({ initialValues, onSubmit }: ScoreFormProps) => {
             next score is
             <br />
             <chakra.span fontSize="6xl" lineHeight="1">
-              {calcNextScore(score, operator, score)}
+              {calcNextScore(initialValues?.score || 0, operator, score)}
             </chakra.span>
           </Text>
         ) : null}
