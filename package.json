@@ -28,7 +28,7 @@
     "react-hotkeys-hook": "^3.4.7",
     "react-icons": "4.6.0",
     "react-router-dom": "6.4.3",
-    "xstate": "4.33.6"
+    "xstate": "4.35.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
