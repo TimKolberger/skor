@@ -20,7 +20,7 @@
     "@emotion/styled": "11.10.5",
     "@fontsource/source-code-pro": "4.5.12",
     "@xstate/react": "3.0.1",
-    "eslint": "^8.30.0",
+    "eslint": "^8.31.0",
     "eslint-config-react-app": "^7.0.1",
     "framer-motion": "8.1.5",
     "react": "18.2.0",
