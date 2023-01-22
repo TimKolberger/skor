@@ -8,10 +8,10 @@
     "dev": "vite",
     "lint": "concurrently pnpm:lint:*",
     "lint:eslint": "eslint src",
-    "lint:prettier": "prettier --plugin prettier-plugin-organize-imports --check {src,test}",
+    "lint:prettier": "prettier --plugin prettier-plugin-organize-imports --check src test",
     "lint:types": "tsc --noEmit",
     "prebuild": "pnpm lint",
-    "prettier:write": "prettier --plugin prettier-plugin-organize-imports --write {src,test}",
+    "prettier:write": "prettier --plugin prettier-plugin-organize-imports --write src test",
     "preview": "vite preview",
     "test": "vitest",
     "test:ci": "vitest --run --coverage"
