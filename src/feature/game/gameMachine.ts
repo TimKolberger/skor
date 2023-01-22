@@ -238,7 +238,7 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
           if (!("step" in event)) {
             return context.step
           }
-          return event.step
+          return event.step || 0
         },
       }),
       setScore: assign({
