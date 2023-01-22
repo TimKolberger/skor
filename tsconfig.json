@@ -18,8 +18,9 @@
     "baseUrl": ".",
     "paths": {
       "test/*": ["test/*"]
-    }
+    },
+    "types": ["jest", "@testing-library/jest-dom"]
   },
-  "include": ["src", "vite-plugin-pages/client"],
+  "include": ["src", "test", "vite-plugin-pages/client"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
