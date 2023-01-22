@@ -29,8 +29,7 @@ export const pageVariants = {
   },
 }
 
-export interface BaseLayoutProps
-  extends React.ComponentProps<typeof MotionBox> {}
+export type BaseLayoutProps = React.ComponentProps<typeof MotionBox>
 
 export const BaseLayout = forwardRef<BaseLayoutProps, "div">((props, ref) => {
   const navigate = useNavigate()

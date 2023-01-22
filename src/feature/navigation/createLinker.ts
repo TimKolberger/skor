@@ -1,4 +1,4 @@
-function entries<T extends {}>(obj: T) {
+function entries<T extends Record<never, never>>(obj: T) {
   type Entries<T> = {
     [K in keyof T]: [K, T[K]]
   }[keyof T][]
@@ -52,8 +52,8 @@ export function createLinker<
         return parts
           .map((part) => {
             if (part.startsWith(":")) {
-              const fieldName = part.slice(1)
-              return (params as any)[fieldName]
+              const fieldName = part.slice(1) as keyof typeof params
+              return params[fieldName]
             }
             return part
           })
