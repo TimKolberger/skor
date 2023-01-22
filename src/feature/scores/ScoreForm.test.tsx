@@ -5,7 +5,7 @@ import { ScoreForm } from "./ScoreForm"
 
 describe("ScoreForm", () => {
   it("should submit without initial values", () => {
-    const onSubmitMock = jest.fn()
+    const onSubmitMock = vi.fn()
     render(<ScoreForm onSubmit={onSubmitMock} />)
 
     const submitButton = screen.getByRole("button", { name: /save/i })
@@ -20,7 +20,7 @@ describe("ScoreForm", () => {
   it.each(["set", "add", "sub"])(
     "should submit with the correct operator %s",
     (operator) => {
-      const onSubmitMock = jest.fn()
+      const onSubmitMock = vi.fn()
       render(<ScoreForm onSubmit={onSubmitMock} />)
 
       const setButton = screen.getByRole("tab", {

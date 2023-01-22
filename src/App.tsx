@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import { ChakraProvider } from "@chakra-ui/react"
 import { AnimatePresence } from "framer-motion"
 import * as React from "react"

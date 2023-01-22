@@ -19,7 +19,7 @@
     "paths": {
       "test/*": ["test/*"]
     },
-    "types": ["jest", "@testing-library/jest-dom"]
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
   "include": ["src", "test", "vite-plugin-pages/client"],
   "references": [{ "path": "./tsconfig.node.json" }]

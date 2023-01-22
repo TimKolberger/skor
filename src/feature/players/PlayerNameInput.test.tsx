@@ -5,7 +5,7 @@ import { PlayerNameInput } from "./PlayerNameInput"
 
 describe("PlayerNameInput", () => {
   it("should show the initial value", () => {
-    const onChangeMock = jest.fn()
+    const onChangeMock = vi.fn()
     render(<PlayerNameInput value="player name" onChange={onChangeMock} />)
 
     const input = screen.getByRole("textbox", { name: "Player name" })
@@ -14,7 +14,7 @@ describe("PlayerNameInput", () => {
   })
 
   it("should trigger the onChange when updated", () => {
-    const onChangeMock = jest.fn()
+    const onChangeMock = vi.fn()
     render(<PlayerNameInput value="player name" onChange={onChangeMock} />)
 
     const input = screen.getByRole("textbox", { name: "Player name" })
@@ -24,7 +24,7 @@ describe("PlayerNameInput", () => {
   })
 
   it("should generate a random player name", () => {
-    const onChangeMock = jest.fn()
+    const onChangeMock = vi.fn()
     render(<PlayerNameInput value="player name" onChange={onChangeMock} />)
 
     const generateNameButton = screen.getByRole("button", {

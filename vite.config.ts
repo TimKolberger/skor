@@ -28,5 +28,17 @@ const pwaPlugin = VitePWA({
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), pwaPlugin]
+  plugins: [react(), pwaPlugin],
+  test: {
+    setupFiles: "test/setup-test.ts",
+    coverage: {
+      all: true,
+      reporter: ["lcov", "text"],
+      include: ["src/**"],
+      exclude: ["src/App.tsx", "src/main.tsx", "**/*.d.ts"],
+    },
+    globals: true,
+    environment: "jsdom",
+    css: false,
+  },
 })

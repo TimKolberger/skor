@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import { StrictMode } from "react"
 import ReactDOM from "react-dom/client"
 
