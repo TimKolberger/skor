@@ -5,7 +5,7 @@ import { MobileFriendlyNumberInput } from "./MobileFriendlyNumberInput"
 
 describe("MobileFriendlyNumberInput", () => {
   it("should show the initial value", () => {
-    const onChangeMock = jest.fn()
+    const onChangeMock = vi.fn()
     render(<MobileFriendlyNumberInput value={1337} onChange={onChangeMock} />)
 
     const input = screen.getByLabelText(/score/i)
@@ -14,7 +14,7 @@ describe("MobileFriendlyNumberInput", () => {
   })
 
   it("should trigger the onChange when updated", () => {
-    const onChangeMock = jest.fn()
+    const onChangeMock = vi.fn()
     render(<MobileFriendlyNumberInput value={1337} onChange={onChangeMock} />)
 
     const input = screen.getByLabelText(/score/i)

@@ -5,8 +5,8 @@ import { ScoreTile } from "./ScoreTile"
 
 describe("ScoreTile", () => {
   it("should show the players name and score", () => {
-    const onDecrementMock = jest.fn()
-    const onIncrementMock = jest.fn()
+    const onDecrementMock = vi.fn()
+    const onIncrementMock = vi.fn()
     const player = { id: "1", name: "Player 1", color: "red.600" }
     const scoreSlice = { total: 1337, diff: 0 }
 
@@ -24,8 +24,8 @@ describe("ScoreTile", () => {
   })
 
   it("should increment on click", () => {
-    const onDecrementMock = jest.fn()
-    const onIncrementMock = jest.fn()
+    const onDecrementMock = vi.fn()
+    const onIncrementMock = vi.fn()
     const player = { id: "1", name: "Player 1", color: "red.600" }
     const scoreSlice = { total: 1337, diff: 0 }
 
@@ -45,8 +45,8 @@ describe("ScoreTile", () => {
   })
 
   it("should decrement on click", () => {
-    const onDecrementMock = jest.fn()
-    const onIncrementMock = jest.fn()
+    const onDecrementMock = vi.fn()
+    const onIncrementMock = vi.fn()
     const player = { id: "1", name: "Player 1", color: "red.600" }
     const scoreSlice = { total: 1337, diff: 0 }
 

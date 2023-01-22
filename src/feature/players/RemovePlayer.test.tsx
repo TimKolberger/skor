@@ -6,7 +6,7 @@ import { RemovePlayer } from "./RemovePlayer"
 describe("Remove Player", () => {
   it("should trigger the onRemove callback on confirmation", () => {
     const player = { id: "1", name: "Player name" }
-    const onRemoveMock = jest.fn()
+    const onRemoveMock = vi.fn()
     render(<RemovePlayer player={player} onRemove={onRemoveMock} />)
     const removeButton = screen.getByRole("button")
     fireEvent.click(removeButton)

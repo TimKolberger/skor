@@ -4,11 +4,11 @@ import { gameMachine } from "./gameMachine"
 
 describe("GameMachine", () => {
   beforeEach(() => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
   })
 
   afterEach(() => {
-    jest.useRealTimers()
+    vi.useRealTimers()
   })
 
   it("should go idle", () => {
@@ -130,7 +130,7 @@ describe("GameMachine", () => {
     })
 
     expect(service.getSnapshot().context.scores["1"]?.diff).toBe(1337)
-    jest.advanceTimersByTime(IDLE_DELAY)
+    vi.advanceTimersByTime(IDLE_DELAY)
     expect(service.getSnapshot().context.scores["1"]?.diff).toBe(0)
     expect(service.getSnapshot().context.scores["1"]?.total).toBe(1337)
   })
@@ -164,7 +164,7 @@ describe("GameMachine", () => {
     })
 
     expect(service.getSnapshot().context.scores["1"]?.diff).toBe(1)
-    jest.advanceTimersByTime(IDLE_DELAY)
+    vi.advanceTimersByTime(IDLE_DELAY)
     expect(service.getSnapshot().context.scores["1"]?.diff).toBe(0)
     expect(service.getSnapshot().context.scores["1"]?.total).toBe(1)
   })
@@ -198,7 +198,7 @@ describe("GameMachine", () => {
     })
 
     expect(service.getSnapshot().context.scores["1"]?.diff).toBe(-1)
-    jest.advanceTimersByTime(IDLE_DELAY)
+    vi.advanceTimersByTime(IDLE_DELAY)
     expect(service.getSnapshot().context.scores["1"]?.diff).toBe(0)
     expect(service.getSnapshot().context.scores["1"]?.total).toBe(-1)
   })

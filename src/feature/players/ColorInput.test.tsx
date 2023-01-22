@@ -5,7 +5,7 @@ import { ColorInput } from "./ColorInput"
 
 describe("ColorInput", () => {
   it("should show the initial value", () => {
-    const onChangeMock = jest.fn()
+    const onChangeMock = vi.fn()
     render(<ColorInput value="red.600" onChange={onChangeMock} />)
 
     const input = screen.getByLabelText("Player color")
@@ -13,7 +13,7 @@ describe("ColorInput", () => {
   })
 
   it("should trigger the onChange when select new color", () => {
-    const onChangeMock = jest.fn()
+    const onChangeMock = vi.fn()
     render(<ColorInput value="red.600" onChange={onChangeMock} />)
 
     const green = screen.getByLabelText(/Select player color green/i)
@@ -23,7 +23,7 @@ describe("ColorInput", () => {
   })
 
   it("should trigger the onChange with keyboard navigation", () => {
-    const onChangeMock = jest.fn()
+    const onChangeMock = vi.fn()
     render(<ColorInput value="red.600" onChange={onChangeMock} />)
 
     const colorSelection = screen.getByLabelText(/color selection/i)
