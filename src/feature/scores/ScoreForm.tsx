@@ -55,6 +55,12 @@ export interface ScoreFormProps {
 }
 
 export const ScoreForm = ({ initialValues, onSubmit }: ScoreFormProps) => {
+  const numberInputRef = React.useRef<HTMLInputElement>(null)
+  React.useEffect(() => {
+    // autofocus on first render
+    numberInputRef.current?.focus()
+  }, [])
+
   const [operator, setOperator] = React.useState(
     initialValues?.operator || "add"
   )
@@ -77,6 +83,7 @@ export const ScoreForm = ({ initialValues, onSubmit }: ScoreFormProps) => {
       <chakra.fieldset display="flex" flexDirection="column" gap="3">
         <ScoreOperatorFormField value={operator} onChange={setOperator} />
         <MobileFriendlyNumberInput
+          ref={numberInputRef}
           value={score}
           onChange={(value) => setScore(value || 0)}
         />
