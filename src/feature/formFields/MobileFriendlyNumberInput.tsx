@@ -2,6 +2,7 @@ import {
   chakra,
   FormControl,
   FormLabel,
+  forwardRef,
   Icon,
   InputGroup,
   InputLeftElement,
@@ -19,10 +20,10 @@ export interface MobileFriendlyNumberInputProps {
   onChange: (value: number) => void
 }
 
-export function MobileFriendlyNumberInput({
-  value,
-  onChange,
-}: MobileFriendlyNumberInputProps) {
+export const MobileFriendlyNumberInput = forwardRef<
+  MobileFriendlyNumberInputProps,
+  "input"
+>(({ value, onChange }, ref) => {
   const input = (
     <NumberInput
       name="score"
@@ -48,6 +49,7 @@ export function MobileFriendlyNumberInput({
           textAlign="center"
           fontWeight="bold"
           fontSize="4xl"
+          ref={ref}
         />
 
         <InputRightElement h="20" bg="whiteAlpha.100">
@@ -72,4 +74,4 @@ export function MobileFriendlyNumberInput({
       </FormControl>
     </chakra.div>
   )
-}
+})
