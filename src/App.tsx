@@ -7,18 +7,21 @@ import { GameProvider } from "./feature/game/GameProvider"
 import { routes } from "./feature/navigation/routes"
 import { PlayerProvider } from "./feature/players/PlayerProvider"
 import { theme } from "./theme"
+import { AppErrorBoundary } from "./feature/error-boundary/AppErrorBoundary"
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <BrowserRouter>
-      <React.Suspense>
-        <PlayerProvider>
-          <GameProvider>
-            <AnimatedRoutes />
-          </GameProvider>
-        </PlayerProvider>
-      </React.Suspense>
-    </BrowserRouter>
+    <AppErrorBoundary>
+      <BrowserRouter>
+        <React.Suspense>
+          <PlayerProvider>
+            <GameProvider>
+              <AnimatedRoutes />
+            </GameProvider>
+          </PlayerProvider>
+        </React.Suspense>
+      </BrowserRouter>
+    </AppErrorBoundary>
   </ChakraProvider>
 )
 
