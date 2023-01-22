@@ -1,5 +1,6 @@
 import { IconButton, IconButtonProps, useLatestRef } from "@chakra-ui/react"
 import * as React from "react"
+import { useCallback, useEffect } from "react"
 
 interface TickingIconButtonProps extends IconButtonProps {
   onTick: () => void
@@ -27,17 +28,29 @@ export const TickingIconButton = ({
       startTimer()
     }, msRef.current)
   }
-  const clearTimer = () => {
+  const clearTimer = useCallback(() => {
+    clearTimeout(timerRef.current)
     msRef.current = initialDurationBetweenTicks
-    clearInterval(timerRef.current)
-  }
+  }, [])
+
+  useEffect(() => {
+    return () => {
+      // stop ticking when component unmounts
+      clearTimer()
+    }
+  }, [clearTimer])
+
   return (
     <IconButton
       {...props}
       onPointerLeave={clearTimer}
       onPointerUp={clearTimer}
+      onBlur={clearTimer}
       onPointerDown={startTimer}
-      onClick={onTick}
+      onClick={() => {
+        clearTimer()
+        onTick()
+      }}
     />
   )
 }
