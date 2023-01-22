@@ -4,15 +4,17 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
+    "build": "vite build",
     "dev": "vite",
     "lint": "concurrently pnpm:lint:*",
-    "lint:types": "tsc --noEmit",
     "lint:eslint": "eslint src",
-    "test": "vitest",
-    "test:ci": "vitest --run --coverage",
+    "lint:prettier": "prettier --plugin prettier-plugin-organize-imports --check {src,test}",
+    "lint:types": "tsc --noEmit",
     "prebuild": "pnpm lint",
-    "build": "vite build",
-    "preview": "vite preview"
+    "prettier:write": "prettier --plugin prettier-plugin-organize-imports --write {src,test}",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ci": "vitest --run --coverage"
   },
   "dependencies": {
     "@chakra-ui/react": "2.4.9",
@@ -33,10 +35,10 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",
-    "@swc/core": "1.3.27",
+    "@commitlint/cli": "17.4.2",
+    "@commitlint/config-conventional": "17.4.2",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
-    "@trivago/prettier-plugin-sort-imports": "4.0.0",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
     "@types/testing-library__jest-dom": "5.14.5",
@@ -44,10 +46,26 @@
     "@vitest/coverage-c8": "0.27.3",
     "concurrently": "7.6.0",
     "jsdom": "21.1.0",
+    "lint-staged": "13.1.0",
     "prettier": "2.8.3",
+    "prettier-plugin-organize-imports": "3.2.2",
     "typescript": "4.9.4",
     "vite": "4.0.4",
     "vite-plugin-pwa": "0.14.1",
     "vitest": "0.27.3"
-  }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json}": [
+      "prettier --plugin prettier-plugin-organize-imports --write"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@7.25.1"
 }
