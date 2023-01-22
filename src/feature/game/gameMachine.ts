@@ -158,7 +158,7 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
   },
   {
     delays: {
-      IDLE_DELAY: 4200,
+      IDLE_DELAY: 3_600,
     },
     actions: {
       startIdleTimer: send(
