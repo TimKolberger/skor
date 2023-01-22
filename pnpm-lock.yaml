@@ -34,6 +34,7 @@ specifiers:
   vite: 4.0.4
   vite-plugin-pwa: 0.14.1
   vitest: 0.27.3
+  workbox-window: ^6.5.4
   xstate: 4.35.2
 
 dependencies:
@@ -71,8 +72,9 @@ devDependencies:
   prettier-plugin-organize-imports: 3.2.2_uhxzhaxu465qzax2tftpee5s7i
   typescript: 4.9.4
   vite: 4.0.4
-  vite-plugin-pwa: 0.14.1_vite@4.0.4
+  vite-plugin-pwa: 0.14.1_aln3rhi4rqbizqxdkcc2hwlswu
   vitest: 0.27.3_jsdom@21.1.0
+  workbox-window: 6.5.4
 
 packages:
 
@@ -7704,10 +7706,11 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-pwa/0.14.1_vite@4.0.4:
+  /vite-plugin-pwa/0.14.1_aln3rhi4rqbizqxdkcc2hwlswu:
     resolution: {integrity: sha512-5zx7yhQ8RTLwV71+GA9YsQQ63ALKG8XXIMqRJDdZkR8ZYftFcRgnzM7wOWmQZ/DATspyhPih5wCdcZnAIsM+mA==}
     peerDependencies:
       vite: ^3.1.0 || ^4.0.0
+      workbox-window: ^6.5.4
     dependencies:
       '@rollup/plugin-replace': 5.0.2_rollup@3.10.1
       debug: 4.3.4
