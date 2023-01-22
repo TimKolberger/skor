@@ -1,5 +1,4 @@
 import { Button } from "@chakra-ui/react"
-import * as React from "react"
 import { useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import { useNavigate } from "react-router-dom"

@@ -1,5 +1,4 @@
 import { Container, Heading } from "@chakra-ui/react"
-import * as React from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import { useNavigate } from "react-router-dom"
 

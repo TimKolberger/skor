@@ -1,5 +1,4 @@
 import { chakra, Kbd } from "@chakra-ui/react"
-import * as React from "react"
 
 export const KeyboardShortcuts = () => (
   <chakra.div display="grid" gridTemplateColumns="auto 1fr" columnGap="3">

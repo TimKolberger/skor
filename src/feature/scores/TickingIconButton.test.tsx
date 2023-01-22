@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "test/utils"
+import { fireEvent, render, screen } from "test/utils"
 
 import { TickingIconButton } from "./TickingIconButton"
 

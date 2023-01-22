@@ -1,5 +1,4 @@
 import { Alert, AlertTitle } from "@chakra-ui/react"
-import * as React from "react"
 
 import { FullModalLayout } from "../../../layouts/FullModalLayout"
 import { Main } from "../../../layouts/Main"

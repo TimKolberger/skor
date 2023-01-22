@@ -5,7 +5,6 @@ import {
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/react"
-import * as React from "react"
 import { FiMinus, FiPlus } from "react-icons/fi"
 import { Link } from "react-router-dom"
 

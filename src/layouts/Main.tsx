@@ -1,6 +1,5 @@
 import { chakra, HTMLChakraProps } from "@chakra-ui/react"
 import { motion } from "framer-motion"
-import * as React from "react"
 
 export interface MainProps extends HTMLChakraProps<"main"> {}
 

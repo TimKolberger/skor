@@ -1,5 +1,4 @@
 import { chakra, Container, Heading, Icon, IconButton } from "@chakra-ui/react"
-import * as React from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import { FiUser } from "react-icons/fi"
 import { Link, useMatch, useNavigate } from "react-router-dom"

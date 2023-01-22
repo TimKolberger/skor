@@ -1,5 +1,3 @@
-import * as React from "react"
-
 import { AppLayout } from "../../../layouts/AppLayout"
 import { Main } from "../../../layouts/Main"
 import { usePlayerService } from "../../players/usePlayerService"

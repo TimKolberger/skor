@@ -28,7 +28,7 @@ const tabs = [
   },
 ] as const
 
-export type ScoreOperator = typeof tabs[number]["type"]
+export type ScoreOperator = (typeof tabs)[number]["type"]
 
 export interface ScoreOperatorFormFieldProps {
   value: ScoreOperator

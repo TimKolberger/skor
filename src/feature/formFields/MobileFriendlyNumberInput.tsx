@@ -12,7 +12,6 @@ import {
   NumberInput,
   NumberInputField,
 } from "@chakra-ui/react"
-import * as React from "react"
 import { FiMinus, FiPlus } from "react-icons/fi"
 
 export interface MobileFriendlyNumberInputProps {

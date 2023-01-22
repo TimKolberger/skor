@@ -1,5 +1,4 @@
 import { Button, ButtonGroup, chakra, Icon, IconButton } from "@chakra-ui/react"
-import * as React from "react"
 import { useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import { FiChevronLeft } from "react-icons/fi"
@@ -12,8 +11,8 @@ import NotFoundPage from "../../navigation/pages/NotFoundPage"
 import { playerColors } from "../ColorInput"
 import { PlayerForm, PlayerFormValues } from "../PlayerForm"
 import { RemovePlayer } from "../RemovePlayer"
-import { usePlayerService } from "../usePlayerService"
 import { usePlayers } from "../usePlayers"
+import { usePlayerService } from "../usePlayerService"
 
 export default function EditPlayerPage() {
   const navigate = useNavigate()

@@ -8,7 +8,6 @@ import {
   InputGroup,
   InputRightElement,
 } from "@chakra-ui/react"
-import * as React from "react"
 import { FiShuffle, FiX } from "react-icons/fi"
 
 import { generatePlayerName } from "./generatePlayerName"

@@ -7,7 +7,6 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react"
-import * as React from "react"
 import { FaGithub } from "react-icons/fa"
 import {
   FiActivity,

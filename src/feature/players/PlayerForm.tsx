@@ -3,8 +3,8 @@ import * as React from "react"
 import { useState } from "react"
 
 import { ColorInput, playerColors } from "./ColorInput"
-import { PlayerNameInput } from "./PlayerNameInput"
 import { generatePlayerName } from "./generatePlayerName"
+import { PlayerNameInput } from "./PlayerNameInput"
 
 export interface PlayerFormValues {
   name: string

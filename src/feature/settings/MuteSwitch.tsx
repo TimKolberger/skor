@@ -1,5 +1,4 @@
 import { Switch } from "@chakra-ui/react"
-import * as React from "react"
 
 import { useMuted } from "./useMuted"
 

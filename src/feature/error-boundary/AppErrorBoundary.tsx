@@ -1,5 +1,3 @@
-import type { ReactNode } from "react"
-import { ErrorBoundary, type FallbackProps } from "react-error-boundary"
 import {
   Alert,
   AlertDescription,
@@ -8,6 +6,8 @@ import {
   Button,
   VStack,
 } from "@chakra-ui/react"
+import type { ReactNode } from "react"
+import { ErrorBoundary, type FallbackProps } from "react-error-boundary"
 
 const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => (
   <Alert

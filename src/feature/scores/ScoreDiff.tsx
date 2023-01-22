@@ -1,5 +1,4 @@
 import { chakra, HTMLChakraProps } from "@chakra-ui/react"
-import * as React from "react"
 
 import { ScoreSlice } from "../game/gameMachine"
 
