@@ -21,9 +21,12 @@ export const ScoreDiff = ({ scoreSlice, ...props }: ScoreDiffProps) => {
     <chakra.div
       display="flex"
       justifyContent="center"
-      gap="3"
+      columnGap="3"
+      rowGap="0"
       fontWeight="black"
-      fontSize="4xl"
+      fontSize="5xl"
+      lineHeight="shorter"
+      flexWrap="wrap"
       {...props}
     >
       <span>{scoreSlice.total}</span>
