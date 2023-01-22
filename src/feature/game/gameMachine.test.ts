@@ -100,7 +100,7 @@ describe("GameMachine", () => {
   })
 
   it("should set score", () => {
-    const IDLE_DELAY = 4_200
+    const IDLE_DELAY = 3_600
 
     const machine = gameMachine
       .withContext({
@@ -136,7 +136,7 @@ describe("GameMachine", () => {
   })
 
   it("should increment", () => {
-    const IDLE_DELAY = 4_200
+    const IDLE_DELAY = 3_600
 
     const machine = gameMachine
       .withContext({
@@ -170,7 +170,7 @@ describe("GameMachine", () => {
   })
 
   it("should decrement", () => {
-    const IDLE_DELAY = 4_200
+    const IDLE_DELAY = 3_600
 
     const machine = gameMachine
       .withContext({
