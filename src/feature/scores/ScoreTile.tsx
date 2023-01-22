@@ -67,6 +67,7 @@ export const ScoreTile = ({
     display="flex"
     alignItems="stretch"
     boxShadow="md"
+    userSelect="none"
     bg={player.color}
     {...boxProps}
   >
