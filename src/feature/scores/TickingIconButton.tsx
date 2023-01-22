@@ -10,7 +10,9 @@ export const TickingIconButton = ({
   onTick,
   ...props
 }: TickingIconButtonProps) => {
-  const timerRef = React.useRef<any>(null)
+  const timerRef = React.useRef<ReturnType<typeof setTimeout> | undefined>(
+    undefined
+  )
   const initialDurationBetweenTicks = 500
   const shortestDurationBetweenTicks = 50
   const decrementDurationWithEachTickBy = 50
