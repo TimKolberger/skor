@@ -43,7 +43,7 @@
     "@types/react-dom": "18.0.10",
     "@types/testing-library__jest-dom": "5.14.5",
     "@vitejs/plugin-react": "3.0.1",
-    "@vitest/coverage-c8": "0.27.3",
+    "@vitest/coverage-c8": "0.28.1",
     "concurrently": "7.6.0",
     "jsdom": "21.1.0",
     "lint-staged": "13.1.0",
