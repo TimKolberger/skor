@@ -27,7 +27,7 @@ const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => (
         Oopsi doopsi - something went wrong
       </AlertTitle>
     </VStack>
-    <AlertDescription as="pre" maxWidth="sm">
+    <AlertDescription as="pre" maxWidth="sm" whiteSpace="normal">
       {error.message}
     </AlertDescription>
     <Button onClick={resetErrorBoundary}>Try again</Button>
