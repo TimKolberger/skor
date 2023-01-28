@@ -3,6 +3,8 @@ import { createLinker } from "./createLinker"
 export const linker = createLinker({
   home: "/",
 
+  gamesOverview: "/games",
+
   addPlayer: "/players/add",
   editPlayer: "/players/:playerId/edit",
   playerScore: "/players/:playerId",

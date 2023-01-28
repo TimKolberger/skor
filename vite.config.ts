@@ -1,7 +1,6 @@
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import { VitePWA } from "vite-plugin-pwa"
-import tsconfigPaths from "vite-tsconfig-paths"
 
 const pwaPlugin = VitePWA({
   registerType: "autoUpdate",
@@ -29,11 +28,13 @@ const pwaPlugin = VitePWA({
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), pwaPlugin, tsconfigPaths()],
+  plugins: [react(), pwaPlugin],
+  server: {
+    port: 3000,
+  },
   test: {
     setupFiles: "test/setup-test.ts",
     coverage: {
-      provider: "v8",
       all: true,
       reporter: ["lcov", "text"],
       include: ["src/**"],

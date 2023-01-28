@@ -11,6 +11,7 @@ import {
 import { FaGithub } from "react-icons/fa"
 import {
   FiActivity,
+  FiGrid,
   FiInfo,
   FiMoreVertical,
   FiRepeat,
@@ -44,6 +45,14 @@ export const GameScoresHeader = ({
       actionButtons={
         <>
           <chakra.li>
+            <IconButton
+              as={Link}
+              to={linker.gamesOverview()}
+              variant="ghost"
+              fontSize="2xl"
+              icon={<Icon as={FiGrid} />}
+              aria-label="Games Overview"
+            />
             <IconButton
               variant="ghost"
               fontSize="2xl"

@@ -10,6 +10,12 @@ export const routes = [
     ),
   },
   {
+    path: linker.gamesOverview.definition,
+    element: createElement(
+      lazy(() => import("../game/pages/GamesOverviewPage"))
+    ),
+  },
+  {
     path: linker.playerScore.definition,
     element: createElement(
       lazy(() => import("../scores/pages/PlayerScorePage"))

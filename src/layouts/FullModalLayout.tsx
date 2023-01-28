@@ -4,7 +4,7 @@ import { FiX } from "react-icons/fi"
 import { Link, LinkProps } from "react-router-dom"
 
 import { linker } from "../feature/navigation/linker"
-import { BaseLayout, BaseLayoutProps, modalVariants } from "./BaseLayout"
+import { BaseLayout, BaseLayoutProps } from "./BaseLayout"
 import { Header } from "./Header"
 
 export type FullModalLayoutProps = BaseLayoutProps & {
@@ -19,7 +19,7 @@ export const FullModalLayout = ({
   bg,
   actionButtons,
 }: FullModalLayoutProps) => (
-  <BaseLayout variants={modalVariants} bg={bg}>
+  <BaseLayout bg={bg}>
     <Header
       actionButtons={
         <>
