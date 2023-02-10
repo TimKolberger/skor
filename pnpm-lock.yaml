@@ -32,7 +32,7 @@ specifiers:
   react-router-dom: 6.8.1
   typescript: 4.9.5
   vite: 4.1.1
-  vite-plugin-pwa: 0.14.3
+  vite-plugin-pwa: 0.14.4
   vitest: 0.28.4
   workbox-window: ^6.5.4
   xstate: 4.35.4
@@ -72,7 +72,7 @@ devDependencies:
   prettier-plugin-organize-imports: 3.2.2_silln3pw57har7jydmecgzoypa
   typescript: 4.9.5
   vite: 4.1.1
-  vite-plugin-pwa: 0.14.3_xp2zqafvd45jbxqxxvnpcv3lzm
+  vite-plugin-pwa: 0.14.4_xp2zqafvd45jbxqxxvnpcv3lzm
   vitest: 0.28.4_jsdom@21.1.0
   workbox-window: 6.5.4
 
@@ -7748,8 +7748,8 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-pwa/0.14.3_xp2zqafvd45jbxqxxvnpcv3lzm:
-    resolution: {integrity: sha512-o/CEzdHXamdSV4WJ6hp1EQNe+yVvoFf9b5q1nMhOSqKxaW7BaDqAHAwnq8jt21wakDmcaipnuF3/j78AzZJ6wg==}
+  /vite-plugin-pwa/0.14.4_xp2zqafvd45jbxqxxvnpcv3lzm:
+    resolution: {integrity: sha512-M7Ct0so8OlouMkTWgXnl8W1xU95glITSKIe7qswZf1tniAstO2idElGCnsrTJ5NPNSx1XqfTCOUj8j94S6FD7Q==}
     peerDependencies:
       vite: ^3.1.0 || ^4.0.0
       workbox-window: ^6.5.4
