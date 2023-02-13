@@ -35,14 +35,14 @@ specifiers:
   vite-plugin-pwa: 0.14.4
   vitest: 0.28.5
   workbox-window: ^6.5.4
-  xstate: 4.35.4
+  xstate: 4.36.0
 
 dependencies:
   '@chakra-ui/react': 2.5.0_jntevb2kvjecrmtem5movaqss4
   '@emotion/react': 11.10.5_pmekkgnqduwlme35zpnqhenc34
   '@emotion/styled': 11.10.5_g6cddab2ma6w7rmdnelgn6dq2a
   '@fontsource/source-code-pro': 4.5.14
-  '@xstate/react': 3.2.1_gnsbn7fm3jo44nx5qzkx5rlttu
+  '@xstate/react': 3.2.1_5qd7b23w5dgywqr3h5a5vxtscq
   eslint: 8.34.0
   eslint-config-react-app: 7.0.1_7kw3g6rralp5ps6mg3uyzz6azm
   framer-motion: 9.0.2_biqbaboplfbrettd7655fr4n2y
@@ -52,7 +52,7 @@ dependencies:
   react-hotkeys-hook: 4.3.5_biqbaboplfbrettd7655fr4n2y
   react-icons: 4.7.1_react@18.2.0
   react-router-dom: 6.8.1_biqbaboplfbrettd7655fr4n2y
-  xstate: 4.35.4
+  xstate: 4.36.0
 
 devDependencies:
   '@babel/eslint-parser': 7.19.1_eslint@8.34.0
@@ -3645,7 +3645,7 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@xstate/react/3.2.1_gnsbn7fm3jo44nx5qzkx5rlttu:
+  /@xstate/react/3.2.1_5qd7b23w5dgywqr3h5a5vxtscq:
     resolution: {integrity: sha512-L/mqYRxyBWVdIdSaXBHacfvS8NKn3sTKbPb31aRADbE9spsJ1p+tXil0GVQHPlzrmjGeozquLrxuYGiXsFNU7g==}
     peerDependencies:
       '@xstate/fsm': ^2.0.0
@@ -3660,7 +3660,7 @@ packages:
       react: 18.2.0
       use-isomorphic-layout-effect: 1.1.2_pmekkgnqduwlme35zpnqhenc34
       use-sync-external-store: 1.2.0_react@18.2.0
-      xstate: 4.35.4
+      xstate: 4.36.0
     transitivePeerDependencies:
       - '@types/react'
     dev: false
@@ -8172,8 +8172,8 @@ packages:
     resolution: {integrity: sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==}
     dev: true
 
-  /xstate/4.35.4:
-    resolution: {integrity: sha512-mqRBYHhljP1xIItI4xnSQNHEv6CKslSM1cOGmvhmxeoDPAZgNbhSUYAL5N6DZIxRfpYY+M+bSm3mUFHD63iuvg==}
+  /xstate/4.36.0:
+    resolution: {integrity: sha512-AUI+KPgyy3g4PDpZWzUy/5ubd8VymbqikNmrJx5AQfqh+AQnemkBiabGROno+am1wUl2yeuT3UDrzUTSidfa6g==}
     dev: false
 
   /y18n/5.0.8:

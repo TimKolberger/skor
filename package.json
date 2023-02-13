@@ -31,7 +31,7 @@
     "react-hotkeys-hook": "4.3.5",
     "react-icons": "4.7.1",
     "react-router-dom": "6.8.1",
-    "xstate": "4.35.4"
+    "xstate": "4.36.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",
