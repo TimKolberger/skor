@@ -21,7 +21,7 @@ specifiers:
   eslint-config-react-app: 7.0.1
   framer-motion: 9.0.2
   jsdom: 21.1.0
-  lint-staged: 13.1.1
+  lint-staged: 13.1.2
   prettier: 2.8.4
   prettier-plugin-organize-imports: 3.2.2
   react: 18.2.0
@@ -67,7 +67,7 @@ devDependencies:
   '@vitest/coverage-c8': 0.28.5_jsdom@21.1.0
   concurrently: 7.6.0
   jsdom: 21.1.0
-  lint-staged: 13.1.1
+  lint-staged: 13.1.2
   prettier: 2.8.4
   prettier-plugin-organize-imports: 3.2.2_silln3pw57har7jydmecgzoypa
   typescript: 4.9.5
@@ -5964,8 +5964,8 @@ packages:
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  /lint-staged/13.1.1:
-    resolution: {integrity: sha512-LLJLO0Kdbcv2a+CvSF4p1M7jBZOajKSMpBUvyR8+bXccsqPER0/NxTFQSpNHjqwV9kM3tkHczYerTB5wI+bksQ==}
+  /lint-staged/13.1.2:
+    resolution: {integrity: sha512-K9b4FPbWkpnupvK3WXZLbgu9pchUJ6N7TtVZjbaPsoizkqFUDkUReUL25xdrCljJs7uLUF3tZ7nVPeo/6lp+6w==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
