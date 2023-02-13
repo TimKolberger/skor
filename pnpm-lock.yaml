@@ -15,7 +15,7 @@ specifiers:
   '@types/testing-library__jest-dom': 5.14.5
   '@vitejs/plugin-react': 3.1.0
   '@vitest/coverage-c8': 0.28.5
-  '@xstate/react': 3.1.2
+  '@xstate/react': 3.2.1
   concurrently: 7.6.0
   eslint: 8.34.0
   eslint-config-react-app: 7.0.1
@@ -42,7 +42,7 @@ dependencies:
   '@emotion/react': 11.10.5_pmekkgnqduwlme35zpnqhenc34
   '@emotion/styled': 11.10.5_g6cddab2ma6w7rmdnelgn6dq2a
   '@fontsource/source-code-pro': 4.5.14
-  '@xstate/react': 3.1.2_gnsbn7fm3jo44nx5qzkx5rlttu
+  '@xstate/react': 3.2.1_gnsbn7fm3jo44nx5qzkx5rlttu
   eslint: 8.34.0
   eslint-config-react-app: 7.0.1_7kw3g6rralp5ps6mg3uyzz6azm
   framer-motion: 9.0.2_biqbaboplfbrettd7655fr4n2y
@@ -3645,12 +3645,12 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@xstate/react/3.1.2_gnsbn7fm3jo44nx5qzkx5rlttu:
-    resolution: {integrity: sha512-nMpYuBFieWoHaImAtsguwmQHY3WnRpfRFYtInn5zRKsfGkC2JILKfnH58fODUubwhSqq0qMiUqrlaklP7ZBUCw==}
+  /@xstate/react/3.2.1_gnsbn7fm3jo44nx5qzkx5rlttu:
+    resolution: {integrity: sha512-L/mqYRxyBWVdIdSaXBHacfvS8NKn3sTKbPb31aRADbE9spsJ1p+tXil0GVQHPlzrmjGeozquLrxuYGiXsFNU7g==}
     peerDependencies:
       '@xstate/fsm': ^2.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      xstate: ^4.35.4
+      xstate: ^4.36.0
     peerDependenciesMeta:
       '@xstate/fsm':
         optional: true
