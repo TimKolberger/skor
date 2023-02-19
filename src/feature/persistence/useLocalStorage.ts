@@ -12,5 +12,17 @@ export function useLocalStorage<State>(
     localStorage.setItem(storageKey, JSON.stringify(value))
   }, [value, storageKey])
 
+  React.useEffect(() => {
+    const listener = (event: StorageEvent) => {
+      if (event.key === storageKey) {
+        setValue(JSON.parse(event.newValue || "null") ?? initialState)
+      }
+    }
+    window.addEventListener("storage", listener)
+    return () => {
+      window.removeEventListener("storage", listener)
+    }
+  }, [storageKey, initialState])
+
   return [value, setValue] as const
 }

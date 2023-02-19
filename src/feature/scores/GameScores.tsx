@@ -29,7 +29,8 @@ const ReorderItem = chakra(Reorder.Item, {
 
 export const GameScores = () => {
   const gameService = useGameService()
-  const { players, scores, sort } = useGame()
+  const game = useGame()
+  const { players, scores, sort, id } = game
 
   useGameScoresKeyboardShortcuts()
 
@@ -41,12 +42,16 @@ export const GameScores = () => {
   )
 
   const sortedPlayersAndScores = React.useMemo(
-    () => players.map((player) => ({ player, scoreSlice: scores[player.id] })),
+    () =>
+      players.map((player) => ({
+        player,
+        scoreSlice: scores[player.id] ?? {},
+      })),
     [players, scores]
   )
 
   if (!sortedPlayersAndScores.length) {
-    return <EmptyGameScoresScreen />
+    return <EmptyGameScoresScreen gameId={id} />
   }
 
   return (
@@ -63,6 +68,7 @@ export const GameScores = () => {
                 drag={false}
               >
                 <ConnectedScoreTile
+                  game={game}
                   player={player}
                   scoreSlice={scoreSlice}
                   key={`${player.id}${sort}`}
@@ -76,7 +82,7 @@ export const GameScores = () => {
   )
 }
 
-const EmptyGameScoresScreen = () => (
+const EmptyGameScoresScreen = ({ gameId }: { gameId: string }) => (
   <Container
     display="flex"
     flexDirection="column"
@@ -104,7 +110,7 @@ const EmptyGameScoresScreen = () => (
         icon={<Icon as={FiUserPlus} />}
         aria-label="Add player"
         as={Link}
-        to={linker.addPlayer()}
+        to={linker.addPlayer({ gameId })}
       />
     </chakra.div>
   </Container>

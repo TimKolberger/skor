@@ -14,6 +14,9 @@ describe("GameMachine", () => {
   it("should go idle", () => {
     const state = gameMachine
       .withContext({
+        id: "game-id",
+        name: "game-name",
+        createdAt: new Date().toISOString(),
         players: [],
         sort: "asc",
         step: 1,
@@ -30,6 +33,9 @@ describe("GameMachine", () => {
   it("should set step", () => {
     const state = gameMachine
       .withContext({
+        id: "game-id",
+        name: "game-name",
+        createdAt: new Date().toISOString(),
         players: [],
         sort: "asc",
         step: 1,
@@ -47,6 +53,9 @@ describe("GameMachine", () => {
   it("should set sort", () => {
     const state = gameMachine
       .withContext({
+        id: "game-id",
+        name: "game-name",
+        createdAt: new Date().toISOString(),
         players: [],
         sort: "asc",
         step: 1,
@@ -64,6 +73,9 @@ describe("GameMachine", () => {
   it("should toggle sort", () => {
     const state = gameMachine
       .withContext({
+        id: "game-id",
+        name: "game-name",
+        createdAt: new Date().toISOString(),
         players: [],
         sort: "asc",
         step: 1,
@@ -85,6 +97,9 @@ describe("GameMachine", () => {
 
     const state = gameMachine
       .withContext({
+        id: "game-id",
+        name: "game-name",
+        createdAt: new Date().toISOString(),
         players: [],
         sort: "asc",
         step: 1,
@@ -104,6 +119,9 @@ describe("GameMachine", () => {
 
     const machine = gameMachine
       .withContext({
+        id: "game-id",
+        name: "game-name",
+        createdAt: new Date().toISOString(),
         players: [
           { id: "1", name: "player name", color: "player color" },
           { id: "2", name: "some other name", color: "some other  color" },
@@ -140,6 +158,9 @@ describe("GameMachine", () => {
 
     const machine = gameMachine
       .withContext({
+        id: "game-id",
+        name: "game-name",
+        createdAt: new Date().toISOString(),
         players: [
           { id: "1", name: "player name", color: "player color" },
           { id: "2", name: "some other name", color: "some other  color" },
@@ -174,6 +195,9 @@ describe("GameMachine", () => {
 
     const machine = gameMachine
       .withContext({
+        id: "game-id",
+        name: "game-name",
+        createdAt: new Date().toISOString(),
         players: [
           { id: "1", name: "player name", color: "player color" },
           { id: "2", name: "some other name", color: "some other  color" },

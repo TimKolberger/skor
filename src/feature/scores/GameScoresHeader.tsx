@@ -38,7 +38,7 @@ export const GameScoresHeader = ({
   onResetScores,
 }: GameScoresHeaderProps) => {
   const gameService = useGameService()
-  const { sort } = useGame()
+  const { sort, id } = useGame()
 
   return (
     <Header
@@ -47,12 +47,14 @@ export const GameScoresHeader = ({
           <chakra.li>
             <IconButton
               as={Link}
-              to={linker.gamesOverview()}
+              to={linker.games()}
               variant="ghost"
               fontSize="2xl"
               icon={<Icon as={FiGrid} />}
               aria-label="Games Overview"
             />
+          </chakra.li>
+          <chakra.li>
             <IconButton
               variant="ghost"
               fontSize="2xl"
@@ -70,7 +72,7 @@ export const GameScoresHeader = ({
           <chakra.li>
             <IconButton
               as={Link}
-              to={linker.addPlayer()}
+              to={linker.addPlayer({ gameId: id })}
               variant="ghost"
               fontSize="2xl"
               icon={<Icon as={FiUserPlus} />}
@@ -96,7 +98,7 @@ export const GameScoresHeader = ({
                 <MenuItem
                   icon={<Icon as={FiActivity} fontSize="lg" display="block" />}
                   as={Link}
-                  to={linker.setScores()}
+                  to={linker.setScores({ gameId: id })}
                 >
                   Set all Scores
                 </MenuItem>

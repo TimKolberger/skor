@@ -1,27 +1,30 @@
 import { Button } from "@chakra-ui/react"
 import { useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 import { FullModalLayout } from "../../../layouts/FullModalLayout"
 import { Main } from "../../../layouts/Main"
 import { linker } from "../../navigation/linker"
 import { playerColors } from "../ColorInput"
 import { PlayerForm, PlayerFormValues } from "../PlayerForm"
-import { usePlayerService } from "../usePlayerService"
+import { usePlayers } from "../usePlayers"
+import { generateId } from "../../utils/generateId"
 
 export default function AddPlayerPage() {
   const navigate = useNavigate()
-  const playerService = usePlayerService()
+  const players = usePlayers()
+  const { gameId } = useParams()
   const [playerColor, setPlayerColor] = useState(
     () => playerColors[Math.floor(Math.random() * playerColors.length)]
   )
-
-  useHotkeys("esc", () => navigate(linker.home()))
+  if (!gameId) throw new Error("Missing gameId")
+  const gameUrl = linker.game({ gameId })
+  useHotkeys("esc", () => navigate(gameUrl))
 
   const onSubmit = (player: PlayerFormValues) => {
-    playerService.send({ type: "ADD_PLAYER", player })
-    navigate("/")
+    players.push([{ ...player, id: generateId() }])
+    navigate(gameUrl)
   }
 
   return (

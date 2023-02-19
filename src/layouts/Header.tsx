@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import { linker } from "../feature/navigation/linker"
 
 interface HeaderProps {
-  actionButtons: React.ReactNode
+  actionButtons?: React.ReactNode
 }
 
 export const Header = ({ actionButtons }: HeaderProps) => (
@@ -18,6 +18,7 @@ export const Header = ({ actionButtons }: HeaderProps) => (
     }}
     px="6"
     py="4"
+    gap={{ base: "2", md: "8" }}
     alignItems="flex-end"
     boxShadow="md"
     position="sticky"
@@ -39,7 +40,13 @@ export const Header = ({ actionButtons }: HeaderProps) => (
       SK0R
     </Button>
     <chakra.nav ml="auto">
-      <chakra.ul listStyleType="none" display="flex" gap="4">
+      <chakra.ul
+        listStyleType="none"
+        display="flex"
+        gap="4"
+        flexWrap="wrap"
+        justifyContent="flex-end"
+      >
         {actionButtons}
       </chakra.ul>
     </chakra.nav>

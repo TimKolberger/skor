@@ -1,6 +1,6 @@
 import { FormControl, FormLabel } from "@chakra-ui/react"
 
-import { MobileFriendlyNumberInput } from "../formFields/MobileFriendlyNumberInput"
+import { MobileFriendlyNumberInput } from "../form-fields/MobileFriendlyNumberInput"
 import { useGame } from "../game/useGame"
 import { useGameService } from "../game/useGameService"
 

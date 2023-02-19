@@ -11,16 +11,19 @@ import { Link } from "react-router-dom"
 import type { ScoreSlice } from "../game/gameMachine"
 import { useGameService } from "../game/useGameService"
 import { linker } from "../navigation/linker"
-import { Player } from "../players/playerMachine"
 import { ScoreDiff } from "./ScoreDiff"
 import { TickingIconButton } from "./TickingIconButton"
+import { Player } from "../players/usePlayers"
+import { Game } from "../game/useGames"
 
 export interface ConnectedScoreTileProps {
+  game: Game
   player: Player
   scoreSlice: ScoreSlice
 }
 
 export const ConnectedScoreTile = ({
+  game,
   player,
   scoreSlice,
 }: ConnectedScoreTileProps) => {
@@ -37,6 +40,7 @@ export const ConnectedScoreTile = ({
   return (
     <chakra.div flex="1 0 0" display="flex" alignItems="stretch">
       <ScoreTile
+        game={game}
         onIncrement={onIncrement}
         onDecrement={onDecrement}
         player={player}
@@ -47,6 +51,7 @@ export const ConnectedScoreTile = ({
 }
 
 export interface ScoreTileProps extends HTMLChakraProps<"div"> {
+  game: Game
   onDecrement: () => void
   player: Player
   scoreSlice: ScoreSlice
@@ -54,6 +59,7 @@ export interface ScoreTileProps extends HTMLChakraProps<"div"> {
 }
 
 export const ScoreTile = ({
+  game,
   onDecrement,
   player,
   scoreSlice,
@@ -93,7 +99,7 @@ export const ScoreTile = ({
     >
       <LinkOverlay
         as={Link}
-        to={linker.playerScore({ playerId: player.id })}
+        to={linker.player({ gameId: game.id, playerId: player.id })}
         fontWeight="black"
         fontSize="3xl"
         textTransform="uppercase"

@@ -1,11 +1,11 @@
-import { Box, forwardRef } from "@chakra-ui/react"
+import { Box, forwardRef, HTMLChakraProps } from "@chakra-ui/react"
 import * as React from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import { useNavigate } from "react-router-dom"
 
 import { linker } from "../feature/navigation/linker"
 
-export type BaseLayoutProps = React.ComponentProps<typeof Box>
+export type BaseLayoutProps = HTMLChakraProps<"div">
 
 export const BaseLayout = forwardRef<BaseLayoutProps, "div">((props, ref) => {
   const navigate = useNavigate()
