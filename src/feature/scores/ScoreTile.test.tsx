@@ -12,6 +12,7 @@ describe("ScoreTile", () => {
 
     render(
       <ScoreTile
+        game={{ id: "1", name: "Game 1", createdAt: new Date().toISOString() }}
         onDecrement={onDecrementMock}
         player={player}
         scoreSlice={scoreSlice}
@@ -31,6 +32,7 @@ describe("ScoreTile", () => {
 
     render(
       <ScoreTile
+        game={{ id: "1", name: "Game 1", createdAt: new Date().toISOString() }}
         onDecrement={onDecrementMock}
         player={player}
         scoreSlice={scoreSlice}
@@ -52,6 +54,7 @@ describe("ScoreTile", () => {
 
     render(
       <ScoreTile
+        game={{ id: "1", name: "Game 1", createdAt: new Date().toISOString() }}
         onDecrement={onDecrementMock}
         player={player}
         scoreSlice={scoreSlice}

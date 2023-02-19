@@ -12,9 +12,7 @@ import {
 } from "@chakra-ui/react"
 import * as React from "react"
 import { FiUserX } from "react-icons/fi"
-
-import { Player } from "./playerMachine"
-import { usePlayerService } from "./usePlayerService"
+import { Player, usePlayers } from "./usePlayers"
 
 export interface RemovePlayerProps {
   onRemove?: () => void | Promise<void>
@@ -24,13 +22,11 @@ export interface RemovePlayerProps {
 export const RemovePlayer = ({ onRemove, player }: RemovePlayerProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const cancelRef = React.useRef<HTMLButtonElement>(null)
-  const playerService = usePlayerService()
+  const players = usePlayers()
 
   const handleRemove = async () => {
-    playerService.send({
-      type: "REMOVE_PLAYER",
-      playerId: player.id,
-    })
+    const index = players.state.findIndex((p) => p.id === player.id)
+    players.delete(index, 1)
     await onRemove?.()
     onClose()
   }

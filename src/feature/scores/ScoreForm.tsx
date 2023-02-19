@@ -2,22 +2,22 @@ import { Button, chakra, Text } from "@chakra-ui/react"
 import * as React from "react"
 import { useNavigate } from "react-router-dom"
 
-import { MobileFriendlyNumberInput } from "../formFields/MobileFriendlyNumberInput"
+import { MobileFriendlyNumberInput } from "../form-fields/MobileFriendlyNumberInput"
 import { calcNextScore } from "../game/gameMachine"
 import { useGame } from "../game/useGame"
 import { useGameService } from "../game/useGameService"
 import { linker } from "../navigation/linker"
 import { LS_KEY_SCORE_OPERATOR } from "../persistence/localStorageKeys"
 import { useLocalStorage } from "../persistence/useLocalStorage"
-import { Player } from "../players/playerMachine"
 import { ScoreOperator, ScoreOperatorFormField } from "./ScoreOperatorFormField"
+import { Player } from "../players/usePlayers"
 
 export interface ConnectedScoreFormProps {
   player?: Player
 }
 
 export const ConnectedScoreForm = ({ player }: ConnectedScoreFormProps) => {
-  const { scores } = useGame()
+  const { id, scores } = useGame()
   const gameService = useGameService()
   const navigate = useNavigate()
   const [operator, setOperator] = useLocalStorage<ScoreOperator>(
@@ -40,7 +40,7 @@ export const ConnectedScoreForm = ({ player }: ConnectedScoreFormProps) => {
           score: values.score,
         })
         setOperator(values.operator)
-        navigate(linker.home())
+        navigate(linker.game({ gameId: id }))
       }}
     />
   )

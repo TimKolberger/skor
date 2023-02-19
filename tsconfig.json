@@ -15,9 +15,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
     "paths": {
-      "test/*": ["test/*"]
+      "test/*": ["./test/*"]
     },
     "types": [
       "vite-plugin-pwa/client",

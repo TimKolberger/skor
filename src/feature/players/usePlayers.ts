@@ -1,8 +1,11 @@
-import { useSelector } from "@xstate/react"
+import { useArray } from "../collaboration/YDocProvider"
 
-import { usePlayerService } from "./usePlayerService"
+export interface Player {
+  id: string
+  name: string
+  color: string
+}
 
 export function usePlayers() {
-  const playerService = usePlayerService()
-  return useSelector(playerService, (emitted) => emitted?.context) ?? {}
+  return useArray<Player>("players")
 }

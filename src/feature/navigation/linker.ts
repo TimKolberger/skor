@@ -3,13 +3,17 @@ import { createLinker } from "./createLinker"
 export const linker = createLinker({
   home: "/",
 
-  gamesOverview: "/games",
+  games: "/games",
+  game: "/games/:gameId",
+  addGame: "/games/add",
+  shareGame: "/games/:gameId/share",
+  joinGame: "/games/:gameId/join",
 
-  addPlayer: "/players/add",
-  editPlayer: "/players/:playerId/edit",
-  playerScore: "/players/:playerId",
+  addPlayer: "/games/:gameId/players/add",
+  editPlayer: "/games/:gameId/players/:playerId/edit",
+  player: "/games/:gameId/players/:playerId",
 
-  setScores: "/players/set-scores",
+  setScores: "/games/:gameId/players/set-scores",
 
   settings: "/settings",
   legalNotice: "/legal-notice",

@@ -1,5 +1,5 @@
 import { ScoreSlice, SortType } from "../game/gameMachine"
-import { Player } from "../players/playerMachine"
+import { Player } from "../players/usePlayers"
 
 export function sortPlayersWithScore({
   players,

@@ -1,8 +1,9 @@
 import { actions, assign, createMachine } from "xstate"
 
-import { Player } from "../players/playerMachine"
 import { ScoreOperator } from "../scores/ScoreOperatorFormField"
 import { sortPlayersWithScore } from "../scores/sortPlayersWithScore"
+import { generateId } from "../utils/generateId"
+import { Player } from "../players/usePlayers"
 
 const { send, cancel } = actions
 
@@ -14,6 +15,9 @@ export interface ScoreSlice {
 export type SortType = "asc" | "desc"
 
 export interface GameContext {
+  id: string
+  name: string
+  createdAt: string
   players: Player[]
   scores: Record<Player["id"], ScoreSlice>
   step: number
@@ -65,7 +69,7 @@ type IdleEvent = {
   type: "IDLE"
 }
 
-type GameEvent =
+export type GameEvent = (
   | IncrementEvent
   | DecrementEvent
   | SetScoreEvent
@@ -75,6 +79,7 @@ type GameEvent =
   | SetStepEvent
   | SetSortEvent
   | ToggleSortEvent
+) & { source?: "ignore" | "remote" | "local" }
 
 const idleTimerId = "idle-timer"
 
@@ -83,6 +88,9 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
     predictableActionArguments: true,
 
     context: {
+      id: generateId(),
+      name: "Unnamed",
+      createdAt: new Date().toISOString(),
       players: [],
       sort: "asc",
       step: 1,

@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  app:
+    image: "signaling:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - "PORT=80"
+      - "NODE_ENV=production"
+    expose:
+      - "80"
+    restart: always
+    labels:
+      - traefik.enable=true
+      - traefik.port=80
+      - traefik.http.routers.signaling.rule=Host(`signaling.kolberger.eu`)
+      - traefik.http.routers.signaling.entrypoints=http
+      - traefik.http.routers.signaling.middlewares=https_redirect
+
+      - traefik.http.routers.signalingsecure.rule=Host(`signaling.kolberger.eu`)
+      - traefik.http.routers.signalingsecure.entrypoints=https
+      - traefik.http.routers.signalingsecure.tls.certresolver=kolbacme
+
+      - traefik.http.middlewares.https_redirect.redirectscheme.scheme=https
+      - traefik.http.middlewares.https_redirect.redirectscheme.permanent=true

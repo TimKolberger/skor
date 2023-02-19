@@ -7,7 +7,7 @@ import { linker } from "../navigation/linker"
 
 export function useGameScoresKeyboardShortcuts() {
   const gameService = useGameService()
-  const { scores, players } = useGame()
+  const { scores, players, id } = useGame()
   const navigate = useNavigate()
 
   function createHotkeyHandler(index: number, type: "INCREMENT" | "DECREMENT") {
@@ -45,7 +45,7 @@ export function useGameScoresKeyboardShortcuts() {
   useHotkeys("shift+0", createHotkeyHandler(9, "DECREMENT"), handlerDeps)
 
   useHotkeys("a", () => {
-    navigate(linker.addPlayer())
+    navigate(linker.addPlayer({ gameId: id }))
   })
 
   useHotkeys("s", () => {

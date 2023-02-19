@@ -1,43 +1,81 @@
-import { createElement, lazy } from "react"
+import React, { createElement, lazy } from "react"
 
 import { linker } from "./linker"
+import { createBrowserRouter, Outlet } from "react-router-dom"
+import { GameProvider } from "../game/GameProvider"
 
-export const routes = [
+export const router = createBrowserRouter([
+  {
+    path: linker.games.definition,
+    children: [
+      {
+        path: "",
+        element: createElement(lazy(() => import("../game/pages/GamesPage"))),
+      },
+      {
+        path: linker.addGame.asChildDefinition(linker.games.definition),
+        element: createElement(
+          lazy(() => import("../game/pages/CreateGamePage"))
+        ),
+      },
+      {
+        path: linker.joinGame.asChildDefinition(linker.games.definition),
+        element: createElement(
+          lazy(() => import("../game/pages/JoinGamePage"))
+        ),
+      },
+      {
+        path: linker.game.asChildDefinition(linker.games.definition),
+        element: createElement(() => (
+          <GameProvider>
+            <Outlet />
+          </GameProvider>
+        )),
+        children: [
+          {
+            path: "",
+            element: createElement(
+              lazy(() => import("../game/pages/GamePage"))
+            ),
+          },
+          {
+            path: linker.shareGame.asChildDefinition(linker.game.definition),
+            element: createElement(
+              lazy(() => import("../game/pages/ShareGamePage"))
+            ),
+          },
+
+          {
+            path: linker.player.asChildDefinition(linker.game.definition),
+            element: createElement(
+              lazy(() => import("../scores/pages/PlayerScorePage"))
+            ),
+          },
+          {
+            path: linker.addPlayer.asChildDefinition(linker.game.definition),
+            element: createElement(
+              lazy(() => import("../players/pages/AddPlayerPage"))
+            ),
+          },
+          {
+            path: linker.editPlayer.asChildDefinition(linker.game.definition),
+            element: createElement(
+              lazy(() => import("../players/pages/EditPlayerPage"))
+            ),
+          },
+          {
+            path: linker.setScores.asChildDefinition(linker.game.definition),
+            element: createElement(
+              lazy(() => import("../scores/pages/SetAllScoresPage"))
+            ),
+          },
+        ],
+      },
+    ],
+  },
   {
     path: linker.home.definition,
-    element: createElement(
-      lazy(() => import("../scores/pages/GameScoresPage"))
-    ),
-  },
-  {
-    path: linker.gamesOverview.definition,
-    element: createElement(
-      lazy(() => import("../game/pages/GamesOverviewPage"))
-    ),
-  },
-  {
-    path: linker.playerScore.definition,
-    element: createElement(
-      lazy(() => import("../scores/pages/PlayerScorePage"))
-    ),
-  },
-  {
-    path: linker.addPlayer.definition,
-    element: createElement(
-      lazy(() => import("../players/pages/AddPlayerPage"))
-    ),
-  },
-  {
-    path: linker.editPlayer.definition,
-    element: createElement(
-      lazy(() => import("../players/pages/EditPlayerPage"))
-    ),
-  },
-  {
-    path: linker.setScores.definition,
-    element: createElement(
-      lazy(() => import("../scores/pages/SetAllScoresPage"))
-    ),
+    element: createElement(lazy(() => import("../game/pages/GamesPage"))),
   },
   {
     path: linker.settings.definition,
@@ -50,4 +88,4 @@ export const routes = [
     ),
   },
   { element: createElement(lazy(() => import("./pages/NotFoundPage"))) },
-]
+])

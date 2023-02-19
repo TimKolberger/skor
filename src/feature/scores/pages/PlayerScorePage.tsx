@@ -1,7 +1,7 @@
 import { chakra, Container, Heading, Icon, IconButton } from "@chakra-ui/react"
 import { useHotkeys } from "react-hotkeys-hook"
 import { FiUser } from "react-icons/fi"
-import { Link, useMatch, useNavigate } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
 import { FullModalLayout } from "../../../layouts/FullModalLayout"
 import { linker } from "../../navigation/linker"
@@ -11,14 +11,14 @@ import { usePlayers } from "../../players/usePlayers"
 import { ConnectedScoreForm } from "../ScoreForm"
 
 export default function PlayerScorePage() {
-  const { players } = usePlayers()
-  const match = useMatch(linker.playerScore.definition)
-  const player = players.find((p) => p.id === match?.params.playerId)
+  const { state: players } = usePlayers()
+  const { gameId, playerId } = useParams()
+  const player = players.find((p) => p.id === playerId)
   const navigate = useNavigate()
 
   useHotkeys("esc", () => navigate(linker.home()))
 
-  if (!player) {
+  if (!player || !gameId) {
     return <NotFoundPage />
   }
 
@@ -30,13 +30,16 @@ export default function PlayerScorePage() {
           <chakra.li>
             <RemovePlayer
               player={player}
-              onRemove={() => navigate(linker.home())}
+              onRemove={() => navigate(linker.game({ gameId }))}
             />
           </chakra.li>
           <chakra.li>
             <IconButton
               as={Link}
-              to={linker.editPlayer({ playerId: player.id })}
+              to={linker.editPlayer({
+                gameId,
+                playerId: player.id,
+              })}
               variant="ghost"
               fontSize="2xl"
               icon={<Icon as={FiUser} fontSize="2xl" />}

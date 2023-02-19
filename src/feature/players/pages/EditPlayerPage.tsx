@@ -2,7 +2,7 @@ import { Button, ButtonGroup, chakra, Icon, IconButton } from "@chakra-ui/react"
 import { useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import { FiChevronLeft } from "react-icons/fi"
-import { useMatch, useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 import { FullModalLayout } from "../../../layouts/FullModalLayout"
 import { Main } from "../../../layouts/Main"
@@ -12,14 +12,12 @@ import { playerColors } from "../ColorInput"
 import { PlayerForm, PlayerFormValues } from "../PlayerForm"
 import { RemovePlayer } from "../RemovePlayer"
 import { usePlayers } from "../usePlayers"
-import { usePlayerService } from "../usePlayerService"
 
 export default function EditPlayerPage() {
   const navigate = useNavigate()
-  const { players } = usePlayers()
-  const match = useMatch(linker.editPlayer.definition)
-  const player = players.find((p) => p.id === match?.params.playerId)
-  const playerService = usePlayerService()
+  const players = usePlayers()
+  const { gameId, playerId } = useParams()
+  const player = players.state.find((p) => p.id === playerId)
   const [playerColor, setPlayerColor] = useState(
     () =>
       player?.color ||
@@ -28,16 +26,18 @@ export default function EditPlayerPage() {
 
   useHotkeys("esc", () => navigate(linker.home()))
 
-  if (!player) {
+  if (!player || !gameId) {
     return <NotFoundPage />
   }
 
   const onSubmit = (values: PlayerFormValues) => {
-    playerService.send({
-      type: "UPDATE_PLAYER",
-      player: { ...player, ...values },
-    })
-    navigate(linker.home())
+    const next = { ...player, ...values }
+    const index = players.state.findIndex((p) => p.id === player.id)
+
+    players.delete(index, 1)
+    players.insert(index, [next])
+
+    navigate(linker.game({ gameId }))
   }
 
   return (

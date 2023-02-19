@@ -24,12 +24,14 @@ interface CreateUrlFunctionWithParams<Path extends string> {
   (params: RouteParams<Path>): string
 
   definition: Path
+  asChildDefinition: (parentPath: string) => string
 }
 
 interface CreateUrlFunctionWithoutParams<Path extends string> {
   (): string
 
   definition: Path
+  asChildDefinition: (parentPath: string) => string
 }
 
 type UrlFactory<
@@ -61,6 +63,8 @@ export function createLinker<
       }) as UrlFactory<Routes, Path, typeof name>
 
       createUrl.definition = route
+      createUrl.asChildDefinition = (parentPath: string) =>
+        route.replace(new RegExp(`^${parentPath}/`), "")
       previousValue[name] = createUrl
       return previousValue
     },
