@@ -27,7 +27,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-error-boundary: ^3.1.4
-  react-hotkeys-hook: 4.3.7
+  react-hotkeys-hook: 4.3.8
   react-icons: 4.8.0
   react-router-dom: 6.9.0
   typescript: 4.9.5
@@ -49,7 +49,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-error-boundary: 3.1.4_react@18.2.0
-  react-hotkeys-hook: 4.3.7_biqbaboplfbrettd7655fr4n2y
+  react-hotkeys-hook: 4.3.8_biqbaboplfbrettd7655fr4n2y
   react-icons: 4.8.0_react@18.2.0
   react-router-dom: 6.9.0_biqbaboplfbrettd7655fr4n2y
   xstate: 4.37.0
@@ -6629,8 +6629,8 @@ packages:
       use-sidecar: 1.1.2_pmekkgnqduwlme35zpnqhenc34
     dev: false
 
-  /react-hotkeys-hook/4.3.7_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-qUcA5vl/liGWr9wLYI5/8oppHLa6nExFqOAMC6CyZhpj7C56PIzYZ76xAtJ+5lgxObgl4A4pQz8upy+nq7orSQ==}
+  /react-hotkeys-hook/4.3.8_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-RmrIQ3M259c84MnYVEAQsmHkD6s7XUgLG0rW6S7qjt1Lh7q+SPIz5b6obVU8OJw1Utsj1mUCj6twtBPaK/ytww==}
     peerDependencies:
       react: '>=16.8.1'
       react-dom: '>=16.8.1'
