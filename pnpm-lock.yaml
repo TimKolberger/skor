@@ -22,7 +22,7 @@ specifiers:
   framer-motion: 10.6.1
   jsdom: 21.1.1
   lint-staged: 13.2.0
-  prettier: 2.8.5
+  prettier: 2.8.6
   prettier-plugin-organize-imports: 3.2.2
   react: 18.2.0
   react-dom: 18.2.0
@@ -68,8 +68,8 @@ devDependencies:
   concurrently: 7.6.0
   jsdom: 21.1.1
   lint-staged: 13.2.0
-  prettier: 2.8.5
-  prettier-plugin-organize-imports: 3.2.2_ymfcbvzenwr4nv6uquwdgoto7i
+  prettier: 2.8.6
+  prettier-plugin-organize-imports: 3.2.2_k4ha7c5shlzw7es36i4xz5r3bm
   typescript: 4.9.5
   vite: 4.2.1
   vite-plugin-pwa: 0.14.4_2zwjfzulkrffi34qjwvtq6zb6a
@@ -6481,7 +6481,7 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  /prettier-plugin-organize-imports/3.2.2_ymfcbvzenwr4nv6uquwdgoto7i:
+  /prettier-plugin-organize-imports/3.2.2_k4ha7c5shlzw7es36i4xz5r3bm:
     resolution: {integrity: sha512-e97lE6odGSiHonHJMTYC0q0iLXQyw0u5z/PJpvP/3vRy6/Zi9kLBwFAbEGjDzIowpjQv8b+J04PDamoUSQbzGA==}
     peerDependencies:
       '@volar/vue-language-plugin-pug': ^1.0.4
@@ -6494,12 +6494,12 @@ packages:
       '@volar/vue-typescript':
         optional: true
     dependencies:
-      prettier: 2.8.5
+      prettier: 2.8.6
       typescript: 4.9.5
     dev: true
 
-  /prettier/2.8.5:
-    resolution: {integrity: sha512-3gzuxrHbKUePRBB4ZeU08VNkUcqEHaUaouNt0m7LGP4Hti/NuB07C7PPTM/LkWqXoJYJn2McEo5+kxPNrtQkLQ==}
+  /prettier/2.8.6:
+    resolution: {integrity: sha512-mtuzdiBbHwPEgl7NxWlqOkithPyp4VN93V7VeHVWBF+ad3I5avc0RVDT4oImXQy9H/AqxA2NSQH8pSxHW6FYbQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
