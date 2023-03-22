@@ -32,7 +32,7 @@ specifiers:
   react-router-dom: 6.9.0
   typescript: 4.9.5
   vite: 4.2.1
-  vite-plugin-pwa: 0.14.4
+  vite-plugin-pwa: 0.14.5
   vitest: 0.29.7
   workbox-window: ^6.5.4
   xstate: 4.37.0
@@ -72,7 +72,7 @@ devDependencies:
   prettier-plugin-organize-imports: 3.2.2_k4ha7c5shlzw7es36i4xz5r3bm
   typescript: 4.9.5
   vite: 4.2.1
-  vite-plugin-pwa: 0.14.4_2zwjfzulkrffi34qjwvtq6zb6a
+  vite-plugin-pwa: 0.14.5_2zwjfzulkrffi34qjwvtq6zb6a
   vitest: 0.29.7_jsdom@21.1.1
   workbox-window: 6.5.4
 
@@ -3132,7 +3132,7 @@ packages:
       rollup: 2.79.1
     dev: true
 
-  /@rollup/plugin-replace/5.0.2_rollup@3.10.1:
+  /@rollup/plugin-replace/5.0.2_rollup@3.19.1:
     resolution: {integrity: sha512-M9YXNekv/C/iHHK+cvORzfRYfPbq0RDD8r0G+bMiTXjNGKulPnCT9O3Ss46WfhI6ZOCgApOP7xAdmCQJ+U2LAA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -3141,9 +3141,9 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2_rollup@3.10.1
+      '@rollup/pluginutils': 5.0.2_rollup@3.19.1
       magic-string: 0.27.0
-      rollup: 3.10.1
+      rollup: 3.19.1
     dev: true
 
   /@rollup/pluginutils/3.1.0_rollup@2.79.1:
@@ -3158,7 +3158,7 @@ packages:
       rollup: 2.79.1
     dev: true
 
-  /@rollup/pluginutils/5.0.2_rollup@3.10.1:
+  /@rollup/pluginutils/5.0.2_rollup@3.19.1:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -3170,7 +3170,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 3.10.1
+      rollup: 3.19.1
     dev: true
 
   /@rushstack/eslint-patch/1.2.0:
@@ -6914,14 +6914,6 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /rollup/3.10.1:
-    resolution: {integrity: sha512-3Er+yel3bZbZX1g2kjVM+FW+RUWDxbG87fcqFM5/9HbPCTpbVp6JOLn7jlxnNlbu7s/N/uDA4EV/91E2gWnxzw==}
-    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
-    hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
   /rollup/3.19.1:
     resolution: {integrity: sha512-lAbrdN7neYCg/8WaoWn/ckzCtz+jr70GFfYdlf50OF7387HTg+wiuiqJRFYawwSPpqfqDNYqK7smY/ks2iAudg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
@@ -7699,17 +7691,17 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-pwa/0.14.4_2zwjfzulkrffi34qjwvtq6zb6a:
-    resolution: {integrity: sha512-M7Ct0so8OlouMkTWgXnl8W1xU95glITSKIe7qswZf1tniAstO2idElGCnsrTJ5NPNSx1XqfTCOUj8j94S6FD7Q==}
+  /vite-plugin-pwa/0.14.5_2zwjfzulkrffi34qjwvtq6zb6a:
+    resolution: {integrity: sha512-LH3VCtoWx0scfim8Ph+daVl45uVRyWzXn3C3GUq92uWUui1p8eh+DjTQ23Pvb7SJ0SJtxZ99LCpOLCkFkaxokg==}
     peerDependencies:
       vite: ^3.1.0 || ^4.0.0
       workbox-window: ^6.5.4
     dependencies:
-      '@rollup/plugin-replace': 5.0.2_rollup@3.10.1
+      '@rollup/plugin-replace': 5.0.2_rollup@3.19.1
       debug: 4.3.4
       fast-glob: 3.2.12
       pretty-bytes: 6.0.0
-      rollup: 3.10.1
+      rollup: 3.19.1
       vite: 4.2.1
       workbox-build: 6.5.4
       workbox-window: 6.5.4
