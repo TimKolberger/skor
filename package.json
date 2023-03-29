@@ -22,7 +22,7 @@
     "@emotion/styled": "11.10.6",
     "@fontsource/source-code-pro": "4.5.14",
     "@xstate/react": "3.2.1",
-    "eslint": "8.36.0",
+    "eslint": "8.37.0",
     "eslint-config-react-app": "7.0.1",
     "framer-motion": "10.9.2",
     "react": "18.2.0",
