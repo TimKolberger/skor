@@ -1,35 +1,44 @@
 import * as React from "react"
 
+import { RouteObject } from "react-router-dom"
 import { linker } from "./linker"
 
-const LazyGameScorePage = React.lazy(
-  () => import("../scores/pages/GameScoresPage")
-)
-const LazyEditPlayerPage = React.lazy(
-  () => import("../players/pages/EditPlayerPage")
-)
-const LazyAddPlayerPage = React.lazy(
-  () => import("../players/pages/AddPlayerPage")
-)
-const LazyNotFoundPage = React.lazy(() => import("./pages/NotFoundPage"))
-const LazySetAllScoresPage = React.lazy(
-  () => import("../scores/pages/SetAllScoresPage")
-)
-const LazyPlayerScorePage = React.lazy(
-  () => import("../scores/pages/PlayerScorePage")
-)
-const LazySettingsPage = React.lazy(() => import("../settings/SettingsPage"))
-const LazyLegalNoticePage = React.lazy(
-  () => import("../legal-notice/LegalNoticePage")
-)
+function lazyRoute(fn: () => Promise<{ default: React.ComponentType }>) {
+  return async () => ({
+    Component: (await fn()).default,
+  })
+}
 
-export const routes = [
-  { path: linker.home.definition, element: <LazyGameScorePage /> },
-  { path: linker.playerScore.definition, element: <LazyPlayerScorePage /> },
-  { path: linker.addPlayer.definition, element: <LazyAddPlayerPage /> },
-  { path: linker.editPlayer.definition, element: <LazyEditPlayerPage /> },
-  { path: linker.setScores.definition, element: <LazySetAllScoresPage /> },
-  { path: linker.settings.definition, element: <LazySettingsPage /> },
-  { path: linker.legalNotice.definition, element: <LazyLegalNoticePage /> },
-  { element: <LazyNotFoundPage /> },
+export const routes: RouteObject[] = [
+  {
+    path: linker.home.definition,
+    lazy: lazyRoute(() => import("../scores/pages/GameScoresPage")),
+  },
+  {
+    path: linker.playerScore.definition,
+    lazy: lazyRoute(() => import("../scores/pages/PlayerScorePage")),
+  },
+  {
+    path: linker.addPlayer.definition,
+    lazy: lazyRoute(() => import("../players/pages/AddPlayerPage")),
+  },
+  {
+    path: linker.editPlayer.definition,
+    lazy: lazyRoute(() => import("../players/pages/EditPlayerPage")),
+  },
+  {
+    path: linker.setScores.definition,
+    lazy: lazyRoute(() => import("../scores/pages/SetAllScoresPage")),
+  },
+  {
+    path: linker.settings.definition,
+    lazy: lazyRoute(() => import("../settings/SettingsPage")),
+  },
+  {
+    path: linker.legalNotice.definition,
+    lazy: lazyRoute(() => import("../legal-notice/LegalNoticePage")),
+  },
+  {
+    lazy: lazyRoute(() => import("./pages/NotFoundPage")),
+  },
 ]

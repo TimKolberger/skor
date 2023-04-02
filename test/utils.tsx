@@ -1,7 +1,7 @@
 import { ChakraProvider, theme } from "@chakra-ui/react"
 import { render, RenderOptions } from "@testing-library/react"
 import * as React from "react"
-import { MemoryRouter, MemoryRouterProps } from "react-router-dom"
+import { MemoryRouter } from "react-router-dom"
 
 import { GameProvider } from "../src/feature/game/GameProvider"
 import { PlayerProvider } from "../src/feature/players/PlayerProvider"
@@ -9,9 +9,10 @@ import { PlayerProvider } from "../src/feature/players/PlayerProvider"
 const customRender = (
   ui: React.ReactElement,
   options?: Omit<RenderOptions, "wrapper"> & {
-    initialEntries?: MemoryRouterProps["initialEntries"]
+    Router?: React.ElementType
   }
 ) => {
+  const Router = options?.Router ?? MemoryRouter
   const AllTheProviders: React.FC<{
     children: React.ReactNode
   }> = ({ children }) => {
@@ -20,9 +21,7 @@ const customRender = (
         <React.Suspense>
           <PlayerProvider>
             <GameProvider>
-              <MemoryRouter initialEntries={options?.initialEntries}>
-                {children}
-              </MemoryRouter>
+              <Router>{children}</Router>
             </GameProvider>
           </PlayerProvider>
         </React.Suspense>
