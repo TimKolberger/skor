@@ -11,7 +11,7 @@ describe("Routes", () => {
       .map((r) => [r.path, r])
   )("should render %s", async (path) => {
     const router = createMemoryRouter(routes, {
-      initialEntries: [path ?? "/not-found"],
+      initialEntries: [path === "*" ? "/not-found" : String(path)],
     })
     render(<div />, {
       Router: () => <RouterProvider router={router} />,

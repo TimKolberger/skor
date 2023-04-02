@@ -39,6 +39,7 @@ export const routes: RouteObject[] = [
     lazy: lazyRoute(() => import("../legal-notice/LegalNoticePage")),
   },
   {
+    path: "*",
     lazy: lazyRoute(() => import("./pages/NotFoundPage")),
   },
 ]
