@@ -1,9 +1,9 @@
 import { AppLayout } from "../../../layouts/AppLayout"
 import { Main } from "../../../layouts/Main"
+import { useGameService } from "../../game/useGameService"
 import { usePlayerService } from "../../players/usePlayerService"
 import { GameScores } from "../GameScores"
 import { GameScoresHeader } from "../GameScoresHeader"
-import { useGameService } from "../../game/useGameService"
 
 export default function GameScoresPage() {
   const playerService = usePlayerService()
