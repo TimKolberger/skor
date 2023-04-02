@@ -4,6 +4,7 @@ import {
   IconButton,
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
 } from "@chakra-ui/react"
@@ -12,6 +13,7 @@ import {
   FiActivity,
   FiInfo,
   FiMoreVertical,
+  FiRepeat,
   FiSettings,
   FiTrendingDown,
   FiTrendingUp,
@@ -27,10 +29,12 @@ import { linker } from "../navigation/linker"
 
 export interface GameScoresHeaderProps {
   onDeleteAllPlayers: () => void
+  onResetScores: () => void
 }
 
 export const GameScoresHeader = ({
   onDeleteAllPlayers,
+  onResetScores,
 }: GameScoresHeaderProps) => {
   const gameService = useGameService()
   const { sort } = useGame()
@@ -75,6 +79,12 @@ export const GameScoresHeader = ({
               />
               <MenuList>
                 <MenuItem
+                  icon={<Icon as={FiRepeat} fontSize="lg" display="block" />}
+                  onClick={onResetScores}
+                >
+                  Reset Scores
+                </MenuItem>
+                <MenuItem
                   icon={<Icon as={FiActivity} fontSize="lg" display="block" />}
                   as={Link}
                   to={linker.setScores()}
@@ -87,6 +97,7 @@ export const GameScoresHeader = ({
                 >
                   Delete all Players
                 </MenuItem>
+                <MenuDivider />
                 <MenuItem
                   icon={<Icon as={FaGithub} fontSize="lg" display="block" />}
                   as="a"

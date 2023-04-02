@@ -57,6 +57,10 @@ type SetScoreEvent = {
   operator: ScoreOperator
 }
 
+type ResetScoresEvent = {
+  type: "RESET_SCORES"
+}
+
 type IdleEvent = {
   type: "IDLE"
 }
@@ -65,6 +69,7 @@ type GameEvent =
   | IncrementEvent
   | DecrementEvent
   | SetScoreEvent
+  | ResetScoresEvent
   | IdleEvent
   | SetPlayersEvent
   | SetStepEvent
@@ -112,6 +117,10 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
           SET_SCORE: {
             target: "counting",
             actions: ["setScore"],
+          },
+          RESET_SCORES: {
+            target: "counting",
+            actions: ["resetScores"],
           },
           SET_STEP: {
             target: "idle",
@@ -239,6 +248,14 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
             return context.step
           }
           return event.step || 0
+        },
+      }),
+      resetScores: assign({
+        scores: (context) => {
+          return Object.entries(context.scores).reduce((prev, [key]) => {
+            prev[key] = { total: 0, diff: 0 }
+            return prev
+          }, {} as GameContext["scores"])
         },
       }),
       setScore: assign({
