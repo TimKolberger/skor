@@ -35,8 +35,8 @@ dependencies:
     specifier: ^4.0.0
     version: 4.0.0(react@18.2.0)
   react-hotkeys-hook:
-    specifier: 4.3.8
-    version: 4.3.8(react-dom@18.2.0)(react@18.2.0)
+    specifier: 4.4.0
+    version: 4.4.0(react-dom@18.2.0)(react@18.2.0)
   react-icons:
     specifier: 4.8.0
     version: 4.8.0(react@18.2.0)
@@ -6693,8 +6693,8 @@ packages:
       use-sidecar: 1.1.2(@types/react@18.0.35)(react@18.2.0)
     dev: false
 
-  /react-hotkeys-hook@4.3.8(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-RmrIQ3M259c84MnYVEAQsmHkD6s7XUgLG0rW6S7qjt1Lh7q+SPIz5b6obVU8OJw1Utsj1mUCj6twtBPaK/ytww==}
+  /react-hotkeys-hook@4.4.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-wOaCWLwgT/f895CMJrR9hmzVf+gfL8IpjWDXWXKngBp9i6Xqzf0tvLv4VI8l3Vlsg/cc4C/Iik3Ck76L/Hj0tw==}
     peerDependencies:
       react: '>=16.8.1'
       react-dom: '>=16.8.1'
