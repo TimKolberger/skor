@@ -14,8 +14,8 @@ dependencies:
     specifier: 4.5.14
     version: 4.5.14
   '@xstate/react':
-    specifier: 3.2.1
-    version: 3.2.1(@types/react@18.2.0)(react@18.2.0)(xstate@4.37.1)
+    specifier: 3.2.2
+    version: 3.2.2(@types/react@18.2.0)(react@18.2.0)(xstate@4.37.1)
   eslint:
     specifier: 8.39.0
     version: 8.39.0
@@ -3613,12 +3613,12 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@xstate/react@3.2.1(@types/react@18.2.0)(react@18.2.0)(xstate@4.37.1):
-    resolution: {integrity: sha512-L/mqYRxyBWVdIdSaXBHacfvS8NKn3sTKbPb31aRADbE9spsJ1p+tXil0GVQHPlzrmjGeozquLrxuYGiXsFNU7g==}
+  /@xstate/react@3.2.2(@types/react@18.2.0)(react@18.2.0)(xstate@4.37.1):
+    resolution: {integrity: sha512-feghXWLedyq8JeL13yda3XnHPZKwYDN5HPBLykpLeuNpr9178tQd2/3d0NrH6gSd0sG5mLuLeuD+ck830fgzLQ==}
     peerDependencies:
       '@xstate/fsm': ^2.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      xstate: ^4.36.0
+      xstate: ^4.37.2
     peerDependenciesMeta:
       '@xstate/fsm':
         optional: true

@@ -21,7 +21,7 @@
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
     "@fontsource/source-code-pro": "4.5.14",
-    "@xstate/react": "3.2.1",
+    "@xstate/react": "3.2.2",
     "eslint": "8.39.0",
     "eslint-config-react-app": "7.0.1",
     "framer-motion": "10.12.4",
