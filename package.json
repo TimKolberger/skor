@@ -34,7 +34,7 @@
     "xstate": "4.38.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.22.7",
+    "@babel/eslint-parser": "7.22.9",
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
     "@testing-library/jest-dom": "5.16.5",
