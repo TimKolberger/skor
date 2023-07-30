@@ -9,7 +9,7 @@ import {
 } from "../persistence/localStorageKeys"
 import { useLocalStorage } from "../persistence/useLocalStorage"
 import { usePlayers } from "../players/usePlayers"
-import { gameMachine, SortType } from "./gameMachine"
+import { SortType, gameMachine } from "./gameMachine"
 
 export const GameServiceContext = React.createContext(
   {} as InterpreterFrom<typeof gameMachine>

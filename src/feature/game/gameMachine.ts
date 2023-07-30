@@ -233,13 +233,16 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
           if (!("players" in event)) {
             return context.scores
           }
-          return event.players.reduce((previousValue, player) => {
-            previousValue[player.id] = context.scores[player.id] || {
-              total: 0,
-              diff: 0,
-            }
-            return previousValue
-          }, {} as GameContext["scores"])
+          return event.players.reduce(
+            (previousValue, player) => {
+              previousValue[player.id] = context.scores[player.id] || {
+                total: 0,
+                diff: 0,
+              }
+              return previousValue
+            },
+            {} as GameContext["scores"]
+          )
         },
       }),
       setStep: assign({
@@ -252,10 +255,13 @@ export const gameMachine = createMachine<GameContext, GameEvent>(
       }),
       resetScores: assign({
         scores: (context) => {
-          return Object.entries(context.scores).reduce((prev, [key]) => {
-            prev[key] = { total: 0, diff: 0 }
-            return prev
-          }, {} as GameContext["scores"])
+          return Object.entries(context.scores).reduce(
+            (prev, [key]) => {
+              prev[key] = { total: 0, diff: 0 }
+              return prev
+            },
+            {} as GameContext["scores"]
+          )
         },
       }),
       setScore: assign({

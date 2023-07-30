@@ -1,5 +1,5 @@
 import { ChakraProvider, theme } from "@chakra-ui/react"
-import { render, RenderOptions } from "@testing-library/react"
+import { RenderOptions, render } from "@testing-library/react"
 import * as React from "react"
 import { MemoryRouter } from "react-router-dom"
 

@@ -35,7 +35,7 @@ interface CreateUrlFunctionWithoutParams<Path extends string> {
 type UrlFactory<
   Routes extends RouteConfigRecord<string, Path>,
   Path extends string,
-  Key extends keyof Routes
+  Key extends keyof Routes,
 > = keyof RouteParams<Routes[Key]> extends ""
   ? CreateUrlFunctionWithoutParams<Routes[Key]>
   : CreateUrlFunctionWithParams<Routes[Key]>
@@ -43,7 +43,7 @@ type UrlFactory<
 export function createLinker<
   Routes extends RouteConfigRecord<RouteName, Path>,
   RouteName extends string,
-  Path extends string
+  Path extends string,
 >(routes: Routes) {
   return entries(routes).reduce(
     (previousValue, [name, route]) => {

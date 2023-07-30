@@ -7,7 +7,7 @@ import { linker } from "../feature/navigation/linker"
 import { BaseLayout, BaseLayoutProps, modalVariants } from "./BaseLayout"
 import { Header } from "./Header"
 
-export interface FullModalLayoutProps extends BaseLayoutProps {
+export type FullModalLayoutProps = BaseLayoutProps & {
   to?: LinkProps["to"]
   bg?: HTMLChakraProps<"header">["bg"]
   actionButtons?: React.ReactNode
