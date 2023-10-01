@@ -14,7 +14,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <AppLayout>
       <AppLayoutHeader title="Rooms">
-        <IconButtonLink to="/rooms/add">
+        <IconButtonLink to="add">
           <FiPlus />
         </IconButtonLink>
       </AppLayoutHeader>
@@ -47,7 +47,7 @@ export default function RoomsPage() {
         >
           <div className="flex flex-col">
             <Link
-              to={`/rooms/${room.id}`}
+              to={room.id}
               className="text-lg font-black before:absolute before:inset-0"
             >
               {room.name}

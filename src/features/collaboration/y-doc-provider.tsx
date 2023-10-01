@@ -1,10 +1,10 @@
 import { useDoc } from './use-doc.tsx'
 import { useCallback, useEffect, useMemo, useReducer } from 'react'
-import * as Y from 'yjs'
+import { Doc, Map, Array, type AbstractType } from 'yjs'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const useSharedType = function <T extends Y.AbstractType<any>>(
-  ...args: Parameters<Y.Doc['get']>
+const useSharedType = function <T extends AbstractType<any>>(
+  ...args: Parameters<Doc['get']>
 ) {
   const doc = useDoc()
   const [name, typeConstr] = args
@@ -28,7 +28,7 @@ const useSharedType = function <T extends Y.AbstractType<any>>(
 }
 
 export const useMap = function <T>(name: string) {
-  const map = useSharedType<Y.Map<T>>(name, Y.Map)
+  const map = useSharedType<Map<T>>(name, Map)
 
   return {
     ymap: map,
@@ -40,7 +40,7 @@ export const useMap = function <T>(name: string) {
 }
 
 export function useArray<T>(name: string) {
-  const array = useSharedType<Y.Array<T>>(name, Y.Array)
+  const array = useSharedType<Array<T>>(name, Array)
 
   return {
     yarray: array,

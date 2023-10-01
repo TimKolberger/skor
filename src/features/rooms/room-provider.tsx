@@ -4,18 +4,18 @@ import { type ReactNode, useEffect, useRef, useState } from 'react'
 import { IndexeddbPersistence } from 'y-indexeddb'
 // @ts-expect-error - not sure why TS cannot find types
 import { WebrtcProvider } from 'y-webrtc'
-import * as Y from 'yjs'
+import { Doc } from 'yjs'
 
 export const RoomProvider = ({ children }: { children: ReactNode }) => {
   const room = useCurrentRoom()
 
-  const [doc, setDoc] = useState<Y.Doc>()
+  const [doc, setDoc] = useState<Doc>()
   const [error, setError] = useState<Error>()
   const webrtcProviderRef = useRef<WebrtcProvider>()
   const indexeddbPersistenceRef = useRef<IndexeddbPersistence>()
 
   useEffect(() => {
-    const yDoc = new Y.Doc()
+    const yDoc = new Doc()
     const docName = `cardscore:${room.id}`
     webrtcProviderRef.current = new WebrtcProvider(docName, yDoc, {
       signaling: ['wss://signaling.kolberger.eu/'],

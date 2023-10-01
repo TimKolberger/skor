@@ -1,4 +1,4 @@
 import { createContext } from 'react'
-import * as Y from 'yjs'
+import { Doc } from 'yjs'
 
-export const DocumentContext = createContext<Y.Doc | null>(null)
+export const DocumentContext = createContext<Doc | null>(null)
