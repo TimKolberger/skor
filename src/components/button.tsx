@@ -76,8 +76,9 @@ function buttonClasses({
         'focus-visible:bg-slate-100 focus-visible:bg-opacity-10 focus-visible:shadow',
       ),
       primary: clsx(
-        'bg-cyan-600 text-white',
-        'hover:bg-cyan-700 focus-visible:bg-cyan-700',
+        'border-2 border-slate-200 border-opacity-20',
+        'hover:bg-slate-600 hover:bg-opacity-10',
+        'focus-visible:bg-slate-100 focus-visible:bg-opacity-10 focus-visible:shadow',
       ),
     }[variant],
     {
@@ -85,10 +86,10 @@ function buttonClasses({
       slim: 'px-2',
     }[padding],
     {
-      sm: 'h-[2.5rem] min-w-[2.5rem] text-2xl',
+      sm: 'h-[2.5rem] min-w-[2.5rem] text-lg',
       md: 'h-[2.75rem] min-w-[2.75rem] text-2xl',
       lg: 'h-[3rem] min-w-[3rem] text-3xl',
     }[size],
-    'inline-flex items-center justify-center gap-2 rounded-md py-1 font-medium transition-all',
+    'inline-flex items-center justify-center gap-2 rounded-md py-1 transition-all uppercase font-black',
   )
 }

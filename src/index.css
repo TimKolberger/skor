@@ -7,18 +7,13 @@
     @apply h-full bg-cyan-600 text-slate-50;
   }
 
-  input,
-  textarea {
-    @apply text-slate-900;
-  }
-
   body {
     @apply h-full flex flex-col;
     text-wrap: balance;
   }
 
   #root {
-    @apply flex flex-1 flex-col min-h-[100dvh];
+    @apply flex flex-[1_0_100dvh] flex-col min-h-[100dvh];
   }
 
   :focus-visible {
