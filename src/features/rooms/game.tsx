@@ -8,14 +8,35 @@ import { Link } from 'react-router-dom'
 
 export const Game = () => {
   const { players } = usePlayers()
+  const playersList = Object.entries(players)
+
+  if (!playersList.length) {
+    return <EmptyGame />
+  }
+
   return (
     <>
-      {Object.entries(players).map(([id, player]) => (
+      {playersList.map(([id, player]) => (
         <PlayerTile key={id} player={player} />
       ))}
     </>
   )
 }
+
+function EmptyGame() {
+  return (
+    <div className="flex h-full flex-col items-center justify-center text-2xl font-black">
+      <p>There are no players in this game yet.</p>
+      <p>
+        Get started and{' '}
+        <Link to="players/add" className="underline">
+          create one!
+        </Link>
+      </p>
+    </div>
+  )
+}
+
 const PlayerTile = ({ player }: { player: Player }) => {
   const room = useCurrentRoom()
   const { updatePlayer } = usePlayers()
