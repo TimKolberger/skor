@@ -54,7 +54,7 @@ export default defineConfig({
       exclude: ['src/App.tsx', 'src/main.tsx', '**/*.d.ts'],
     },
     globals: true,
-    environment: 'jsdom',
+    environment: 'happy-dom',
     css: false,
   },
 })
