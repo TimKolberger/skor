@@ -1,20 +1,15 @@
-import { IconButtonLink } from '../../components/button.tsx'
+import { Button, IconButtonLink } from '../../components/button.tsx'
+import { RoomForm } from '../../features/rooms/room-form.tsx'
 import { RoomSchema, useRoomStore } from '../../features/rooms/use-rooms.ts'
 import {
   AppLayout,
   AppLayoutContent,
   AppLayoutHeader,
 } from '../../layout/layout.tsx'
-import { type ReactNode, useEffect } from 'react'
+import { type ReactNode } from 'react'
 import { FiChevronLeft } from 'react-icons/fi'
-import {
-  type ActionFunction,
-  Form,
-  useActionData,
-  useNavigate,
-  useNavigation,
-} from 'react-router-dom'
-import { safeParseAsync } from 'valibot'
+import { useNavigate } from 'react-router-dom'
+import { parse } from 'valibot'
 
 export const Layout = ({ children }: { children: ReactNode }) => {
   return (
@@ -28,42 +23,21 @@ export const Layout = ({ children }: { children: ReactNode }) => {
     </AppLayout>
   )
 }
-export const action = (async ({ request }) => {
-  const addRoom = useRoomStore.getState().addRoom
-  const formData = await request.formData()
-  const name = formData.get('name') as string
-  const parseResult = await safeParseAsync(RoomSchema, { name })
-
-  if (parseResult.success) {
-    addRoom(parseResult.output)
-  }
-
-  return parseResult
-}) satisfies ActionFunction
 
 export default function AddRoomPage() {
-  const navigation = useNavigation()
   const navigate = useNavigate()
-  const actionData = useActionData() as Awaited<
-    ReturnType<typeof action> | undefined
-  >
-  const loading = navigation.state === 'submitting'
-
-  useEffect(() => {
-    if (actionData?.success) {
-      navigate(`/rooms/${actionData.output.id}`)
-    }
-  }, [actionData, navigate])
+  const { addRoom } = useRoomStore()
 
   return (
-    <Form method="POST">
-      <label htmlFor="name">
-        Name
-        <input type="text" name="name" placeholder="Name" />
-      </label>
-      <button type="submit">Add room</button>
-      {loading && <div>loading...</div>}
-      {actionData ? <pre>{JSON.stringify(actionData, null, 2)}</pre> : null}
-    </Form>
+    <RoomForm
+      onSubmit={(room) => {
+        addRoom(parse(RoomSchema, room))
+        navigate(`/rooms/${room.id}`)
+      }}
+    >
+      <Button size="sm" type="submit" className="self-end" variant="primary">
+        Add room
+      </Button>
+    </RoomForm>
   )
 }

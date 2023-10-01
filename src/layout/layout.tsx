@@ -51,7 +51,7 @@ export const AppLayoutContent = (props: AppLayoutContentProps) => {
       className={clsx(
         'flex flex-1 flex-col',
         {
-          'mx-auto w-full max-w-screen-lg px-4': variant === 'max-width',
+          'mx-auto w-full max-w-screen-lg px-4 py-8': variant === 'max-width',
           'items-center justify-center': variant === 'center',
         },
         className,
