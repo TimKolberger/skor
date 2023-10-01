@@ -23,11 +23,13 @@ export const DrawerContent = forwardRef<HTMLDivElement, DrawerContentProps>(
             ...style,
             height,
           }}
-          className="fixed bottom-0 left-0 right-0 z-50 mt-24 flex max-h-[97dvh] flex-col rounded-t-lg bg-slate-800 bg-opacity-30 px-4 backdrop-blur-2xl"
+          className="fixed bottom-0 left-0 right-0 z-50 mt-24 flex max-h-[97dvh] flex-col rounded-t-lg bg-slate-800 bg-opacity-30 backdrop-blur-2xl"
           ref={ref}
         >
           <div className="mx-auto mb-8 mt-2 h-1.5 w-12 flex-shrink-0 rounded-full bg-zinc-300" />
-          <div className="flex flex-col overflow-y-auto pb-8">{children}</div>
+          <div className="flex flex-col overflow-y-auto px-4 pb-8">
+            {children}
+          </div>
           <Vaul.Close asChild>
             <IconButton className="absolute right-2 top-2" size="sm">
               <FiX />
