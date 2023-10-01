@@ -23,7 +23,7 @@ export const DrawerContent = forwardRef<HTMLDivElement, DrawerContentProps>(
             ...style,
             height,
           }}
-          className="fixed bottom-0 left-0 right-0 z-50 mt-24 flex flex-col rounded-t-[10px] bg-slate-800 bg-opacity-30 px-4 backdrop-blur-2xl"
+          className="fixed bottom-0 left-0 right-0 z-50 mt-24 flex max-h-[97dvh] flex-col rounded-t-lg bg-slate-800 bg-opacity-30 px-4 backdrop-blur-2xl"
           ref={ref}
         >
           <div className="mx-auto mb-8 mt-2 h-1.5 w-12 flex-shrink-0 rounded-full bg-zinc-300" />
