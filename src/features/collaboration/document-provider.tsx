@@ -1,10 +1,10 @@
 import { DocumentContext } from './document-context.tsx'
 import { type ReactNode } from 'react'
-import * as Y from 'yjs'
+import { Doc } from 'yjs'
 
 type DocumentProviderProps = {
   children?: ReactNode
-  doc: Y.Doc
+  doc: Doc
 }
 
 export const DocumentProvider = ({ children, doc }: DocumentProviderProps) => (
