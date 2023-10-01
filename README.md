@@ -16,8 +16,8 @@ Persists the **application state locally**, is **offline capable**, and works
 This **P**rogressive **W**eb **A**pplication is built with
 [React](https://github.com/facebook/react),
 [vite](https://github.com/vitejs/vite/),
-[Chakra UI](https://github.com/chakra-ui/chakra-ui) and
-[XState](https://github.com/statelyai/xstate).
+[tailwindcss](https://tailwindcss.com/),
+[Yjs](https://docs.yjs.dev/)
 
 ## Development
 
