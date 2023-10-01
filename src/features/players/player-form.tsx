@@ -50,7 +50,7 @@ export const PlayerForm = ({
           onColorChange?.(nextValue)
         }}
       />
-      <div className="mx-auto flex max-w-screen-lg flex-col gap-6 px-4">
+      <div className="mx-auto flex w-full max-w-lg flex-col gap-6 px-4">
         <PlayerNameInput value={playerName} onChange={setPlayerName} />
         {children}
       </div>
