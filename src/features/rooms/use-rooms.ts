@@ -20,8 +20,14 @@ export const RoomSchema = object({
     if (name) return String(name)
     return 'Unnamed Room'
   }),
-  createdAt: nullish(string([isoTimestamp()])),
-  updatedAt: nullish(string([isoTimestamp()])),
+  createdAt: coerce(nullish(string([isoTimestamp()])), (value) => {
+    if (value) return String(value)
+    return new Date().toISOString()
+  }),
+  updatedAt: coerce(nullish(string([isoTimestamp()])), (value) => {
+    if (value) return String(value)
+    return new Date().toISOString()
+  }),
 })
 
 export type Room = Output<typeof RoomSchema>
