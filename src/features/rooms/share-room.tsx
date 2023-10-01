@@ -1,4 +1,4 @@
-import { IconButton } from '../../components/button.tsx'
+import { Button, IconButton } from '../../components/button.tsx'
 import {
   Drawer,
   DrawerContent,
@@ -35,20 +35,23 @@ export function ShareRoom({ room }: { room: Room }) {
         <h1 className="mb-4 text-center text-2xl font-bold">
           Share room "{room.name}"
         </h1>
-        <div className="stack gap-4">
+        <div className="stack mx-auto max-w-2xl gap-10">
           <p>
             Collaborate with your companions by sharing this room. You can
             update and view the game stats in real-time.
           </p>
           {isShareAvailable ? (
-            <div>
-              <button
+            <div className="flex w-full justify-center">
+              <Button
+                variant="primary"
+                className="border-slate-600"
                 onClick={async () => {
                   await navigator.share(shareData)
                 }}
               >
-                Share via System Share Capabilities
-              </button>
+                <FiShare />
+                Share
+              </Button>
             </div>
           ) : null}
 
@@ -65,16 +68,14 @@ export function ShareRoom({ room }: { room: Room }) {
           </div>
 
           <div>
-            <p>Old school by URL: </p>
-            <div className="flex">
-              <a
-                href={shareRoomUrlString}
-                className="inline-block whitespace-break-spaces break-all"
-              >
+            <p>or you can share this URL</p>
+            <div className="flex gap-2">
+              <code className="border-1 inline-flex select-all items-center whitespace-break-spaces break-all rounded border-slate-400 bg-slate-200 px-2 py-1">
                 {shareRoomUrlString}
-              </a>
+              </code>
               {typeof navigator.clipboard?.writeText === 'function' ? (
                 <IconButton
+                  size="sm"
                   onClick={async () => {
                     await navigator.clipboard.writeText(shareRoomUrlString)
                   }}

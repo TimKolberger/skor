@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 export const Game = () => {
   const { players } = usePlayers()
   const playersList = Object.entries(players)
-
+  console.log(players)
   if (!playersList.length) {
     return <EmptyGame />
   }
@@ -41,13 +41,7 @@ const PlayerTile = ({ player }: { player: Player }) => {
   const room = useCurrentRoom()
   const { updatePlayer } = usePlayers()
   return (
-    <div
-      className={clsx('flex flex-1 select-none shadow', {
-        'bg-cyan-600': player.score === 0,
-        'bg-green-600': player.score > 0,
-        'bg-red-600': player.score < 0,
-      })}
-    >
+    <div className={clsx('flex flex-1 select-none shadow', player.color)}>
       <IconButton
         className="min-h-full min-w-[4rem] rounded-none"
         size="lg"
@@ -58,7 +52,7 @@ const PlayerTile = ({ player }: { player: Player }) => {
       >
         <FiMinus />
       </IconButton>
-      <div className="relative flex flex-1 flex-col items-center justify-center">
+      <div className="relative flex flex-1 flex-col items-center justify-center py-4">
         <Link
           to={`/rooms/${room.id}/players/${player.id}`}
           className={clsx(

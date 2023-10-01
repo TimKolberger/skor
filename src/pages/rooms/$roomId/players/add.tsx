@@ -1,4 +1,6 @@
-import { IconButtonLink } from '../../../../components/button.tsx'
+import { Button, IconButtonLink } from '../../../../components/button.tsx'
+import { PlayerForm } from '../../../../features/players/PlayerForm.tsx'
+import { playerColors } from '../../../../features/players/playerColors.ts'
 import { RoomProvider } from '../../../../features/rooms/room-provider.tsx'
 import { useCurrentRoom } from '../../../../features/rooms/use-current-room.ts'
 import {
@@ -12,6 +14,7 @@ import {
   AppLayoutHeader,
 } from '../../../../layout/layout.tsx'
 import type { ReactNode } from 'react'
+import { useState } from 'react'
 import { FiChevronLeft } from 'react-icons/fi'
 import { useNavigate, useParams } from 'react-router-dom'
 import { parse } from 'valibot'
@@ -33,31 +36,30 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
           <FiChevronLeft />
         </IconButtonLink>
       </AppLayoutHeader>
-      <AppLayoutContent variant="max-width">{children}</AppLayoutContent>
+      <AppLayoutContent variant="full-size">{children}</AppLayoutContent>
     </AppLayout>
   )
 }
 export default function AddPlayerPage() {
-  const { addPlayer } = usePlayers()
-  const params = useParams<{ roomId: string }>()
   const navigate = useNavigate()
+  const params = useParams<{ roomId: string }>()
+  const { addPlayer } = usePlayers()
+  const [playerColor, setPlayerColor] = useState(
+    () => playerColors[Math.floor(Math.random() * playerColors.length)],
+  )
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        const player = Object.fromEntries(
-          new FormData(e.currentTarget).entries(),
-        )
+    <PlayerForm
+      onSubmit={(player) => {
         addPlayer(parse(PlayerSchema, player))
         navigate(`/rooms/${params.roomId}`)
       }}
+      onColorChange={setPlayerColor}
+      initialValues={{ color: playerColor }}
     >
-      <label htmlFor="name">
-        Name
-        <input type="text" name="name" placeholder="Name" />
-      </label>
-      <button type="submit">Add player</button>
-    </form>
+      <Button size="sm" type="submit" className="self-end" variant="primary">
+        Add player
+      </Button>
+    </PlayerForm>
   )
 }
