@@ -1,80 +1,54 @@
 {
-  "name": "cardscore",
+  "name": "cardscore-collab",
   "private": true,
-  "version": "2.0.0",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite --host",
     "build": "vite build",
-    "dev": "vite",
-    "lint": "concurrently pnpm:lint:*",
-    "lint:eslint": "eslint src",
-    "lint:prettier": "prettier --plugin prettier-plugin-organize-imports --check src test",
+    "lint": "concurrently 'pnpm run lint:*'",
+    "lint:eslint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:types": "tsc --noEmit",
-    "prebuild": "pnpm lint",
-    "prettier:write": "prettier --plugin prettier-plugin-organize-imports --write src test",
-    "preview": "vite preview",
-    "test": "vitest",
-    "test:ci": "vitest --run --coverage"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@chakra-ui/react": "2.4.9",
-    "@emotion/react": "11.10.5",
-    "@emotion/styled": "11.10.5",
-    "@fontsource/source-code-pro": "4.5.14",
-    "@xstate/react": "3.1.0",
-    "eslint": "8.32.0",
-    "eslint-config-react-app": "7.0.1",
-    "framer-motion": "8.5.4",
+    "@fontsource/source-code-pro": "5.0.8",
+    "autoprefixer": "10.4.16",
+    "clsx": "2.0.0",
+    "human-id": "4.1.0",
+    "postcss": "8.4.31",
+    "prettier": "3.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-error-boundary": "^3.1.4",
-    "react-hotkeys-hook": "4.3.3",
-    "react-icons": "4.7.1",
-    "react-qr-code": "^2.0.11",
-    "react-router-dom": "6.8.0",
-    "uuid": "9.0.0",
-    "xstate": "4.35.3",
-    "y-indexeddb": "^9.0.9",
-    "y-webrtc": "10.2.4",
-    "yjs": "13.5.46"
+    "react-icons": "4.11.0",
+    "react-qr-code": "2.0.12",
+    "react-router-dom": "6.16.0",
+    "tailwindcss": "3.3.3",
+    "valibot": "0.17.1",
+    "vaul": "0.6.8",
+    "vite-plugin-pwa": "0.16.5",
+    "y-indexeddb": "9.0.11",
+    "y-webrtc": "10.2.5",
+    "yjs": "13.6.8",
+    "zustand": "4.4.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.19.1",
-    "@commitlint/cli": "17.4.2",
-    "@commitlint/config-conventional": "17.4.2",
-    "@testing-library/jest-dom": "5.16.5",
-    "@testing-library/react": "13.4.0",
-    "@types/dotenv-safe": "^8.1.2",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
-    "@types/testing-library__jest-dom": "5.14.5",
-    "@types/uuid": "^9.0.0",
-    "@vitejs/plugin-react": "3.0.1",
-    "@vitest/coverage-c8": "0.28.3",
-    "concurrently": "7.6.0",
-    "dotenv-safe": "^8.2.0",
-    "jsdom": "21.1.0",
-    "lint-staged": "13.1.0",
-    "prettier": "2.8.3",
-    "prettier-plugin-organize-imports": "3.2.2",
-    "typescript": "4.9.4",
-    "vite": "4.0.4",
-    "vite-plugin-pwa": "0.14.1",
-    "vitest": "0.28.3",
-    "workbox-window": "^6.5.4"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json}": [
-      "prettier --plugin prettier-plugin-organize-imports --write"
-    ]
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "packageManager": "pnpm@7.26.1"
+    "@testing-library/react": "^14.0.0",
+    "@trivago/prettier-plugin-sort-imports": "4.2.0",
+    "@types/react": "18.2.23",
+    "@types/react-dom": "18.2.8",
+    "@typescript-eslint/eslint-plugin": "6.7.3",
+    "@typescript-eslint/parser": "6.7.3",
+    "@vitejs/plugin-react": "4.1.0",
+    "@vitest/coverage-v8": "0.34.6",
+    "concurrently": "8.2.1",
+    "eslint": "8.50.0",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react-refresh": "0.4.3",
+    "prettier-plugin-tailwindcss": "0.5.4",
+    "rollup-plugin-visualizer": "^5.9.2",
+    "typescript": "5.2.2",
+    "vite": "4.4.9",
+    "vitest": "0.34.6"
+  }
 }

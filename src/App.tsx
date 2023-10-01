@@ -1,17 +1,7 @@
-import { ChakraProvider } from "@chakra-ui/react"
-import * as React from "react"
-import { RouterProvider } from "react-router-dom"
+import { AppRouter } from './features/router/app-router.tsx'
 
-import { AppErrorBoundary } from "./feature/error-boundary/AppErrorBoundary"
-import { router } from "./feature/navigation/routes"
-import { theme } from "./theme"
+function App() {
+  return <AppRouter />
+}
 
-export const App = () => (
-  <ChakraProvider theme={theme}>
-    <AppErrorBoundary>
-      <React.Suspense>
-        <RouterProvider router={router} />
-      </React.Suspense>
-    </AppErrorBoundary>
-  </ChakraProvider>
-)
+export default App
