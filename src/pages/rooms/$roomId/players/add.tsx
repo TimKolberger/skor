@@ -1,6 +1,6 @@
 import { Button, IconButtonLink } from '../../../../components/button.tsx'
-import { PlayerForm } from '../../../../features/players/PlayerForm.tsx'
-import { playerColors } from '../../../../features/players/playerColors.ts'
+import { playerColors } from '../../../../features/players/player-colors.ts'
+import { PlayerForm } from '../../../../features/players/player-form.tsx'
 import { RoomProvider } from '../../../../features/rooms/room-provider.tsx'
 import { useCurrentRoom } from '../../../../features/rooms/use-current-room.ts'
 import {

@@ -9,17 +9,16 @@ import { Link } from 'react-router-dom'
 export const Game = () => {
   const { players } = usePlayers()
   const playersList = Object.entries(players)
-  console.log(players)
   if (!playersList.length) {
     return <EmptyGame />
   }
 
   return (
-    <>
+    <ul className="flex flex-1 flex-col">
       {playersList.map(([id, player]) => (
         <PlayerTile key={id} player={player} />
       ))}
-    </>
+    </ul>
   )
 }
 

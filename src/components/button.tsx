@@ -11,11 +11,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = 'ghost',
       padding = 'normal',
       size = 'md',
+      type = 'button',
       ...rest
     } = props
     return (
       <button
         {...rest}
+        type={type}
         className={clsx(buttonClasses({ variant, padding, size }), className)}
         ref={ref}
       />
