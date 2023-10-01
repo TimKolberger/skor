@@ -21,11 +21,7 @@
   }
 }
 
-@layer utilities {
-  .stack {
-    @apply flex flex-col items-start;
-  }
-
+@layer components {
   .glass {
     position: absolute;
     inset: 0;
@@ -41,10 +37,10 @@
     /*   Cut the part of the backdrop that falls outside of <nav /> */
     --cutoff: calc(100% - var(--extended-by));
     -webkit-mask-image: linear-gradient(
-      to bottom,
-      black 0,
-      black var(--cutoff),
-      transparent var(--cutoff)
+            to bottom,
+            black 0,
+            black var(--cutoff),
+            transparent var(--cutoff)
     );
   }
 
@@ -69,10 +65,16 @@
     pointer-events: none;
 
     -webkit-mask-image: linear-gradient(
-      to bottom,
-      black 0,
-      black var(--offset),
-      transparent var(--offset)
+            to bottom,
+            black 0,
+            black var(--offset),
+            transparent var(--offset)
     );
+  }
+}
+
+@layer utilities {
+  .stack {
+    @apply flex flex-col items-start;
   }
 }

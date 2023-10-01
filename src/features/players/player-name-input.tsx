@@ -1,5 +1,5 @@
 import { IconButton } from '../../components/button.tsx'
-import { generatePlayerName } from './generatePlayerName.ts'
+import { generatePlayerName } from './generate-player-name.ts'
 import { FiShuffle, FiX } from 'react-icons/fi'
 
 interface PlayerNameInputProps {

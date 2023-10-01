@@ -32,9 +32,7 @@ export function ShareRoom({ room }: { room: Room }) {
         </IconButton>
       </DrawerTrigger>
       <DrawerContent>
-        <h1 className="mb-4 text-center text-2xl font-bold">
-          Share room "{room.name}"
-        </h1>
+        <h1 className="mb-4 text-2xl font-bold">Share room "{room.name}"</h1>
         <div className="stack mx-auto max-w-2xl gap-10">
           <p>
             Collaborate with your companions by sharing this room. You can
@@ -56,7 +54,7 @@ export function ShareRoom({ room }: { room: Room }) {
           ) : null}
 
           <div className="flex flex-col self-stretch">
-            <div className="flex justify-center">
+            <div className="mx-auto flex justify-center rounded-lg bg-white p-4">
               <QRCode
                 size={256}
                 height="auto"
@@ -69,8 +67,8 @@ export function ShareRoom({ room }: { room: Room }) {
 
           <div>
             <p>or you can share this URL</p>
-            <div className="flex gap-2">
-              <code className="border-1 inline-flex select-all items-center whitespace-break-spaces break-all rounded border-slate-400 bg-slate-200 px-2 py-1">
+            <div className="flex gap-2 ">
+              <code className="border-1 inline-flex select-all items-center whitespace-break-spaces break-all rounded border-slate-400 bg-slate-200 bg-opacity-20 px-2 py-1">
                 {shareRoomUrlString}
               </code>
               {typeof navigator.clipboard?.writeText === 'function' ? (
