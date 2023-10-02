@@ -1,3 +1,4 @@
+import { useLatestRef } from './use-latest-ref.ts'
 import { useCallback, useEffect, useRef } from 'react'
 
 export function useTickingButton({ onTick }: { onTick: () => void }) {
@@ -41,10 +42,4 @@ export function useTickingButton({ onTick }: { onTick: () => void }) {
       onTick()
     },
   }
-}
-
-function useLatestRef<T>(value: T) {
-  const ref = useRef(value)
-  ref.current = value
-  return ref
 }
