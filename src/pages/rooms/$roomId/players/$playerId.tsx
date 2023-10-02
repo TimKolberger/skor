@@ -56,7 +56,10 @@ export default function EditPlayerPage() {
   const navigate = useNavigate()
   const params = useParams<{ roomId: string; playerId: string }>()
   const { players, updatePlayer } = usePlayers()
-  const initialPlayer = players[params.playerId!]
+  const initialPlayer = players.find((p) => p.id === params.playerId)
+  if (!initialPlayer) {
+    throw new Error(`Player ${params.playerId} not found`)
+  }
   const [playerColor, setPlayerColor] = useState(
     () =>
       initialPlayer.color ||
