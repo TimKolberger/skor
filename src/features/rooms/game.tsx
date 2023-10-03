@@ -1,4 +1,5 @@
 import { IconButton } from '../../components/button.tsx'
+import { useDebounce } from '../../components/use-debounce.ts'
 import { useTickingButton } from '../../components/use-ticking-button.ts'
 import { useCurrentRoom } from './use-current-room.ts'
 import { type Player, usePlayers } from './use-players.ts'
@@ -58,6 +59,15 @@ function EmptyGame() {
 const PlayerTile = ({ player }: { player: Player }) => {
   const room = useCurrentRoom()
   const { updatePlayer } = usePlayers()
+  const score = player.score || 0
+  const [debouncedScore] = useDebounce(score, 5_000)
+
+  const diff = score - debouncedScore
+  const scoreView =
+    diff !== 0
+      ? `${debouncedScore} ${diff >= 0 ? '+' : '-'} ${Math.abs(diff)}`
+      : score
+
   return (
     <div className={clsx('flex flex-1 select-none shadow', player.color)}>
       <IconButton
@@ -81,7 +91,7 @@ const PlayerTile = ({ player }: { player: Player }) => {
           {player.name}
         </Link>
         <div className="px-2 text-center text-5xl font-black tabular-nums leading-tight">
-          {player.score}
+          {scoreView}
         </div>
       </div>
       <IconButton
