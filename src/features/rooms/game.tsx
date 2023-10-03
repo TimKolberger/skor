@@ -2,7 +2,7 @@ import { IconButton } from '../../components/button.tsx'
 import { useDebounce } from '../../components/use-debounce.ts'
 import { useTickingButton } from '../../components/use-ticking-button.ts'
 import { useCurrentRoom } from './use-current-room.ts'
-import { type Player, usePlayers } from './use-players.ts'
+import { DEBOUNCE_DELAY, type Player, usePlayers } from './use-players.ts'
 import { clsx } from 'clsx'
 import { AnimatePresence, LayoutGroup, Reorder } from 'framer-motion'
 import { FiMinus, FiPlus } from 'react-icons/fi'
@@ -60,7 +60,7 @@ const PlayerTile = ({ player }: { player: Player }) => {
   const room = useCurrentRoom()
   const { updatePlayer } = usePlayers()
   const score = player.score || 0
-  const [debouncedScore] = useDebounce(score, 5_000)
+  const [debouncedScore] = useDebounce(score, DEBOUNCE_DELAY)
 
   const diff = score - debouncedScore
   const scoreView =
