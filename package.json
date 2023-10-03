@@ -19,6 +19,7 @@
     "@fontsource/source-code-pro": "5.0.8",
     "autoprefixer": "10.4.16",
     "clsx": "2.0.0",
+    "framer-motion": "^10.16.4",
     "human-id": "4.1.0",
     "postcss": "8.4.31",
     "prettier": "3.0.3",
