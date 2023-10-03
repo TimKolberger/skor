@@ -49,13 +49,15 @@ function sortByScoreExtractId(
     .map((p) => p.id)
 }
 
+export const DEBOUNCE_DELAY = 4_000
+
 export function usePlayers() {
   const { ymap: settingsMap, sortDirection } = useSettings()
   const { ymap: playersMap, state, set, remove } = useMap<Player>('players')
   const [order, setOrder] = useState(() =>
     sortByScoreExtractId(state, sortDirection),
   )
-  const [debouncedOrder, setDebouncedOrder] = useDebounce(order, 5_000)
+  const [debouncedOrder, setDebouncedOrder] = useDebounce(order, DEBOUNCE_DELAY)
 
   const stateRef = useLatestRef(state)
   useEffect(() => {
