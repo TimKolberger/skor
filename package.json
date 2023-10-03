@@ -55,7 +55,8 @@
     "rollup-plugin-visualizer": "^5.9.2",
     "typescript": "5.2.2",
     "vite": "4.4.9",
-    "vitest": "0.34.6"
+    "vitest": "0.34.6",
+    "workbox-window": "^7.0.0"
   },
   "packageManager": "pnpm@8.8.0"
 }
