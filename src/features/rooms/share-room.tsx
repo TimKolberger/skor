@@ -5,9 +5,10 @@ import {
   DrawerTrigger,
 } from '../../components/drawer.tsx'
 import type { Room } from './use-rooms.ts'
-import { useMemo } from 'react'
+import { lazy, Suspense, useMemo } from 'react'
 import { FiCopy, FiShare } from 'react-icons/fi'
-import QRCode from 'react-qr-code'
+
+const LazyQrCode = lazy(() => import('react-qr-code'))
 
 export function ShareRoom({ room }: { room: Room }) {
   const shareRoomUrlString = useMemo(() => {
@@ -55,13 +56,21 @@ export function ShareRoom({ room }: { room: Room }) {
 
           <div className="flex flex-col self-stretch">
             <div className="mx-auto flex justify-center rounded-lg bg-white p-4">
-              <QRCode
-                size={256}
-                height="auto"
-                width="100%"
-                value={shareRoomUrlString}
-                viewBox={`0 0 256 256`}
-              />
+              <Suspense
+                fallback={
+                  <div className="flex h-64 w-64 items-center justify-center text-slate-400">
+                    Loading...
+                  </div>
+                }
+              >
+                <LazyQrCode
+                  size={256}
+                  height="auto"
+                  width="100%"
+                  value={shareRoomUrlString}
+                  viewBox={`0 0 256 256`}
+                />
+              </Suspense>
             </div>
           </div>
 
