@@ -52,7 +52,7 @@ export default function RoomsPage() {
             >
               {room.name}
             </Link>
-            <div className="flex justify-evenly">
+            <div className="flex">
               <Time dateTime={room.createdAt} />
             </div>
           </div>
