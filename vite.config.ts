@@ -57,4 +57,13 @@ export default defineConfig({
     environment: 'happy-dom',
     css: false,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          collaboration: ['yjs', 'y-webrtc', 'y-indexeddb'],
+        },
+      },
+    },
+  },
 })
