@@ -26,7 +26,10 @@ export const AppLayoutHeader = (props: AppLayoutHeaderProps) => {
         <div className="flex items-end justify-between">
           <div className="flex flex-col justify-end text-slate-200">
             <span>{title}</span>
-            <Link to="/" className="gap-3 text-5xl font-black">
+            <Link
+              to="/"
+              className="-ml-3 rounded-md px-3 text-5xl font-black transition-colors hover:bg-slate-200 hover:bg-opacity-10"
+            >
               SK0R
             </Link>
           </div>
