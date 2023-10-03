@@ -14,6 +14,9 @@ dependencies:
   clsx:
     specifier: 2.0.0
     version: 2.0.0
+  framer-motion:
+    specifier: ^10.16.4
+    version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
   human-id:
     specifier: 4.1.0
     version: 4.1.0
@@ -1339,6 +1342,20 @@ packages:
   /@bcoe/v8-coverage@0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
+
+  /@emotion/is-prop-valid@0.8.8:
+    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
+    requiresBuild: true
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    dev: false
+    optional: true
+
+  /@emotion/memoize@0.7.4:
+    resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /@esbuild/android-arm64@0.18.20:
     resolution: {integrity: sha512-Nz4rJcchGDtENV0eMKUNa6L12zz2zBDXuhj/Vjh18zGqB44Bi7MBMSXjgunJgjRhCmKOjnPuZp4Mb6OKqtMHLQ==}
@@ -3194,6 +3211,24 @@ packages:
 
   /fraction.js@4.3.6:
     resolution: {integrity: sha512-n2aZ9tNfYDwaHhvFTkhFErqOMIb8uyzSQ+vGJBjZyanAKZVbGUQ1sngfk9FdkBw7G26O7AgNjLcecLffD1c7eg==}
+    dev: false
+
+  /framer-motion@10.16.4(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-p9V9nGomS3m6/CALXqv6nFGMuFOxbWsmaOrdmhyQimMIlLl3LC7h7l86wge/Js/8cRu5ktutS/zlzgR7eBOtFA==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tslib: 2.6.2
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
     dev: false
 
   /fs-extra@9.1.0:

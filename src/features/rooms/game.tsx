@@ -3,6 +3,7 @@ import { useTickingButton } from '../../components/use-ticking-button.ts'
 import { useCurrentRoom } from './use-current-room.ts'
 import { type Player, usePlayers } from './use-players.ts'
 import { clsx } from 'clsx'
+import { AnimatePresence, LayoutGroup, Reorder } from 'framer-motion'
 import { FiMinus, FiPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
@@ -13,11 +14,30 @@ export const Game = () => {
   }
 
   return (
-    <ul className="flex flex-1 flex-col">
-      {players.map((player) => (
-        <PlayerTile key={player.id} player={player} />
-      ))}
-    </ul>
+    <LayoutGroup>
+      <Reorder.Group
+        axis="y"
+        values={players}
+        onReorder={() => void 0}
+        className="flex flex-1 flex-col"
+      >
+        <AnimatePresence>
+          {players.map((player) => {
+            return (
+              <Reorder.Item
+                key={player.id}
+                value={player}
+                exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                drag={false}
+                className="flex"
+              >
+                <PlayerTile player={player} />
+              </Reorder.Item>
+            )
+          })}
+        </AnimatePresence>
+      </Reorder.Group>
+    </LayoutGroup>
   )
 }
 
