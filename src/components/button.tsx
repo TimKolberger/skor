@@ -73,13 +73,13 @@ function buttonClasses({
   return clsx(
     {
       ghost: clsx(
-        'hover:bg-slate-600 hover:bg-opacity-10',
+        'hover:bg-slate-200 hover:bg-opacity-10',
         'active:bg-opacity-5',
         'focus-visible:bg-slate-100 focus-visible:bg-opacity-10 focus-visible:shadow',
       ),
       primary: clsx(
         'border-2 border-slate-200 border-opacity-20',
-        'hover:bg-slate-600 hover:bg-opacity-10',
+        'hover:bg-slate-200 hover:bg-opacity-10',
         'focus-visible:bg-slate-100 focus-visible:bg-opacity-10 focus-visible:shadow',
       ),
     }[variant],
