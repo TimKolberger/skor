@@ -20,7 +20,7 @@
     "@chakra-ui/react": "2.8.1",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
-    "@fontsource/source-code-pro": "5.0.12",
+    "@fontsource/source-code-pro": "5.0.13",
     "@xstate/react": "3.2.2",
     "eslint": "8.51.0",
     "eslint-config-react-app": "7.0.1",
