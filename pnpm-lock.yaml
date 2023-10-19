@@ -15,8 +15,8 @@ dependencies:
     specifier: 11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.29)(react@18.2.0)
   '@fontsource/source-code-pro':
-    specifier: 5.0.13
-    version: 5.0.13
+    specifier: 5.0.14
+    version: 5.0.14
   '@xstate/react':
     specifier: 3.2.2
     version: 3.2.2(@types/react@18.2.29)(react@18.2.0)(xstate@4.38.2)
@@ -3075,8 +3075,8 @@ packages:
     resolution: {integrity: sha512-HxjQ8Qn+4SI3/AFv6sOrDB+g6PpUTDwSJiQqOrnneEk8L71161srI9gjzzZvYVbzHiVg/BvcH95+cK/zfIt4pg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@fontsource/source-code-pro@5.0.13:
-    resolution: {integrity: sha512-fGKE9YC1mjvp0XjW4dVdqOjU+oROgPoT7MavORcJB+v1tzcqPJFJ0dbxZoa9KEMghf3HzfAYwfdgYvWPn/yTFA==}
+  /@fontsource/source-code-pro@5.0.14:
+    resolution: {integrity: sha512-sHRYwzsmog5Ly32zAJyeg8d4xta3jhymeZzmI389vu0h0AODZit6pd5ROuvYI3+ceTtBr4fbtldc39wCuwUcFw==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.11:
