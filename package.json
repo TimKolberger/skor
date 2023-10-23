@@ -32,7 +32,7 @@
     "react-icons": "4.11.0",
     "react-router-dom": "6.17.0",
     "vite-tsconfig-paths": "^4.2.1",
-    "xstate": "4.38.2"
+    "xstate": "4.38.3"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.22.15",
