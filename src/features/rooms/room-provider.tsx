@@ -2,7 +2,6 @@ import { DocumentProvider } from '../collaboration/document-provider.tsx'
 import { useCurrentRoom } from './use-current-room.ts'
 import { type ReactNode, useEffect, useRef, useState } from 'react'
 import { IndexeddbPersistence } from 'y-indexeddb'
-// @ts-expect-error - not sure why TS cannot find types
 import { WebrtcProvider } from 'y-webrtc'
 import { Doc } from 'yjs'
 
@@ -21,11 +20,7 @@ export const RoomProvider = ({ children }: { children: ReactNode }) => {
       signaling: ['wss://signaling.kolberger.eu/'],
     })
     indexeddbPersistenceRef.current = new IndexeddbPersistence(docName, yDoc)
-
-    Promise.all([
-      indexeddbPersistenceRef.current?.whenSynced,
-      webrtcProviderRef.current?.whenSynced,
-    ])
+    indexeddbPersistenceRef.current?.whenSynced
       .then(() => {
         setDoc(yDoc)
       })
