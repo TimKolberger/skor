@@ -2,7 +2,11 @@ import { IconButton } from '../../components/button.tsx'
 import { useDebounce } from '../../components/use-debounce.ts'
 import { useTickingButton } from '../../components/use-ticking-button.ts'
 import { useCurrentRoom } from './use-current-room.ts'
-import { DEBOUNCE_DELAY, type Player, usePlayers } from './use-players.ts'
+import {
+  DEBOUNCE_DELAY,
+  type PlayerWithScore,
+  usePlayers,
+} from './use-players.ts'
 import { clsx } from 'clsx'
 import { AnimatePresence, LayoutGroup, Reorder } from 'framer-motion'
 import { FiMinus, FiPlus } from 'react-icons/fi'
@@ -56,9 +60,9 @@ function EmptyGame() {
   )
 }
 
-const PlayerTile = ({ player }: { player: Player }) => {
+const PlayerTile = ({ player }: { player: PlayerWithScore }) => {
   const room = useCurrentRoom()
-  const { updatePlayer } = usePlayers()
+  const { updateScore } = usePlayers()
   const score = player.score || 0
   const [debouncedScore] = useDebounce(score, DEBOUNCE_DELAY)
 
@@ -74,8 +78,7 @@ const PlayerTile = ({ player }: { player: Player }) => {
         className="min-h-full min-w-[4rem] rounded-none"
         size="lg"
         {...useTickingButton({
-          onTick: () =>
-            updatePlayer({ id: player.id, score: (player.score || 0) - 1 }),
+          onTick: () => updateScore(player.id, -1),
         })}
       >
         <FiMinus />
@@ -98,8 +101,7 @@ const PlayerTile = ({ player }: { player: Player }) => {
         className="min-h-full min-w-[4rem] rounded-none"
         size="lg"
         {...useTickingButton({
-          onTick: () =>
-            updatePlayer({ id: player.id, score: (player.score || 0) + 1 }),
+          onTick: () => updateScore(player.id, 1),
         })}
       >
         <FiPlus />

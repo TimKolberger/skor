@@ -1,7 +1,7 @@
 import { useDebounce } from '../../components/use-debounce.ts'
 import { useLatestRef } from '../../components/use-latest-ref.ts'
 import { createUniqueId } from '../../utils/create-unique-id.ts'
-import { useMap } from '../collaboration/y-doc-provider.tsx'
+import { useArray, useMap } from '../collaboration/y-doc-provider.tsx'
 import { type SortDirection, useSettings } from './use-settings.ts'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
@@ -9,7 +9,6 @@ import {
   isoTimestamp,
   minLength,
   nullish,
-  number,
   object,
   type Output,
   string,
@@ -24,10 +23,6 @@ export const PlayerSchema = object({
     if (name) return String(name)
     return 'Unnamed Player'
   }),
-  score: coerce(number(), (value) => {
-    if (value) return Number(value)
-    return 0
-  }),
   color: coerce(string(), (value) => {
     if (value) return String(value)
     return 'red'
@@ -37,9 +32,10 @@ export const PlayerSchema = object({
 })
 
 export type Player = Output<typeof PlayerSchema>
+export type PlayerWithScore = Player & { score: number }
 
 function sortByScoreExtractId(
-  state: Record<string, Player>,
+  state: Record<string, PlayerWithScore>,
   direction: SortDirection = 'desc',
 ) {
   return Object.values(state)
@@ -51,19 +47,71 @@ function sortByScoreExtractId(
 
 export const DEBOUNCE_DELAY = 4_000
 
+type ScoreAction = {
+  playerId: Player['id']
+  scoreDiff: number
+}
+
+function enhancePlayersWithScore(
+  playersState: Record<string, Player>,
+  scoreByPlayerId: Record<string, number>,
+) {
+  return Object.entries(playersState).reduce<
+    Record<Player['id'], PlayerWithScore>
+  >((acc, [id, player]) => {
+    acc[id] = {
+      ...player,
+      score: scoreByPlayerId[id] ?? 0,
+    }
+    return acc
+  }, {})
+}
+
+function scoreByPlayerIdLens(scoreState: ScoreAction[]) {
+  return scoreState.reduce<Record<Player['id'], number>>(
+    (acc, { playerId, scoreDiff }) => {
+      if (!acc[playerId]) {
+        acc[playerId] = 0
+      }
+      acc[playerId] += scoreDiff
+      return acc
+    },
+    {},
+  )
+}
+
 export function usePlayers() {
   const { ymap: settingsMap, sortDirection } = useSettings()
-  const { ymap: playersMap, state, set, remove } = useMap<Player>('players')
+  const {
+    ymap: playersMap,
+    state: playersState,
+    set: setPlayer,
+    remove: removePlayer,
+  } = useMap<Player>('players')
+  const {
+    yarray: scoreArray,
+    state: scoreState,
+    push: pushScore,
+  } = useArray<ScoreAction>('scores')
+
+  const { scoreByPlayerId, playersWithScore } = useMemo(() => {
+    const scoreByPlayerId = scoreByPlayerIdLens(scoreState)
+    return {
+      scoreByPlayerId,
+      playersWithScore: enhancePlayersWithScore(playersState, scoreByPlayerId),
+    }
+  }, [playersState, scoreState])
+
   const [order, setOrder] = useState(() =>
-    sortByScoreExtractId(state, sortDirection),
+    sortByScoreExtractId(playersWithScore, sortDirection),
   )
   const [debouncedOrder, setDebouncedOrder] = useDebounce(order, DEBOUNCE_DELAY)
 
-  const stateRef = useLatestRef(state)
+  const playerStateRef = useLatestRef(playersWithScore)
   useEffect(() => {
     const listener: Parameters<typeof settingsMap.observe>[0] = (e) => {
       const newOrder = sortByScoreExtractId(
-        stateRef.current,
+        playerStateRef.current,
         e.target.toJSON().sortDirection,
       )
       setOrder(newOrder)
@@ -73,40 +121,74 @@ export function usePlayers() {
     return () => {
       settingsMap.unobserve(listener)
     }
-  }, [setDebouncedOrder, settingsMap, stateRef])
+  }, [setDebouncedOrder, settingsMap, playerStateRef])
 
   useEffect(() => {
     const listener: Parameters<typeof playersMap.observe>[0] = (e) => {
-      setOrder(sortByScoreExtractId(e.target.toJSON(), sortDirection))
+      setOrder(
+        sortByScoreExtractId(
+          enhancePlayersWithScore(e.target.toJSON(), scoreByPlayerId),
+          sortDirection,
+        ),
+      )
     }
     playersMap.observe(listener)
     return () => {
       playersMap.unobserve(listener)
     }
-  }, [sortDirection, playersMap])
+  }, [playersMap, scoreByPlayerId, sortDirection])
+
+  useEffect(() => {
+    const listener: Parameters<typeof scoreArray.observe>[0] = (e) => {
+      setOrder(
+        sortByScoreExtractId(
+          enhancePlayersWithScore(
+            playerStateRef.current,
+            scoreByPlayerIdLens(e.target.toJSON()),
+          ),
+          sortDirection,
+        ),
+      )
+    }
+    scoreArray.observe(listener)
+    return () => {
+      scoreArray.unobserve(listener)
+    }
+  }, [playerStateRef, playersMap, scoreArray, scoreByPlayerId, sortDirection])
 
   return {
     players: useMemo(
-      () => debouncedOrder.map((id) => state[id]).filter(Boolean),
-      [debouncedOrder, state],
+      () => debouncedOrder.map((id) => playersWithScore[id]).filter(Boolean),
+      [debouncedOrder, playersWithScore],
     ),
     addPlayer: useCallback(
       (player: Player) => {
-        set(player.id, player)
+        setPlayer(player.id, player)
       },
-      [set],
+      [setPlayer],
     ),
     removePlayer: useCallback(
       (playerId: string) => {
-        remove(playerId)
+        removePlayer(playerId)
       },
-      [remove],
+      [removePlayer],
     ),
     updatePlayer: useCallback(
       (player: Partial<Player> & { id: Player['id'] }) => {
-        set(player.id, { ...state[player.id], ...player })
+        setPlayer(player.id, { ...playersState[player.id], ...player })
       },
-      [set, state],
+      [setPlayer, playersState],
+    ),
+    updateScore: useCallback(
+      (playerId: Player['id'], scoreDiff: number) => {
+        pushScore([
+          {
+            playerId,
+            scoreDiff,
+          },
+        ])
+      },
+      [pushScore],
     ),
   }
 }
