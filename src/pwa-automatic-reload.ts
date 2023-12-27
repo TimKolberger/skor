@@ -1,12 +1,13 @@
-import { registerSW } from "virtual:pwa-register"
+import { registerSW } from 'virtual:pwa-register'
 
-const REFRESH_INTERVAL_IN_MS = 20 * 60 * 1000
+const MINUTE_IN_MS = 60_000
+const REFRESH_INTERVAL_IN_MS = 20 * MINUTE_IN_MS
 
 registerSW({
   immediate: true,
   onRegisteredSW: (_, registration) => {
-    setInterval(() => {
-      registration?.update()
+    setInterval(async () => {
+      await registration?.update()
     }, REFRESH_INTERVAL_IN_MS)
   },
 })

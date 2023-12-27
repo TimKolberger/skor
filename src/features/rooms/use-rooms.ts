@@ -35,7 +35,7 @@ export type Room = Output<typeof RoomSchema>
 export const useRoomStore = create(
   persist<{
     rooms: Room[]
-    addRoom: (room: Room) => void
+    addRoom: (room: Omit<Room, 'createdAt' | 'updatedAt'>) => void
     editRoom: (room: Room) => void
     removeRoom: (id: string) => void
   }>(
