@@ -44,7 +44,7 @@ export function useArray<T>(name: string) {
 
   return {
     yarray: array,
-    state: array.toJSON(),
+    state: array.toJSON() as T[],
     get: useCallback((index: number) => array.get(index), [array]),
     insert: useCallback(
       (index: number, content: T[]) => array.insert(index, content),
