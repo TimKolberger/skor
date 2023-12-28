@@ -18,8 +18,8 @@ dependencies:
     specifier: 5.0.16
     version: 5.0.16
   '@xstate/react':
-    specifier: 3.2.2
-    version: 3.2.2(@types/react@18.2.46)(react@18.2.0)(xstate@4.38.3)
+    specifier: 4.0.2
+    version: 4.0.2(@types/react@18.2.46)(react@18.2.0)(xstate@5.4.1)
   eslint:
     specifier: 8.56.0
     version: 8.56.0
@@ -51,8 +51,8 @@ dependencies:
     specifier: ^4.2.1
     version: 4.2.1(typescript@5.3.3)(vite@5.0.10)
   xstate:
-    specifier: 4.38.3
-    version: 4.38.3
+    specifier: 5.4.1
+    version: 5.4.1
 
 devDependencies:
   '@babel/eslint-parser':
@@ -4863,22 +4863,19 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
-  /@xstate/react@3.2.2(@types/react@18.2.46)(react@18.2.0)(xstate@4.38.3):
-    resolution: {integrity: sha512-feghXWLedyq8JeL13yda3XnHPZKwYDN5HPBLykpLeuNpr9178tQd2/3d0NrH6gSd0sG5mLuLeuD+ck830fgzLQ==}
+  /@xstate/react@4.0.2(@types/react@18.2.46)(react@18.2.0)(xstate@5.4.1):
+    resolution: {integrity: sha512-t5Xau/H8nS9nlowV+72RneqaQ/wqkQ8C/8ij4gEvHcoCQptc2REgZkjOpV74xyTabUZnUeYwdDTsMmz5ot3S+Q==}
     peerDependencies:
-      '@xstate/fsm': ^2.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      xstate: ^4.37.2
+      xstate: ^5.4.1
     peerDependenciesMeta:
-      '@xstate/fsm':
-        optional: true
       xstate:
         optional: true
     dependencies:
       react: 18.2.0
       use-isomorphic-layout-effect: 1.1.2(@types/react@18.2.46)(react@18.2.0)
       use-sync-external-store: 1.2.0(react@18.2.0)
-      xstate: 4.38.3
+      xstate: 5.4.1
     transitivePeerDependencies:
       - '@types/react'
     dev: false
@@ -9477,8 +9474,8 @@ packages:
     resolution: {integrity: sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==}
     dev: true
 
-  /xstate@4.38.3:
-    resolution: {integrity: sha512-SH7nAaaPQx57dx6qvfcIgqKRXIh4L0A1iYEqim4s1u7c9VoCgzZc+63FY90AKU4ZzOC2cfJzTnpO4zK7fCUzzw==}
+  /xstate@5.4.1:
+    resolution: {integrity: sha512-1DDT047hsTCSgm3BwLyb4sXQDmTdbLutc4ni0MLACgd2yX6vij35pnNNf1F4U6kQ8njx6NxQ6wpLjlh1lqs0NQ==}
     dev: false
 
   /y18n@5.0.8:
