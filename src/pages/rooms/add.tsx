@@ -35,7 +35,7 @@ export default function AddRoomPage() {
         navigate(`/rooms/${room.id}`)
       }}
     >
-      <Button size="sm" type="submit" className="self-end" variant="primary">
+      <Button type="submit" variant="primary">
         Add room
       </Button>
     </RoomForm>

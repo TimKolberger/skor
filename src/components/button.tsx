@@ -79,9 +79,9 @@ export function buttonClasses({
         'focus-visible:bg-opacity-10 focus-visible:shadow',
       ),
       primary: clsx(
-        'border-2 border-slate-200 border-opacity-20',
-        'hover:bg-slate-200 hover:bg-opacity-10',
-        'focus-visible:bg-slate-100 focus-visible:bg-opacity-10 focus-visible:shadow',
+        'bg-slate-800 hover:bg-slate-900',
+        'active:bg-slate-950 aria-expanded:bg-slate-950',
+        'focus-visible:bg-slate-900 focus-visible:shadow',
       ),
     }[variant],
     {
@@ -90,8 +90,8 @@ export function buttonClasses({
     }[padding],
     {
       sm: 'h-[2.5rem] min-w-[2.5rem] text-lg',
-      md: 'h-[2.75rem] min-w-[2.75rem] text-2xl',
-      lg: 'h-[3rem] min-w-[3rem] text-3xl',
+      md: 'h-[2.75rem] min-w-[2.75rem] text-xl',
+      lg: 'h-[3rem] min-w-[3rem] text-2xl',
     }[size],
     'inline-flex items-center justify-center gap-2 rounded-md py-1 transition-all uppercase font-black',
   )

@@ -57,7 +57,7 @@ export default function AddPlayerPage() {
       onColorChange={setPlayerColor}
       initialValues={{ color: playerColor }}
     >
-      <Button size="sm" type="submit" className="self-end" variant="primary">
+      <Button type="submit" className="" variant="primary">
         Add player
       </Button>
     </PlayerForm>
