@@ -75,7 +75,7 @@ export default function EditPlayerPage() {
       onColorChange={setPlayerColor}
       initialValues={{ ...initialPlayer, color: playerColor }}
     >
-      <Button size="sm" type="submit" className="self-end" variant="primary">
+      <Button type="submit" variant="primary">
         Save player
       </Button>
     </PlayerForm>
