@@ -14,7 +14,7 @@ import {
 } from '../../../../../layout/layout.tsx'
 import { clsx } from 'clsx'
 import { type ReactNode } from 'react'
-import { FiChevronLeft, FiUser, FiUserMinus } from 'react-icons/fi'
+import { FiChevronLeft, FiEdit, FiTrash2 } from 'react-icons/fi'
 import { useNavigate, useParams } from 'react-router-dom'
 
 export const Layout = ({ children }: LayoutProps) => {
@@ -40,7 +40,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
         <IconButtonLink
           to={`/rooms/${room.id}/players/${params.playerId}/edit`}
         >
-          <FiUser />
+          <FiEdit />
         </IconButtonLink>
         <IconButton
           onClick={() => {
@@ -48,7 +48,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
             navigate(`/rooms/${room.id}`)
           }}
         >
-          <FiUserMinus />
+          <FiTrash2 />
         </IconButton>
       </AppLayoutHeader>
       <AppLayoutContent variant="full-size">{children}</AppLayoutContent>

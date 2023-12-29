@@ -5,12 +5,18 @@ import {
   DrawerTrigger,
 } from '../../components/drawer.tsx'
 import type { Room } from './use-rooms.ts'
-import { lazy, Suspense, useMemo } from 'react'
+import { lazy, type ReactNode, Suspense, useMemo } from 'react'
 import { FiCopy, FiShare } from 'react-icons/fi'
 
 const LazyQrCode = lazy(() => import('react-qr-code'))
 
-export function ShareRoom({ room }: { room: Room }) {
+export function ShareRoom({
+  room,
+  children,
+}: {
+  room: Room
+  children: ReactNode
+}) {
   const shareRoomUrlString = useMemo(() => {
     const joinRoomUrl = new URL(`/rooms/${room.id}/join`, window.origin)
     joinRoomUrl.searchParams.set('name', room.name)
@@ -27,11 +33,7 @@ export function ShareRoom({ room }: { room: Room }) {
 
   return (
     <Drawer>
-      <DrawerTrigger>
-        <IconButton>
-          <FiShare />
-        </IconButton>
-      </DrawerTrigger>
+      <DrawerTrigger>{children}</DrawerTrigger>
       <DrawerContent>
         <h1 className="mb-4 text-2xl font-bold">Share room "{room.name}"</h1>
         <div className="stack mx-auto max-w-2xl gap-10">
