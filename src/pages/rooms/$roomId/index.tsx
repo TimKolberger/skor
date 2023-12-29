@@ -21,11 +21,12 @@ import {
 } from '../../../layout/layout.tsx'
 import {
   FiChevronLeft,
-  FiDelete,
   FiGithub,
   FiInfo,
   FiMoreVertical,
   FiRepeat,
+  FiShare,
+  FiTrash2,
   FiTrendingDown,
   FiTrendingUp,
   FiUserPlus,
@@ -53,22 +54,27 @@ const PageLayout = ({ children }: LayoutProps) => {
         <IconButtonLink to="/rooms">
           <FiChevronLeft />
         </IconButtonLink>
-        <ShareRoom room={room} />
-        <IconButton
-          onClick={() =>
-            setSortDirection(sortDirection === 'desc' ? 'asc' : 'desc')
-          }
-        >
-          {sortDirection === 'desc' ? <FiTrendingDown /> : <FiTrendingUp />}
-        </IconButton>
         <IconButtonLink to="players/add">
           <FiUserPlus />
         </IconButtonLink>
+        <ShareRoom room={room}>
+          <IconButton>
+            <FiShare />
+          </IconButton>
+        </ShareRoom>
         <Menu>
           <MenuButton variant="ghost" padding="slim">
             <FiMoreVertical />
           </MenuButton>
           <MenuContent align="end">
+            <MenuItem
+              onClick={() =>
+                setSortDirection(sortDirection === 'desc' ? 'asc' : 'desc')
+              }
+            >
+              {sortDirection === 'asc' ? <FiTrendingDown /> : <FiTrendingUp />}
+              Sort Scores {sortDirection === 'asc' ? 'descending' : 'ascending'}
+            </MenuItem>
             <MenuItem
               onClick={() => {
                 setAllScores(0)
@@ -77,6 +83,7 @@ const PageLayout = ({ children }: LayoutProps) => {
               <FiRepeat />
               Reset all Scores
             </MenuItem>
+            <MenuSeparator />
             <MenuItem
               onClick={() => {
                 removeAllPlayers()
@@ -91,7 +98,7 @@ const PageLayout = ({ children }: LayoutProps) => {
                 navigate('/rooms')
               }}
             >
-              <FiDelete />
+              <FiTrash2 />
               Delete Room
             </MenuItem>
             <MenuSeparator />
