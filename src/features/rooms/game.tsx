@@ -88,7 +88,7 @@ const PlayerTile = ({ player }: { player: PlayerWithScore }) => {
           to={`/rooms/${room.id}/players/${player.id}`}
           className={clsx(
             'px-2 text-center text-3xl font-black uppercase',
-            'before:absolute before:inset-0 before:bg-transparent before:transition-all before:hover:bg-slate-600 before:hover:bg-opacity-10 before:focus-visible:bg-slate-100 before:active:bg-opacity-5',
+            'before:absolute before:inset-0 before:bg-transparent before:transition-all before:hover:bg-slate-200 before:hover:bg-opacity-10 before:focus-visible:bg-slate-100 before:active:bg-opacity-5',
           )}
         >
           {player.name}
