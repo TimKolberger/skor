@@ -16,8 +16,8 @@
     "test:ci": "vitest --run --coverage --pass-with-no-tests"
   },
   "dependencies": {
-    "@ariakit/react": "^0.3.11",
     "@fontsource/source-code-pro": "5.0.16",
+    "@radix-ui/react-dropdown-menu": "2.0.6",
     "autoprefixer": "10.4.16",
     "clsx": "2.0.0",
     "framer-motion": "10.16.16",

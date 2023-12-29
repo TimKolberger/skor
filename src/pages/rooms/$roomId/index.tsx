@@ -68,7 +68,7 @@ const PageLayout = ({ children }: LayoutProps) => {
           <MenuButton variant="ghost" padding="slim">
             <FiMoreVertical />
           </MenuButton>
-          <MenuContent>
+          <MenuContent align="end">
             <MenuItem
               onClick={() => {
                 setAllScores(0)
@@ -95,24 +95,21 @@ const PageLayout = ({ children }: LayoutProps) => {
               Delete Room
             </MenuItem>
             <MenuSeparator />
-            <MenuItem
-              render={(props) => (
-                <a
-                  {...props}
-                  href="https://github.com/TimKolberger/skor"
-                  target="_blank"
-                  rel="noreferrer"
-                />
-              )}
-            >
-              <FiGithub />
-              Open Source on GitHub
+            <MenuItem asChild>
+              <a
+                href="https://github.com/TimKolberger/skor"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FiGithub />
+                Open Source on GitHub
+              </a>
             </MenuItem>
-            <MenuItem
-              render={(props) => <Link {...props} to="/legal-notice" />}
-            >
-              <FiInfo />
-              Legal Notice
+            <MenuItem asChild>
+              <Link to="/legal-notice">
+                <FiInfo />
+                Legal Notice
+              </Link>
             </MenuItem>
           </MenuContent>
         </Menu>
