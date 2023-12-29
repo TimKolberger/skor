@@ -2,18 +2,18 @@ import {
   Button,
   IconButton,
   IconButtonLink,
-} from '../../../../components/button.tsx'
-import { playerColors } from '../../../../features/players/player-colors.ts'
-import { PlayerForm } from '../../../../features/players/player-form.tsx'
-import { RoomProvider } from '../../../../features/rooms/room-provider.tsx'
-import { useCurrentRoom } from '../../../../features/rooms/use-current-room.ts'
-import { usePlayers } from '../../../../features/rooms/use-players.ts'
-import type { LayoutProps } from '../../../../features/router/types.ts'
+} from '../../../../../components/button.tsx'
+import { playerColors } from '../../../../../features/players/player-colors.ts'
+import { PlayerForm } from '../../../../../features/players/player-form.tsx'
+import { RoomProvider } from '../../../../../features/rooms/room-provider.tsx'
+import { useCurrentRoom } from '../../../../../features/rooms/use-current-room.ts'
+import { usePlayers } from '../../../../../features/rooms/use-players.ts'
+import type { LayoutProps } from '../../../../../features/router/types.ts'
 import {
   AppLayout,
   AppLayoutContent,
   AppLayoutHeader,
-} from '../../../../layout/layout.tsx'
+} from '../../../../../layout/layout.tsx'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
 import { FiChevronLeft, FiUserMinus } from 'react-icons/fi'
@@ -36,7 +36,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
   return (
     <AppLayout>
       <AppLayoutHeader title="Edit Player">
-        <IconButtonLink to={`/rooms/${room.id}`}>
+        <IconButtonLink to={`/rooms/${room.id}/players/${params.playerId}`}>
           <FiChevronLeft />
         </IconButtonLink>
         <IconButton
