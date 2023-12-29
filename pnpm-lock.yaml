@@ -47,6 +47,9 @@ dependencies:
   react-router-dom:
     specifier: 6.21.1
     version: 6.21.1(react-dom@18.2.0)(react@18.2.0)
+  react-screen-wake-lock:
+    specifier: ^3.0.2
+    version: 3.0.2(react@18.2.0)
   tailwindcss:
     specifier: 3.4.0
     version: 3.4.0
@@ -4973,6 +4976,15 @@ packages:
       react: '>=16.8'
     dependencies:
       '@remix-run/router': 1.14.1
+      react: 18.2.0
+    dev: false
+
+  /react-screen-wake-lock@3.0.2(react@18.2.0):
+    resolution: {integrity: sha512-f88vcfMG1AWYRSIWQ5Qx5YVboH6TSL0F4ZlFLERZp6aKiZRGVRAAJ9wedJdO5jqTMcCDZ4OXJ8PjcSkDmvGSBg==}
+    engines: {node: '>=14.16'}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
       react: 18.2.0
     dev: false
 

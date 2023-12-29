@@ -14,6 +14,7 @@ import { usePlayers } from '../../../features/rooms/use-players.ts'
 import { useRoomStore } from '../../../features/rooms/use-rooms.ts'
 import { useSettings } from '../../../features/rooms/use-settings.ts'
 import type { LayoutProps } from '../../../features/router/types.ts'
+import { useWakeLockContext } from '../../../features/wake-lock/use-wake-lock-context.tsx'
 import {
   AppLayout,
   AppLayoutContent,
@@ -26,6 +27,8 @@ import {
   FiMoreVertical,
   FiRepeat,
   FiShare,
+  FiSunrise,
+  FiSunset,
   FiTrash2,
   FiTrendingDown,
   FiTrendingUp,
@@ -48,6 +51,8 @@ const PageLayout = ({ children }: LayoutProps) => {
   const { removeAllPlayers, setAllScores } = usePlayers()
   const room = useCurrentRoom()
   const { sortDirection, setSortDirection } = useSettings()
+  const wakeLock = useWakeLockContext()
+  console.log(wakeLock)
   return (
     <AppLayout>
       <AppLayoutHeader title={room.name}>
@@ -102,6 +107,29 @@ const PageLayout = ({ children }: LayoutProps) => {
               Delete Room
             </MenuItem>
             <MenuSeparator />
+            {wakeLock.isSupported ? (
+              <MenuItem
+                onClick={async () => {
+                  if (wakeLock.type === 'screen') {
+                    await wakeLock.release()
+                  } else {
+                    await wakeLock.request()
+                  }
+                }}
+              >
+                {wakeLock.type === 'screen' ? (
+                  <>
+                    <FiSunset />
+                    Allow screen to turn off
+                  </>
+                ) : (
+                  <>
+                    <FiSunrise />
+                    Keep Screen on
+                  </>
+                )}
+              </MenuItem>
+            ) : null}
             <MenuItem asChild>
               <a
                 href="https://github.com/TimKolberger/skor"
