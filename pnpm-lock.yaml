@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@ariakit/react':
+    specifier: ^0.3.11
+    version: 0.3.11(react-dom@18.2.0)(react@18.2.0)
   '@fontsource/source-code-pro':
     specifier: 5.0.16
     version: 5.0.16
@@ -154,6 +157,34 @@ packages:
       json-schema: 0.4.0
       jsonpointer: 5.0.1
       leven: 3.1.0
+    dev: false
+
+  /@ariakit/core@0.3.9:
+    resolution: {integrity: sha512-GHOJfDfIu+Fs9iKSgapFdDT1YQ5o1/gyo5GI1fIBK6/y6i7OrbQhdC6hz3wjVzDhPJOYUphaiMkq3HtEmYwukA==}
+    dev: false
+
+  /@ariakit/react-core@0.3.11(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-+EcZXRwLHOtn3GaC3VL/F+GdunuKBmCrymjZKXWT5fpdfXCqNH11hh5DsKJWoqnM/upTN68NfVAMADVFFk6ITg==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@ariakit/core': 0.3.9
+      '@floating-ui/dom': 1.5.3
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
+  /@ariakit/react@0.3.11(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-KZSKX0p/4GLvniijyfWkAHA6jMcoUA8TZ0y8ck/jPuqGrKWT35mIrfhrMCKsprw2tYyXlmlagG4wyENaLBawow==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@ariakit/react-core': 0.3.11(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@babel/code-frame@7.23.5:
@@ -1591,6 +1622,23 @@ packages:
     resolution: {integrity: sha512-gMsVel9D7f2HLkBma9VbtzZRehRogVRfbr++f06nL2vnCGCNlzOD+/MUov/F4p8myyAHspEhVobgjpX64q5m6A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
+
+  /@floating-ui/core@1.5.2:
+    resolution: {integrity: sha512-Ii3MrfY/GAIN3OhXNzpCKaLxHQfJF9qvwq/kEJYdqDxeIHa01K8sldugal6TmeeXl+WMvhv9cnVzUTaFFJF09A==}
+    dependencies:
+      '@floating-ui/utils': 0.1.6
+    dev: false
+
+  /@floating-ui/dom@1.5.3:
+    resolution: {integrity: sha512-ClAbQnEqJAKCJOEbbLo5IUlZHkNszqhuxS4fHAVxRPXPya6Ysf2G8KypnYcOTpx6I8xcgF9bbHb6g/2KpbV8qA==}
+    dependencies:
+      '@floating-ui/core': 1.5.2
+      '@floating-ui/utils': 0.1.6
+    dev: false
+
+  /@floating-ui/utils@0.1.6:
+    resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
+    dev: false
 
   /@fontsource/source-code-pro@5.0.16:
     resolution: {integrity: sha512-ErErGXjKo9/fAJE49fyU8M6DuJUpdqR5YLM8jGJOC5ZcKIDSTQ5m+R3DTa0VYHAGGFbk2qLWVWD/r5sfCLA/jQ==}

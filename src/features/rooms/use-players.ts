@@ -173,6 +173,9 @@ export function usePlayers() {
       },
       [removePlayer],
     ),
+    removeAllPlayers: useCallback(() => {
+      Object.keys(playerStateRef.current).forEach(removePlayer)
+    }, [removePlayer, playerStateRef]),
     updatePlayer: useCallback(
       (player: Partial<Player> & { id: Player['id'] }) => {
         setPlayer(player.id, { ...playersState[player.id], ...player })
@@ -189,6 +192,18 @@ export function usePlayers() {
         ])
       },
       [pushScore],
+    ),
+    setAllScores: useCallback(
+      (score: number) => {
+        const actions = Object.entries(playerStateRef.current).map(
+          ([playerId, playerWithScore]) => ({
+            playerId,
+            scoreDiff: -playerWithScore.score + score,
+          }),
+        )
+        pushScore(actions)
+      },
+      [playerStateRef, pushScore],
     ),
   }
 }

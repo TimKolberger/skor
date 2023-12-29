@@ -33,7 +33,7 @@ export const AppLayoutHeader = (props: AppLayoutHeaderProps) => {
               SK0R
             </Link>
           </div>
-          <div className="flex items-end gap-2">{children}</div>
+          <div className="flex items-end gap-1">{children}</div>
         </div>
       </div>
     </header>

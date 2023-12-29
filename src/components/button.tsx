@@ -59,13 +59,14 @@ export const IconButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   },
 )
 
-type ButtonVariants = {
+export type ButtonVariants = {
   variant?: 'ghost' | 'primary'
   padding?: 'normal' | 'slim'
   size?: 'sm' | 'md' | 'lg'
 }
 
-function buttonClasses({
+// eslint-disable-next-line react-refresh/only-export-components
+export function buttonClasses({
   variant = 'primary',
   padding = 'normal',
   size = 'md',
@@ -73,9 +74,9 @@ function buttonClasses({
   return clsx(
     {
       ghost: clsx(
-        'hover:bg-slate-200 hover:bg-opacity-10',
-        'active:bg-opacity-5',
-        'focus-visible:bg-slate-100 focus-visible:bg-opacity-10 focus-visible:shadow',
+        'bg-slate-200 bg-opacity-0 hover:bg-opacity-10',
+        'active:bg-opacity-5 aria-expanded:bg-opacity-5',
+        'focus-visible:bg-opacity-10 focus-visible:shadow',
       ),
       primary: clsx(
         'border-2 border-slate-200 border-opacity-20',
