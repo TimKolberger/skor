@@ -1,19 +1,12 @@
-import { chakra, Heading, Link } from "@chakra-ui/react"
-
-import { FullModalLayout } from "../../layouts/FullModalLayout"
-import { Main } from "../../layouts/Main"
+import { FullModalLayout } from '../../layouts/FullModalLayout'
+import { Main } from '../../layouts/Main'
+import { chakra, Heading, Link } from '@chakra-ui/react'
 
 export default function LegalNoticePage() {
   return (
     <FullModalLayout>
       <Main py="10">
         <Heading mb="8">Legal Notice</Heading>
-        <p>
-          Tim Kolberger <br />
-          Röderstr. 7<br />
-          65183 Wiesbaden <br />
-        </p>
-        <br />
         <p>
           <strong>Vertreten durch: </strong>
           <br />
@@ -22,23 +15,12 @@ export default function LegalNoticePage() {
         <br />
         <strong>Kontakt:</strong>
         <p>
-          Telefon:{" "}
-          <chakra.span
-            _before={{
-              content: "attr(data-text)",
-              unicodeBidi: "bidi-override",
-              direction: "ltr",
-            }}
-            data-text="+491737531922"
-          />
-        </p>
-        <p>
-          E-Mail:{" "}
+          E-Mail:{' '}
           <chakra.span
             _before={{
               content: 'attr(data-user) "\\0040" attr(data-website)',
-              unicodeBidi: "bidi-override",
-              direction: "ltr",
+              unicodeBidi: 'bidi-override',
+              direction: 'ltr',
             }}
             data-user="mail"
             data-website="solutionmatters&#46;de"
@@ -119,11 +101,11 @@ export default function LegalNoticePage() {
         <br />
         <br />
         <p>
-          Website Impressum erstellt durch{" "}
+          Website Impressum erstellt durch{' '}
           <Link href="http://www.impressum-generator.de">
             impressum-generator.de
-          </Link>{" "}
-          von der{" "}
+          </Link>{' '}
+          von der{' '}
           <Link href="http://www.kanzlei-hasselbach.de/fachanwalt-arbeitsrecht-koeln/">
             Kanzlei Hasselbach, Köln
           </Link>
