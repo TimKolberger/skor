@@ -34,7 +34,7 @@ export const Game = () => {
                 value={player}
                 exit={{ opacity: 0, transition: { duration: 0.2 } }}
                 drag={false}
-                className="flex"
+                className="flex flex-1"
               >
                 <PlayerTile player={player} />
               </Reorder.Item>
