@@ -1,4 +1,4 @@
-import { Button, IconButtonLink } from '../../components/button.tsx'
+import { Button } from '../../components/button.tsx'
 import { RoomForm } from '../../features/rooms/room-form.tsx'
 import { RoomIdInput } from '../../features/rooms/room-id-input.tsx'
 import { RoomSchema, useRoomStore } from '../../features/rooms/use-rooms.ts'
@@ -8,18 +8,13 @@ import {
   AppLayoutHeader,
 } from '../../layout/layout.tsx'
 import { type ReactNode } from 'react'
-import { FiChevronLeft } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
 import { parse } from 'valibot'
 
 export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <AppLayout>
-      <AppLayoutHeader title="Add Room">
-        <IconButtonLink to="/rooms">
-          <FiChevronLeft />
-        </IconButtonLink>
-      </AppLayoutHeader>
+      <AppLayoutHeader title="Add Room" backLink="/rooms" />
       <AppLayoutContent variant="max-width">{children}</AppLayoutContent>
     </AppLayout>
   )

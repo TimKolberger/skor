@@ -1,8 +1,4 @@
-import {
-  Button,
-  IconButton,
-  IconButtonLink,
-} from '../../../../../components/button.tsx'
+import { Button, IconButton } from '../../../../../components/button.tsx'
 import { playerColors } from '../../../../../features/players/player-colors.ts'
 import { PlayerForm } from '../../../../../features/players/player-form.tsx'
 import { RoomProvider } from '../../../../../features/rooms/room-provider.tsx'
@@ -16,7 +12,7 @@ import {
 } from '../../../../../layout/layout.tsx'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
-import { FiChevronLeft, FiTrash2 } from 'react-icons/fi'
+import { FiTrash2 } from 'react-icons/fi'
 import { useNavigate, useParams } from 'react-router-dom'
 
 export const Layout = ({ children }: LayoutProps) => {
@@ -35,10 +31,10 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <AppLayout>
-      <AppLayoutHeader title="Edit Player">
-        <IconButtonLink to={`/rooms/${room.id}/players/${params.playerId}`}>
-          <FiChevronLeft />
-        </IconButtonLink>
+      <AppLayoutHeader
+        title="Edit Player"
+        backLink={`/rooms/${room.id}/players/${params.playerId}`}
+      >
         <IconButton
           onClick={() => {
             removePlayer(params.playerId!)

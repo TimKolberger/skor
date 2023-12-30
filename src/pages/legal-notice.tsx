@@ -1,20 +1,14 @@
-import { IconButtonLink } from '../components/button.tsx'
 import type { LayoutProps } from '../features/router/types.ts'
 import {
   AppLayout,
   AppLayoutContent,
   AppLayoutHeader,
 } from '../layout/layout.tsx'
-import { FiChevronLeft } from 'react-icons/fi'
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <AppLayout>
-      <AppLayoutHeader title="Legal Notice">
-        <IconButtonLink to="/">
-          <FiChevronLeft />
-        </IconButtonLink>
-      </AppLayoutHeader>
+      <AppLayoutHeader title="Legal Notice" backLink="/" />
       <AppLayoutContent variant="max-width">{children}</AppLayoutContent>
     </AppLayout>
   )
