@@ -19,6 +19,10 @@
   :focus-visible {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500;
   }
+
+  * {
+    @apply min-w-0;
+  }
 }
 
 @layer components {
