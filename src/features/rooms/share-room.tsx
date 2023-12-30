@@ -35,7 +35,13 @@ export function ShareRoom({
     <Drawer>
       <DrawerTrigger>{children}</DrawerTrigger>
       <DrawerContent>
-        <h1 className="mb-4 text-2xl font-bold">Share room "{room.name}"</h1>
+        <h1 className="mb-4 text-center text-2xl font-bold">
+          Share room "{room.name}"
+        </h1>
+        <div className="mb-4">
+          <p className="text-sm">Room ID</p>
+          <p className="text-xl font-bold">{room.id}</p>
+        </div>
         <div className="stack mx-auto max-w-2xl gap-10">
           <p>
             Collaborate with your companions by sharing this room. You can
