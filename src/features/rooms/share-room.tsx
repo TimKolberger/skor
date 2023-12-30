@@ -40,7 +40,7 @@ export function ShareRoom({
         </h1>
         <div className="mb-4">
           <p className="text-sm">Room ID</p>
-          <p className="text-xl font-bold">{room.id}</p>
+          <p className="select-all text-xl font-bold">{room.id}</p>
         </div>
         <div className="stack mx-auto max-w-2xl gap-10">
           <p>
