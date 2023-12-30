@@ -113,7 +113,7 @@ export const ColorInput = ({ value, onChange }: ColorInputProps) => {
               key={color}
               aria-label={`Select player color ${color}`}
               className={clsx(
-                'h-20 flex-1 basis-20 shadow transition-all',
+                'h-16 flex-1 basis-20 shadow transition-all',
                 {
                   'z-1 scale-125 rounded': isSelected,
                 },
