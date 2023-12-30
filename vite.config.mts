@@ -8,7 +8,7 @@ const pwaPlugin = VitePWA({
   manifest: {
     name: 'SKOR',
     short_name: 'SKOR',
-    start_url: '.',
+    start_url: '/',
     icons: [
       {
         src: '/android-chrome-192x192.png',
@@ -25,6 +25,9 @@ const pwaPlugin = VitePWA({
     background_color: '#0a91b1',
     display: 'standalone',
   },
+  workbox: {
+    globPatterns: ['**/*.{js,css,html,ico,png,svg,mp3}']
+  }
 })
 
 const optionalPlugins = (['1', 'true'].includes(

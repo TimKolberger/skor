@@ -1,4 +1,5 @@
 import { createUniqueId } from '../../utils/create-unique-id.ts'
+import { LS_KEY_ROOMS } from '../persistence/local-storage-keys.ts'
 import {
   coerce,
   isoTimestamp,
@@ -71,7 +72,7 @@ export const useRoomStore = create(
       },
     }),
     {
-      name: 'cardscore-rooms',
+      name: LS_KEY_ROOMS,
       storage: createJSONStorage(() => localStorage),
     },
   ),

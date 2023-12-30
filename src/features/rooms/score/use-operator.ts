@@ -1,3 +1,4 @@
+import { SS_KEY_CALC_MODE } from '../../persistence/session-storage-keys.ts'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 
@@ -12,7 +13,7 @@ export const useOperator = create(
       setOperator: (operator) => set({ operator: operator || get().operator }),
     }),
     {
-      name: 'calc-mode',
+      name: SS_KEY_CALC_MODE,
       storage: createJSONStorage(() => sessionStorage),
     },
   ),
