@@ -7,9 +7,9 @@ export const useOperator = create(
     operator: Operator
     setOperator: (operator: Operator) => void
   }>(
-    (set) => ({
+    (set, get) => ({
       operator: 'add',
-      setOperator: (operator) => set({ operator }),
+      setOperator: (operator) => set({ operator: operator || get().operator }),
     }),
     {
       name: 'calc-mode',
