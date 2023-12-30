@@ -1,3 +1,4 @@
+import { LoadingScreen } from '../../components/loading-screen.tsx'
 import { DocumentProvider } from '../collaboration/document-provider.tsx'
 import { useCurrentRoom } from './use-current-room.ts'
 import { type ReactNode, useEffect, useRef, useState } from 'react'
@@ -43,7 +44,7 @@ export const RoomProvider = ({ children }: { children: ReactNode }) => {
   }
 
   if (!doc) {
-    return <p>Loading...</p>
+    return <LoadingScreen />
   }
 
   return <DocumentProvider doc={doc}>{children}</DocumentProvider>
