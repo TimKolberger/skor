@@ -1,7 +1,4 @@
-import {
-  IconButton,
-  IconButtonLink,
-} from '../../../../../components/button.tsx'
+import { IconButtonLink } from '../../../../../components/button.tsx'
 import { RoomProvider } from '../../../../../features/rooms/room-provider.tsx'
 import { ScoreForm } from '../../../../../features/rooms/score/score-form.tsx'
 import { useCurrentRoom } from '../../../../../features/rooms/use-current-room.ts'
@@ -14,7 +11,7 @@ import {
 } from '../../../../../layout/layout.tsx'
 import { clsx } from 'clsx'
 import { type ReactNode } from 'react'
-import { FiChevronLeft, FiEdit, FiTrash2 } from 'react-icons/fi'
+import { FiChevronLeft, FiEdit } from 'react-icons/fi'
 import { useNavigate, useParams } from 'react-router-dom'
 
 export const Layout = ({ children }: LayoutProps) => {
@@ -27,9 +24,7 @@ export const Layout = ({ children }: LayoutProps) => {
 
 const PageLayout = ({ children }: { children: ReactNode }) => {
   const room = useCurrentRoom()
-  const navigate = useNavigate()
   const params = useParams<{ playerId: string }>()
-  const { removePlayer } = usePlayers()
 
   return (
     <AppLayout>
@@ -42,14 +37,6 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
         >
           <FiEdit />
         </IconButtonLink>
-        <IconButton
-          onClick={() => {
-            removePlayer(params.playerId!)
-            navigate(`/rooms/${room.id}`)
-          }}
-        >
-          <FiTrash2 />
-        </IconButton>
       </AppLayoutHeader>
       <AppLayoutContent variant="full-size">{children}</AppLayoutContent>
     </AppLayout>

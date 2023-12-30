@@ -16,7 +16,7 @@ import {
 } from '../../../../../layout/layout.tsx'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
-import { FiChevronLeft, FiUserMinus } from 'react-icons/fi'
+import { FiChevronLeft, FiTrash2 } from 'react-icons/fi'
 import { useNavigate, useParams } from 'react-router-dom'
 
 export const Layout = ({ children }: LayoutProps) => {
@@ -45,7 +45,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
             navigate(`/rooms/${room.id}`)
           }}
         >
-          <FiUserMinus />
+          <FiTrash2 />
         </IconButton>
       </AppLayoutHeader>
       <AppLayoutContent variant="full-size">{children}</AppLayoutContent>
