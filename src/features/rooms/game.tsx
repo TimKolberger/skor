@@ -93,7 +93,7 @@ const PlayerTile = ({ player }: { player: PlayerWithScore }) => {
         >
           {player.name}
         </Link>
-        <div className="px-2 text-center text-5xl font-black tabular-nums leading-tight">
+        <div className="break-all px-2 text-center text-5xl font-black tabular-nums leading-tight">
           {scoreView}
         </div>
       </div>

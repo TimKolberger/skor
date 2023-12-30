@@ -4,8 +4,9 @@ import {
   ToggleGroupItem,
 } from '../../../components/toggle-group.tsx'
 import type { Assign } from '../../../utils/assign.ts'
-import { type Operator, useOperator } from './use-operator.tsx'
-import { type ComponentPropsWithRef, useEffect, useRef, useState } from 'react'
+import { useLastDiff } from './use-last-diff.ts'
+import { type Operator, useOperator } from './use-operator.ts'
+import { type ComponentPropsWithRef, useEffect, useRef } from 'react'
 
 type ScoreFormProps = Assign<
   ComponentPropsWithRef<'form'>,
@@ -17,10 +18,10 @@ type ScoreFormProps = Assign<
 export const ScoreForm = (props: ScoreFormProps) => {
   const { score, onSubmit, ...rest } = props
   const { operator, setOperator } = useOperator()
-  const [absoluteDiff, setAbsoluteDiff] = useState(score || 0)
+  const { diff, setDiff } = useLastDiff()
   const inputRef = useRef<HTMLInputElement | null>(null)
 
-  const nextScore = calculateNextScore(score || 0, absoluteDiff || 0, operator)
+  const nextScore = calculateNextScore(score || 0, diff, operator)
 
   useEffect(() => {
     inputRef.current?.select()
@@ -46,8 +47,8 @@ export const ScoreForm = (props: ScoreFormProps) => {
           type="number"
           inputMode="numeric"
           pattern="\d*"
-          value={absoluteDiff}
-          onChange={(e) => setAbsoluteDiff(e.currentTarget.valueAsNumber)}
+          value={diff}
+          onChange={(e) => setDiff(e.currentTarget.valueAsNumber)}
           className="w-full rounded bg-slate-50 bg-opacity-10 text-center text-5xl font-black tabular-nums text-slate-50"
           ref={inputRef}
           required
@@ -56,7 +57,7 @@ export const ScoreForm = (props: ScoreFormProps) => {
       <div className="flex w-full flex-wrap items-stretch gap-6">
         <div className="flex flex-1 flex-col">
           <p className="text-end text-sm font-black italic">next score is</p>
-          <output className="text-end text-5xl font-black tabular-nums">
+          <output className="break-all text-end text-5xl font-black tabular-nums">
             {nextScore}
           </output>
         </div>
