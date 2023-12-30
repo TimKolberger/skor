@@ -1,6 +1,5 @@
-import "@testing-library/jest-dom"
-
-import * as localStorageKeys from "../src/feature/persistence/localStorageKeys"
+import * as localStorageKeys from '../src/features/persistence/local-storage-keys'
+import '@testing-library/jest-dom'
 
 beforeEach(() => {
   for (const key of Object.values(localStorageKeys)) {
@@ -9,9 +8,5 @@ beforeEach(() => {
 })
 
 // mock prototype functions for audio elements
-window.HTMLMediaElement.prototype.load = () => {
-  /* do nothing */
-}
-window.HTMLMediaElement.prototype.play = async () => {
-  /* do nothing */
-}
+window.HTMLMediaElement.prototype.load = vi.fn()
+window.HTMLMediaElement.prototype.play = vi.fn(() => Promise.resolve())
