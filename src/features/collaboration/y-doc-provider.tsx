@@ -1,5 +1,5 @@
 import { useDoc } from './use-doc.tsx'
-import { useCallback, useEffect, useMemo, useReducer } from 'react'
+import { useCallback, useEffect, useReducer } from 'react'
 import { type AbstractType, Array, Doc, Map } from 'yjs'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -8,12 +8,9 @@ const useSharedType = function <T extends AbstractType<any>>(
 ) {
   const doc = useDoc()
   const [name, typeConstr] = args
-  const thing = useMemo(
-    () => doc.get(name, typeConstr) as T,
-    [doc, name, typeConstr],
-  )
+  const [, forceUpdate] = useForceUpdate()
+  const thing = doc.get(name, typeConstr) as T
 
-  const forceUpdate = useForceUpdate()
   useEffect(() => {
     const update = () => {
       forceUpdate()
@@ -23,6 +20,16 @@ const useSharedType = function <T extends AbstractType<any>>(
       thing.unobserve(update)
     }
   }, [forceUpdate, thing])
+
+  useEffect(() => {
+    const listener = () => {
+      forceUpdate()
+    }
+    doc.on('synced', listener)
+    return () => {
+      doc.off('synced', listener)
+    }
+  }, [doc, forceUpdate])
 
   return thing
 }
@@ -64,6 +71,5 @@ export function useArray<T>(name: string) {
 }
 
 const useForceUpdate = function () {
-  const [, dispatch] = useReducer((s) => s + 1, 0)
-  return dispatch
+  return useReducer((s) => s + 1, 0)
 }

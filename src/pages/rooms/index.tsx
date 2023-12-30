@@ -39,7 +39,7 @@ export default function RoomsPage() {
   }
 
   return (
-    <ul className="divide-y divide-slate-100">
+    <ul className="divide-y divide-slate-100 divide-opacity-25">
       {rooms.map((room) => (
         <li
           key={room.id}

@@ -21,7 +21,8 @@ export const RoomProvider = ({ children }: { children: ReactNode }) => {
       signaling: ['wss://signaling.kolberger.eu/'],
     })
     indexeddbPersistenceRef.current = new IndexeddbPersistence(docName, yDoc)
-    indexeddbPersistenceRef.current?.whenSynced
+
+    indexeddbPersistenceRef.current.whenSynced
       .then(() => {
         setDoc(yDoc)
       })
@@ -29,7 +30,14 @@ export const RoomProvider = ({ children }: { children: ReactNode }) => {
         setError(error)
       })
 
+    const syncedListener = () => {
+      yDoc.emit('synced', [yDoc])
+    }
+
+    webrtcProviderRef.current?.on('synced', syncedListener)
+
     return () => {
+      webrtcProviderRef.current?.off('synced', syncedListener)
       if (webrtcProviderRef.current?.connected) {
         webrtcProviderRef.current?.disconnect()
       }
