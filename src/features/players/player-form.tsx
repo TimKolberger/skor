@@ -5,7 +5,7 @@ import { generatePlayerName } from './generate-player-name.ts'
 import { playerColors } from './player-colors.ts'
 import { PlayerNameInput } from './player-name-input.tsx'
 import * as React from 'react'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { parse } from 'valibot'
 
 type PlayerFormProps = {
@@ -29,6 +29,12 @@ export const PlayerForm = ({
     () => initialValues?.['name'] ?? generatePlayerName(),
   )
 
+  const inputRef = useRef<HTMLInputElement | null>(null)
+
+  useEffect(() => {
+    inputRef.current?.select()
+  }, [])
+
   return (
     <form
       onSubmit={(e) => {
@@ -51,7 +57,11 @@ export const PlayerForm = ({
         }}
       />
       <div className="mx-auto flex w-full max-w-lg flex-col gap-6 px-4">
-        <PlayerNameInput value={playerName} onChange={setPlayerName} />
+        <PlayerNameInput
+          value={playerName}
+          onChange={setPlayerName}
+          ref={inputRef}
+        />
         {children}
       </div>
     </form>

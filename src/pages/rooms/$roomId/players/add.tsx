@@ -13,8 +13,7 @@ import {
   AppLayoutContent,
   AppLayoutHeader,
 } from '../../../../layout/layout.tsx'
-import type { ReactNode } from 'react'
-import { useState } from 'react'
+import { type ReactNode, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { parse } from 'valibot'
 
