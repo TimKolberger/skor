@@ -33,7 +33,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <AppLayout>
-      <AppLayoutHeader title="Edit Player">
+      <AppLayoutHeader title="Edit Score">
         <IconButtonLink to={`/rooms/${room.id}`}>
           <FiChevronLeft />
         </IconButtonLink>
