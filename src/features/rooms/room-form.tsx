@@ -1,7 +1,7 @@
 import { generateRoomName } from './generate-room-name.ts'
 import { RoomNameInput } from './room-name-input.tsx'
-import { RoomSchema } from './use-rooms.ts'
 import type { Room } from './use-rooms.ts'
+import { RoomSchema } from './use-rooms.ts'
 import * as React from 'react'
 import { useState } from 'react'
 import { parse } from 'valibot'
@@ -24,10 +24,11 @@ export const RoomForm = ({
     <form
       onSubmit={(e) => {
         e.preventDefault()
+        const values = Object.fromEntries(new FormData(e.currentTarget))
         onSubmit(
           parse(RoomSchema, {
             ...initialValues,
-            name: roomName,
+            ...values,
           }),
         )
       }}

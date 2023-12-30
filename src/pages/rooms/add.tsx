@@ -1,5 +1,6 @@
 import { Button, IconButtonLink } from '../../components/button.tsx'
 import { RoomForm } from '../../features/rooms/room-form.tsx'
+import { RoomIdInput } from '../../features/rooms/room-id-input.tsx'
 import { RoomSchema, useRoomStore } from '../../features/rooms/use-rooms.ts'
 import {
   AppLayout,
@@ -35,6 +36,12 @@ export default function AddRoomPage() {
         navigate(`/rooms/${room.id}`)
       }}
     >
+      <div className="flex flex-col gap-1">
+        <RoomIdInput />
+        <p className="text-xs leading-4 text-slate-200">
+          Join a room with an ID. You can find it in the Share dialog.
+        </p>
+      </div>
       <Button type="submit" variant="primary">
         Add room
       </Button>
