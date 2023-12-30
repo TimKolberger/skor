@@ -73,7 +73,7 @@ const PageLayout = ({ children }: LayoutProps) => {
               }
             >
               {sortDirection === 'asc' ? <FiTrendingDown /> : <FiTrendingUp />}
-              Sort Scores {sortDirection === 'asc' ? 'descending' : 'ascending'}
+              Sort scores {sortDirection === 'asc' ? 'descending' : 'ascending'}
             </MenuItem>
             <MenuItem
               onClick={() => {
@@ -81,7 +81,7 @@ const PageLayout = ({ children }: LayoutProps) => {
               }}
             >
               <FiRepeat />
-              Reset all Scores
+              Reset all scores
             </MenuItem>
             <MenuSeparator />
             <MenuItem
@@ -90,7 +90,7 @@ const PageLayout = ({ children }: LayoutProps) => {
               }}
             >
               <FiUsers />
-              Delete all Players
+              Delete all players
             </MenuItem>
             <MenuItem
               onClick={() => {
@@ -99,7 +99,7 @@ const PageLayout = ({ children }: LayoutProps) => {
               }}
             >
               <FiTrash2 />
-              Delete Room
+              Delete room
             </MenuItem>
             <MenuSeparator />
             {wakeLock.isSupported ? (
@@ -120,7 +120,7 @@ const PageLayout = ({ children }: LayoutProps) => {
                 ) : (
                   <>
                     <FiSunrise />
-                    Keep Screen on
+                    Keep screen on
                   </>
                 )}
               </MenuItem>
@@ -138,7 +138,7 @@ const PageLayout = ({ children }: LayoutProps) => {
             <MenuItem asChild>
               <Link to="/legal-notice">
                 <FiInfo />
-                Legal Notice
+                Legal notice
               </Link>
             </MenuItem>
           </MenuContent>
