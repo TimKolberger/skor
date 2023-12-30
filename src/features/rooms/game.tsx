@@ -1,4 +1,4 @@
-import { IconButton } from '../../components/button.tsx'
+import { ButtonLink, IconButton } from '../../components/button.tsx'
 import { useDebounce } from '../../components/use-debounce.ts'
 import { useTickingButton } from '../../components/use-ticking-button.ts'
 import { useCurrentRoom } from './use-current-room.ts'
@@ -48,14 +48,11 @@ export const Game = () => {
 
 function EmptyGame() {
   return (
-    <div className="flex h-full flex-col items-center justify-center text-2xl font-black">
-      <p>There are no players in this game yet.</p>
-      <p>
-        Get started and{' '}
-        <Link to="players/add" className="underline">
-          create one!
-        </Link>
-      </p>
+    <div className="flex h-full flex-col items-center justify-center gap-4 p-4">
+      <p className="text-center text-2xl font-black">There are no players.</p>
+      <ButtonLink to="players/add" variant="primary">
+        Create player
+      </ButtonLink>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { IconButtonLink } from '../../components/button.tsx'
+import { ButtonLink, IconButtonLink } from '../../components/button.tsx'
 import { Time } from '../../components/time.tsx'
 import { useRoomStore } from '../../features/rooms/use-rooms.ts'
 import {
@@ -67,14 +67,13 @@ export default function RoomsPage() {
 
 function EmptyRooms() {
   return (
-    <div className="flex h-full flex-col items-center justify-center text-2xl font-black">
-      <p>No game rooms yet.</p>
-      <p>
-        Get started and{' '}
-        <Link to="add" className="underline">
-          create one!
-        </Link>
+    <div className="flex h-full flex-col items-center justify-center gap-4 p-4">
+      <p className="text-center text-2xl font-black">
+        There are no game rooms.
       </p>
+      <ButtonLink to="add" variant="primary">
+        Create room
+      </ButtonLink>
     </div>
   )
 }
