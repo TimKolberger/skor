@@ -17,7 +17,7 @@ export const MenuContent = (props: RadixMenu.DropdownMenuContentProps) => {
         className={clsx(
           className,
           'animate-slide-down-and-fade',
-          'z-40 rounded border border-slate-50 border-opacity-10 bg-cyan-700 shadow-xl focus-visible:ring-0',
+          'z-40 rounded border border-slate-50 border-opacity-10 bg-slate-700 shadow-xl focus-visible:ring-0',
         )}
       />
     </RadixMenu.Portal>

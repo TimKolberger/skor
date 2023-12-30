@@ -61,7 +61,7 @@ export const ColorInput = ({ value, onChange }: ColorInputProps) => {
         aria-label="Color selection"
         ref={colorSelectRef}
         tabIndex={0}
-        className={`grid grid-cols-4 overflow-hidden pb-4 focus:outline-none`}
+        className={`grid grid-cols-4 overflow-hidden pb-4 focus:ring-0`}
         onKeyDown={(e) => {
           const currentIndex = playerColors.findIndex(
             (color) => value === color,
@@ -115,7 +115,7 @@ export const ColorInput = ({ value, onChange }: ColorInputProps) => {
               className={clsx(
                 'h-20 flex-1 basis-20 shadow transition-all',
                 {
-                  'z-1 scale-125': isSelected,
+                  'z-1 scale-125 rounded': isSelected,
                 },
                 color,
               )}

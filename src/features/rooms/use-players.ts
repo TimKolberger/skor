@@ -21,7 +21,7 @@ export const PlayerSchema = object({
   }),
   name: coerce(string([minLength(1)]), (name) => {
     if (name) return String(name)
-    return 'Unnamed Player'
+    return 'Unnamed player'
   }),
   color: coerce(string(), (value) => {
     if (value) return String(value)

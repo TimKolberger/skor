@@ -30,7 +30,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
   const room = useCurrentRoom()
   return (
     <AppLayout>
-      <AppLayoutHeader title="Add Player" backLink={`/rooms/${room.id}`} />
+      <AppLayoutHeader title="Add player" backLink={`/rooms/${room.id}`} />
       <AppLayoutContent variant="full-size">{children}</AppLayoutContent>
     </AppLayout>
   )
