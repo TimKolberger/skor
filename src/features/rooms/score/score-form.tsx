@@ -3,13 +3,17 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from '../../../components/toggle-group.tsx'
+import type { Assign } from '../../../utils/assign.ts'
 import { type Operator, useOperator } from './use-operator.tsx'
 import { type ComponentPropsWithRef, useEffect, useRef, useState } from 'react'
 
-type ScoreFormProps = {
-  score: number
-  onSubmit: (values: { diff: number }) => void
-} & Omit<ComponentPropsWithRef<'form'>, 'onSubmit'>
+type ScoreFormProps = Assign<
+  ComponentPropsWithRef<'form'>,
+  {
+    score: number
+    onSubmit: (values: { diff: number }) => void
+  }
+>
 export const ScoreForm = (props: ScoreFormProps) => {
   const { score, onSubmit, ...rest } = props
   const { operator, setOperator } = useOperator()
