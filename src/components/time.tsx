@@ -1,8 +1,12 @@
+import type { Assign } from '../utils/assign.ts'
 import type { ComponentPropsWithoutRef } from 'react'
 
-type TimeProps = Omit<ComponentPropsWithoutRef<'time'>, 'dateTime'> & {
-  dateTime?: Date | string | number | null
-}
+type TimeProps = Assign<
+  ComponentPropsWithoutRef<'time'>,
+  {
+    dateTime?: Date | string | number | null
+  }
+>
 export const Time = ({ dateTime, ...rest }: TimeProps) => {
   if (!dateTime) {
     return null
