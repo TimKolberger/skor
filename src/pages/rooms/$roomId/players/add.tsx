@@ -1,4 +1,4 @@
-import { Button, IconButtonLink } from '../../../../components/button.tsx'
+import { Button } from '../../../../components/button.tsx'
 import { playerColors } from '../../../../features/players/player-colors.ts'
 import { PlayerForm } from '../../../../features/players/player-form.tsx'
 import { RoomProvider } from '../../../../features/rooms/room-provider.tsx'
@@ -15,7 +15,6 @@ import {
 } from '../../../../layout/layout.tsx'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
-import { FiChevronLeft } from 'react-icons/fi'
 import { useNavigate, useParams } from 'react-router-dom'
 import { parse } from 'valibot'
 
@@ -31,11 +30,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
   const room = useCurrentRoom()
   return (
     <AppLayout>
-      <AppLayoutHeader title="Add Player">
-        <IconButtonLink to={`/rooms/${room.id}`}>
-          <FiChevronLeft />
-        </IconButtonLink>
-      </AppLayoutHeader>
+      <AppLayoutHeader title="Add Player" backLink={`/rooms/${room.id}`} />
       <AppLayoutContent variant="full-size">{children}</AppLayoutContent>
     </AppLayout>
   )

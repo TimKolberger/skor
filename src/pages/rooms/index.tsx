@@ -56,7 +56,7 @@ export default function RoomsPage() {
               <Time dateTime={room.createdAt} />
             </div>
           </div>
-          <div className="ml-auto flex items-center text-2xl">
+          <div className="ml-auto flex items-center px-2 text-2xl">
             <FiChevronRight />
           </div>
         </li>

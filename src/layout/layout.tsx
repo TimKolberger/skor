@@ -1,5 +1,7 @@
+import { IconButtonLink } from '../components/button.tsx'
 import { clsx } from 'clsx'
 import type { ComponentPropsWithoutRef } from 'react'
+import { FiChevronLeft } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
 type AppLayoutProps = ComponentPropsWithoutRef<'div'>
@@ -9,9 +11,11 @@ export const AppLayout = (props: AppLayoutProps) => {
   )
 }
 
-type AppLayoutHeaderProps = ComponentPropsWithoutRef<'main'>
+type AppLayoutHeaderProps = ComponentPropsWithoutRef<'main'> & {
+  backLink?: string
+}
 export const AppLayoutHeader = (props: AppLayoutHeaderProps) => {
-  const { className, children, title, ...rest } = props
+  const { className, children, title, backLink, ...rest } = props
   return (
     <header
       {...rest}
@@ -22,8 +26,15 @@ export const AppLayoutHeader = (props: AppLayoutHeaderProps) => {
     >
       <div className="glass" />
       <div className="glass-edge" />
-      <div className="absolute inset-0 flex flex-1 flex-col justify-end px-6 py-4">
-        <span>{title}</span>
+      <div className="absolute inset-0 flex flex-1 flex-col justify-end px-4 py-4">
+        <div className="flex min-h-[44px] items-center gap-1">
+          {backLink ? (
+            <IconButtonLink to={backLink} className="-ms-2 self-start">
+              <FiChevronLeft />
+            </IconButtonLink>
+          ) : null}
+          <span className="truncate">{title}</span>
+        </div>
         <div className="flex items-end justify-between">
           <div className="flex flex-col justify-end text-slate-200">
             <Link

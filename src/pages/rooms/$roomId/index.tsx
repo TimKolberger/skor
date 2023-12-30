@@ -21,7 +21,6 @@ import {
   AppLayoutHeader,
 } from '../../../layout/layout.tsx'
 import {
-  FiChevronLeft,
   FiGithub,
   FiInfo,
   FiMoreVertical,
@@ -54,10 +53,7 @@ const PageLayout = ({ children }: LayoutProps) => {
   const wakeLock = useWakeLockContext()
   return (
     <AppLayout>
-      <AppLayoutHeader title={room.name}>
-        <IconButtonLink to="/rooms">
-          <FiChevronLeft />
-        </IconButtonLink>
+      <AppLayoutHeader title={room.name} backLink="/rooms">
         <IconButtonLink to="players/add">
           <FiUserPlus />
         </IconButtonLink>

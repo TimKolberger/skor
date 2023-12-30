@@ -11,7 +11,7 @@ import {
 } from '../../../../../layout/layout.tsx'
 import { clsx } from 'clsx'
 import { type ReactNode } from 'react'
-import { FiChevronLeft, FiEdit } from 'react-icons/fi'
+import { FiEdit } from 'react-icons/fi'
 import { useNavigate, useParams } from 'react-router-dom'
 
 export const Layout = ({ children }: LayoutProps) => {
@@ -28,10 +28,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <AppLayout>
-      <AppLayoutHeader title="Edit Score">
-        <IconButtonLink to={`/rooms/${room.id}`}>
-          <FiChevronLeft />
-        </IconButtonLink>
+      <AppLayoutHeader title="Edit Score" backLink={`/rooms/${room.id}`}>
         <IconButtonLink
           to={`/rooms/${room.id}/players/${params.playerId}/edit`}
         >

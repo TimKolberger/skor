@@ -1,6 +1,6 @@
 import { useDoc } from './use-doc.tsx'
 import { useCallback, useEffect, useMemo, useReducer } from 'react'
-import { Doc, Map, Array, type AbstractType } from 'yjs'
+import { type AbstractType, Array, Doc, Map } from 'yjs'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useSharedType = function <T extends AbstractType<any>>(

@@ -8,16 +8,16 @@
   }
 
   body {
-    @apply h-full flex flex-col;
+    @apply flex h-full flex-col;
     text-wrap: balance;
   }
 
   #root {
-    @apply flex flex-[1_0_100dvh] flex-col min-h-[100dvh];
+    @apply flex min-h-[100dvh] flex-[1_0_100dvh] flex-col;
   }
 
   :focus-visible {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500;
   }
 }
 
@@ -37,10 +37,10 @@
     /*   Cut the part of the backdrop that falls outside of <nav /> */
     --cutoff: calc(100% - var(--extended-by));
     -webkit-mask-image: linear-gradient(
-            to bottom,
-            black 0,
-            black var(--cutoff),
-            transparent var(--cutoff)
+      to bottom,
+      black 0,
+      black var(--cutoff),
+      transparent var(--cutoff)
     );
   }
 
@@ -65,10 +65,10 @@
     pointer-events: none;
 
     -webkit-mask-image: linear-gradient(
-            to bottom,
-            black 0,
-            black var(--offset),
-            transparent var(--offset)
+      to bottom,
+      black 0,
+      black var(--offset),
+      transparent var(--offset)
     );
   }
 }
