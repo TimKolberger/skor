@@ -51,6 +51,7 @@ const PageLayout = ({ children }: LayoutProps) => {
   const room = useCurrentRoom()
   const { sortDirection, setSortDirection } = useSettings()
   const wakeLock = useWakeLockContext()
+
   return (
     <AppLayout>
       <AppLayoutHeader title={room.name} backLink="/rooms">
