@@ -66,8 +66,8 @@ dependencies:
     specifier: 9.0.12
     version: 9.0.12(yjs@13.6.10)
   y-webrtc:
-    specifier: 10.2.6
-    version: 10.2.6(yjs@13.6.10)
+    specifier: 10.3.0
+    version: 10.3.0(yjs@13.6.10)
   yjs:
     specifier: 13.6.10
     version: 13.6.10
@@ -6434,8 +6434,8 @@ packages:
       yjs: 13.6.10
     dev: false
 
-  /y-webrtc@10.2.6(yjs@13.6.10):
-    resolution: {integrity: sha512-1kZ4YYwksFZi8+l8mTebVX9vW6Q5MnqxMkvNU700X5dBE38usurt/JgeXSIQRpK3NwUYYb9y63Jn9FMpMH6/vA==}
+  /y-webrtc@10.3.0(yjs@13.6.10):
+    resolution: {integrity: sha512-KalJr7dCgUgyVFxoG3CQYbpS0O2qybegD0vI4bYnYHI0MOwoVbucED3RZ5f2o1a5HZb1qEssUKS0H/Upc6p1lA==}
     engines: {node: '>=12'}
     hasBin: true
     peerDependencies:
