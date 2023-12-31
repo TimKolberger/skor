@@ -1,4 +1,5 @@
 import type { LayoutProps } from '../features/router/types.ts'
+import { HeaderMenu } from '../layout/header-menu.tsx'
 import {
   AppLayout,
   AppLayoutContent,
@@ -8,7 +9,9 @@ import {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <AppLayout>
-      <AppLayoutHeader title="Legal notice" backLink="/" />
+      <AppLayoutHeader title="Legal notice" backLink="/">
+        <HeaderMenu />
+      </AppLayoutHeader>
       <AppLayoutContent variant="max-width">{children}</AppLayoutContent>
     </AppLayout>
   )

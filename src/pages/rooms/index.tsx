@@ -2,6 +2,7 @@ import { ButtonLink, IconButtonLink } from '../../components/button.tsx'
 import { IconContainer } from '../../components/icon-container.tsx'
 import { Time } from '../../components/time.tsx'
 import { useRoomStore } from '../../features/rooms/use-rooms.ts'
+import { HeaderMenu } from '../../layout/header-menu.tsx'
 import {
   AppLayout,
   AppLayoutContent,
@@ -18,6 +19,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         <IconButtonLink to="add">
           <FiPlus />
         </IconButtonLink>
+        <HeaderMenu />
       </AppLayoutHeader>
       <AppLayoutContent variant="full-size">{children}</AppLayoutContent>
     </AppLayout>

@@ -76,7 +76,7 @@ const PlayerTile = ({ player }: { player: PlayerWithScore }) => {
   return (
     <div className={clsx('flex flex-1 select-none shadow', player.color)}>
       <IconButton
-        className="min-h-full min-w-[4rem] rounded-none"
+        className="min-h-full min-w-16 rounded-none"
         size="lg"
         {...useTickingButton({
           onTick: () => updateScore(player.id, -1),
@@ -89,7 +89,9 @@ const PlayerTile = ({ player }: { player: PlayerWithScore }) => {
           to={`/rooms/${room.id}/players/${player.id}`}
           className={clsx(
             'px-2 text-center text-3xl font-black uppercase',
-            'before:absolute before:inset-0 before:bg-transparent before:transition-all before:hover:bg-slate-200 before:hover:bg-opacity-10 before:focus-visible:bg-slate-100 before:active:bg-opacity-5',
+            'before:absolute before:inset-0 before:transition-all',
+            'before:bg-slate-200 before:bg-opacity-0',
+            'before:hover:bg-opacity-10 before:focus-visible:bg-opacity-10 before:active:bg-opacity-15',
           )}
         >
           {player.name}
@@ -99,7 +101,7 @@ const PlayerTile = ({ player }: { player: PlayerWithScore }) => {
         </div>
       </div>
       <IconButton
-        className="min-h-full min-w-[4rem] rounded-none"
+        className="min-h-full min-w-16 rounded-none"
         size="lg"
         {...useTickingButton({
           onTick: () => updateScore(player.id, 1),

@@ -8,6 +8,7 @@ import {
   usePlayers,
 } from '../../../../features/rooms/use-players.ts'
 import type { LayoutProps } from '../../../../features/router/types.ts'
+import { HeaderMenu } from '../../../../layout/header-menu.tsx'
 import {
   AppLayout,
   AppLayoutContent,
@@ -29,7 +30,9 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
   const room = useCurrentRoom()
   return (
     <AppLayout>
-      <AppLayoutHeader title="Add player" backLink={`/rooms/${room.id}`} />
+      <AppLayoutHeader title="Add player" backLink={`/rooms/${room.id}`}>
+        <HeaderMenu />
+      </AppLayoutHeader>
       <AppLayoutContent variant="full-size">{children}</AppLayoutContent>
     </AppLayout>
   )

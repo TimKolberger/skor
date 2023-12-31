@@ -1,11 +1,5 @@
 import { IconButton, IconButtonLink } from '../../../components/button.tsx'
-import {
-  Menu,
-  MenuButton,
-  MenuContent,
-  MenuItem,
-  MenuSeparator,
-} from '../../../components/menu.tsx'
+import { MenuItem, MenuSeparator } from '../../../components/menu.tsx'
 import { Game } from '../../../features/rooms/game.tsx'
 import { RoomProvider } from '../../../features/rooms/room-provider.tsx'
 import { ShareRoom } from '../../../features/rooms/share-room.tsx'
@@ -14,27 +8,22 @@ import { usePlayers } from '../../../features/rooms/use-players.ts'
 import { useRoomStore } from '../../../features/rooms/use-rooms.ts'
 import { useSettings } from '../../../features/rooms/use-settings.ts'
 import type { LayoutProps } from '../../../features/router/types.ts'
-import { useWakeLockContext } from '../../../features/wake-lock/use-wake-lock-context.tsx'
+import { HeaderMenu } from '../../../layout/header-menu.tsx'
 import {
   AppLayout,
   AppLayoutContent,
   AppLayoutHeader,
 } from '../../../layout/layout.tsx'
 import {
-  FiGithub,
-  FiInfo,
-  FiMoreVertical,
   FiRepeat,
   FiShare,
-  FiSunrise,
-  FiSunset,
   FiTrash2,
   FiTrendingDown,
   FiTrendingUp,
   FiUserPlus,
   FiUsers,
 } from 'react-icons/fi'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
@@ -50,7 +39,6 @@ const PageLayout = ({ children }: LayoutProps) => {
   const { removeAllPlayers, setAllScores } = usePlayers()
   const room = useCurrentRoom()
   const { sortDirection, setSortDirection } = useSettings()
-  const wakeLock = useWakeLockContext()
 
   return (
     <AppLayout>
@@ -63,87 +51,42 @@ const PageLayout = ({ children }: LayoutProps) => {
             <FiShare />
           </IconButton>
         </ShareRoom>
-        <Menu>
-          <MenuButton variant="ghost" padding="slim">
-            <FiMoreVertical />
-          </MenuButton>
-          <MenuContent align="end">
-            <MenuItem
-              onClick={() =>
-                setSortDirection(sortDirection === 'desc' ? 'asc' : 'desc')
-              }
-            >
-              {sortDirection === 'asc' ? <FiTrendingDown /> : <FiTrendingUp />}
-              Sort scores {sortDirection === 'asc' ? 'descending' : 'ascending'}
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                setAllScores(0)
-              }}
-            >
-              <FiRepeat />
-              Reset all scores
-            </MenuItem>
-            <MenuSeparator />
-            <MenuItem
-              onClick={() => {
-                removeAllPlayers()
-              }}
-            >
-              <FiUsers />
-              Delete all players
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                removeRoom(room.id)
-                navigate('/rooms')
-              }}
-            >
-              <FiTrash2 />
-              Delete room
-            </MenuItem>
-            <MenuSeparator />
-            {wakeLock.isSupported ? (
-              <MenuItem
-                onClick={async () => {
-                  if (wakeLock.type === 'screen') {
-                    await wakeLock.release()
-                  } else {
-                    await wakeLock.request()
-                  }
-                }}
-              >
-                {wakeLock.type === 'screen' ? (
-                  <>
-                    <FiSunset />
-                    Allow screen to turn off
-                  </>
-                ) : (
-                  <>
-                    <FiSunrise />
-                    Keep screen on
-                  </>
-                )}
-              </MenuItem>
-            ) : null}
-            <MenuItem asChild>
-              <a
-                href="https://github.com/TimKolberger/skor"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FiGithub />
-                Open Source on GitHub
-              </a>
-            </MenuItem>
-            <MenuItem asChild>
-              <Link to="/legal-notice">
-                <FiInfo />
-                Legal notice
-              </Link>
-            </MenuItem>
-          </MenuContent>
-        </Menu>
+        <HeaderMenu>
+          <MenuItem
+            onClick={() =>
+              setSortDirection(sortDirection === 'desc' ? 'asc' : 'desc')
+            }
+          >
+            {sortDirection === 'asc' ? <FiTrendingDown /> : <FiTrendingUp />}
+            Sort scores {sortDirection === 'asc' ? 'descending' : 'ascending'}
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              setAllScores(0)
+            }}
+          >
+            <FiRepeat />
+            Reset all scores
+          </MenuItem>
+          <MenuSeparator />
+          <MenuItem
+            onClick={() => {
+              removeAllPlayers()
+            }}
+          >
+            <FiUsers />
+            Delete all players
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              removeRoom(room.id)
+              navigate('/rooms')
+            }}
+          >
+            <FiTrash2 />
+            Delete room
+          </MenuItem>
+        </HeaderMenu>
       </AppLayoutHeader>
       <AppLayoutContent variant="full-size">{children}</AppLayoutContent>
     </AppLayout>
