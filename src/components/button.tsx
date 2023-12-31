@@ -25,12 +25,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   },
 )
 
+Button.displayName = 'Button'
+
 export const IconButton = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
     const { padding = 'slim', ...rest } = props
     return <Button {...rest} padding={padding} ref={ref} />
   },
 )
+
+IconButton.displayName = 'IconButton'
 
 export type ButtonLinkProps = LinkProps & ButtonVariants
 export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
@@ -52,12 +56,16 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   },
 )
 
+ButtonLink.displayName = 'ButtonLink'
+
 export const IconButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   (props, ref) => {
     const { padding = 'slim', ...rest } = props
     return <ButtonLink {...rest} padding={padding} ref={ref} />
   },
 )
+
+IconButtonLink.displayName = 'IconButtonLink'
 
 export type ButtonVariants = {
   variant?: 'ghost' | 'primary'
