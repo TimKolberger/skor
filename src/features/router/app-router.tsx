@@ -1,3 +1,4 @@
+import { ErrorBoundary } from './ErrorBoundary.tsx'
 import type { FC } from 'react'
 import { Fragment } from 'react'
 import {
@@ -37,7 +38,7 @@ const routes = Object.keys(pages).reduce<RouteObject[]>((allRoutes, path) => {
     .replace(/\/index/g, '')
 
   const Element = pages[path].default
-  const ErrorBoundary = pages[path].ErrorBoundary
+  const RouteErrorBoundary = pages[path].ErrorBoundary ?? ErrorBoundary
   const Layout = pages[path].Layout ?? Fragment
 
   allRoutes.push({
@@ -49,7 +50,7 @@ const routes = Object.keys(pages).reduce<RouteObject[]>((allRoutes, path) => {
     ),
     loader: pages[path]?.loader,
     action: pages[path]?.action,
-    errorElement: ErrorBoundary ? <ErrorBoundary /> : undefined,
+    errorElement: RouteErrorBoundary ? <RouteErrorBoundary /> : undefined,
   })
   return allRoutes
 }, [])
