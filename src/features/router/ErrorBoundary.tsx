@@ -1,4 +1,5 @@
 import { ButtonLink } from '../../components/button.tsx'
+import { HeaderMenu } from '../../layout/header-menu.tsx'
 import {
   AppLayout,
   AppLayoutContent,
@@ -14,10 +15,9 @@ export const ErrorBoundary = () => {
   if (error instanceof NotFoundError) {
     return (
       <AppLayout>
-        <AppLayoutHeader
-          backLink={defaultBackLink}
-          title="Page not found"
-        ></AppLayoutHeader>
+        <AppLayoutHeader backLink={defaultBackLink} title="Page not found">
+          <HeaderMenu />
+        </AppLayoutHeader>
         <AppLayoutContent variant="center">
           <div className="flex flex-col gap-10">
             <h2 className="text-center text-9xl font-black uppercase">404</h2>
@@ -34,7 +34,9 @@ export const ErrorBoundary = () => {
   if (error instanceof Error) {
     return (
       <AppLayout>
-        <AppLayoutHeader backLink={defaultBackLink} title="Error occurred" />
+        <AppLayoutHeader backLink={defaultBackLink} title="Error occurred">
+          <HeaderMenu />
+        </AppLayoutHeader>
         <AppLayoutContent variant="center">
           <div className="flex flex-col gap-10">
             <h2 className="text-center text-6xl font-black uppercase">

@@ -29,6 +29,7 @@ export const AppLayoutHeader = (props: AppLayoutHeaderProps) => {
         <div className="flex min-h-11 items-center gap-1">
           {backLink ? (
             <IconButtonLink to={backLink} className="-ms-2 self-start">
+              <span className="sr-only">Back</span>
               <FiChevronLeft />
             </IconButtonLink>
           ) : null}

@@ -89,9 +89,9 @@ export function buttonClasses({
       slim: 'px-2',
     }[padding],
     {
-      sm: 'h-[2.5rem] min-w-[2.5rem] text-lg',
-      md: 'h-[2.75rem] min-w-[2.75rem] text-xl',
-      lg: 'h-[3rem] min-w-[3rem] text-2xl',
+      sm: 'h-10 min-w-10 text-lg',
+      md: 'h-11 min-w-11 text-xl',
+      lg: 'h-12 min-w-12 text-2xl',
     }[size],
     'inline-flex items-center justify-center gap-2 rounded-md py-1 transition-all uppercase font-black',
   )

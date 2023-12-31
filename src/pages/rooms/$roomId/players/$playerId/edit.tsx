@@ -6,6 +6,7 @@ import { useCurrentRoom } from '../../../../../features/rooms/use-current-room.t
 import { usePlayers } from '../../../../../features/rooms/use-players.ts'
 import { notFound } from '../../../../../features/router/not-found-error.ts'
 import type { LayoutProps } from '../../../../../features/router/types.ts'
+import { HeaderMenu } from '../../../../../layout/header-menu.tsx'
 import {
   AppLayout,
   AppLayoutContent,
@@ -45,6 +46,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
         >
           <FiTrash2 />
         </IconButton>
+        <HeaderMenu />
       </AppLayoutHeader>
       <AppLayoutContent variant="full-size">{children}</AppLayoutContent>
     </AppLayout>
