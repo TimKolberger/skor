@@ -21,6 +21,9 @@ This **P**rogressive **W**eb **A**pplication is built with
 
 ## Development
 
+This project uses [pnpm](https://pnpm.io/) as package manager.
+Follow the [installation instructions on their website](https://pnpm.io/installation) to install it.
+
 ```shell
 pnpm install
 pnpm dev
