@@ -2,6 +2,7 @@ import { useDebounce } from '../../components/use-debounce.ts'
 import { useLatestRef } from '../../components/use-latest-ref.ts'
 import { createUniqueId } from '../../utils/create-unique-id.ts'
 import { useArray, useMap } from '../collaboration/y-doc-provider.tsx'
+import { DOC_ID_PLAYERS, DOC_ID_SCORES } from './constants.ts'
 import { type SortDirection, useSettings } from './use-settings.ts'
 import { useCallback, useEffect, useMemo } from 'react'
 import {
@@ -47,7 +48,7 @@ function sortByScoreExtractId(
 
 export const DEBOUNCE_DELAY = 4_000
 
-type ScoreAction = {
+export type ScoreAction = {
   playerId: Player['id']
   scoreDiff: number
 }
@@ -86,8 +87,9 @@ export function usePlayers() {
     state: playersState,
     set: setPlayer,
     remove: removePlayer,
-  } = useMap<Player>('players')
-  const { state: scoreState, push: pushScore } = useArray<ScoreAction>('scores')
+  } = useMap<Player>(DOC_ID_PLAYERS)
+  const { state: scoreState, push: pushScore } =
+    useArray<ScoreAction>(DOC_ID_SCORES)
 
   const { playersWithScore } = useMemo(
     () => ({
