@@ -20,7 +20,7 @@
     "@radix-ui/react-dropdown-menu": "2.0.6",
     "@radix-ui/react-toggle-group": "^1.0.4",
     "autoprefixer": "10.4.16",
-    "clsx": "2.0.0",
+    "clsx": "2.1.0",
     "framer-motion": "10.16.16",
     "human-id": "4.1.0",
     "postcss": "8.4.32",
