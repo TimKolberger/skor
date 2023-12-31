@@ -38,29 +38,11 @@ export function ShareRoom({
         <h1 className="mb-4 text-center text-2xl font-bold">
           Share room "{room.name}"
         </h1>
-        <div className="mb-4">
-          <p className="text-sm">Room ID</p>
-          <p className="select-all text-xl font-bold">{room.id}</p>
-        </div>
-        <div className="stack mx-auto max-w-2xl gap-10">
+        <div className="mx-auto flex max-w-2xl flex-col gap-10">
           <p>
             Collaborate with your companions by sharing this room. You can
             update and view the game stats in real-time.
           </p>
-          {isShareAvailable ? (
-            <div className="flex w-full justify-center">
-              <Button
-                variant="primary"
-                className="border-slate-600"
-                onClick={async () => {
-                  await navigator.share(shareData)
-                }}
-              >
-                <FiShare />
-                Share
-              </Button>
-            </div>
-          ) : null}
 
           <div className="flex flex-col self-stretch">
             <div className="mx-auto flex justify-center rounded-lg bg-white p-4">
@@ -83,6 +65,26 @@ export function ShareRoom({
           </div>
 
           <div>
+            <p className="text-sm">Room ID</p>
+            <p className="select-all text-xl font-bold">{room.id}</p>
+          </div>
+
+          {isShareAvailable ? (
+            <div className="flex w-full justify-center">
+              <Button
+                variant="primary"
+                className="w-full"
+                onClick={async () => {
+                  await navigator.share(shareData)
+                }}
+              >
+                <FiShare />
+                More share options
+              </Button>
+            </div>
+          ) : null}
+
+          <div>
             <p>or you can share this URL</p>
             <div className="flex gap-2 ">
               <code className="border-1 inline-flex select-all items-center whitespace-break-spaces break-all rounded border-slate-400 bg-slate-200 bg-opacity-20 px-2 py-1">
@@ -100,6 +102,12 @@ export function ShareRoom({
               ) : null}
             </div>
           </div>
+
+          <p>
+            The room data is synchronized via a peer-to-peer connection between
+            your devices. No data is stored on a server. To synchronize the
+            data, open the room on another device.
+          </p>
         </div>
       </DrawerContent>
     </Drawer>
