@@ -22,6 +22,6 @@ This **P**rogressive **W**eb **A**pplication is built with
 ## Development
 
 ```shell
-yarn
-yarn dev
+pnpm install
+pnpm dev
 ```
