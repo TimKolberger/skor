@@ -26,7 +26,7 @@ const pwaPlugin = VitePWA({
     display: 'standalone',
   },
   workbox: {
-    globPatterns: ['**/*.{js,css,html,ico,png,svg,mp3}']
+    globPatterns: ['**/*.{js,css,html,ico,png,svg,mp3,woff,woff2}']
   }
 })
 
