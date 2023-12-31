@@ -36,7 +36,7 @@ export function ShareRoom({
       <DrawerTrigger>{children}</DrawerTrigger>
       <DrawerContent>
         <h2 className="mb-4 text-center text-2xl font-bold">
-          Share room "{room.name}"
+          Share room &quot;{room.name}&quot;
         </h2>
         <div className="mx-auto flex max-w-2xl flex-col gap-10">
           <p>

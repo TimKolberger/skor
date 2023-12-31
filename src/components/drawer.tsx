@@ -42,9 +42,13 @@ export const DrawerContent = forwardRef<HTMLDivElement, DrawerContentProps>(
   },
 )
 
+DrawerContent.displayName = 'DrawerContent'
+
 export const DrawerTrigger = forwardRef<
   HTMLButtonElement,
   ComponentPropsWithoutRef<typeof Vaul.Trigger>
 >((props, ref) => {
   return <Vaul.Trigger {...props} asChild ref={ref} />
 })
+
+DrawerTrigger.displayName = 'DrawerTrigger'

@@ -49,3 +49,5 @@ export const PlayerNameInput = forwardRef<
     </label>
   )
 })
+
+PlayerNameInput.displayName = 'PlayerNameInput'
