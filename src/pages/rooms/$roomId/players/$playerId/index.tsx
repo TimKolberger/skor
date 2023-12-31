@@ -3,6 +3,7 @@ import { RoomProvider } from '../../../../../features/rooms/room-provider.tsx'
 import { ScoreForm } from '../../../../../features/rooms/score/score-form.tsx'
 import { useCurrentRoom } from '../../../../../features/rooms/use-current-room.ts'
 import { usePlayers } from '../../../../../features/rooms/use-players.ts'
+import { notFound } from '../../../../../features/router/not-found-error.ts'
 import type { LayoutProps } from '../../../../../features/router/types.ts'
 import {
   AppLayout,
@@ -46,7 +47,7 @@ export default function PlayerPage() {
   const { players, updateScore } = usePlayers()
   const player = players.find((p) => p.id === params.playerId)
   if (!player) {
-    throw new Error(`Player ${params.playerId} not found`)
+    throw notFound(`Player "${params.playerId}" not found`)
   }
 
   return (
