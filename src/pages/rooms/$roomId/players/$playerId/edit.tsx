@@ -32,12 +32,13 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
   return (
     <AppLayout>
       <AppLayoutHeader
-        title="Edit Player"
+        title="Edit player"
         backLink={`/rooms/${room.id}/players/${params.playerId}`}
       >
         <IconButton
           onClick={() => {
-            removePlayer(params.playerId!)
+            if (!params.playerId) return
+            removePlayer(params.playerId)
             navigate(`/rooms/${room.id}`)
           }}
         >
@@ -56,11 +57,11 @@ export default function EditPlayerPage() {
   if (!initialPlayer) {
     throw new Error(`Player ${params.playerId} not found`)
   }
-  const [playerColor, setPlayerColor] = useState(
-    () =>
-      initialPlayer.color ||
-      playerColors[Math.floor(Math.random() * playerColors.length)],
-  )
+  const [playerColor, setPlayerColor] = useState(() => {
+    const randomPlayerColor =
+      playerColors[Math.floor(Math.random() * playerColors.length)]
+    return initialPlayer.color || randomPlayerColor
+  })
 
   return (
     <PlayerForm

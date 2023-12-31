@@ -14,7 +14,7 @@ import { parse } from 'valibot'
 export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <AppLayout>
-      <AppLayoutHeader title="Add Room" backLink="/rooms" />
+      <AppLayoutHeader title="Add room" backLink="/rooms" />
       <AppLayoutContent variant="max-width">{children}</AppLayoutContent>
     </AppLayout>
   )

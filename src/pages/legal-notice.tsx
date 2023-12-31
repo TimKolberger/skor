@@ -8,7 +8,7 @@ import {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <AppLayout>
-      <AppLayoutHeader title="Legal Notice" backLink="/" />
+      <AppLayoutHeader title="Legal notice" backLink="/" />
       <AppLayoutContent variant="max-width">{children}</AppLayoutContent>
     </AppLayout>
   )

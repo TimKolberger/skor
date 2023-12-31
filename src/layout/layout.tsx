@@ -6,12 +6,11 @@ import { Link } from 'react-router-dom'
 
 type AppLayoutProps = ComponentPropsWithoutRef<'div'>
 export const AppLayout = (props: AppLayoutProps) => {
-  return (
-    <div {...props} className={clsx('flex flex-1 flex-col', props.className)} />
-  )
+  const { className, ...rest } = props
+  return <div {...rest} className={clsx('flex flex-1 flex-col', className)} />
 }
 
-type AppLayoutHeaderProps = ComponentPropsWithoutRef<'main'> & {
+type AppLayoutHeaderProps = ComponentPropsWithoutRef<'header'> & {
   backLink?: string
 }
 export const AppLayoutHeader = (props: AppLayoutHeaderProps) => {
@@ -20,14 +19,14 @@ export const AppLayoutHeader = (props: AppLayoutHeaderProps) => {
     <header
       {...rest}
       className={clsx(
-        'sticky top-0 z-30 flex-grow-0 basis-[9rem] justify-end shadow',
+        'sticky top-0 z-30 flex-grow-0 basis-36 justify-end shadow',
         className,
       )}
     >
       <div className="glass" />
       <div className="glass-edge" />
       <div className="absolute inset-0 flex flex-1 flex-col justify-end px-4 py-4">
-        <div className="flex min-h-[44px] items-center gap-1">
+        <div className="flex min-h-11 items-center gap-1">
           {backLink ? (
             <IconButtonLink to={backLink} className="-ms-2 self-start">
               <FiChevronLeft />
@@ -39,7 +38,7 @@ export const AppLayoutHeader = (props: AppLayoutHeaderProps) => {
           <div className="flex flex-col justify-end text-slate-200">
             <Link
               to="/"
-              className="-ml-3 rounded-md px-3 text-5xl font-black transition-colors hover:bg-slate-200 hover:bg-opacity-10"
+              className="-ms-3 rounded-md px-3 text-5xl font-black transition-colors hover:bg-slate-200 hover:bg-opacity-10"
             >
               SK0R
             </Link>
