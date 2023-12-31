@@ -25,7 +25,7 @@ import tune_h1 from './assets/tunes/h1.mp3'
 import tune_h from './assets/tunes/h.mp3'
 import { playerColors } from './player-colors.ts'
 import { clsx } from 'clsx'
-import * as React from 'react'
+import { useEffect, useId, useRef } from 'react'
 
 export interface ColorInputProps {
   value: string
@@ -34,16 +34,16 @@ export interface ColorInputProps {
 
 export const ColorInput = ({ value, onChange }: ColorInputProps) => {
   const columns = 4
-  const colorSelectRef = React.useRef<HTMLDivElement>(null)
-  React.useEffect(() => {
+  const colorSelectRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
     colorSelectRef.current?.focus()
   }, [])
   const playIndex = useAudioEffect()
-  const id = React.useId()
+  const id = useId()
 
-  const handleChange = (value: string) => {
-    playIndex(playerColors.indexOf(value))
+  const handleChange = async (value: string) => {
     onChange(value)
+    await playIndex(playerColors.indexOf(value))
   }
 
   return (

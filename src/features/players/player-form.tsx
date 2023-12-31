@@ -4,15 +4,14 @@ import { ColorInput } from './color-input.tsx'
 import { generatePlayerName } from './generate-player-name.ts'
 import { playerColors } from './player-colors.ts'
 import { PlayerNameInput } from './player-name-input.tsx'
-import * as React from 'react'
-import { useEffect, useRef, useState } from 'react'
+import { type ReactNode, useEffect, useRef, useState } from 'react'
 import { parse } from 'valibot'
 
 type PlayerFormProps = {
   initialValues?: Partial<Player>
   onSubmit: (values: Player) => void
   onColorChange?: (color: Player['color']) => void
-  children: React.ReactNode
+  children: ReactNode
 }
 export const PlayerForm = ({
   initialValues,
