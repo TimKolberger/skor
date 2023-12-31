@@ -2,14 +2,13 @@ import { generateRoomName } from './generate-room-name.ts'
 import { RoomNameInput } from './room-name-input.tsx'
 import type { Room } from './use-rooms.ts'
 import { RoomSchema } from './use-rooms.ts'
-import * as React from 'react'
-import { useState } from 'react'
+import { type ReactNode, useState } from 'react'
 import { parse } from 'valibot'
 
 type RoomFormProps = {
   initialValues?: Partial<Room>
   onSubmit: (values: Room) => void
-  children: React.ReactNode
+  children: ReactNode
 }
 export const RoomForm = ({
   initialValues,
