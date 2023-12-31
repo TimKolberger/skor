@@ -76,9 +76,3 @@
     );
   }
 }
-
-@layer utilities {
-  .stack {
-    @apply flex flex-col items-start;
-  }
-}
