@@ -1,4 +1,5 @@
 import { ButtonLink, IconButtonLink } from '../../components/button.tsx'
+import { IconContainer } from '../../components/icon-container.tsx'
 import { Time } from '../../components/time.tsx'
 import { useRoomStore } from '../../features/rooms/use-rooms.ts'
 import {
@@ -7,7 +8,7 @@ import {
   AppLayoutHeader,
 } from '../../layout/layout.tsx'
 import type { ReactNode } from 'react'
-import { FiChevronRight, FiPlus } from 'react-icons/fi'
+import { FiBox, FiChevronRight, FiPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
 export const Layout = ({ children }: { children: ReactNode }) => {
@@ -68,6 +69,9 @@ export default function RoomsPage() {
 function EmptyRooms() {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-4 p-4">
+      <IconContainer>
+        <FiBox />
+      </IconContainer>
       <p className="text-center text-2xl font-black">
         There are no game rooms.
       </p>

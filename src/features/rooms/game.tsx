@@ -1,4 +1,5 @@
 import { ButtonLink, IconButton } from '../../components/button.tsx'
+import { IconContainer } from '../../components/icon-container.tsx'
 import { useDebounce } from '../../components/use-debounce.ts'
 import { useTickingButton } from '../../components/use-ticking-button.ts'
 import { useCurrentRoom } from './use-current-room.ts'
@@ -9,7 +10,7 @@ import {
 } from './use-players.ts'
 import { clsx } from 'clsx'
 import { AnimatePresence, LayoutGroup, Reorder } from 'framer-motion'
-import { FiMinus, FiPlus } from 'react-icons/fi'
+import { FiMinus, FiPlus, FiUsers } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
 export const Game = () => {
@@ -49,6 +50,9 @@ export const Game = () => {
 function EmptyGame() {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-4 p-4">
+      <IconContainer>
+        <FiUsers />
+      </IconContainer>
       <p className="text-center text-2xl font-black">There are no players.</p>
       <ButtonLink to="players/add" variant="primary">
         Create player
