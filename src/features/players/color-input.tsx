@@ -69,38 +69,38 @@ export const ColorInput = ({ value, onChange }: ColorInputProps) => {
           const length = playerColors.length
           const maxIndex = playerColors.length - 1
 
-          const keyHandlerMap: Record<string, () => void> = {
-            ArrowLeft: () => {
+          const keyHandlerMap: Record<string, () => Promise<void>> = {
+            ArrowLeft: async () => {
               let nextIndex = (currentIndex - 1) % length
               if (nextIndex < 0) {
                 nextIndex = maxIndex
               }
               const nextColor = playerColors[nextIndex]
-              handleChange(nextColor)
+              await handleChange(nextColor)
             },
-            ArrowRight: () => {
+            ArrowRight: async () => {
               let nextIndex = (currentIndex + 1) % length
               if (nextIndex < 0) {
                 nextIndex = maxIndex
               }
               const nextColor = playerColors[nextIndex]
-              handleChange(nextColor)
+              await handleChange(nextColor)
             },
-            ArrowUp: () => {
+            ArrowUp: async () => {
               let nextIndex = (currentIndex - columns) % length
               if (nextIndex < 0) {
                 nextIndex += maxIndex + 1
               }
               const nextColor = playerColors[nextIndex]
-              handleChange(nextColor)
+              await handleChange(nextColor)
             },
-            ArrowDown: () => {
+            ArrowDown: async () => {
               let nextIndex = (currentIndex + columns) % length
               if (nextIndex < 0) {
                 nextIndex += maxIndex - 1
               }
               const nextColor = playerColors[nextIndex]
-              handleChange(nextColor)
+              await handleChange(nextColor)
             },
           }
           keyHandlerMap[e.key]?.()
@@ -111,7 +111,7 @@ export const ColorInput = ({ value, onChange }: ColorInputProps) => {
           return (
             <div
               key={color}
-              aria-label={`Select player color ${color}`}
+              aria-label={`Select player color ${color.split('-')[1]}`}
               className={clsx(
                 'h-16 flex-1 basis-20 shadow transition-all',
                 {
