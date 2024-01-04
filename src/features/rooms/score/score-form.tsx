@@ -3,7 +3,7 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from '../../../components/toggle-group.tsx'
-import type { Assign } from '../../../utils/assign.ts'
+import type { Assign } from '../../../utils/assign.types.ts'
 import { useLastDiff } from './use-last-diff.ts'
 import { type Operator, useOperator } from './use-operator.ts'
 import { type ComponentPropsWithRef, useEffect, useRef } from 'react'
@@ -11,6 +11,7 @@ import { type ComponentPropsWithRef, useEffect, useRef } from 'react'
 type ScoreFormProps = Assign<
   ComponentPropsWithRef<'form'>,
   {
+    children?: never
     score: number
     onSubmit: (values: { diff: number }) => void
   }
@@ -44,6 +45,7 @@ export const ScoreForm = (props: ScoreFormProps) => {
       </ToggleGroup>
       <div className="flex">
         <input
+          aria-label="Diff"
           type="number"
           inputMode="numeric"
           pattern="\d*"

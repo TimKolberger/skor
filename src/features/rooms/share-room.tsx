@@ -97,6 +97,7 @@ export function ShareRoom({
                     await navigator.clipboard.writeText(shareRoomUrlString)
                   }}
                 >
+                  <span className="sr-only">Copy URL</span>
                   <FiCopy />
                 </IconButton>
               ) : null}

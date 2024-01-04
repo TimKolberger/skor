@@ -26,6 +26,7 @@ export const HeaderMenu = (props: HeaderMenuProps) => {
   return (
     <Menu>
       <MenuButton variant="ghost" padding="slim">
+        <span className="sr-only">Open menu</span>
         <FiMoreVertical />
       </MenuButton>
       <MenuContent align="end">

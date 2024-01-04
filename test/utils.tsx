@@ -1,4 +1,6 @@
+import { WakeLockProvider } from '../src/features/wake-lock/wake-lock-provider.tsx'
 import { render, type RenderOptions } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { type FC, type ReactElement, type ReactNode, Suspense } from 'react'
 import { MemoryRouter, type MemoryRouterProps } from 'react-router-dom'
 
@@ -13,14 +15,19 @@ const customRender = (
   }> = ({ children }) => {
     return (
       <Suspense>
-        <MemoryRouter initialEntries={options?.initialEntries}>
-          {children}
-        </MemoryRouter>
+        <WakeLockProvider>
+          <MemoryRouter initialEntries={options?.initialEntries}>
+            {children}
+          </MemoryRouter>
+        </WakeLockProvider>
       </Suspense>
     )
   }
-
-  return render(ui, { wrapper: AllTheProviders, ...options })
+  const user = userEvent.setup()
+  return {
+    ...render(ui, { wrapper: AllTheProviders, ...options }),
+    user,
+  }
 }
 
 // eslint-disable-next-line react-refresh/only-export-components

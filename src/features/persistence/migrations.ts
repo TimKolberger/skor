@@ -4,22 +4,16 @@ import {
 } from './local-storage-version.ts'
 import { migration001 } from './migrations/001-from-single-game.ts'
 
-const version = getLocalStorageVersion()
-
-async function migrate() {
-  if (version < 1) {
+export async function runMigrations() {
+  if (getLocalStorageVersion() < 1) {
     await runMigration(migration001, 1)
   }
 
-  // if (version < 2) {
+  // if (getLocalStorageVersion() < 2) {
   //  // write next migration here
   // await runMigration(migration002, 2)
   // }
 }
-
-migrate().catch((error) => {
-  console.error(error)
-})
 
 async function runMigration(
   migration: () => void | Promise<void>,
