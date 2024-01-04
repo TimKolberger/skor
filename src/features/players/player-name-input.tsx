@@ -3,7 +3,7 @@ import { generatePlayerName } from './generate-player-name.ts'
 import { forwardRef } from 'react'
 import { FiShuffle, FiX } from 'react-icons/fi'
 
-interface PlayerNameInputProps {
+type PlayerNameInputProps = {
   value: string
   onChange: (playerName: string) => void
 }
