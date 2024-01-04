@@ -26,8 +26,8 @@ const pwaPlugin = VitePWA({
     display: 'standalone',
   },
   workbox: {
-    globPatterns: ['**/*.{js,css,html,ico,png,svg,mp3,woff,woff2}']
-  }
+    globPatterns: ['**/*.{js,css,html,ico,png,svg,mp3,woff,woff2}'],
+  },
 })
 
 const optionalPlugins = (['1', 'true'].includes(
@@ -50,15 +50,38 @@ export default defineConfig({
   test: {
     setupFiles: 'test/setup-test.ts',
     coverage: {
-      provider: 'v8',
       all: true,
-      reporter: ['lcov', 'text'],
+      provider: 'v8',
+      reporter: ['json-summary', 'json', 'lcov'],
+      reportOnFailure: true,
+      thresholds: {
+        lines: 60,
+        branches: 60,
+        functions: 60,
+        statements: 60,
+      },
       include: ['src/**'],
-      exclude: ['src/App.tsx', 'src/main.tsx', '**/*.d.ts'],
+      exclude: [
+        'src/App.tsx',
+        'src/main.tsx',
+        '**/*.types.ts',
+        'src/feature/router',
+        'src/pages',
+        '**/*.d.ts',
+      ],
     },
     globals: true,
     environment: 'happy-dom',
     css: false,
+    onConsoleLog(msg) {
+      if (
+        msg.includes(
+          'The above error occurred in the <TestComponent> component:',
+        )
+      ) {
+        return false
+      }
+    },
   },
   build: {
     rollupOptions: {
