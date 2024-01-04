@@ -2,7 +2,7 @@ import { clsx } from 'clsx'
 import { type ComponentPropsWithoutRef, forwardRef } from 'react'
 import { Link, type LinkProps } from 'react-router-dom'
 
-export type ButtonProps = ComponentPropsWithoutRef<'button'> & ButtonVariants
+type ButtonProps = ComponentPropsWithoutRef<'button'> & ButtonVariants
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
@@ -36,7 +36,7 @@ export const IconButton = forwardRef<HTMLButtonElement, ButtonProps>(
 
 IconButton.displayName = 'IconButton'
 
-export type ButtonLinkProps = LinkProps & ButtonVariants
+type ButtonLinkProps = LinkProps & ButtonVariants
 export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   (props, ref) => {
     const {

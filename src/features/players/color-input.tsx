@@ -27,7 +27,7 @@ import { playerColors } from './player-colors.ts'
 import { clsx } from 'clsx'
 import { useEffect, useId, useRef } from 'react'
 
-export interface ColorInputProps {
+type ColorInputProps = {
   value: string
   onChange: (value: string) => void
 }

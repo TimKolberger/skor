@@ -1,0 +1,6 @@
+{
+  "$schema": "https://unpkg.com/knip@3/schema.json",
+  "entry": ["src/main.tsx", "src/run-migrations.ts", "src/pages/**/*.tsx"],
+  "project": ["src/**/**/*.{ts,tsx}", "test/**/*.{ts,tsx}"],
+  "ignoreDependencies": ["virtual:*"]
+}

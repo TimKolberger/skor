@@ -17,7 +17,7 @@ export const LoadingScreen = () => {
   )
 }
 
-export const Loading = () => {
+const Loading = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {

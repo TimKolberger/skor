@@ -16,7 +16,7 @@ import {
 } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
-export type HeaderMenuProps = {
+type HeaderMenuProps = {
   children?: ReactNode
 }
 export const HeaderMenu = (props: HeaderMenuProps) => {

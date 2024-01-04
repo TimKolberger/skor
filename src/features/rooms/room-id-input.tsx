@@ -2,7 +2,7 @@ import { IconButton } from '../../components/button.tsx'
 import { useRef } from 'react'
 import { FiX } from 'react-icons/fi'
 
-interface RoomIdInputProps {
+type RoomIdInputProps = {
   value?: string
   onChange?: (playerName: string) => void
 }
