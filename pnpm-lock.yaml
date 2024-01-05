@@ -21,8 +21,8 @@ dependencies:
     specifier: 2.1.0
     version: 2.1.0
   framer-motion:
-    specifier: 10.17.6
-    version: 10.17.6(react-dom@18.2.0)(react@18.2.0)
+    specifier: 10.17.9
+    version: 10.17.9(react-dom@18.2.0)(react@18.2.0)
   human-id:
     specifier: 4.1.0
     version: 4.1.0
@@ -4206,8 +4206,8 @@ packages:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
     dev: false
 
-  /framer-motion@10.17.6(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-WPPm0vLGTbhLOsD7v1fEv3yjX1RrmzsVI3CZ6dpBJvVb7wKMA6mpZsQzTYiSUDz/YIlvTUHHY0Jum7iEHnLHDA==}
+  /framer-motion@10.17.9(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-z2NpP8r+XuALoPA7ZVZHm/OoTnwkQNJFBu91sC86o/FYvJ4x7ar3eQnixgwYWFK7kEqOtQ6whtNM37tn1KrOOA==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
