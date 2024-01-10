@@ -66,5 +66,5 @@
     "vitest": "1.1.3",
     "workbox-window": "7.0.0"
   },
-  "packageManager": "pnpm@8.14.0"
+  "packageManager": "pnpm@8.14.1"
 }
