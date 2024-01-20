@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { defineConfig, type PluginOption } from 'vite'
+import { defineConfig, type PluginOption, type Plugin } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 const pwaPlugin = VitePWA({
@@ -30,6 +30,17 @@ const pwaPlugin = VitePWA({
   },
 })
 
+const htmlPlugin: Plugin = {
+  name: 'html-transform',
+  apply: 'build',
+  transformIndexHtml(html: string) {
+    return html.replace(
+      '<!-- inject-analytics-script -->',
+      `<script async src="https://umami.kolberger.eu/script.js" data-website-id="9cd0ee03-0f5e-4414-81d2-c2de1a3e1d99"></script>`,
+    )
+  },
+}
+
 const optionalPlugins = (['1', 'true'].includes(
   process.env.ANALYZE?.toLowerCase(),
 )
@@ -45,7 +56,7 @@ const optionalPlugins = (['1', 'true'].includes(
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), pwaPlugin, ...optionalPlugins],
+  plugins: [react(), pwaPlugin, htmlPlugin, ...optionalPlugins],
   server: {},
   test: {
     setupFiles: 'test/setup-test.ts',
