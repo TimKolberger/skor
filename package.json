@@ -35,7 +35,7 @@
     "tailwindcss": "3.4.1",
     "valibot": "0.27.0",
     "vaul": "0.8.9",
-    "vite-plugin-pwa": "0.17.4",
+    "vite-plugin-pwa": "0.17.5",
     "y-indexeddb": "9.0.12",
     "y-webrtc": "10.3.0",
     "yjs": "13.6.11",
