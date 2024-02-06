@@ -54,8 +54,8 @@ dependencies:
     specifier: 3.4.1
     version: 3.4.1
   valibot:
-    specifier: 0.27.1
-    version: 0.27.1
+    specifier: 0.28.0
+    version: 0.28.0
   vaul:
     specifier: 0.9.0
     version: 0.9.0(@types/react-dom@18.2.18)(@types/react@18.2.54)(react-dom@18.2.0)(react@18.2.0)
@@ -6869,8 +6869,8 @@ packages:
       convert-source-map: 2.0.0
     dev: true
 
-  /valibot@0.27.1:
-    resolution: {integrity: sha512-k57/5/kMwMjiVP0LUMpa+n4ihSemuXshz1ND4fftKw1bkHZYN/TnHcbjaEie3K7FwAceiOgugLZPjSaNxdygeg==}
+  /valibot@0.28.0:
+    resolution: {integrity: sha512-+ADabFSOGEffVmMYltPVK3K1GpbzXGoNSoP9ZbjTVz7wkjVIj6L2NvOu4TaeU2R9s7tyNKihcAeddmrpT6LDzQ==}
     dev: false
 
   /validate-npm-package-license@3.0.4:
