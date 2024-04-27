@@ -31,7 +31,7 @@ export const RoomProvider = ({ children }: { children: ReactNode }) => {
       })
 
     const syncedListener = () => {
-      yDoc.emit('synced', [yDoc])
+      yDoc.emit('sync', [true, yDoc])
     }
 
     webrtcProviderRef.current?.on('synced', syncedListener)

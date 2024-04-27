@@ -25,9 +25,9 @@ const useSharedType = function <T extends AbstractType<any>>(
     const listener = () => {
       forceUpdate()
     }
-    doc.on('synced', listener)
+    doc.on('sync', listener)
     return () => {
-      doc.off('synced', listener)
+      doc.off('sync', listener)
     }
   }, [doc, forceUpdate])
 
