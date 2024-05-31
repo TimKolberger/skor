@@ -128,8 +128,8 @@ devDependencies:
     specifier: 5.17.3
     version: 5.17.3(@types/node@20.12.13)(typescript@5.4.5)
   prettier-plugin-tailwindcss:
-    specifier: 0.6.0
-    version: 0.6.0(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.2.5)
+    specifier: 0.6.1
+    version: 0.6.1(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.2.5)
   rollup-plugin-visualizer:
     specifier: 5.12.0
     version: 5.12.0
@@ -5434,8 +5434,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-tailwindcss@0.6.0(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.2.5):
-    resolution: {integrity: sha512-l5F3iG54XbOq/2DOPP/YA+c6VE3/qXrcBccntq2v7PSxtEc+J6SwsuTyDHxoFK1+jAlcU/hECBfzn6MON6ENBg==}
+  /prettier-plugin-tailwindcss@0.6.1(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.2.5):
+    resolution: {integrity: sha512-AnbeYZu0WGj+QgKciUgdMnRxrqcxltleZPgdwfA5104BHM3siBLONN/HLW1yS2HvzSNkzpQ/JAj+LN0jcJO+0w==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
