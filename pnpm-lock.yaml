@@ -64,13 +64,13 @@ dependencies:
     version: 0.20.0(vite@5.3.1)(workbox-window@7.1.0)
   y-indexeddb:
     specifier: 9.0.12
-    version: 9.0.12(yjs@13.6.17)
+    version: 9.0.12(yjs@13.6.18)
   y-webrtc:
     specifier: 10.3.0
-    version: 10.3.0(yjs@13.6.17)
+    version: 10.3.0(yjs@13.6.18)
   yjs:
-    specifier: 13.6.17
-    version: 13.6.17
+    specifier: 13.6.18
+    version: 13.6.18
   zustand:
     specifier: 4.5.2
     version: 4.5.2(@types/react@18.3.3)(react@18.3.1)
@@ -6947,27 +6947,27 @@ packages:
     dev: false
     optional: true
 
-  /y-indexeddb@9.0.12(yjs@13.6.17):
+  /y-indexeddb@9.0.12(yjs@13.6.18):
     resolution: {integrity: sha512-9oCFRSPPzBK7/w5vOkJBaVCQZKHXB/v6SIT+WYhnJxlEC61juqG0hBrAf+y3gmSMLFLwICNH9nQ53uscuse6Hg==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
     peerDependencies:
       yjs: ^13.0.0
     dependencies:
       lib0: 0.2.94
-      yjs: 13.6.17
+      yjs: 13.6.18
     dev: false
 
-  /y-protocols@1.0.6(yjs@13.6.17):
+  /y-protocols@1.0.6(yjs@13.6.18):
     resolution: {integrity: sha512-vHRF2L6iT3rwj1jub/K5tYcTT/mEYDUppgNPXwp8fmLpui9f7Yeq3OEtTLVF012j39QnV+KEQpNqoN7CWU7Y9Q==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
     peerDependencies:
       yjs: ^13.0.0
     dependencies:
       lib0: 0.2.94
-      yjs: 13.6.17
+      yjs: 13.6.18
     dev: false
 
-  /y-webrtc@10.3.0(yjs@13.6.17):
+  /y-webrtc@10.3.0(yjs@13.6.18):
     resolution: {integrity: sha512-KalJr7dCgUgyVFxoG3CQYbpS0O2qybegD0vI4bYnYHI0MOwoVbucED3RZ5f2o1a5HZb1qEssUKS0H/Upc6p1lA==}
     engines: {node: '>=12'}
     hasBin: true
@@ -6976,8 +6976,8 @@ packages:
     dependencies:
       lib0: 0.2.94
       simple-peer: 9.11.1
-      y-protocols: 1.0.6(yjs@13.6.17)
-      yjs: 13.6.17
+      y-protocols: 1.0.6(yjs@13.6.18)
+      yjs: 13.6.18
     optionalDependencies:
       ws: 8.17.1
     transitivePeerDependencies:
@@ -7018,8 +7018,8 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
-  /yjs@13.6.17:
-    resolution: {integrity: sha512-ERnKXYZrZqgGO81Yqt3D69detaRUwaqhsQTZRKi9CDMgteDMund+KcLChfwpjQbva9YwfRgh7S914Pa6qPVVCA==}
+  /yjs@13.6.18:
+    resolution: {integrity: sha512-GBTjO4QCmv2HFKFkYIJl7U77hIB1o22vSCSQD1Ge8ZxWbIbn8AltI4gyXbtL+g5/GJep67HCMq3Y5AmNwDSyEg==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
     dependencies:
       lib0: 0.2.94
