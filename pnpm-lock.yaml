@@ -72,8 +72,8 @@ dependencies:
     specifier: 13.6.18
     version: 13.6.18
   zustand:
-    specifier: 4.5.2
-    version: 4.5.2(@types/react@18.3.3)(react@18.3.1)
+    specifier: 4.5.3
+    version: 4.5.3(@types/react@18.3.3)(react@18.3.1)
 
 devDependencies:
   '@testing-library/jest-dom':
@@ -7028,8 +7028,8 @@ packages:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
     dev: true
 
-  /zustand@4.5.2(@types/react@18.3.3)(react@18.3.1):
-    resolution: {integrity: sha512-2cN1tPkDVkwCy5ickKrI7vijSjPksFRfqS6237NzT0vqSsztTNnQdHw9mmN7uBdk3gceVXU0a+21jFzFzAc9+g==}
+  /zustand@4.5.3(@types/react@18.3.3)(react@18.3.1):
+    resolution: {integrity: sha512-iH1gA/3uOMR0Gz260Fsklxo7wWEXJ008p1bO9O6gxwkbvBUaTDlcVChkDKGGSsvdbOyVce0nQfBitVH6sbYyew==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@types/react': '>=16.8'
