@@ -58,7 +58,7 @@
     "eslint-plugin-react": "7.34.3",
     "eslint-plugin-react-refresh": "0.4.7",
     "happy-dom": "13.6.2",
-    "knip": "5.23.2",
+    "knip": "5.23.3",
     "prettier-plugin-tailwindcss": "0.6.5",
     "rollup-plugin-visualizer": "5.12.0",
     "typescript": "5.5.2",
