@@ -30,8 +30,8 @@ dependencies:
     specifier: 8.4.39
     version: 8.4.39
   prettier:
-    specifier: 3.3.2
-    version: 3.3.2
+    specifier: 3.3.3
+    version: 3.3.3
   react:
     specifier: 18.3.1
     version: 18.3.1
@@ -87,7 +87,7 @@ devDependencies:
     version: 14.5.2
   '@trivago/prettier-plugin-sort-imports':
     specifier: 4.3.0
-    version: 4.3.0(prettier@3.3.2)
+    version: 4.3.0(prettier@3.3.3)
   '@types/node':
     specifier: 20.14.10
     version: 20.14.10
@@ -129,7 +129,7 @@ devDependencies:
     version: 5.25.2(@types/node@20.14.10)(typescript@5.5.3)
   prettier-plugin-tailwindcss:
     specifier: 0.6.5
-    version: 0.6.5(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.3.2)
+    version: 0.6.5(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.3.3)
   rollup-plugin-visualizer:
     specifier: 5.12.0
     version: 5.12.0
@@ -2655,7 +2655,7 @@ packages:
       '@testing-library/dom': '>=7.21.4'
     dev: true
 
-  /@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.3.2):
+  /@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.3.3):
     resolution: {integrity: sha512-r3n0onD3BTOVUNPhR4lhVK4/pABGpbA7bW3eumZnYdKaHkf1qEC+Mag6DPbGNuuh0eG8AaYj+YqmVHSiGslaTQ==}
     peerDependencies:
       '@vue/compiler-sfc': 3.x
@@ -2670,7 +2670,7 @@ packages:
       '@babel/types': 7.17.0
       javascript-natural-sort: 0.7.1
       lodash: 4.17.21
-      prettier: 3.3.2
+      prettier: 3.3.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5232,7 +5232,7 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-tailwindcss@0.6.5(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.3.2):
+  /prettier-plugin-tailwindcss@0.6.5(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.3.3):
     resolution: {integrity: sha512-axfeOArc/RiGHjOIy9HytehlC0ZLeMaqY09mm8YCkMzznKiDkwFzOpBvtuhuv3xG5qB73+Mj7OCe2j/L1ryfuQ==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
@@ -5284,12 +5284,12 @@ packages:
       prettier-plugin-svelte:
         optional: true
     dependencies:
-      '@trivago/prettier-plugin-sort-imports': 4.3.0(prettier@3.3.2)
-      prettier: 3.3.2
+      '@trivago/prettier-plugin-sort-imports': 4.3.0(prettier@3.3.3)
+      prettier: 3.3.3
     dev: true
 
-  /prettier@3.3.2:
-    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
+  /prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
     engines: {node: '>=14'}
     hasBin: true
 
