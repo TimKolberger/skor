@@ -119,8 +119,8 @@ devDependencies:
     specifier: 7.35.0
     version: 7.35.0(eslint@8.57.0)
   eslint-plugin-react-refresh:
-    specifier: 0.4.8
-    version: 0.4.8(eslint@8.57.0)
+    specifier: 0.4.9
+    version: 0.4.9(eslint@8.57.0)
   happy-dom:
     specifier: 13.6.2
     version: 13.6.2
@@ -3763,8 +3763,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-plugin-react-refresh@0.4.8(eslint@8.57.0):
-    resolution: {integrity: sha512-MIKAclwaDFIiYtVBLzDdm16E+Ty4GwhB6wZlCAG1R3Ur+F9Qbo6PRxpA5DK7XtDgm+WlCoAY2WxAwqhmIDHg6Q==}
+  /eslint-plugin-react-refresh@0.4.9(eslint@8.57.0):
+    resolution: {integrity: sha512-QK49YrBAo5CLNLseZ7sZgvgTy21E6NEw22eZqc4teZfH8pxV3yXc9XXOYfUI6JNpw7mfHNkAeWtBxrTyykB6HA==}
     peerDependencies:
       eslint: '>=7'
     dependencies:
