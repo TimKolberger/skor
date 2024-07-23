@@ -22,7 +22,7 @@
     "@radix-ui/react-toggle-group": "1.0.4",
     "autoprefixer": "10.4.19",
     "clsx": "2.1.1",
-    "framer-motion": "11.3.8",
+    "framer-motion": "11.3.12",
     "human-id": "4.1.1",
     "postcss": "8.4.39",
     "prettier": "3.3.3",
