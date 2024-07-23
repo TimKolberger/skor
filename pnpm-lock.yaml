@@ -77,8 +77,8 @@ dependencies:
 
 devDependencies:
   '@testing-library/jest-dom':
-    specifier: 6.4.7
-    version: 6.4.7(vitest@2.0.4)
+    specifier: 6.4.8
+    version: 6.4.8
   '@testing-library/react':
     specifier: 15.0.7
     version: 15.0.7(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
@@ -2584,26 +2584,9 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/jest-dom@6.4.7(vitest@2.0.4):
-    resolution: {integrity: sha512-GaKJ0nijoNf30dWSOOzQEBkWBRk4rG3C/efw8zKrimNuZpnS/6/AEwo0WvZHgJxG84cNCgxt+mtbe1fsvfLp2A==}
+  /@testing-library/jest-dom@6.4.8:
+    resolution: {integrity: sha512-JD0G+Zc38f5MBHA4NgxQMR5XtO5Jx9g86jqturNTt2WUfRmLDIY7iKkWHDCCTiDuFMre6nxAD5wHw9W5kI4rGw==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
-    peerDependencies:
-      '@jest/globals': '>= 28'
-      '@types/bun': latest
-      '@types/jest': '>= 28'
-      jest: '>= 28'
-      vitest: '>= 0.32'
-    peerDependenciesMeta:
-      '@jest/globals':
-        optional: true
-      '@types/bun':
-        optional: true
-      '@types/jest':
-        optional: true
-      jest:
-        optional: true
-      vitest:
-        optional: true
     dependencies:
       '@adobe/css-tools': 4.4.0
       '@babel/runtime': 7.24.7
@@ -2613,7 +2596,6 @@ packages:
       dom-accessibility-api: 0.6.3
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 2.0.4(@types/node@20.14.11)(happy-dom@13.6.2)
     dev: true
 
   /@testing-library/react@15.0.7(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1):
