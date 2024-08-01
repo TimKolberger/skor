@@ -2,7 +2,7 @@ import * as RadixToggleGroup from '@radix-ui/react-toggle-group'
 import { clsx } from 'clsx'
 
 export const ToggleGroup = (
-  props: RadixToggleGroup.ToggleGroupImplSingleProps,
+  props: Omit<RadixToggleGroup.ToggleGroupSingleProps, 'type'>,
 ) => {
   const { className, ...rest } = props
   return (

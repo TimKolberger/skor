@@ -24,7 +24,7 @@ export const MenuContent = (props: RadixMenu.DropdownMenuContentProps) => {
   )
 }
 
-export const MenuItem = (props: RadixMenu.MenuItemProps) => {
+export const MenuItem = (props: RadixMenu.DropdownMenuItemProps) => {
   const { className, ...rest } = props
 
   return (
