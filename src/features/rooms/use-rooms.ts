@@ -1,37 +1,41 @@
 import { createUniqueId } from '../../utils/create-unique-id.ts'
 import { LS_KEY_ROOMS } from '../persistence/local-storage-keys.ts'
-import {
-  coerce,
-  isoTimestamp,
-  minLength,
-  nullish,
-  object,
-  type Output,
-  string,
-} from 'valibot'
+import { type InferOutput, object, pipe, transform, unknown } from 'valibot'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 
 export const RoomSchema = object({
-  id: coerce(string(), (id) => {
-    if (id) return String(id)
-    return createUniqueId()
-  }),
-  name: coerce(string([minLength(1)]), (name) => {
-    if (name) return String(name)
-    return 'Unnamed Room'
-  }),
-  createdAt: coerce(nullish(string([isoTimestamp()])), (value) => {
-    if (value) return String(value)
-    return new Date().toISOString()
-  }),
-  updatedAt: coerce(nullish(string([isoTimestamp()])), (value) => {
-    if (value) return String(value)
-    return new Date().toISOString()
-  }),
+  id: pipe(
+    unknown(),
+    transform((id) => {
+      if (id) return String(id)
+      return createUniqueId()
+    }),
+  ),
+  name: pipe(
+    unknown(),
+    transform((name) => {
+      if (name) return String(name)
+      return 'Unnamed Room'
+    }),
+  ),
+  createdAt: pipe(
+    unknown(),
+    transform((value) => {
+      if (value) return String(value)
+      return new Date().toISOString()
+    }),
+  ),
+  updatedAt: pipe(
+    unknown(),
+    transform((value) => {
+      if (value) return String(value)
+      return new Date().toISOString()
+    }),
+  ),
 })
 
-export type Room = Output<typeof RoomSchema>
+export type Room = InferOutput<typeof RoomSchema>
 
 export const useRoomStore = create(
   persist<{
