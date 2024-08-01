@@ -1,9 +1,9 @@
-import { useDebounce } from '../../components/use-debounce.ts'
-import { useLatestRef } from '../../components/use-latest-ref.ts'
-import { createUniqueId } from '../../utils/create-unique-id.ts'
-import { useArray, useMap } from '../collaboration/y-doc-provider.tsx'
-import { DOC_ID_PLAYERS, DOC_ID_SCORES } from './constants.ts'
-import { type SortDirection, useSettings } from './use-settings.ts'
+import { useDebounce } from '../../components/use-debounce'
+import { useLatestRef } from '../../components/use-latest-ref'
+import { createUniqueId } from '../../utils/create-unique-id'
+import { useArray, useMap } from '../collaboration/y-doc-provider'
+import { DOC_ID_PLAYERS, DOC_ID_SCORES } from './constants'
+import { type SortDirection, useSettings } from './use-settings'
 import { useCallback, useEffect, useMemo } from 'react'
 import {
   type InferOutput,

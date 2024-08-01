@@ -1,13 +1,9 @@
-import { ButtonLink, IconButton } from '../../components/button.tsx'
-import { IconContainer } from '../../components/icon-container.tsx'
-import { useDebounce } from '../../components/use-debounce.ts'
-import { useTickingButton } from '../../components/use-ticking-button.ts'
-import { useCurrentRoom } from './use-current-room.ts'
-import {
-  DEBOUNCE_DELAY,
-  type PlayerWithScore,
-  usePlayers,
-} from './use-players.ts'
+import { ButtonLink, IconButton } from '../../components/button'
+import { IconContainer } from '../../components/icon-container'
+import { useDebounce } from '../../components/use-debounce'
+import { useTickingButton } from '../../components/use-ticking-button'
+import { useCurrentRoom } from './use-current-room'
+import { DEBOUNCE_DELAY, type PlayerWithScore, usePlayers } from './use-players'
 import { clsx } from 'clsx'
 import { AnimatePresence, LayoutGroup, Reorder } from 'framer-motion'
 import { FiMinus, FiPlus, FiUsers } from 'react-icons/fi'

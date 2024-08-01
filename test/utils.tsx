@@ -1,4 +1,4 @@
-import { WakeLockProvider } from '../src/features/wake-lock/wake-lock-provider.tsx'
+import { WakeLockProvider } from '../src/features/wake-lock/wake-lock-provider'
 import { render, type RenderOptions } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { type FC, type ReactElement, type ReactNode, Suspense } from 'react'

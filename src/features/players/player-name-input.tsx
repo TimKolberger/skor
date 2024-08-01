@@ -1,5 +1,5 @@
-import { IconButton } from '../../components/button.tsx'
-import { generatePlayerName } from './generate-player-name.ts'
+import { IconButton } from '../../components/button'
+import { generatePlayerName } from './generate-player-name'
 import { forwardRef } from 'react'
 import { FiShuffle, FiX } from 'react-icons/fi'
 

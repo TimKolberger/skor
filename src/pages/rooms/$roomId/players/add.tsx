@@ -1,19 +1,19 @@
-import { Button } from '../../../../components/button.tsx'
-import { playerColors } from '../../../../features/players/player-colors.ts'
-import { PlayerForm } from '../../../../features/players/player-form.tsx'
-import { RoomProvider } from '../../../../features/rooms/room-provider.tsx'
-import { useCurrentRoom } from '../../../../features/rooms/use-current-room.ts'
+import { Button } from '../../../../components/button'
+import { playerColors } from '../../../../features/players/player-colors'
+import { PlayerForm } from '../../../../features/players/player-form'
+import { RoomProvider } from '../../../../features/rooms/room-provider'
+import { useCurrentRoom } from '../../../../features/rooms/use-current-room'
 import {
   PlayerSchema,
   usePlayers,
-} from '../../../../features/rooms/use-players.ts'
-import type { LayoutProps } from '../../../../features/router/types.ts'
-import { HeaderMenu } from '../../../../layout/header-menu.tsx'
+} from '../../../../features/rooms/use-players'
+import type { LayoutProps } from '../../../../features/router/types'
+import { HeaderMenu } from '../../../../layout/header-menu'
 import {
   AppLayout,
   AppLayoutContent,
   AppLayoutHeader,
-} from '../../../../layout/layout.tsx'
+} from '../../../../layout/layout'
 import { type ReactNode, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { parse } from 'valibot'

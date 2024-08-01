@@ -1,4 +1,4 @@
-import { useMap } from '../collaboration/y-doc-provider.tsx'
+import { useMap } from '../collaboration/y-doc-provider'
 
 export type SortDirection = 'asc' | 'desc'
 

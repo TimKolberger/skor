@@ -1,4 +1,4 @@
-import { IconButtonLink } from '../components/button.tsx'
+import { IconButtonLink } from '../components/button'
 import { clsx } from 'clsx'
 import type { ComponentPropsWithoutRef } from 'react'
 import { FiChevronLeft } from 'react-icons/fi'

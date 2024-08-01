@@ -1,5 +1,5 @@
-import { IconButton } from '../../components/button.tsx'
-import { generateRoomName } from './generate-room-name.ts'
+import { IconButton } from '../../components/button'
+import { generateRoomName } from './generate-room-name'
 import { FiShuffle, FiX } from 'react-icons/fi'
 
 interface RoomNameInputProps {

@@ -1,4 +1,4 @@
-import { DocumentContext } from './document-context.tsx'
+import { DocumentContext } from './document-context'
 import { useContext } from 'react'
 
 export function useDoc() {

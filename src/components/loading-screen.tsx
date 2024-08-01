@@ -1,8 +1,4 @@
-import {
-  AppLayout,
-  AppLayoutContent,
-  AppLayoutHeader,
-} from '../layout/layout.tsx'
+import { AppLayout, AppLayoutContent, AppLayoutHeader } from '../layout/layout'
 import { useEffect, useState } from 'react'
 import { FiLoader } from 'react-icons/fi'
 

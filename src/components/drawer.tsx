@@ -1,4 +1,4 @@
-import { IconButton } from './button.tsx'
+import { IconButton } from './button'
 import type { ComponentPropsWithoutRef } from 'react'
 import { forwardRef } from 'react'
 import { FiX } from 'react-icons/fi'

@@ -1,6 +1,6 @@
-import App from './App.tsx'
+import App from './App'
 import './index.css'
-import './pwa-automatic-reload.ts'
+import './pwa-automatic-reload'
 import '@fontsource/source-code-pro/300.css'
 import '@fontsource/source-code-pro/400.css'
 import '@fontsource/source-code-pro/900.css'

@@ -1,4 +1,4 @@
-import { SS_KEY_LAST_DIFF } from '../../persistence/session-storage-keys.ts'
+import { SS_KEY_LAST_DIFF } from '../../persistence/session-storage-keys'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 

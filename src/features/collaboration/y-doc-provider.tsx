@@ -1,4 +1,4 @@
-import { useDoc } from './use-doc.tsx'
+import { useDoc } from './use-doc'
 import { useCallback, useEffect, useReducer } from 'react'
 import { type AbstractType, Array, Doc, Map } from 'yjs'
 

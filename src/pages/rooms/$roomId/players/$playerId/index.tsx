@@ -1,16 +1,16 @@
-import { IconButtonLink } from '../../../../../components/button.tsx'
-import { RoomProvider } from '../../../../../features/rooms/room-provider.tsx'
-import { ScoreForm } from '../../../../../features/rooms/score/score-form.tsx'
-import { useCurrentRoom } from '../../../../../features/rooms/use-current-room.ts'
-import { usePlayers } from '../../../../../features/rooms/use-players.ts'
-import { notFound } from '../../../../../features/router/not-found-error.ts'
-import type { LayoutProps } from '../../../../../features/router/types.ts'
-import { HeaderMenu } from '../../../../../layout/header-menu.tsx'
+import { IconButtonLink } from '../../../../../components/button'
+import { RoomProvider } from '../../../../../features/rooms/room-provider'
+import { ScoreForm } from '../../../../../features/rooms/score/score-form'
+import { useCurrentRoom } from '../../../../../features/rooms/use-current-room'
+import { usePlayers } from '../../../../../features/rooms/use-players'
+import { notFound } from '../../../../../features/router/not-found-error'
+import type { LayoutProps } from '../../../../../features/router/types'
+import { HeaderMenu } from '../../../../../layout/header-menu'
 import {
   AppLayout,
   AppLayoutContent,
   AppLayoutHeader,
-} from '../../../../../layout/layout.tsx'
+} from '../../../../../layout/layout'
 import { clsx } from 'clsx'
 import { type ReactNode } from 'react'
 import { FiEdit } from 'react-icons/fi'

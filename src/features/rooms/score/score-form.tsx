@@ -1,11 +1,8 @@
-import { Button } from '../../../components/button.tsx'
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from '../../../components/toggle-group.tsx'
-import type { Assign } from '../../../utils/assign.types.ts'
-import { useLastDiff } from './use-last-diff.ts'
-import { type Operator, useOperator } from './use-operator.ts'
+import { Button } from '../../../components/button'
+import { ToggleGroup, ToggleGroupItem } from '../../../components/toggle-group'
+import type { Assign } from '../../../utils/assign.types'
+import { useLastDiff } from './use-last-diff'
+import { type Operator, useOperator } from './use-operator'
 import { type ComponentPropsWithRef, useEffect, useRef } from 'react'
 
 type ScoreFormProps = Assign<

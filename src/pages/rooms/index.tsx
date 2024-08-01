@@ -1,13 +1,13 @@
-import { ButtonLink, IconButtonLink } from '../../components/button.tsx'
-import { IconContainer } from '../../components/icon-container.tsx'
-import { Time } from '../../components/time.tsx'
-import { useRoomStore } from '../../features/rooms/use-rooms.ts'
-import { HeaderMenu } from '../../layout/header-menu.tsx'
+import { ButtonLink, IconButtonLink } from '../../components/button'
+import { IconContainer } from '../../components/icon-container'
+import { Time } from '../../components/time'
+import { useRoomStore } from '../../features/rooms/use-rooms'
+import { HeaderMenu } from '../../layout/header-menu'
 import {
   AppLayout,
   AppLayoutContent,
   AppLayoutHeader,
-} from '../../layout/layout.tsx'
+} from '../../layout/layout'
 import type { ReactNode } from 'react'
 import { FiBox, FiChevronRight, FiPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom'

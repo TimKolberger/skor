@@ -1,4 +1,4 @@
-import { runMigrations } from './features/persistence/migrations.ts'
+import { runMigrations } from './features/persistence/migrations'
 
 runMigrations().catch((error) => {
   console.error(error)

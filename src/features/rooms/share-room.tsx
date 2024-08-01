@@ -1,10 +1,6 @@
-import { Button, IconButton } from '../../components/button.tsx'
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
-} from '../../components/drawer.tsx'
-import type { Room } from './use-rooms.ts'
+import { Button, IconButton } from '../../components/button'
+import { Drawer, DrawerContent, DrawerTrigger } from '../../components/drawer'
+import type { Room } from './use-rooms'
 import { lazy, type ReactNode, Suspense, useMemo } from 'react'
 import { FiCopy, FiShare } from 'react-icons/fi'
 
@@ -86,7 +82,7 @@ export function ShareRoom({
 
           <div>
             <p>or you can share this URL</p>
-            <div className="flex gap-2 ">
+            <div className="flex gap-2">
               <code className="border-1 inline-flex select-all items-center whitespace-break-spaces break-all rounded border-slate-400 bg-slate-200 bg-opacity-20 px-2 py-1">
                 {shareRoomUrlString}
               </code>

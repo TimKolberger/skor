@@ -1,10 +1,6 @@
-import type { LayoutProps } from '../features/router/types.ts'
-import { HeaderMenu } from '../layout/header-menu.tsx'
-import {
-  AppLayout,
-  AppLayoutContent,
-  AppLayoutHeader,
-} from '../layout/layout.tsx'
+import type { LayoutProps } from '../features/router/types'
+import { HeaderMenu } from '../layout/header-menu'
+import { AppLayout, AppLayoutContent, AppLayoutHeader } from '../layout/layout'
 
 export const Layout = ({ children }: LayoutProps) => {
   return (

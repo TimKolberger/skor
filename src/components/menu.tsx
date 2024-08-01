@@ -1,4 +1,4 @@
-import { buttonClasses, type ButtonVariants } from './button.tsx'
+import { buttonClasses, type ButtonVariants } from './button'
 import * as RadixMenu from '@radix-ui/react-dropdown-menu'
 import { clsx } from 'clsx'
 

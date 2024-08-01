@@ -1,4 +1,4 @@
-import { SS_KEY_CALC_MODE } from '../../persistence/session-storage-keys.ts'
+import { SS_KEY_CALC_MODE } from '../../persistence/session-storage-keys'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 

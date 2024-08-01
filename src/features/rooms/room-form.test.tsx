@@ -1,6 +1,6 @@
-import { render, screen } from '../../../test/utils.tsx'
-import { RoomForm } from './room-form.tsx'
-import { RoomIdInput } from './room-id-input.tsx'
+import { render, screen } from '../../../test/utils'
+import { RoomForm } from './room-form'
+import { RoomIdInput } from './room-id-input'
 
 describe('RoomForm', () => {
   it('should create a room', async () => {

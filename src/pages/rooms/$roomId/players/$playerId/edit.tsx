@@ -1,17 +1,17 @@
-import { Button, IconButton } from '../../../../../components/button.tsx'
-import { playerColors } from '../../../../../features/players/player-colors.ts'
-import { PlayerForm } from '../../../../../features/players/player-form.tsx'
-import { RoomProvider } from '../../../../../features/rooms/room-provider.tsx'
-import { useCurrentRoom } from '../../../../../features/rooms/use-current-room.ts'
-import { usePlayers } from '../../../../../features/rooms/use-players.ts'
-import { notFound } from '../../../../../features/router/not-found-error.ts'
-import type { LayoutProps } from '../../../../../features/router/types.ts'
-import { HeaderMenu } from '../../../../../layout/header-menu.tsx'
+import { Button, IconButton } from '../../../../../components/button'
+import { playerColors } from '../../../../../features/players/player-colors'
+import { PlayerForm } from '../../../../../features/players/player-form'
+import { RoomProvider } from '../../../../../features/rooms/room-provider'
+import { useCurrentRoom } from '../../../../../features/rooms/use-current-room'
+import { usePlayers } from '../../../../../features/rooms/use-players'
+import { notFound } from '../../../../../features/router/not-found-error'
+import type { LayoutProps } from '../../../../../features/router/types'
+import { HeaderMenu } from '../../../../../layout/header-menu'
 import {
   AppLayout,
   AppLayoutContent,
   AppLayoutHeader,
-} from '../../../../../layout/layout.tsx'
+} from '../../../../../layout/layout'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
 import { FiTrash2 } from 'react-icons/fi'

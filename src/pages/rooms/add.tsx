@@ -1,12 +1,12 @@
-import { Button } from '../../components/button.tsx'
-import { RoomForm } from '../../features/rooms/room-form.tsx'
-import { RoomIdInput } from '../../features/rooms/room-id-input.tsx'
-import { RoomSchema, useRoomStore } from '../../features/rooms/use-rooms.ts'
+import { Button } from '../../components/button'
+import { RoomForm } from '../../features/rooms/room-form'
+import { RoomIdInput } from '../../features/rooms/room-id-input'
+import { RoomSchema, useRoomStore } from '../../features/rooms/use-rooms'
 import {
   AppLayout,
   AppLayoutContent,
   AppLayoutHeader,
-} from '../../layout/layout.tsx'
+} from '../../layout/layout'
 import { type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { parse } from 'valibot'

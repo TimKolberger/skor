@@ -4,8 +4,8 @@ import {
   MenuContent,
   MenuItem,
   MenuSeparator,
-} from '../components/menu.tsx'
-import { useWakeLockContext } from '../features/wake-lock/use-wake-lock-context.tsx'
+} from '../components/menu'
+import { useWakeLockContext } from '../features/wake-lock/use-wake-lock-context'
 import type { ReactNode } from 'react'
 import {
   FiGithub,

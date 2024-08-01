@@ -1,6 +1,6 @@
-import { render, screen } from '../../../test/utils.tsx'
-import { ColorInput } from './color-input.tsx'
-import { playerColors } from './player-colors.ts'
+import { render, screen } from '../../../test/utils'
+import { ColorInput } from './color-input'
+import { playerColors } from './player-colors'
 import { expect } from 'vitest'
 
 describe('ColorInput', () => {

@@ -1,8 +1,8 @@
 import {
   getLocalStorageVersion,
   setLocalStorageVersion,
-} from './local-storage-version.ts'
-import { migration001 } from './migrations/001-from-single-game.ts'
+} from './local-storage-version'
+import { migration001 } from './migrations/001-from-single-game'
 
 export async function runMigrations() {
   if (getLocalStorageVersion() < 1) {
