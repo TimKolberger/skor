@@ -9,6 +9,10 @@
     {
       "matchPackageNames": "pnpm",
       "allowedVersions": "<9"
+    },
+    {
+      "matchPackageNames": "eslint",
+      "allowedVersions": "<9"
     }
   ],
   "lockFileMaintenance": {
