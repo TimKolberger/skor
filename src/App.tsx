@@ -1,5 +1,5 @@
-import { AppRouter } from './features/router/app-router.tsx'
-import { WakeLockProvider } from './features/wake-lock/wake-lock-provider.tsx'
+import { AppRouter } from './features/router/app-router'
+import { WakeLockProvider } from './features/wake-lock/wake-lock-provider'
 
 function App() {
   return (

@@ -1,19 +1,19 @@
-import { IconButton, IconButtonLink } from '../../../components/button.tsx'
-import { MenuItem, MenuSeparator } from '../../../components/menu.tsx'
-import { Game } from '../../../features/rooms/game.tsx'
-import { RoomProvider } from '../../../features/rooms/room-provider.tsx'
-import { ShareRoom } from '../../../features/rooms/share-room.tsx'
-import { useCurrentRoom } from '../../../features/rooms/use-current-room.ts'
-import { usePlayers } from '../../../features/rooms/use-players.ts'
-import { useRoomStore } from '../../../features/rooms/use-rooms.ts'
-import { useSettings } from '../../../features/rooms/use-settings.ts'
-import type { LayoutProps } from '../../../features/router/types.ts'
-import { HeaderMenu } from '../../../layout/header-menu.tsx'
+import { IconButton, IconButtonLink } from '../../../components/button'
+import { MenuItem, MenuSeparator } from '../../../components/menu'
+import { Game } from '../../../features/rooms/game'
+import { RoomProvider } from '../../../features/rooms/room-provider'
+import { ShareRoom } from '../../../features/rooms/share-room'
+import { useCurrentRoom } from '../../../features/rooms/use-current-room'
+import { usePlayers } from '../../../features/rooms/use-players'
+import { useRoomStore } from '../../../features/rooms/use-rooms'
+import { useSettings } from '../../../features/rooms/use-settings'
+import type { LayoutProps } from '../../../features/router/types'
+import { HeaderMenu } from '../../../layout/header-menu'
 import {
   AppLayout,
   AppLayoutContent,
   AppLayoutHeader,
-} from '../../../layout/layout.tsx'
+} from '../../../layout/layout'
 import {
   FiRepeat,
   FiShare,

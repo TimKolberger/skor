@@ -1,5 +1,5 @@
-import { render, screen } from '../../../../test/utils.tsx'
-import { ScoreForm } from './score-form.tsx'
+import { render, screen } from '../../../../test/utils'
+import { ScoreForm } from './score-form'
 import { it } from 'vitest'
 
 describe('ScoreForm', () => {

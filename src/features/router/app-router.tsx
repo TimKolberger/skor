@@ -1,4 +1,4 @@
-import { ErrorBoundary } from './ErrorBoundary.tsx'
+import { ErrorBoundary } from './ErrorBoundary'
 import type { FC } from 'react'
 import { Fragment } from 'react'
 import {
@@ -23,7 +23,7 @@ const pages = import.meta.glob<{
   ErrorBoundary?: RouteObject['ErrorBoundary']
   action?: RouteObject['action']
   loader?: RouteObject['loader']
-}>('../../pages/**/*.tsx', {
+}>('../../pages/**/*', {
   eager: true,
 })
 

@@ -1,4 +1,4 @@
-import { DocumentContext } from './document-context.tsx'
+import { DocumentContext } from './document-context'
 import { type ReactNode } from 'react'
 import { Doc } from 'yjs'
 

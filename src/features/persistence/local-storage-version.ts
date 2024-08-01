@@ -1,5 +1,5 @@
-import { prefix } from './prefix.ts'
-import { safeJsonParse } from './safe-json-parse.ts'
+import { prefix } from './prefix'
+import { safeJsonParse } from './safe-json-parse'
 
 const LS_KEY_MIGRATION_VERSION = `${prefix}migration-version`
 

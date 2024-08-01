@@ -1,5 +1,5 @@
-import { render, screen } from '../../test/utils.tsx'
-import { HeaderMenu } from './header-menu.tsx'
+import { render, screen } from '../../test/utils'
+import { HeaderMenu } from './header-menu'
 
 describe('Header Menu', () => {
   it('should render', async () => {

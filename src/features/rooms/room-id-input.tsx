@@ -1,4 +1,4 @@
-import { IconButton } from '../../components/button.tsx'
+import { IconButton } from '../../components/button'
 import { useRef } from 'react'
 import { FiX } from 'react-icons/fi'
 

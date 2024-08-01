@@ -1,4 +1,4 @@
-import { WakeLockContext } from './wake-lock-context.tsx'
+import { WakeLockContext } from './wake-lock-context'
 import { type ReactNode, useMemo } from 'react'
 import { useWakeLock } from 'react-screen-wake-lock'
 

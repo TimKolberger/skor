@@ -1,5 +1,5 @@
-import { notFound } from '../router/not-found-error.ts'
-import { useRoomStore } from './use-rooms.ts'
+import { notFound } from '../router/not-found-error'
+import { useRoomStore } from './use-rooms'
 import { useParams } from 'react-router-dom'
 
 export function useCurrentRoom() {

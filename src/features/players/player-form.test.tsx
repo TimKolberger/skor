@@ -1,6 +1,6 @@
-import { render, screen } from '../../../test/utils.tsx'
-import { playerColors } from './player-colors.ts'
-import { PlayerForm } from './player-form.tsx'
+import { render, screen } from '../../../test/utils'
+import { playerColors } from './player-colors'
+import { PlayerForm } from './player-form'
 
 describe('PlayerForm', () => {
   it('should create a player', async () => {

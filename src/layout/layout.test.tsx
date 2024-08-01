@@ -1,5 +1,5 @@
-import { render } from '../../test/utils.tsx'
-import { AppLayout, AppLayoutContent, AppLayoutHeader } from './layout.tsx'
+import { render } from '../../test/utils'
+import { AppLayout, AppLayoutContent, AppLayoutHeader } from './layout'
 import { screen, within } from '@testing-library/react'
 
 describe('Layout', () => {

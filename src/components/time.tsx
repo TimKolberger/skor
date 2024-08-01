@@ -1,4 +1,4 @@
-import type { Assign } from '../utils/assign.types.ts'
+import type { Assign } from '../utils/assign.types'
 import type { ComponentPropsWithoutRef } from 'react'
 
 type TimeProps = Assign<

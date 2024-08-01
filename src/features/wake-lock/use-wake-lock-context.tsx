@@ -1,4 +1,4 @@
-import { WakeLockContext } from './wake-lock-context.tsx'
+import { WakeLockContext } from './wake-lock-context'
 import { useContext } from 'react'
 
 export const useWakeLockContext = () => {

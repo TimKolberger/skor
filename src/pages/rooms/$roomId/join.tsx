@@ -1,4 +1,4 @@
-import { RoomSchema, useRoomStore } from '../../../features/rooms/use-rooms.ts'
+import { RoomSchema, useRoomStore } from '../../../features/rooms/use-rooms'
 import { useEffect } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { parse } from 'valibot'

@@ -1,11 +1,11 @@
-import { ButtonLink } from '../../components/button.tsx'
-import { HeaderMenu } from '../../layout/header-menu.tsx'
+import { ButtonLink } from '../../components/button'
+import { HeaderMenu } from '../../layout/header-menu'
 import {
   AppLayout,
   AppLayoutContent,
   AppLayoutHeader,
-} from '../../layout/layout.tsx'
-import { NotFoundError } from './not-found-error.ts'
+} from '../../layout/layout'
+import { NotFoundError } from './not-found-error'
 import { useRouteError } from 'react-router-dom'
 
 export const ErrorBoundary = () => {

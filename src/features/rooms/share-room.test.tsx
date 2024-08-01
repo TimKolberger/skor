@@ -1,5 +1,5 @@
-import { render, screen } from '../../../test/utils.tsx'
-import { ShareRoom } from './share-room.tsx'
+import { render, screen } from '../../../test/utils'
+import { ShareRoom } from './share-room'
 import { expect } from 'vitest'
 
 describe('ShareRoom', () => {

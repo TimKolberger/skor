@@ -23,7 +23,7 @@ import tune_gis1 from './assets/tunes/gis1.mp3'
 import tune_gis from './assets/tunes/gis.mp3'
 import tune_h1 from './assets/tunes/h1.mp3'
 import tune_h from './assets/tunes/h.mp3'
-import { playerColors } from './player-colors.ts'
+import { playerColors } from './player-colors'
 import { clsx } from 'clsx'
 import { useEffect, useId, useRef } from 'react'
 

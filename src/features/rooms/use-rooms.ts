@@ -1,5 +1,5 @@
-import { createUniqueId } from '../../utils/create-unique-id.ts'
-import { LS_KEY_ROOMS } from '../persistence/local-storage-keys.ts'
+import { createUniqueId } from '../../utils/create-unique-id'
+import { LS_KEY_ROOMS } from '../persistence/local-storage-keys'
 import { type InferOutput, object, pipe, transform, unknown } from 'valibot'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'

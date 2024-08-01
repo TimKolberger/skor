@@ -1,4 +1,4 @@
-import { useLatestRef } from './use-latest-ref.ts'
+import { useLatestRef } from './use-latest-ref'
 import { useCallback, useEffect, useRef } from 'react'
 
 export function useTickingButton({ onTick }: { onTick: () => void }) {

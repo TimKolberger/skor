@@ -1,7 +1,7 @@
-import { generateRoomName } from './generate-room-name.ts'
-import { RoomNameInput } from './room-name-input.tsx'
-import type { Room } from './use-rooms.ts'
-import { RoomSchema } from './use-rooms.ts'
+import { generateRoomName } from './generate-room-name'
+import { RoomNameInput } from './room-name-input'
+import type { Room } from './use-rooms'
+import { RoomSchema } from './use-rooms'
 import { type ReactNode, useState } from 'react'
 import { parse } from 'valibot'
 

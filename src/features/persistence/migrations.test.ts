@@ -1,6 +1,6 @@
-import { LS_KEY_ROOMS } from './local-storage-keys.ts'
-import { getLocalStorageVersion } from './local-storage-version.ts'
-import { runMigrations } from './migrations.ts'
+import { LS_KEY_ROOMS } from './local-storage-keys'
+import { getLocalStorageVersion } from './local-storage-version'
+import { runMigrations } from './migrations'
 import { expect } from 'vitest'
 
 describe('migrations', () => {
