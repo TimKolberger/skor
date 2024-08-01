@@ -6,33 +6,43 @@ import { DOC_ID_PLAYERS, DOC_ID_SCORES } from './constants.ts'
 import { type SortDirection, useSettings } from './use-settings.ts'
 import { useCallback, useEffect, useMemo } from 'react'
 import {
-  coerce,
+  type InferOutput,
   isoTimestamp,
-  minLength,
   nullish,
   object,
-  type Output,
+  pipe,
   string,
+  transform,
+  unknown,
 } from 'valibot'
 
 export const PlayerSchema = object({
-  id: coerce(string(), (id) => {
-    if (id) return String(id)
-    return createUniqueId()
-  }),
-  name: coerce(string([minLength(1)]), (name) => {
-    if (name) return String(name)
-    return 'Unnamed player'
-  }),
-  color: coerce(string(), (value) => {
-    if (value) return String(value)
-    return 'red'
-  }),
-  createdAt: nullish(string([isoTimestamp()])),
-  updatedAt: nullish(string([isoTimestamp()])),
+  id: pipe(
+    unknown(),
+    transform((id) => {
+      if (id) return String(id)
+      return createUniqueId()
+    }),
+  ),
+  name: pipe(
+    unknown(),
+    transform((name) => {
+      if (name) return String(name)
+      return 'Unnamed player'
+    }),
+  ),
+  color: pipe(
+    unknown(),
+    transform((value) => {
+      if (value) return String(value)
+      return 'red'
+    }),
+  ),
+  createdAt: nullish(pipe(string(), isoTimestamp())),
+  updatedAt: nullish(pipe(string(), isoTimestamp())),
 })
 
-export type Player = Output<typeof PlayerSchema>
+export type Player = InferOutput<typeof PlayerSchema>
 export type PlayerWithScore = Player & { score: number }
 
 function sortByScoreExtractId(
