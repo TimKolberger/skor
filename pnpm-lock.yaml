@@ -131,8 +131,8 @@ devDependencies:
     specifier: 5.27.2
     version: 5.27.2(@types/node@20.14.14)(typescript@5.5.4)
   prettier-plugin-tailwindcss:
-    specifier: 0.6.5
-    version: 0.6.5(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.3.3)
+    specifier: 0.6.6
+    version: 0.6.6(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.3.3)
   rollup-plugin-visualizer:
     specifier: 5.12.0
     version: 5.12.0
@@ -5150,8 +5150,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-tailwindcss@0.6.5(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.3.3):
-    resolution: {integrity: sha512-axfeOArc/RiGHjOIy9HytehlC0ZLeMaqY09mm8YCkMzznKiDkwFzOpBvtuhuv3xG5qB73+Mj7OCe2j/L1ryfuQ==}
+  /prettier-plugin-tailwindcss@0.6.6(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.3.3):
+    resolution: {integrity: sha512-OPva5S7WAsPLEsOuOWXATi13QrCKACCiIonFgIR6V4lYv4QLp++UXVhZSzRbZxXGimkQtQT86CC6fQqTOybGng==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
@@ -5165,6 +5165,7 @@ packages:
       prettier-plugin-import-sort: '*'
       prettier-plugin-jsdoc: '*'
       prettier-plugin-marko: '*'
+      prettier-plugin-multiline-arrays: '*'
       prettier-plugin-organize-attributes: '*'
       prettier-plugin-organize-imports: '*'
       prettier-plugin-sort-imports: '*'
@@ -5190,6 +5191,8 @@ packages:
       prettier-plugin-jsdoc:
         optional: true
       prettier-plugin-marko:
+        optional: true
+      prettier-plugin-multiline-arrays:
         optional: true
       prettier-plugin-organize-attributes:
         optional: true
