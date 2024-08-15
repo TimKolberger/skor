@@ -39,7 +39,7 @@
     "y-indexeddb": "9.0.12",
     "y-webrtc": "10.3.0",
     "yjs": "13.6.18",
-    "zustand": "4.5.4"
+    "zustand": "4.5.5"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
