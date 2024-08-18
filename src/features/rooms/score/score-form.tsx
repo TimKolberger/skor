@@ -1,6 +1,7 @@
 import { Button } from '../../../components/button'
 import { ToggleGroup, ToggleGroupItem } from '../../../components/toggle-group'
 import type { Assign } from '../../../utils/assign.types'
+import { isValidNumber } from '../../../utils/is-valid-number'
 import { useLastDiff } from './use-last-diff'
 import { type Operator, useOperator } from './use-operator'
 import { type ComponentPropsWithRef, useEffect, useRef } from 'react'
@@ -13,14 +14,13 @@ type ScoreFormProps = Assign<
     onSubmit: (values: { diff: number }) => void
   }
 >
+
 export const ScoreForm = (props: ScoreFormProps) => {
   const { score, onSubmit, ...rest } = props
   const { operator, setOperator } = useOperator()
   const { diff, setDiff } = useLastDiff()
   const inputRef = useRef<HTMLInputElement | null>(null)
-
-  const nextScore = calculateNextScore(score || 0, diff, operator)
-
+  const nextScore = calculateNextScore(score || 0, diff || 0, operator)
   useEffect(() => {
     inputRef.current?.select()
   }, [operator])
@@ -46,7 +46,7 @@ export const ScoreForm = (props: ScoreFormProps) => {
           type="number"
           inputMode="numeric"
           pattern="\d*"
-          value={diff}
+          value={isValidNumber(diff) ? diff : ''}
           onChange={(e) => setDiff(e.currentTarget.valueAsNumber)}
           className="w-full rounded bg-slate-50 bg-opacity-10 text-center text-5xl font-black tabular-nums text-slate-50"
           ref={inputRef}
