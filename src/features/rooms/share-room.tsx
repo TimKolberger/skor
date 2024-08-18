@@ -1,5 +1,11 @@
 import { Button, IconButton } from '../../components/button'
-import { Drawer, DrawerContent, DrawerTrigger } from '../../components/drawer'
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerTitle,
+  DrawerTrigger,
+} from '../../components/drawer'
 import type { Room } from './use-rooms'
 import { lazy, type ReactNode, Suspense, useMemo } from 'react'
 import { FiCopy, FiShare } from 'react-icons/fi'
@@ -31,14 +37,14 @@ export function ShareRoom({
     <Drawer>
       <DrawerTrigger>{children}</DrawerTrigger>
       <DrawerContent>
-        <h2 className="mb-4 text-center text-2xl font-bold">
+        <DrawerTitle className="mb-4 text-center text-2xl font-bold">
           Share room &quot;{room.name}&quot;
-        </h2>
+        </DrawerTitle>
         <div className="mx-auto flex max-w-2xl flex-col gap-10">
-          <p>
+          <DrawerDescription>
             Collaborate with your companions by sharing this room. You can
             update and view the game stats in real-time.
-          </p>
+          </DrawerDescription>
 
           <div className="flex flex-col self-stretch">
             <div className="mx-auto flex justify-center rounded-lg bg-white p-4">

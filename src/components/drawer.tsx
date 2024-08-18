@@ -52,3 +52,6 @@ export const DrawerTrigger = forwardRef<
 })
 
 DrawerTrigger.displayName = 'DrawerTrigger'
+
+export const DrawerTitle = Vaul.Title
+export const DrawerDescription = Vaul.Description
