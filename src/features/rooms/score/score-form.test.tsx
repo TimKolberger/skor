@@ -1,6 +1,6 @@
 import { render, screen } from '../../../../test/utils'
 import { ScoreForm } from './score-form'
-import { it } from 'vitest'
+import { expect, it } from 'vitest'
 
 describe('ScoreForm', () => {
   it('should have default diff of 1 with operator add', async () => {
@@ -64,5 +64,15 @@ describe('ScoreForm', () => {
     expect(onSubmit).toHaveBeenCalledWith({
       diff: -100,
     })
+  })
+
+  it('should allow clearing the diff input', async () => {
+    const onSubmit = vi.fn()
+    const score = 1
+    const { user } = render(<ScoreForm onSubmit={onSubmit} score={score} />)
+    const diffInput = screen.getByLabelText('Diff', { selector: 'input' })
+    expect(diffInput).toHaveValue(1)
+    await user.type(diffInput, '{backspace}')
+    expect(diffInput).toHaveValue(null)
   })
 })

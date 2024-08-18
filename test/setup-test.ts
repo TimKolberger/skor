@@ -1,10 +1,16 @@
 import * as localStorageKeys from '../src/features/persistence/local-storage-keys'
-import '@testing-library/jest-dom'
+import * as sessionStorageKeys from '../src/features/persistence/session-storage-keys'
+import { useLastDiff } from '../src/features/rooms/score/use-last-diff'
+import '@testing-library/jest-dom/vitest'
 
-beforeEach(() => {
+afterEach(() => {
   for (const key of Object.values(localStorageKeys)) {
     localStorage.removeItem(key)
   }
+  for (const key of Object.values(sessionStorageKeys)) {
+    sessionStorage.removeItem(key)
+  }
+  useLastDiff.setState({ diff: 1 })
 })
 
 // mock prototype functions for audio elements

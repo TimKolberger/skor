@@ -7,9 +7,9 @@ export const useLastDiff = create(
     diff: number
     setDiff: (nextDiff: number) => void
   }>(
-    (set, get) => ({
+    (set) => ({
       diff: 1,
-      setDiff: (nextDiff) => set({ diff: nextDiff || get().diff }),
+      setDiff: (nextDiff) => set({ diff: nextDiff }),
     }),
     {
       name: SS_KEY_LAST_DIFF,
