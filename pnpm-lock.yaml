@@ -128,8 +128,8 @@ devDependencies:
     specifier: 13.6.2
     version: 13.6.2
   knip:
-    specifier: 5.27.3
-    version: 5.27.3(@types/node@20.16.1)(typescript@5.5.4)
+    specifier: 5.27.4
+    version: 5.27.4(@types/node@20.16.1)(typescript@5.5.4)
   prettier-plugin-tailwindcss:
     specifier: 0.6.6
     version: 0.6.6(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.3.3)
@@ -4657,8 +4657,8 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
-  /knip@5.27.3(@types/node@20.16.1)(typescript@5.5.4):
-    resolution: {integrity: sha512-X0zYs0viwENUtp+FZE2Ig6vQZYvKOz8TvuQkWSWMOXiEDoiMAF+NuDczVD9Dhupicfew0YKpYamHhKtNP+f8+g==}
+  /knip@5.27.4(@types/node@20.16.1)(typescript@5.5.4):
+    resolution: {integrity: sha512-7t1yqIKxaVGYD1cLI4raVLWi9cNqv+JNbngc8mgvTVJbomnxOg1pjxgCGEztB7eVgD+6VEwf7Jg5WHXzk+Kbpw==}
     engines: {node: '>=18.6.0'}
     hasBin: true
     peerDependencies:
