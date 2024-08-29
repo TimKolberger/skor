@@ -60,8 +60,8 @@ dependencies:
     specifier: 0.9.1
     version: 0.9.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
   vite-plugin-pwa:
-    specifier: 0.20.1
-    version: 0.20.1(vite@5.4.2)(workbox-window@7.1.0)
+    specifier: 0.20.2
+    version: 0.20.2(vite@5.4.2)(workbox-window@7.1.0)
   y-indexeddb:
     specifier: 9.0.12
     version: 9.0.12(yjs@13.6.18)
@@ -216,7 +216,7 @@ packages:
     resolution: {integrity: sha512-oLcVCTeIFadUoArDTwpluncplrYBmTCCZZgXCbgNGvOBBiSDDK3eWO4b/+eOTli5tKv1lg+a5/NAXg+nTcei1w==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.17.0
+      '@babel/types': 7.25.4
       jsesc: 2.5.2
       source-map: 0.5.7
     dev: true
@@ -6255,8 +6255,8 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-pwa@0.20.1(vite@5.4.2)(workbox-window@7.1.0):
-    resolution: {integrity: sha512-M6Pk4b18i5ryrhKgiIF8Zud0HGphYiCbEfLsCdlvmwn/CEnS6noVwfIDG/+3V7r6yxpPV/gLiKw+rIlCCiCCoQ==}
+  /vite-plugin-pwa@0.20.2(vite@5.4.2)(workbox-window@7.1.0):
+    resolution: {integrity: sha512-9wLqHt/NjP7YKj6CCEKS5+Fhffo6tHGrAa+wvoqCG59oZkmpX5lBBl38MVjLaO4ELrLqjdtUhILJDwZu+q/hGQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@vite-pwa/assets-generator': ^0.2.4
