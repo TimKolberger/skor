@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@fontsource/source-code-pro':
-    specifier: 5.0.20
-    version: 5.0.20
+    specifier: 5.1.0
+    version: 5.1.0
   '@radix-ui/react-dropdown-menu':
     specifier: 2.1.1
     version: 2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1)(react@18.3.1)
@@ -1724,8 +1724,8 @@ packages:
     resolution: {integrity: sha512-X8R8Oj771YRl/w+c1HqAC1szL8zWQRwFvgDwT129k9ACdBoud/+/rX9V0qiMl6LWUdP9voC2nDVZYPMQQsb6eA==}
     dev: false
 
-  /@fontsource/source-code-pro@5.0.20:
-    resolution: {integrity: sha512-NR5bxLZ+bNOZcSMqMQrDOuCrejVmBW12fWtFyETL6DXunhrvDSVKb4EN3nM1QuOgCgQGw+X5fUGz5z+PPG+JSQ==}
+  /@fontsource/source-code-pro@5.1.0:
+    resolution: {integrity: sha512-aT6pQbwEM/oGyK4Q8XOOknFcrXTAnP+GLVuEADBnB4avOYAOa4U5BG/D5JrTobwckuWyKrbMZ8EdcXPsqizfSw==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
