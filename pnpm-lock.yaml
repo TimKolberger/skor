@@ -57,8 +57,8 @@ dependencies:
     specifier: 0.42.1
     version: 0.42.1(typescript@5.6.2)
   vaul:
-    specifier: 0.9.4
-    version: 0.9.4(@types/react-dom@18.3.0)(@types/react@18.3.9)(react-dom@18.3.1)(react@18.3.1)
+    specifier: 0.9.6
+    version: 0.9.6(@types/react-dom@18.3.0)(@types/react@18.3.9)(react-dom@18.3.1)(react@18.3.1)
   vite-plugin-pwa:
     specifier: 0.20.5
     version: 0.20.5(vite@5.4.7)(workbox-window@7.1.0)
@@ -6172,8 +6172,8 @@ packages:
       typescript: 5.6.2
     dev: false
 
-  /vaul@0.9.4(@types/react-dom@18.3.0)(@types/react@18.3.9)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-pcyIy1nEk6798ReNQpbVH/T/dYnoJ3bwyq7jmSp134s+bSvpWoSWQthm3/jfsQRvHNYIEK4ZKbkHUJ3YfLfw1w==}
+  /vaul@0.9.6(@types/react-dom@18.3.0)(@types/react@18.3.9)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-Ykk5FSu4ibeD6qfKQH/CkBRdSGWkxi35KMNei0z59kTPAlgzpE/Qf1gTx2sxih8Q05KBO/aFhcF/UkBW5iI1Ww==}
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
