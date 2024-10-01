@@ -56,7 +56,7 @@
     "@vitest/coverage-v8": "2.1.1",
     "concurrently": "9.0.1",
     "eslint": "8.57.1",
-    "eslint-plugin-react": "7.37.0",
+    "eslint-plugin-react": "7.37.1",
     "eslint-plugin-react-refresh": "0.4.12",
     "happy-dom": "13.6.2",
     "knip": "5.30.6",
