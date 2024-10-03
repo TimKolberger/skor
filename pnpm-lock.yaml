@@ -128,8 +128,8 @@ devDependencies:
     specifier: 13.6.2
     version: 13.6.2
   knip:
-    specifier: 5.30.6
-    version: 5.30.6(@types/node@20.16.10)(typescript@5.6.2)
+    specifier: 5.31.0
+    version: 5.31.0(@types/node@20.16.10)(typescript@5.6.2)
   prettier-plugin-tailwindcss:
     specifier: 0.6.8
     version: 0.6.8(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.3.3)
@@ -4636,6 +4636,12 @@ packages:
   /jiti@1.21.6:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
+    dev: false
+
+  /jiti@2.1.0:
+    resolution: {integrity: sha512-Nftp80J8poC3u+93ZxpjstsgfQ5d0o5qyD6yStv32sgnWr74xRxBppEwsUoA/GIdrJpgGRkC1930YkLcAsFdSw==}
+    hasBin: true
+    dev: true
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -4711,8 +4717,8 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
-  /knip@5.30.6(@types/node@20.16.10)(typescript@5.6.2):
-    resolution: {integrity: sha512-YkcnRVl0N99xZ7eaXE7KlH/4cPTCn6BGuk9KxINEdCMFN3yita2vGBizApy97ZOHgghy8tb589gQ3xvLMFIO4w==}
+  /knip@5.31.0(@types/node@20.16.10)(typescript@5.6.2):
+    resolution: {integrity: sha512-4hR+qHx/id7mniCWWUqA4MXwGjYFN75xv3qLmEkl9Hm6eCKAhv0wGP0CyrXKUYxVyDplJQsqQaAlsjuRKYsdPA==}
     engines: {node: '>=18.6.0'}
     hasBin: true
     peerDependencies:
@@ -4725,7 +4731,7 @@ packages:
       easy-table: 1.2.0
       enhanced-resolve: 5.17.1
       fast-glob: 3.3.2
-      jiti: 1.21.6
+      jiti: 2.1.0
       js-yaml: 4.1.0
       minimist: 1.2.8
       picocolors: 1.1.0
