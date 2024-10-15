@@ -32,7 +32,7 @@
     "react-qr-code": "2.0.15",
     "react-router-dom": "6.27.0",
     "react-screen-wake-lock": "3.0.2",
-    "tailwindcss": "3.4.13",
+    "tailwindcss": "3.4.14",
     "valibot": "0.42.1",
     "vaul": "1.1.0",
     "vite-plugin-pwa": "0.20.5",
