@@ -119,8 +119,8 @@ devDependencies:
     specifier: 8.57.1
     version: 8.57.1
   eslint-plugin-react:
-    specifier: 7.37.1
-    version: 7.37.1(eslint@8.57.1)
+    specifier: 7.37.2
+    version: 7.37.2(eslint@8.57.1)
   eslint-plugin-react-refresh:
     specifier: 0.4.13
     version: 0.4.13(eslint@8.57.1)
@@ -3605,8 +3605,8 @@ packages:
       eslint: 8.57.1
     dev: true
 
-  /eslint-plugin-react@7.37.1(eslint@8.57.1):
-    resolution: {integrity: sha512-xwTnwDqzbDRA8uJ7BMxPs/EXRB3i8ZfnOIp8BsxEQkT0nHPp+WWceqGgo6rKb9ctNi8GJLDT4Go5HAWELa/WMg==}
+  /eslint-plugin-react@7.37.2(eslint@8.57.1):
+    resolution: {integrity: sha512-EsTAnj9fLVr/GZleBLFbj/sSuXeWmp1eXIN60ceYnZveqEaUCyW4X+Vh4WTdUhCkW4xutXYqTXCUSyqD4rB75w==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
