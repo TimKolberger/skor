@@ -61,7 +61,7 @@ dependencies:
     version: 1.1.1(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1)(react@18.3.1)
   vite-plugin-pwa:
     specifier: 0.20.5
-    version: 0.20.5(vite@5.4.10)(workbox-window@7.1.0)
+    version: 0.20.5(vite@5.4.10)(workbox-window@7.3.0)
   y-indexeddb:
     specifier: 9.0.12
     version: 9.0.12(yjs@13.6.20)
@@ -146,8 +146,8 @@ devDependencies:
     specifier: 2.1.4
     version: 2.1.4(@types/node@20.17.3)(happy-dom@13.6.2)
   workbox-window:
-    specifier: 7.1.0
-    version: 7.1.0
+    specifier: 7.3.0
+    version: 7.3.0
 
 packages:
 
@@ -6050,7 +6050,7 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-pwa@0.20.5(vite@5.4.10)(workbox-window@7.1.0):
+  /vite-plugin-pwa@0.20.5(vite@5.4.10)(workbox-window@7.3.0):
     resolution: {integrity: sha512-aweuI/6G6n4C5Inn0vwHumElU/UEpNuO+9iZzwPZGTCH87TeZ6YFMrEY6ZUBQdIHHlhTsbMDryFARcSuOdsz9Q==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -6066,7 +6066,7 @@ packages:
       tinyglobby: 0.2.9
       vite: 5.4.10(@types/node@20.17.3)
       workbox-build: 7.1.1
-      workbox-window: 7.1.0
+      workbox-window: 7.3.0
     transitivePeerDependencies:
       - '@types/babel__core'
       - supports-color
@@ -6334,6 +6334,10 @@ packages:
 
   /workbox-core@7.1.0:
     resolution: {integrity: sha512-5KB4KOY8rtL31nEF7BfvU7FMzKT4B5TkbYa2tzkS+Peqj0gayMT9SytSFtNzlrvMaWgv6y/yvP9C0IbpFjV30Q==}
+    dev: false
+
+  /workbox-core@7.3.0:
+    resolution: {integrity: sha512-Z+mYrErfh4t3zi7NVTvOuACB0A/jA3bgxUN3PwtAVHvfEsZxV9Iju580VEETug3zYJRc0Dmii/aixI/Uxj8fmw==}
 
   /workbox-expiration@7.1.0:
     resolution: {integrity: sha512-m5DcMY+A63rJlPTbbBNtpJ20i3enkyOtSgYfv/l8h+D6YbbNiA0zKEkCUaMsdDlxggla1oOfRkyqTvl5Ni5KQQ==}
@@ -6410,6 +6414,13 @@ packages:
     dependencies:
       '@types/trusted-types': 2.0.7
       workbox-core: 7.1.0
+    dev: false
+
+  /workbox-window@7.3.0:
+    resolution: {integrity: sha512-qW8PDy16OV1UBaUNGlTVcepzrlzyzNW/ZJvFQQs2j2TzGsg6IKjcpZC1RSquqQnTOafl5pCj5bGfAHlCjOOjdA==}
+    dependencies:
+      '@types/trusted-types': 2.0.7
+      workbox-core: 7.3.0
 
   /wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
