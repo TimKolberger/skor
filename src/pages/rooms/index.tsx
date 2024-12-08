@@ -8,7 +8,7 @@ import {
   AppLayoutContent,
   AppLayoutHeader,
 } from '../../layout/layout'
-import type { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 import { FiBox, FiChevronRight, FiPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
@@ -27,23 +27,22 @@ export const Layout = ({ children }: { children: ReactNode }) => {
 }
 
 export default function RoomsPage() {
-  const rooms = useRoomStore((state) =>
-    state.rooms
-      .slice()
-      .sort(
-        (a, b) =>
-          new Date(b.createdAt ?? 0).getTime() -
-          new Date(a.createdAt ?? 0).getTime(),
-      ),
-  )
+  const rooms = useRoomStore((state) => state.rooms)
+  const sortedRooms = rooms
+    .slice()
+    .sort(
+      (a, b) =>
+        new Date(b.createdAt ?? 0).getTime() -
+        new Date(a.createdAt ?? 0).getTime(),
+    )
 
-  if (!rooms.length) {
+  if (!sortedRooms.length) {
     return <EmptyRooms />
   }
 
   return (
     <ul className="divide-y divide-slate-100 divide-opacity-25">
-      {rooms.map((room) => (
+      {sortedRooms.map((room) => (
         <li
           key={room.id}
           className="relative flex px-4 py-4 transition-colors hover:bg-slate-200 hover:bg-opacity-10"

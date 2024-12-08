@@ -11,8 +11,8 @@ export const RoomProvider = ({ children }: { children: ReactNode }) => {
 
   const [doc, setDoc] = useState<Doc>()
   const [error, setError] = useState<Error>()
-  const webrtcProviderRef = useRef<WebrtcProvider>()
-  const indexeddbPersistenceRef = useRef<IndexeddbPersistence>()
+  const webrtcProviderRef = useRef<WebrtcProvider>(null)
+  const indexeddbPersistenceRef = useRef<IndexeddbPersistence>(null)
 
   useEffect(() => {
     const yDoc = new Doc()
