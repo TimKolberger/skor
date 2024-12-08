@@ -73,7 +73,6 @@ export type ButtonVariants = {
   size?: 'sm' | 'md' | 'lg'
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function buttonClasses({
   variant = 'primary',
   padding = 'normal',

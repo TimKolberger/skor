@@ -2,7 +2,6 @@ import { useDoc } from './use-doc'
 import { useCallback, useEffect, useReducer } from 'react'
 import { type AbstractType, Array, Doc, Map } from 'yjs'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useSharedType = function <T extends AbstractType<any>>(
   ...args: Parameters<Doc['get']>
 ) {

@@ -7,7 +7,6 @@
     "build": "vite build",
     "dev": "vite --host",
     "lint": "concurrently 'pnpm run lint:*'",
-    "lint:eslint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:types": "tsc --noEmit",
     "lint:knip": "knip",
     "prebuild": "pnpm lint",
@@ -42,7 +41,7 @@
     "zustand": "4.5.5"
   },
   "devDependencies": {
-    "@testing-library/dom": "^10.4.0",
+    "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.1.0",
     "@testing-library/user-event": "14.5.2",
@@ -50,14 +49,9 @@
     "@types/node": "22.10.1",
     "@types/react": "18.3.14",
     "@types/react-dom": "18.3.2",
-    "@typescript-eslint/eslint-plugin": "8.17.0",
-    "@typescript-eslint/parser": "8.17.0",
     "@vitejs/plugin-react": "4.3.4",
     "@vitest/coverage-v8": "2.1.8",
     "concurrently": "9.1.0",
-    "eslint": "8.57.1",
-    "eslint-plugin-react": "7.37.2",
-    "eslint-plugin-react-refresh": "0.4.16",
     "happy-dom": "13.6.2",
     "knip": "5.39.2",
     "prettier-plugin-tailwindcss": "0.6.9",
@@ -68,8 +62,7 @@
     "workbox-window": "7.3.0"
   },
   "engines": {
-    "node": ">=18.0.0",
-    "pnpm": "<9"
+    "node": ">=22.0.0"
   },
-  "packageManager": "pnpm@8.15.9"
+  "packageManager": "pnpm@8.15.0"
 }
