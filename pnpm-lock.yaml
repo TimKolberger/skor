@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@fontsource/source-code-pro':
-        specifier: 5.1.0
-        version: 5.1.0
+        specifier: 5.1.1
+        version: 5.1.1
       '@radix-ui/react-dropdown-menu':
         specifier: 2.1.4
         version: 2.1.4(@types/react-dom@19.0.2(@types/react@19.0.2))(@types/react@19.0.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -958,8 +958,8 @@ packages:
   '@floating-ui/utils@0.2.8':
     resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
 
-  '@fontsource/source-code-pro@5.1.0':
-    resolution: {integrity: sha512-aT6pQbwEM/oGyK4Q8XOOknFcrXTAnP+GLVuEADBnB4avOYAOa4U5BG/D5JrTobwckuWyKrbMZ8EdcXPsqizfSw==}
+  '@fontsource/source-code-pro@5.1.1':
+    resolution: {integrity: sha512-J2adI3neDfsPpJp4T51bo0M1jUGLH3m+l1+d+2qrcuAYb51ozlMggv/YoLHVhyOAvanvfgwMI1HiSMQBQUadCg==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -4473,7 +4473,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.8': {}
 
-  '@fontsource/source-code-pro@5.1.0': {}
+  '@fontsource/source-code-pro@5.1.1': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
