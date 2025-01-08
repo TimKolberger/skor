@@ -75,8 +75,8 @@ importers:
         specifier: 13.6.21
         version: 13.6.21
       zustand:
-        specifier: 5.0.2
-        version: 5.0.2(@types/react@19.0.3)(react@19.0.0)
+        specifier: 5.0.3
+        version: 5.0.3(@types/react@19.0.3)(react@19.0.0)
     devDependencies:
       '@testing-library/dom':
         specifier: 10.4.0
@@ -2974,6 +2974,7 @@ packages:
   rollup-plugin-visualizer@5.13.1:
     resolution: {integrity: sha512-vMg8i6BprL8aFm9DKvL2c8AwS8324EgymYQo9o6E26wgVvwMhsJxS37aNL6ZsU7X9iAcMYwdME7gItLfG5fwJg==}
     engines: {node: '>=18'}
+    deprecated: Contains unintended breaking changes
     hasBin: true
     peerDependencies:
       rolldown: 1.x
@@ -3625,8 +3626,8 @@ packages:
   zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
 
-  zustand@5.0.2:
-    resolution: {integrity: sha512-8qNdnJVJlHlrKXi50LDqqUNmUbuBjoKLrYQBnoChIbVph7vni+sY+YpvdjXG9YLd/Bxr6scMcR+rm5H3aSqPaw==}
+  zustand@5.0.3:
+    resolution: {integrity: sha512-14fwWQtU3pH4dE0dOpdMiWjddcH+QzKIgk1cl8epwSE7yag43k/AD/m4L6+K7DytAOr9gGBe3/EXj9g7cdostg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=18.0.0'
@@ -7179,7 +7180,7 @@ snapshots:
 
   zod@3.23.8: {}
 
-  zustand@5.0.2(@types/react@19.0.3)(react@19.0.0):
+  zustand@5.0.3(@types/react@19.0.3)(react@19.0.0):
     optionalDependencies:
       '@types/react': 19.0.3
       react: 19.0.0
