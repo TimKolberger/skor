@@ -56,7 +56,7 @@
     "knip": "5.41.1",
     "prettier-plugin-tailwindcss": "0.6.9",
     "rollup-plugin-visualizer": "5.14.0",
-    "typescript": "5.7.2",
+    "typescript": "5.7.3",
     "vite": "6.0.7",
     "vitest": "2.1.8",
     "workbox-window": "7.3.0"
