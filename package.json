@@ -53,7 +53,7 @@
     "@vitest/coverage-v8": "3.0.5",
     "concurrently": "9.1.2",
     "happy-dom": "13.6.2",
-    "knip": "5.44.0",
+    "knip": "5.44.1",
     "prettier-plugin-tailwindcss": "0.6.11",
     "rollup-plugin-visualizer": "5.14.0",
     "typescript": "5.7.3",
