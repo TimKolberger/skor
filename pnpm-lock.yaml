@@ -51,8 +51,8 @@ importers:
         specifier: 7.3.0
         version: 7.3.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-screen-wake-lock:
-        specifier: 3.0.3
-        version: 3.0.3(react@19.0.0)
+        specifier: 3.0.4
+        version: 3.0.4(react@19.0.0)
       tailwindcss:
         specifier: 3.4.17
         version: 3.4.17
@@ -2676,11 +2676,11 @@ packages:
       react-dom:
         optional: true
 
-  react-screen-wake-lock@3.0.3:
-    resolution: {integrity: sha512-zWRqQL7xFrTN4wgDBRxvGmJA+lFx+vtmHvq+3SF0cxVYwaOgjUorhS0E1/IQYP+tWmllsg3tfkL/apG9q1C1Cw==}
+  react-screen-wake-lock@3.0.4:
+    resolution: {integrity: sha512-L8t/MSQJXLbLNyc8+UVM4lfeL83yswiowbJbHST3N7r9P6vz1MqtPnacCZbgFWMTZgPti+3C3SMbavRHXB3bSg==}
     engines: {node: '>=v14.21.3'}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react-style-singleton@2.2.3:
     resolution: {integrity: sha512-b6jSvxvVnyptAiLjbkWLE/lOnR4lfTtDAl+eUC7RZy+QQWc6wRzIV2CE6xBuMmDxc2qIihtDCZD5NPOFl7fRBQ==}
@@ -5985,7 +5985,7 @@ snapshots:
     optionalDependencies:
       react-dom: 19.0.0(react@19.0.0)
 
-  react-screen-wake-lock@3.0.3(react@19.0.0):
+  react-screen-wake-lock@3.0.4(react@19.0.0):
     dependencies:
       react: 19.0.0
 
