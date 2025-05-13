@@ -67,13 +67,13 @@ importers:
         version: 0.21.2(@types/babel__core@7.20.5)(vite@6.3.5(@types/node@22.15.17)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0))(workbox-window@7.3.0)
       y-indexeddb:
         specifier: 9.0.12
-        version: 9.0.12(yjs@13.6.26)
+        version: 9.0.12(yjs@13.6.27)
       y-webrtc:
         specifier: 10.3.0
-        version: 10.3.0(yjs@13.6.26)
+        version: 10.3.0(yjs@13.6.27)
       yjs:
-        specifier: 13.6.26
-        version: 13.6.26
+        specifier: 13.6.27
+        version: 13.6.27
       zustand:
         specifier: 5.0.4
         version: 5.0.4(@types/react@19.1.4)(react@19.1.0)
@@ -3542,8 +3542,8 @@ packages:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
 
-  yjs@13.6.26:
-    resolution: {integrity: sha512-wiARO3wixu7mtoRP5f7LqpUtsURP9SmNgXUt3RlnZg4qDuF7dUjthwIvwxIDmK55dPw4Wl4QdW5A3ag0atwu7g==}
+  yjs@13.6.27:
+    resolution: {integrity: sha512-OIDwaflOaq4wC6YlPBy2L6ceKeKuF7DeTxx+jPzv1FHn9tCZ0ZwSRnUBxD05E3yed46fv/FWJbvR+Ud7x0L7zw==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
 
   zod-validation-error@3.4.0:
@@ -7118,22 +7118,22 @@ snapshots:
   ws@8.18.1:
     optional: true
 
-  y-indexeddb@9.0.12(yjs@13.6.26):
+  y-indexeddb@9.0.12(yjs@13.6.27):
     dependencies:
       lib0: 0.2.99
-      yjs: 13.6.26
+      yjs: 13.6.27
 
-  y-protocols@1.0.6(yjs@13.6.26):
+  y-protocols@1.0.6(yjs@13.6.27):
     dependencies:
       lib0: 0.2.99
-      yjs: 13.6.26
+      yjs: 13.6.27
 
-  y-webrtc@10.3.0(yjs@13.6.26):
+  y-webrtc@10.3.0(yjs@13.6.27):
     dependencies:
       lib0: 0.2.99
       simple-peer: 9.11.1
-      y-protocols: 1.0.6(yjs@13.6.26)
-      yjs: 13.6.26
+      y-protocols: 1.0.6(yjs@13.6.27)
+      yjs: 13.6.27
     optionalDependencies:
       ws: 8.18.1
     transitivePeerDependencies:
@@ -7159,7 +7159,7 @@ snapshots:
       y18n: 5.0.8
       yargs-parser: 21.1.1
 
-  yjs@13.6.26:
+  yjs@13.6.27:
     dependencies:
       lib0: 0.2.99
 
