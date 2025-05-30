@@ -54,7 +54,7 @@
     "concurrently": "9.1.2",
     "happy-dom": "13.6.2",
     "knip": "5.59.1",
-    "prettier-plugin-tailwindcss": "0.6.11",
+    "prettier-plugin-tailwindcss": "0.6.12",
     "rollup-plugin-visualizer": "5.14.0",
     "typescript": "5.8.3",
     "vite": "6.3.5",
