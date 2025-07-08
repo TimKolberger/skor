@@ -57,7 +57,7 @@
     "prettier-plugin-tailwindcss": "0.6.13",
     "rollup-plugin-visualizer": "6.0.3",
     "typescript": "5.8.3",
-    "vite": "7.0.2",
+    "vite": "7.0.3",
     "vitest": "3.2.4",
     "workbox-window": "7.3.0"
   },
