@@ -63,8 +63,8 @@ importers:
         specifier: 1.1.2
         version: 1.1.2(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       vite-plugin-pwa:
-        specifier: 1.0.1
-        version: 1.0.1(@types/babel__core@7.20.5)(vite@7.0.6(@types/node@22.16.5)(jiti@2.4.2)(terser@5.43.1)(yaml@2.8.0))(workbox-window@7.3.0)
+        specifier: 1.0.2
+        version: 1.0.2(@types/babel__core@7.20.5)(vite@7.0.6(@types/node@22.16.5)(jiti@2.4.2)(terser@5.43.1)(yaml@2.8.0))(workbox-window@7.3.0)
       y-indexeddb:
         specifier: 9.0.12
         version: 9.0.12(yjs@13.6.27)
@@ -3267,8 +3267,8 @@ packages:
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
 
-  vite-plugin-pwa@1.0.1:
-    resolution: {integrity: sha512-STyUomQbydj7vGamtgQYIJI0YsUZ3T4pJLGBQDQPhzMse6aGSncmEN21OV35PrFsmCvmtiH+Nu1JS1ke4RqBjQ==}
+  vite-plugin-pwa@1.0.2:
+    resolution: {integrity: sha512-O3UwjsCnoDclgJANoOgzzqW7SFgwXE/th2OmUP/ILxHKwzWxxKDBu+B/Xa9Cv4IgSVSnj2HgRVIJ7F15+vQFkA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@vite-pwa/assets-generator': ^1.0.0
@@ -6778,7 +6778,7 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-pwa@1.0.1(@types/babel__core@7.20.5)(vite@7.0.6(@types/node@22.16.5)(jiti@2.4.2)(terser@5.43.1)(yaml@2.8.0))(workbox-window@7.3.0):
+  vite-plugin-pwa@1.0.2(@types/babel__core@7.20.5)(vite@7.0.6(@types/node@22.16.5)(jiti@2.4.2)(terser@5.43.1)(yaml@2.8.0))(workbox-window@7.3.0):
     dependencies:
       debug: 4.4.1
       pretty-bytes: 6.1.1
