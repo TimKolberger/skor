@@ -115,8 +115,8 @@ importers:
         specifier: 13.6.2
         version: 13.6.2
       knip:
-        specifier: 5.63.0
-        version: 5.63.0(@types/node@22.18.0)(typescript@5.9.2)
+        specifier: 5.63.1
+        version: 5.63.1(@types/node@22.18.0)(typescript@5.9.2)
       prettier-plugin-tailwindcss:
         specifier: 0.6.14
         version: 0.6.14(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.6.2))(prettier@3.6.2)
@@ -2447,8 +2447,8 @@ packages:
     resolution: {integrity: sha512-p/nXbhSEcu3pZRdkW1OfJhpsVtW1gd4Wa1fnQc9YLiTfAjn0312eMKimbdIQzuZl9aa9xUGaRlP9T/CJE/ditQ==}
     engines: {node: '>=0.10.0'}
 
-  knip@5.63.0:
-    resolution: {integrity: sha512-xIFIi/uvLW0S/AQqwggN6UVRKBOQ1Ya7jBfQzllswZplr2si5C616/5wCcWc/eoi1PLJgPgJQLxqYq1aiYpqwg==}
+  knip@5.63.1:
+    resolution: {integrity: sha512-wSznedUAzcU4o9e0O2WPqDnP7Jttu8cesq/R23eregRY8QYQ9NLJ3aGt9fadJfRzPBoU4tRyutwVQu6chhGDlA==}
     engines: {node: '>=18.18.0'}
     hasBin: true
     peerDependencies:
@@ -6025,7 +6025,7 @@ snapshots:
 
   jsonpointer@5.0.1: {}
 
-  knip@5.63.0(@types/node@22.18.0)(typescript@5.9.2):
+  knip@5.63.1(@types/node@22.18.0)(typescript@5.9.2):
     dependencies:
       '@nodelib/fs.walk': 1.2.8
       '@types/node': 22.18.0
