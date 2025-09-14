@@ -16,7 +16,7 @@
     "test:ci": "vitest --run --coverage --pass-with-no-tests"
   },
   "dependencies": {
-    "@fontsource/source-code-pro": "5.2.6",
+    "@fontsource/source-code-pro": "5.2.7",
     "@radix-ui/react-dropdown-menu": "2.1.16",
     "@radix-ui/react-toggle-group": "1.1.11",
     "autoprefixer": "10.4.21",
