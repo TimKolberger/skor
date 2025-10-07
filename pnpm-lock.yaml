@@ -27,8 +27,8 @@ importers:
         specifier: 11.13.1
         version: 11.13.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       human-id:
-        specifier: 4.1.1
-        version: 4.1.1
+        specifier: 4.1.2
+        version: 4.1.2
       postcss:
         specifier: 8.5.6
         version: 8.5.6
@@ -2151,8 +2151,8 @@ packages:
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
 
-  human-id@4.1.1:
-    resolution: {integrity: sha512-3gKm/gCSUipeLsRYZbbdA1BD83lBoWUkZ7G9VFrhWPAU76KwYo5KR8V28bpoPm/ygy0x5/GCbpRQdY7VLYCoIg==}
+  human-id@4.1.2:
+    resolution: {integrity: sha512-v/J+4Z/1eIJovEBdlV5TYj1IR+ZiohcYGRY+qN/oC9dAfKzVT023N/Bgw37hrKCoVRBvk3bqyzpr2PP5YeTMSg==}
     hasBin: true
 
   idb@7.1.1:
@@ -5659,7 +5659,7 @@ snapshots:
 
   html-escaper@2.0.2: {}
 
-  human-id@4.1.1: {}
+  human-id@4.1.2: {}
 
   idb@7.1.1: {}
 
