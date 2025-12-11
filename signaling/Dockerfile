@@ -1,4 +1,4 @@
-FROM node:22
+FROM node:24
 
 RUN npm install -g y-webrtc
 
