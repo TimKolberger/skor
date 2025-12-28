@@ -64,7 +64,7 @@ importers:
         version: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       vite-plugin-pwa:
         specifier: 1.2.0
-        version: 1.2.0(@types/babel__core@7.20.5)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.0)(terser@5.44.0)(yaml@2.8.1))(workbox-window@7.3.0)
+        version: 1.2.0(@types/babel__core@7.20.5)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.0)(terser@5.44.0)(yaml@2.8.1))(workbox-window@7.4.0)
       y-indexeddb:
         specifier: 9.0.12
         version: 9.0.12(yjs@13.6.28)
@@ -133,8 +133,8 @@ importers:
         specifier: 3.2.4
         version: 3.2.4(@types/node@24.10.4)(happy-dom@13.6.2)(jiti@2.6.0)(terser@5.44.0)(yaml@2.8.1)
       workbox-window:
-        specifier: 7.3.0
-        version: 7.3.0
+        specifier: 7.4.0
+        version: 7.4.0
 
 packages:
 
@@ -3450,9 +3450,6 @@ packages:
   workbox-cacheable-response@7.4.0:
     resolution: {integrity: sha512-0Fb8795zg/x23ISFkAc7lbWes6vbw34DGFIMw31cwuHPgDEC/5EYm6m/ZkylLX0EnEbbOyOCLjKgFS/Z5g0HeQ==}
 
-  workbox-core@7.3.0:
-    resolution: {integrity: sha512-Z+mYrErfh4t3zi7NVTvOuACB0A/jA3bgxUN3PwtAVHvfEsZxV9Iju580VEETug3zYJRc0Dmii/aixI/Uxj8fmw==}
-
   workbox-core@7.4.0:
     resolution: {integrity: sha512-6BMfd8tYEnN4baG4emG9U0hdXM4gGuDU3ectXuVHnj71vwxTFI7WOpQJC4siTOlVtGqCUtj0ZQNsrvi6kZZTAQ==}
 
@@ -3485,9 +3482,6 @@ packages:
 
   workbox-sw@7.4.0:
     resolution: {integrity: sha512-ltU+Kr3qWR6BtbdlMnCjobZKzeV1hN+S6UvDywBrwM19TTyqA03X66dzw1tEIdJvQ4lYKkBFox6IAEhoSEZ8Xw==}
-
-  workbox-window@7.3.0:
-    resolution: {integrity: sha512-qW8PDy16OV1UBaUNGlTVcepzrlzyzNW/ZJvFQQs2j2TzGsg6IKjcpZC1RSquqQnTOafl5pCj5bGfAHlCjOOjdA==}
 
   workbox-window@7.4.0:
     resolution: {integrity: sha512-/bIYdBLAVsNR3v7gYGaV4pQW3M3kEPx5E8vDxGvxo6khTrGtSSCS7QiFKv9ogzBgZiy0OXLP9zO28U/1nF1mfw==}
@@ -6872,14 +6866,14 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-pwa@1.2.0(@types/babel__core@7.20.5)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.0)(terser@5.44.0)(yaml@2.8.1))(workbox-window@7.3.0):
+  vite-plugin-pwa@1.2.0(@types/babel__core@7.20.5)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.0)(terser@5.44.0)(yaml@2.8.1))(workbox-window@7.4.0):
     dependencies:
       debug: 4.4.3
       pretty-bytes: 6.1.1
       tinyglobby: 0.2.15
       vite: 7.3.0(@types/node@24.10.4)(jiti@2.6.0)(terser@5.44.0)(yaml@2.8.1)
       workbox-build: 7.4.0(@types/babel__core@7.20.5)
-      workbox-window: 7.3.0
+      workbox-window: 7.4.0
     transitivePeerDependencies:
       - '@types/babel__core'
       - supports-color
@@ -7061,8 +7055,6 @@ snapshots:
     dependencies:
       workbox-core: 7.4.0
 
-  workbox-core@7.3.0: {}
-
   workbox-core@7.4.0: {}
 
   workbox-expiration@7.4.0:
@@ -7114,11 +7106,6 @@ snapshots:
       workbox-routing: 7.4.0
 
   workbox-sw@7.4.0: {}
-
-  workbox-window@7.3.0:
-    dependencies:
-      '@types/trusted-types': 2.0.7
-      workbox-core: 7.3.0
 
   workbox-window@7.4.0:
     dependencies:
