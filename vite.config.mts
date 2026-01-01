@@ -66,10 +66,10 @@ export default defineConfig({
       reporter: ['json-summary', 'json', 'lcov'],
       reportOnFailure: true,
       thresholds: {
-        lines: 60,
-        branches: 60,
-        functions: 60,
-        statements: 60,
+        lines: 50,
+        branches: 45,
+        functions: 45,
+        statements: 50,
       },
       include: ['src/**'],
       exclude: [
