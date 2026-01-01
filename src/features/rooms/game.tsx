@@ -21,7 +21,6 @@ export const Game = () => {
         axis="y"
         values={players}
         onReorder={() => void 0}
-        // @ts-expect-error - invalid Framer/React 19 types
         className="flex flex-1 flex-col"
       >
         <AnimatePresence>
@@ -32,7 +31,6 @@ export const Game = () => {
                 value={player}
                 exit={{ opacity: 0, transition: { duration: 0.2 } }}
                 drag={false}
-                // @ts-expect-error - invalid Framer/React 19 types
                 className="flex flex-1"
               >
                 <PlayerTile player={player} />
