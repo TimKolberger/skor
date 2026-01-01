@@ -107,13 +107,13 @@ importers:
         version: 5.1.2(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(terser@5.44.1))
       '@vitest/coverage-v8':
         specifier: 4.0.16
-        version: 4.0.16(vitest@4.0.16(@types/node@24.10.4)(happy-dom@13.6.2)(jiti@2.6.1)(terser@5.44.1))
+        version: 4.0.16(vitest@4.0.16(@types/node@24.10.4)(happy-dom@13.10.1)(jiti@2.6.1)(terser@5.44.1))
       concurrently:
         specifier: 9.2.1
         version: 9.2.1
       happy-dom:
-        specifier: 13.6.2
-        version: 13.6.2
+        specifier: 13.10.1
+        version: 13.10.1
       knip:
         specifier: 5.78.0
         version: 5.78.0(@types/node@24.10.4)(typescript@5.9.3)
@@ -131,7 +131,7 @@ importers:
         version: 7.3.0(@types/node@24.10.4)(jiti@2.6.1)(terser@5.44.1)
       vitest:
         specifier: 4.0.16
-        version: 4.0.16(@types/node@24.10.4)(happy-dom@13.6.2)(jiti@2.6.1)(terser@5.44.1)
+        version: 4.0.16(@types/node@24.10.4)(happy-dom@13.10.1)(jiti@2.6.1)(terser@5.44.1)
       workbox-window:
         specifier: 7.4.0
         version: 7.4.0
@@ -2109,8 +2109,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  happy-dom@13.6.2:
-    resolution: {integrity: sha512-Ku+wDqcF/KwFA0dI+xIMZd9Jn020RXjuSil/Vz7gu2yhDC3FsDYZ55qqV9k+SGC4opwb4acisXqVSRxUJMlPbQ==}
+  happy-dom@13.10.1:
+    resolution: {integrity: sha512-9GZLEFvQL5EgfJX2zcBgu1nsPUn98JF/EiJnSfQbdxI6YEQGqpd09lXXxOmYonRBIEFz9JlGCOiPflDzgS1p8w==}
     engines: {node: '>=16.0.0'}
 
   has-bigints@1.1.0:
@@ -4932,7 +4932,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/coverage-v8@4.0.16(vitest@4.0.16(@types/node@24.10.4)(happy-dom@13.6.2)(jiti@2.6.1)(terser@5.44.1))':
+  '@vitest/coverage-v8@4.0.16(vitest@4.0.16(@types/node@24.10.4)(happy-dom@13.10.1)(jiti@2.6.1)(terser@5.44.1))':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/utils': 4.0.16
@@ -4945,7 +4945,7 @@ snapshots:
       obug: 2.1.1
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.16(@types/node@24.10.4)(happy-dom@13.6.2)(jiti@2.6.1)(terser@5.44.1)
+      vitest: 4.0.16(@types/node@24.10.4)(happy-dom@13.10.1)(jiti@2.6.1)(terser@5.44.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -5556,7 +5556,7 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  happy-dom@13.6.2:
+  happy-dom@13.10.1:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -6692,7 +6692,7 @@ snapshots:
       jiti: 2.6.1
       terser: 5.44.1
 
-  vitest@4.0.16(@types/node@24.10.4)(happy-dom@13.6.2)(jiti@2.6.1)(terser@5.44.1):
+  vitest@4.0.16(@types/node@24.10.4)(happy-dom@13.10.1)(jiti@2.6.1)(terser@5.44.1):
     dependencies:
       '@vitest/expect': 4.0.16
       '@vitest/mocker': 4.0.16(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(terser@5.44.1))
@@ -6716,7 +6716,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.10.4
-      happy-dom: 13.6.2
+      happy-dom: 13.10.1
     transitivePeerDependencies:
       - jiti
       - less
