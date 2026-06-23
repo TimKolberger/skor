@@ -1,18 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", ":semanticCommitTypeAll(chore)"],
+  "extends": ["config:recommended", ":semanticCommitTypeAll(chore)"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     },
     {
-      "matchPackageNames": "pnpm",
-      "allowedVersions": "<9"
-    },
-    {
-      "matchPackageNames": "eslint",
-      "allowedVersions": "<9"
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "1 day"
     }
   ],
   "lockFileMaintenance": {
