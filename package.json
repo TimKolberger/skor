@@ -37,7 +37,7 @@
     "vite-plugin-pwa": "1.2.0",
     "y-indexeddb": "9.0.12",
     "y-webrtc": "10.3.0",
-    "yjs": "13.6.28",
+    "yjs": "13.6.31",
     "zustand": "5.0.9"
   },
   "devDependencies": {
