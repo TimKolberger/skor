@@ -67,13 +67,13 @@ importers:
         version: 1.2.0(@types/babel__core@7.20.5)(vite@7.3.5(@types/node@24.10.4)(jiti@2.6.1)(terser@5.44.1))(workbox-window@7.4.0)
       y-indexeddb:
         specifier: 9.0.12
-        version: 9.0.12(yjs@13.6.28)
+        version: 9.0.12(yjs@13.6.31)
       y-webrtc:
         specifier: 10.3.0
-        version: 10.3.0(yjs@13.6.28)
+        version: 10.3.0(yjs@13.6.31)
       yjs:
-        specifier: 13.6.28
-        version: 13.6.28
+        specifier: 13.6.31
+        version: 13.6.31
       zustand:
         specifier: 5.0.9
         version: 5.0.9(@types/react@19.2.7)(react@19.2.3)
@@ -3466,8 +3466,8 @@ packages:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
 
-  yjs@13.6.28:
-    resolution: {integrity: sha512-EgnDOXs8+hBVm6mq3/S89Kiwzh5JRbn7w2wXwbrMRyKy/8dOFsLvuIfC+x19ZdtaDc0tA9rQmdZzbqqNHG44wA==}
+  yjs@13.6.31:
+    resolution: {integrity: sha512-Eq+5BRfbeGyqGVrTJL3bEcr8gKkxPuyuoHmAwpk52fDb8kOVMrfVSTRPd6yiGgX5Fskb96qCRjzjbRjrL4YEnw==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
 
   zod@4.3.4:
@@ -6923,22 +6923,22 @@ snapshots:
   ws@8.18.3:
     optional: true
 
-  y-indexeddb@9.0.12(yjs@13.6.28):
+  y-indexeddb@9.0.12(yjs@13.6.31):
     dependencies:
       lib0: 0.2.117
-      yjs: 13.6.28
+      yjs: 13.6.31
 
-  y-protocols@1.0.7(yjs@13.6.28):
+  y-protocols@1.0.7(yjs@13.6.31):
     dependencies:
       lib0: 0.2.117
-      yjs: 13.6.28
+      yjs: 13.6.31
 
-  y-webrtc@10.3.0(yjs@13.6.28):
+  y-webrtc@10.3.0(yjs@13.6.31):
     dependencies:
       lib0: 0.2.117
       simple-peer: 9.11.1
-      y-protocols: 1.0.7(yjs@13.6.28)
-      yjs: 13.6.28
+      y-protocols: 1.0.7(yjs@13.6.31)
+      yjs: 13.6.31
     optionalDependencies:
       ws: 8.18.3
     transitivePeerDependencies:
@@ -6962,7 +6962,7 @@ snapshots:
       y18n: 5.0.8
       yargs-parser: 21.1.1
 
-  yjs@13.6.28:
+  yjs@13.6.31:
     dependencies:
       lib0: 0.2.117
 
