@@ -52,7 +52,7 @@
     "@vitejs/plugin-react": "5.2.0",
     "@vitest/coverage-v8": "4.1.9",
     "concurrently": "9.2.3",
-    "happy-dom": "13.6.2",
+    "happy-dom": "20.10.6",
     "knip": "5.88.1",
     "prettier-plugin-tailwindcss": "0.8.0",
     "rollup-plugin-visualizer": "6.0.11",
