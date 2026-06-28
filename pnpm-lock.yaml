@@ -58,7 +58,7 @@ importers:
         version: 3.4.19(yaml@2.9.0)
       valibot:
         specifier: 0.42.1
-        version: 0.42.1(typescript@5.9.3)
+        version: 0.42.1(typescript@6.0.3)
       vaul:
         specifier: 1.1.2
         version: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -116,7 +116,7 @@ importers:
         version: 13.6.2
       knip:
         specifier: 5.88.1
-        version: 5.88.1(@types/node@24.13.2)(typescript@5.9.3)
+        version: 5.88.1(@types/node@24.13.2)(typescript@6.0.3)
       prettier-plugin-tailwindcss:
         specifier: 0.8.0
         version: 0.8.0(@trivago/prettier-plugin-sort-imports@6.0.2(prettier@3.9.0))(prettier@3.9.0)
@@ -124,8 +124,8 @@ importers:
         specifier: 6.0.11
         version: 6.0.11(rollup@4.54.0)
       typescript:
-        specifier: 5.9.3
-        version: 5.9.3
+        specifier: 6.0.3
+        version: 6.0.3
       vite:
         specifier: 7.3.6
         version: 7.3.6(@types/node@24.13.2)(jiti@2.6.1)(terser@5.44.1)(yaml@2.9.0)
@@ -3338,8 +3338,8 @@ packages:
     resolution: {integrity: sha512-3KS2b+kL7fsuk/eJZ7EQdnEmQoaho/r6KUef7hxvltNA5DR8NAUM+8wJMbJyZ4G9/7i3v5zPBIMN5aybAh2/Jg==}
     engines: {node: '>= 0.4'}
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -6158,7 +6158,7 @@ snapshots:
 
   jsonpointer@5.0.1: {}
 
-  knip@5.88.1(@types/node@24.13.2)(typescript@5.9.3):
+  knip@5.88.1(@types/node@24.13.2)(typescript@6.0.3):
     dependencies:
       '@nodelib/fs.walk': 1.2.8
       '@types/node': 24.13.2
@@ -6171,7 +6171,7 @@ snapshots:
       picomatch: 4.0.3
       smol-toml: 1.6.0
       strip-json-comments: 5.0.3
-      typescript: 5.9.3
+      typescript: 6.0.3
       unbash: 2.2.0
       yaml: 2.9.0
       zod: 4.3.4
@@ -6950,7 +6950,7 @@ snapshots:
       possible-typed-array-names: 1.1.0
       reflect.getprototypeof: 1.0.10
 
-  typescript@5.9.3: {}
+  typescript@6.0.3: {}
 
   unbash@2.2.0: {}
 
@@ -7011,9 +7011,9 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  valibot@0.42.1(typescript@5.9.3):
+  valibot@0.42.1(typescript@6.0.3):
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.3
 
   vaul@1.1.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
