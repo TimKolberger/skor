@@ -51,7 +51,7 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "5.2.0",
     "@vitest/coverage-v8": "4.1.9",
-    "concurrently": "9.2.3",
+    "concurrently": "10.0.3",
     "happy-dom": "13.6.2",
     "knip": "5.88.1",
     "prettier-plugin-tailwindcss": "0.8.0",
