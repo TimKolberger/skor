@@ -112,8 +112,8 @@ importers:
         specifier: 10.0.3
         version: 10.0.3
       happy-dom:
-        specifier: 13.6.2
-        version: 13.6.2
+        specifier: 13.10.1
+        version: 13.10.1
       knip:
         specifier: 5.88.1
         version: 5.88.1(@types/node@24.13.2)(typescript@6.0.3)
@@ -131,7 +131,7 @@ importers:
         version: 7.3.6(@types/node@24.13.2)(jiti@2.6.1)(terser@5.44.1)(yaml@2.9.0)
       vitest:
         specifier: 4.1.10
-        version: 4.1.10(@types/node@24.13.2)(@vitest/coverage-v8@4.1.10)(happy-dom@13.6.2)(vite@7.3.6(@types/node@24.13.2)(jiti@2.6.1)(terser@5.44.1)(yaml@2.9.0))
+        version: 4.1.10(@types/node@24.13.2)(@vitest/coverage-v8@4.1.10)(happy-dom@13.10.1)(vite@7.3.6(@types/node@24.13.2)(jiti@2.6.1)(terser@5.44.1)(yaml@2.9.0))
       workbox-window:
         specifier: 7.4.1
         version: 7.4.1
@@ -2317,8 +2317,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  happy-dom@13.6.2:
-    resolution: {integrity: sha512-Ku+wDqcF/KwFA0dI+xIMZd9Jn020RXjuSil/Vz7gu2yhDC3FsDYZ55qqV9k+SGC4opwb4acisXqVSRxUJMlPbQ==}
+  happy-dom@13.10.1:
+    resolution: {integrity: sha512-9GZLEFvQL5EgfJX2zcBgu1nsPUn98JF/EiJnSfQbdxI6YEQGqpd09lXXxOmYonRBIEFz9JlGCOiPflDzgS1p8w==}
     engines: {node: '>=16.0.0'}
 
   has-bigints@1.1.0:
@@ -5317,7 +5317,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.1.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.10(@types/node@24.13.2)(@vitest/coverage-v8@4.1.10)(happy-dom@13.6.2)(vite@7.3.6(@types/node@24.13.2)(jiti@2.6.1)(terser@5.44.1)(yaml@2.9.0))
+      vitest: 4.1.10(@types/node@24.13.2)(@vitest/coverage-v8@4.1.10)(happy-dom@13.10.1)(vite@7.3.6(@types/node@24.13.2)(jiti@2.6.1)(terser@5.44.1)(yaml@2.9.0))
 
   '@vitest/expect@4.1.10':
     dependencies:
@@ -5947,7 +5947,7 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  happy-dom@13.6.2:
+  happy-dom@13.10.1:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -7073,7 +7073,7 @@ snapshots:
       terser: 5.44.1
       yaml: 2.9.0
 
-  vitest@4.1.10(@types/node@24.13.2)(@vitest/coverage-v8@4.1.10)(happy-dom@13.6.2)(vite@7.3.6(@types/node@24.13.2)(jiti@2.6.1)(terser@5.44.1)(yaml@2.9.0)):
+  vitest@4.1.10(@types/node@24.13.2)(@vitest/coverage-v8@4.1.10)(happy-dom@13.10.1)(vite@7.3.6(@types/node@24.13.2)(jiti@2.6.1)(terser@5.44.1)(yaml@2.9.0)):
     dependencies:
       '@vitest/expect': 4.1.10
       '@vitest/mocker': 4.1.10(vite@7.3.6(@types/node@24.13.2)(jiti@2.6.1)(terser@5.44.1)(yaml@2.9.0))
@@ -7098,7 +7098,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.13.2
       '@vitest/coverage-v8': 4.1.10(vitest@4.1.10)
-      happy-dom: 13.6.2
+      happy-dom: 13.10.1
     transitivePeerDependencies:
       - msw
 
