@@ -50,7 +50,7 @@
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.7",
     "@vitejs/plugin-react": "5.2.0",
-    "@vitest/coverage-v8": "4.1.10",
+    "@vitest/coverage-v8": "4.1.11",
     "concurrently": "10.0.5",
     "happy-dom": "13.6.2",
     "knip": "6.32.0",
@@ -58,7 +58,7 @@
     "rollup-plugin-visualizer": "7.0.1",
     "typescript": "6.0.3",
     "vite": "7.3.6",
-    "vitest": "4.1.10",
+    "vitest": "4.1.11",
     "workbox-window": "7.4.1"
   },
   "engines": {
