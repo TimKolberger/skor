@@ -55,7 +55,7 @@
     "happy-dom": "13.6.2",
     "knip": "6.34.0",
     "prettier-plugin-tailwindcss": "0.8.1",
-    "rollup-plugin-visualizer": "7.0.1",
+    "rollup-plugin-visualizer": "7.1.1",
     "typescript": "6.0.3",
     "vite": "7.3.6",
     "vitest": "4.1.11",
